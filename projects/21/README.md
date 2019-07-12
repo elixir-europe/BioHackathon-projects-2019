@@ -1,4 +1,4 @@
-# Development of biomedical schema for data exchange for GA4GH and GEM-Japan22
+# Development of biomedical schema for data exchange for GA4GH and GEM-Japan
 
 **Project Number:** 21
 

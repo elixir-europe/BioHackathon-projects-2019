@@ -1,4 +1,4 @@
-# Knowledge graph for scholarly publications in Bioschemas13
+# Knowledge graph for scholarly publications in Bioschemas
 
 **Project Number:** 12
 
