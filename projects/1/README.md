@@ -5,12 +5,13 @@
 ## Research area alignment
 
 - ELIXIR Tools Platform
- ELIXIR Interoperability Platform
- ELIXIR Galaxy Community
- EOSC-Life
- GA4GH
- All ELIXIR Communities
-- The Data Stewardship Wizard is proposed as a way of presenting ELIXIR Data Management Resources (databases, tools, etc) to ELIXIR users in the submitted proposal for ELIXIR-Converge. The work proposed here is complementary to the work that will be performed in that project, but it will be possible to use the BioHackathon time also to refer to more ELIXIR services in the Wizard knowledge model, working on the preliminaries for the goals in ELIXIR-Converge (the recently submitted ELIXIR Data Management proposal).
+- ELIXIR Interoperability Platform
+- ELIXIR Galaxy Community
+- EOSC-Life
+- GA4GH
+- All ELIXIR Communities
+
+The Data Stewardship Wizard is proposed as a way of presenting ELIXIR Data Management Resources (databases, tools, etc) to ELIXIR users in the submitted proposal for ELIXIR-Converge. The work proposed here is complementary to the work that will be performed in that project, but it will be possible to use the BioHackathon time also to refer to more ELIXIR services in the Wizard knowledge model, working on the preliminaries for the goals in ELIXIR-Converge (the recently submitted ELIXIR Data Management proposal).
 
 ## Merged from
 
