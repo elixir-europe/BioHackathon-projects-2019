@@ -1,4 +1,4 @@
-# Development of a visualization library for real-time monitoring of computational workflows15
+# Development of a visualization library for real-time monitoring of computational workflows
 
 **Project Number:** 14
 
