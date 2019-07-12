@@ -1,14 +1,14 @@
-# Improve the support of Common Workflow Language in Galaxy
+# Improve the support of Common Workflow Language standards in Galaxy
 
 **Project Number:** 3
 
 ## Research area alignment
 
 - ELIXIR Interoperability Platform
- ELIXIR Tools Platform
- ELIXIR Compute Platform
- ELIXIR Galaxy Community
- ELIXIR Marine Metagenomics Community
+- ELIXIR Tools Platform
+- ELIXIR Compute Platform
+- ELIXIR Galaxy Community
+- ELIXIR Marine Metagenomics Community
 
 ## Team
 
@@ -20,17 +20,17 @@
 
 ### Lead(s)
 
-- Hervé Ménager, John Chilto, Michael Cruso,
+- Hervé Ménager, John Chilto, Michael R. Crusoe,
 
 ### Nominated participant(s)
 
 - Nicola Soranzo, Galaxy core developer
- Michael R. Crusoe,, CWL expert
- Hervé Ménager,, CWL leadership team
+- Michael R. Crusoe, CWL expert
+- Hervé Ménager, CWL leadership team
 
 ## Expected outcomes
 
-- 1) Improved support for importing CWL tool and workflow descriptions into Galaxy.
+ 1) Improved support for importing CWL tool and workflow descriptions into Galaxy.
  2) This support is merged into the main Galaxy codebase and is part of a future release of Galaxy
 
 ## Expected audience
