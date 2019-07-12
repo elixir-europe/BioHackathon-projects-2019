@@ -1,67 +1,39 @@
 # Towards seamless Galaxy and InterMine integration: Enhanced region analysis
 
+**Project Number:** 7
+
 ## Research area alignment
 
-- This biohackathon aligns with the following ELIXIR platforms: data, tools and interoperability. ELIXIR communities which may find it relevant are Human Data and Rare Diseases.
+- Interoperability for Bioinformatics tools
 
 ## Team
 
+**Submitter:** Yo Yehudi
+
 ### Proponent(s)
 
-- Marek Ostaszewski
+- Yo Yehudi
 
 ### Lead(s)
 
-- Laura I. Furlong
- Research Programme on Biomedical Informatics (GRIB)
- Hospital del Mar Medical Research Institute (IMIM)
- DCEXS, Pompeu Fabra University (UPF)
- Carrer del Dr. Aiguader, 88, 08003 Barcelona, Spain
- email:
- 
- Joaquin Dopazo
- Clinical Bioinformatics Area, Director
- Fundacion Progreso y Salud
- CDCA, Hospital Virgen del Rocío
- c/Manuel Siurot s/n, 
- 41013, Sevilla, Spain
- email:
- 
- Marek Ostaszewski
- Research Fellow
- Université du Luxembourg
- Luxembourg Centre for Systems Biomedicine (LCSB)
- 6, avenue du Swing
- L-4367 Belvaux, Luxembourg
- email:
+- Yo Yehudi -
 
 ### Nominated participant(s)
 
-- 1. Steve Laurie, CNAG, expert in the RD research and member of the RD-connect resource, omics data integration
- 2. Joaquin Dopazo, expertise in pathway modeling in translational medicine
- 3. Piotr Gawron, expertise in knowledge visualization and translational medicine data formats
+- Daniela Butano / University of Cambridge /
+ Anthony Bretaudeau / Galaxy
 
 ## Expected outcomes
 
-- We expect to deliver a working prototype of a search and visualization interface that, given the search criteria and, if available, omics data, will scan the considered resources, combine the results into a molecular diagram, which then will become available for visualization in MINERVA and Hipathia platforms, linking the results to the sources in DisGeNET and other repositories. 
+- In the short term, we expect to produce a working prototype of the direct data upload from Galaxy to InterMine at this hackathon. This effort is meant to be the first step towards the tighter interoperation between InterMine and Galaxy. 
  
- A suggested workflow will look as follows:
- 1. For a rare disease from Orphanet, retrieve the genes/variants from DisGeNET
- 2. Interrogate disease maps via MINERVA to retrieve pathways in which these genes/variants are involved
- 3. Identify omics data for the RD from omics data repository (e.g. transcriptomics)
- 4. Feed output of 3 and 2 into Hipathia for modelling disease processes
- 5. Use MINERVA for visualization of identified disease maps, and/or for integration of retrieved data
- 
- If successful, we plan to continue this collaboration and aim for at least one bioinformatics paper. We will actively explore the possibility of establishing this search and visualization engine as part of ELIXIR services.
+ In the future, we plan to allow arbitrary datasets to move freely between both, and for Galaxy users to be able to create their own InterMine instances in the cloud: these will be loaded with their data from Galaxy and complementary external data. This would allow Galaxy users to benefit from InterMine’s data integration and enrichment process, as well as providing analysis and visualisation tools, with a wealth of interoperable web-services for programmatic access to their data.
 
 ## Expected audience
 
-- - Bioinformaticians with expertise in handling clinical data to define and consult use-cases for the RD mechanisms search
- - Bioinformaticians skilled in information retrieval, knowledge exchange and systems biology formats (SBML, SBGN, BioPAX) to design and implement the intra-tool pipelines
- - Bioinformaticians skilled in omics data retrieval and integration, to design and implement the data-level pipelines, including RD-connect
- - Web developers proficient with JavaScript to implement the search and visualization interface based on existing MINERVA plugin architecture
- 
- Importantly, the organizers ensure participation of 1 web developer, and the following bioinformaticians: 2 for clinical data handling, 1 for knowledge retrieval and exchange and 2 for omics data handling. This way we secure the critical mass necessary for the biohackathon.
+- Galaxy and InterMine users to gather additional requirements.
+ Galaxy developers to help create the Galaxy data export tool
+ Java or Clojure developers to help work on the InterMine side of importing the data
 
-**Number of expected hacking days**: 4
+**Number of expected hacking days**: 2
 

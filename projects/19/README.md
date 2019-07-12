@@ -1,36 +1,43 @@
 # Updating the Galaksio workflow management interface for Galaxy and migrating it to Vue.js
 
+**Project Number:** 19
+
 ## Research area alignment
 
-- Federated Compute, Galaxy, Bioinformatics
+- Galaxy Working Group
+ (making bioinformatics more accessible for biologists)
 
 ## Team
 
+**Submitter:** Tomas Klingström
+
 ### Proponent(s)
 
-- Gianmauro Cuccuru
+- Tomas Klingström
 
 ### Lead(s)
 
-- Gianmauro Cuccuru
- Marco Antonio Tangaro
+- Tomas Klingstrom
 
 ### Nominated participant(s)
 
-- Gianmauro Cuccuru (DE) - Ansible, Bash, Cloud computing, Docker, Galaxy, Python
- Miroslav Ruda (CZ) - Bash, Distributed job scheduling, Grid computing
- Marco Antonio Tangaro (IT) - Ansible, Bash, Cloud computing, Docker, Galaxy, Python
+- 1. Rafael Hernández de Diego, Is the original programmer behind Galaksio and a very skilled programmer in both front-end and back-end development. His current work is demanding but the BioHackaton can hopefully be seen as a bit of a prestige collaboration for his current employer and thus make him available to us for this.
+ 
+ 2. Marius van den Beek, One of the key developers in Europe for Galaxy with many major contributions to both Galaxy and Galaksio. (Note: Works in Paris)
+ 
+ 3. Nicola Soranzo, of the key developers in Europe for Galaxy and has developed Bioblend which is used to connect tools such as Galaksio with Galaxy.
 
 ## Expected outcomes
 
-- Having a network of trusted pulsar servers across Europe to leverage computational power more efficiently in ELIXIR
- Distributing jobs based on tool metrics and ELIXIR AAI attributes through Europe
+- The overall objective is to provide a simplified interface for running best practice workflows hosted on Galaxy servers. Specifically the hackaton will:
+ *Migrate Galaksio to a more sustainable codebase.
+ *Bring together key skills necessary to finalize some specific issues in the code.
+ *Contribute to creation of a "component library" in Vue as components can be shared between Galaxy, Galaksio and other bioinformatics software using Vue.js (or where Vue.js can be easily added).
 
 ## Expected audience
 
-- Type of participants: Developers, DevOps, System Administrators
- Knowledge: basic Galaxy admin knowledge, Job scheduling
- Skills: Ansible, Bash, Python
+- Galaxy administrators, developers and high level users.
+ Researchers knowledgeable in JavaScript (more specifically Vue.js and/or Angular.js).
 
 **Number of expected hacking days**: 4
 

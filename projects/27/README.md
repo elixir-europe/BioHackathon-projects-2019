@@ -1,34 +1,49 @@
 # FAIR Identifier Mapping: Building Bridges Between Communities
 
+**Project Number:** 27
+
 ## Research area alignment
 
-- Tools Platform, Training Platform, Software Development Best Practices WG
+- Interoperability, Data
+ Rare Disease, Metabolomics, but relevant for all Communities
 
 ## Team
 
+**Submitter:** Denise Slenter
+
 ### Proponent(s)
 
-- Mateusz Kuzak
+- Denise Slenter
 
 ### Lead(s)
 
-- Mateusz Kuzak
- Fotis Psomopoulos
- Allegra Via
+- Denise Slenter,
+ Chris Evelo,
+ Egon Willighagen,
+ Alasdair Gray
 
 ### Nominated participant(s)
 
-- Dimitris Bampalikis
- Neil Chue Hong (Software Sustainability Institute) or other expert from ReSA community
+- 1. Emma Schymanski - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
+ 2. Nick Juty - University of Manchester -, identifiers.org and Compact Identifiers expert
+ 3. Tobias Kuhn - Free University of Amsterdam -, nanopublications
 
 ## Expected outcomes
 
-- The direct outcome of this project is going to be a draft checklist of a Software Management Plan (SMP). This will be further reviewed within the ELIXIR Software Best Practices WG, in conjunction with the involved stakeholders (i.e. from the ELIXIR network, relevant Journals as well as potential funding agencies such as EC). Mid-term goal of the project is to have an established SMP in place, that would be a requirement in at least one network. Moreover, the topics of the Management plan will be also included in the existing training material as extensions, so that targeted training can be provided.
+- 1. Improve the FAIR metrics of existing BridgeDb ID mapping databases
+ 2. Automation of generation of Scientific Lenses for chemical compounds
+ 3. Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME)
+ 4. BridgeDb application to create link sets from Bioschemas (MolecularEntity) annotation
+ 5. Faster identifier mapping (with Apache Derby replacement)
+ 6. ID mapping data exchange using nanopublications, allowing explicit provenance being stored
 
 ## Expected audience
 
-- Participants: Software developers, Research Software Engineers, Researchers
- Knowledge: GitHub, Data Management Plan, Software Development, Software Engineering Practices
+- ELIXIR Core Resource representations (mapping need and mapping providers)
+ Semantic Web and interoperability experts
+ Technicians with knowledge of Docker and/or OpenAPI
+ Workflow developers (Galaxy, KNIME, CWL)
+ Java developers
 
 **Number of expected hacking days**: 4
 

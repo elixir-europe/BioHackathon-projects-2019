@@ -1,38 +1,40 @@
 # Nightingale
 
+**Project Number:** 32
+
 ## Research area alignment
 
-- ELIXIR Galaxy Community
- ELIXIR Tools platform, Tools and Services Registry, Workflows & Interoperability groups
+- Data Visualization of Biological Data
 
 ## Team
 
+**Submitter:** Gustavo Salazar
+
 ### Proponent(s)
 
-- Wolfgang Maier
+- Gustavo Salazar
 
 ### Lead(s)
 
-- Wolfgang Maier,
- Jon Ison,
+- Gustavo Adolfo Salazar Orejuela, Xavier Watkins
 
 ### Nominated participant(s)
 
-- Anup Kumar,: Member of the Galaxy EU team working on deep learning models for tool suggestions
- Piotr Jaroslaw Chmura, & Ivan Kuzmin,: bio.tools developers
+- Aurélien Luciani JavaScript Developer - One of the original contributors to the project. Main Developer of the DataLoader and its adapters.
+ Daniel Rice JavaScript Developer. Contributor to UniProt Nightingale components.
 
 ## Expected outcomes
 
-- - a graph-based database of tools the traversal of which defines analysis workflows at various levels of tool interoperability confidence levels
- - a public frontend for Galaxy instances for exploring networks of tools and suggesting possible workflows from analysis start and end points
+- 2 new Nightingale components
+ Documentation for both developers and users
+ Updating the Showcase Application
+ Improve/redefine component use of lifecycle
 
 ## Expected audience
 
-- Galaxy tool developers and experienced end-users & Galaxy server admins for curated content development
- Bioinformatics operations ontologists (EDAM, bioschema) for automated content generation
- bio.tools ecosystem developers and experts
- Graph database developers for database layout decisions
- Members of the Galaxy Working Group within the ELIXIR Tools Platform for integration into Galaxy
+- Web Developer (JavaScript)
+ Web users of biological data
+ Designers
 
 **Number of expected hacking days**: 4
 

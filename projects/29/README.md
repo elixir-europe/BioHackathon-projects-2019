@@ -1,45 +1,55 @@
 # Semantic recommendation system for life sciences publications
 
+**Project Number:** 29
+
 ## Research area alignment
 
-- Interoperability, Data
- Rare Disease, Metabolomics, but relevant for all Communities
+- ELIXIR platform: Tools
+- Elixir platform: Tools
+
+## Merged from
+
+- Semantic recommendation system for life sciences publications
+- Developing Semantic Life Sciences Publications Subscription System
 
 ## Team
 
+**Submitter:** Toshiyuki Yokoyama/Mustafa Anil Tuncel
+
 ### Proponent(s)
 
-- Denise Slenter
+- Toshiyuki Yokoyama
+- Ivan Topolsky
 
 ### Lead(s)
 
-- Denise Slenter,
- Chris Evelo,
- Egon Willighagen,
- Alasdair Gray
+- Mustafa Anil Tuncel, Toshiyuki Yokoyama
+- Kim Philipp Jablonski,
+ Ivan Topolsky
 
 ### Nominated participant(s)
 
-- 1. Emma Schymanski - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
- 2. Nick Juty - University of Manchester -, identifiers.org and Compact Identifiers expert
- 3. Tobias Kuhn - Free University of Amsterdam -, nanopublications
+- 1. Toshiyuki Yokoyama, The University of Tokyo,, JavaScript/React, Ruby/Python/Bash, RDF/SPARQL, HTML/CSS 
+ 2. Mustafa Anil Tuncel, ETH Zurich,, Backend, Python, Bioinformatics, SPARQL, RDF
+ 3. Ivan Topolsky, ETH Zurich and SIB,, Backend, SysOps, DevOps, RaspPi servers, Docker containers, Web servers, Service Integration and Management, Perl/Bash/Python, HTML/CSS.
+- 1. Kim Philipp Jablonski, ETH Zurich,, Backend, Python.
+ 
+ 2. Ivan Topolsky, ETH Zurich and SIB,, Backend, SysOps, DevOps, RaspPi servers, Docker containers, Service Integration and Management, Perl/Bash/Python, Mail servers administration.
+ 
+ 3. Mustafa Anil Tuncel, ETH Zurich,, Backend, Python, Bioinformatics, SPARQL, RDF, C-SPARQL, Stream databases
 
 ## Expected outcomes
 
-- 1. Improve the FAIR metrics of existing BridgeDb ID mapping databases
- 2. Automation of generation of Scientific Lenses for chemical compounds
- 3. Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME)
- 4. BridgeDb application to create link sets from Bioschemas (MolecularEntity) annotation
- 5. Faster identifier mapping (with Apache Derby replacement)
- 6. ID mapping data exchange using nanopublications, allowing explicit provenance being stored
+- 1. A service that recommends articles to users by collecting articles and grants information from Europe PMC articles API and academic grants API.
+ 2. A web interface that shows the list of recommended papers and visualizes relationships between them.
+- - A semantic subscription system that notifies the researchers whenever a relevant paper or a grant is available.
+ 
+ - A web interface that allows researchers to subscribe in certain topics of life sciences from the ontology.
 
 ## Expected audience
 
-- ELIXIR Core Resource representations (mapping need and mapping providers)
- Semantic Web and interoperability experts
- Technicians with knowledge of Docker and/or OpenAPI
- Workflow developers (Galaxy, KNIME, CWL)
- Java developers
+- Researchers, Engineers, Ontology expert, JavaScript, Graph Database, RDF, Europe PMC
+- Front-end development, Knowledge on RDF, Backend
 
 **Number of expected hacking days**: 4
 

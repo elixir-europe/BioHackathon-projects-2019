@@ -1,42 +1,38 @@
 # TogoEx: the integration of gene expression data
 
+**Project Number:** 24
+
 ## Research area alignment
 
-- Interop
- Elixir Validation Implementation study
- Plant metadata submission
- SHEX/SHACL JSON-LD Shape validation
+- Omics researches that can be integrated with transcriptome data.
 
 ## Team
 
+**Submitter:** Hidemasa Bono
+
 ### Proponent(s)
 
-- Alasdair Gray
+- Hidemasa Bono
 
 ### Lead(s)
 
-- Simon Jupp
- Alasdair Gray
- Adam Cowdy
+- Hidemasa Bono
+ Hiromasa Ono
 
 ### Nominated participant(s)
 
-- Cyril Pommier, INRA,
- Philippe Rocca-Serra, UOXF, (ISA schema)
+- Hidemasa Bono 
+ Takeya Kasukawa Specialist of the system for transcriptome data
+ Hideki Hirakawa Specialist in plant genomics and bioinformatics
 
 ## Expected outcomes
 
-- Understanding of a wider set of validation use cases identifying their commonalities and differences
- Extending validation to networks of resources
- Share best practice about reporting validation errors
+- Gene expression matrix (genes vs samples) for silkworm and rice with the data viewer which was originally developed for human and mouse reference expression dataset.
 
 ## Expected audience
 
-- In general programmers interested in adopting standards for validation tools, including, but not limited to:
- JSON schema experts
- Plant metadata related expert (MIAPPE, PPEO…)
- BrAPI/ISA developers
- JSON-LD validation
+- Bioinformatists interested in analyzing transcriptome data for agricultural important organisms.
+ Ontologists for biological samples from those.
 
-**Number of expected hacking days**: 2
+**Number of expected hacking days**: 4
 

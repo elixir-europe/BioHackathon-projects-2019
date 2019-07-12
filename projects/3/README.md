@@ -1,35 +1,41 @@
 # Improve the support of Common Workflow Language in Galaxy
 
+**Project Number:** 3
+
 ## Research area alignment
 
-- Aligns with ELIXIR Tools Platform and other end-users of bio.tools and EDAM ontology.
+- ELIXIR Interoperability Platform
+ ELIXIR Tools Platform
+ ELIXIR Compute Platform
+ ELIXIR Galaxy Community
+ ELIXIR Marine Metagenomics Community
 
 ## Team
 
+**Submitter:** Herve Menager
+
 ### Proponent(s)
 
-- Jon Ison
+- Herve Menager
 
 ### Lead(s)
 
-- Jon Ison
- Hans Ienasescu
+- Hervé Ménager, John Chilto, Michael Cruso,
 
 ### Nominated participant(s)
 
-- Hans Ienasescu, (bio.tools expert)
- Veit Schwämmle, (bio.tools & EDAM expert)
+- Nicola Soranzo, Galaxy core developer
+ Michael R. Crusoe,, CWL expert
+ Hervé Ménager,, CWL leadership team
 
 ## Expected outcomes
 
-- 1. Definition of EDAM conceptual relationships and plans on how to leverage these within bio.tools to improve content quality and optimise the registration process.
- 2. Putting pubfetcher into the bio.tools curation process.
- 3. Optimising EDAMMap and EDAM Browser in light of user testing.
- 4. Technical planning for the GitHub-based content management architecture.
+- 1) Improved support for importing CWL tool and workflow descriptions into Galaxy.
+ 2) This support is merged into the main Galaxy codebase and is part of a future release of Galaxy
 
 ## Expected audience
 
-- programmers, ontologists, technical project managers
+- Software developers with either Python or Web Frontend development skills (especially JavaScript), with or without an initial experience of development in Galaxy and/or CWL.
 
 **Number of expected hacking days**: 4
 

@@ -1,41 +1,40 @@
 # Development of a Pulsar toolkit
 
+**Project Number:** 17
+
 ## Research area alignment
 
-- Elxir Core Data Resources
- Rare disease Elixir Communities
- Federated Data
+- Federated Compute, Galaxy, Bioinformatics
 
 ## Team
 
+**Submitter:** Gianmauro Cuccuru
+
 ### Proponent(s)
 
-- Marc Hanauer
+- Gianmauro Cuccuru
 
 ### Lead(s)
 
-- Marc Hanauer
- David Lagorce
+- Gianmauro Cuccuru
+ Marco Antonio Tangaro
 
 ### Nominated participant(s)
 
-- Rajaram Kaliyaperumal (FAIR expert)
- Celine Rousselot (Orphanet PHP dev lead)
- David Lagorce (Orphanet/Orphadata project manager & Dev)
- Marc Hanauer (Orphanet CTO)
- 
- (Please note: no travel fundings for Rousselot, Lagorce and Hanauer, only accommodation)
+- Gianmauro Cuccuru (DE) - Ansible, Bash, Cloud computing, Docker, Galaxy, Python
+ Miroslav Ruda (CZ) - Bash, Distributed job scheduling, Grid computing
+ Marco Antonio Tangaro (IT) - Ansible, Bash, Cloud computing, Docker, Galaxy, Python
 
 ## Expected outcomes
 
-- Improve interoperability of our core data resources
- FAIRdatapoint avalaible
+- Having a network of trusted pulsar servers across Europe to leverage computational power more efficiently in ELIXIR
+ Distributing jobs based on tool metrics and ELIXIR AAI attributes through Europe
 
 ## Expected audience
 
-- FAIR expert
- PHP dev. (Orphanet's website)
- data model (RDF/Ontology)
+- Type of participants: Developers, DevOps, System Administrators
+ Knowledge: basic Galaxy admin knowledge, Job scheduling
+ Skills: Ansible, Bash, Python
 
 **Number of expected hacking days**: 4
 

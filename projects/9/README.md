@@ -1,35 +1,38 @@
 # Data Management toolkit
 
+**Project Number:** 9
+
 ## Research area alignment
 
-- Interoperability for Bioinformatics tools
+- Tools Platform, Training Platform, Software Development Best Practices WG
 
 ## Team
 
+**Submitter:** Stuart Owen
+
 ### Proponent(s)
 
-- Yo Yehudi
+- Mateusz Kuzak
 
 ### Lead(s)
 
-- Yo Yehudi -
+- Mateusz Kuzak
+ Fotis Psomopoulos
+ Allegra Via
 
 ### Nominated participant(s)
 
-- Daniela Butano / University of Cambridge /
- Anthony Bretaudeau / Galaxy
+- Dimitris Bampalikis
+ Neil Chue Hong (Software Sustainability Institute) or other expert from ReSA community
 
 ## Expected outcomes
 
-- In the short term, we expect to produce a working prototype of the direct data upload from Galaxy to InterMine at this hackathon. This effort is meant to be the first step towards the tighter interoperation between InterMine and Galaxy. 
- 
- In the future, we plan to allow arbitrary datasets to move freely between both, and for Galaxy users to be able to create their own InterMine instances in the cloud: these will be loaded with their data from Galaxy and complementary external data. This would allow Galaxy users to benefit from InterMine’s data integration and enrichment process, as well as providing analysis and visualisation tools, with a wealth of interoperable web-services for programmatic access to their data.
+- The direct outcome of this project is going to be a draft checklist of a Software Management Plan (SMP). This will be further reviewed within the ELIXIR Software Best Practices WG, in conjunction with the involved stakeholders (i.e. from the ELIXIR network, relevant Journals as well as potential funding agencies such as EC). Mid-term goal of the project is to have an established SMP in place, that would be a requirement in at least one network. Moreover, the topics of the Management plan will be also included in the existing training material as extensions, so that targeted training can be provided.
 
 ## Expected audience
 
-- Galaxy and InterMine users to gather additional requirements.
- Galaxy developers to help create the Galaxy data export tool
- Java or Clojure developers to help work on the InterMine side of importing the data
+- Participants: Software developers, Research Software Engineers, Researchers
+ Knowledge: GitHub, Data Management Plan, Software Development, Software Engineering Practices
 
-**Number of expected hacking days**: 2
+**Number of expected hacking days**: 4
 

@@ -1,34 +1,43 @@
 # How to setup a local-EGA for Human Data with regulatory constraints?
 
+**Project Number:** 13
+
 ## Research area alignment
 
-- ELIXIR platforms: Data/Interoperability 
- ELIXIR Communities: Rare Disease/Proteomics/Metabolomics
+- This project is mainly aligned with the Human Data communities. 
+ h-CNV community
+ Platforms :Data, Compute and Tools
+ ELIXIR::GA4GH projects alignment
 
 ## Team
 
+**Submitter:** Victoria Dominguez Del Angel
+
 ### Proponent(s)
 
-- Venkata Pardhasaradhi Satagopam
+- Victoria Dominguez Del Angel
 
 ### Lead(s)
 
-- Venkata Satagopam  >, Johanna McEntyre, Aravind Venkatesan, Carlos Vega Moreno
+- Jordi Rambla, Victoria Dominguez del Angel, Christophe Blanchet, David Salgado, Olivier Collin
 
 ### Nominated participant(s)
 
-- Dr. Lars Juhl Jensen, University of Copenhagen,
- Dr. Martin Krallinger, CNIO,
+- Christophe Blanchet,, Cloud expert
+ Jordi Rambla,, EGA expert
+ Victoria Dominguez del Angel,, help on cloud brokering and documentation
 
 ## Expected outcomes
 
-- We look forward to the development of a common integration between cross-resource literature knowledgebase projects, delivering advancements on interoperability and accessibility of text-mining resources by developing an interface by extending existing APIs and application of standards, for example, W3C Web Annotation Data Model. This common interface will be tangentially beneficial for the different use cases that, for example, creation of interaction networks and disease maps and annotate corresponding entities, relationships and events through such knowledge databases. We are planned to submit a manuscript on Biohackathon outcome. Between the potential achievements, we could find an extended and lasting collaboration between institutions as well as scientific literature contributions, exploring the deployment of joint multi-institutional services.
+- - Deployment a local EGA instance in the Cloud Federation Biosphere with publically available Human data
+ - Creation of the Image
+ - Improve best practice documentation on “how to” deployment a Local EGA in a Cloud : https://localega.readthedocs.io/en/latest/code.html
+ - “How to use” Loca EGA from user’s prespective
+ - Define and propose solutions on Human data sharing issues taking into account the French Legislation
 
 ## Expected audience
 
-- Bioinformaticians and developers working in the areas of text-mining, network biology and semantic web technologies.
- 
- By all means, organisers commit to the proposal with the participation and contribution of developers, bioinformaticians for the event to ensure the presence of enough human resources and provide momentum during the biohackathon. 3 people from the University of Luxembourg and 2 from EMBL-EBI will participate in this Biohackathon topic.
+- Bioinformaticians, computer scientists, docker experts, cloud brokers
 
 **Number of expected hacking days**: 4
 

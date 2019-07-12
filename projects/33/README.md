@@ -1,35 +1,35 @@
 # FAIR applications
 
+**Project Number:** 33
+
 ## Research area alignment
 
-- ELIXIR Tools platform, Tools and Services Registry, Workflows & Interoperability groups
+- large data management analysis and interoperability
 
 ## Team
 
+**Submitter:** Juan Caballero
+
 ### Proponent(s)
 
-- Bjoern Gruening
+- Juan Caballero
 
 ### Lead(s)
 
-- Björn Grüning
- Devon Ryan
+- Juan Caballero
 
 ### Nominated participant(s)
 
-- * Johannes Köster
- * Elmar Prüsse
- * Wolfgang Maier
+- I don't have any one on mind
 
 ## Expected outcomes
 
-- * more bioconda contributors = more sustainable community
- * less bioconda/biocontainer bugs
+- At Databiology we have created CIAO, our framework to create and deploy biomedical applications, we would like to discuss and implement a set of standards to make CIAO completely open and freely available to enable FAIR applications
 
 ## Expected audience
 
-- * tool developers that want to add their tools to bioconda/biocontainers
- * tool users that want to learn conda or complain about conda :)
+- Participants: programmers, ontologists
+ Skills: RDF/Turttle, python, docker
 
 **Number of expected hacking days**: 4
 

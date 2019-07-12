@@ -1,38 +1,36 @@
 # Development of a visualization library for real-time monitoring of computational workflows15
 
+**Project Number:** 14
+
 ## Research area alignment
 
-- Interoperability, Bioschemas
+- In alignment with ELIXIR tools and compute platforms
 
 ## Team
 
+**Submitter:** Argyrios Alexandros Gardelakos
+
 ### Proponent(s)
 
-- Leyla Jael García Castro
+- Argyrios Alexandros Gardelakos
 
 ### Lead(s)
 
-- Leyla Garcia
- Juliane Fluck
- Dietrich Rebholz-Schuhmann
+- Argyrios Alexandros Gardelakos, 
+ Georgios Kostoulas
 
 ### Nominated participant(s)
 
-- * Bernd Müller Java, indexes, semantic web
- * Benjamin Wolff Java, indexes, semantic web
- * T.B.D
+- 1) Georgios Ntalaperas, Programmer, Data transformation expert
+ 2) Foivos Gypas, Programmer, Bioinformatics expert (Swiss Institute of Bioinformatics)
 
 ## Expected outcomes
 
-- * Knowledge graph from the existing markup and crawler
- * Selection of an evaluation case
- * Findings regarding the selected evaluation case
- * Beyond the hackathon, the work done here can be used as a proof-of-concept and model for a Bioschemas knowledge graph
- Note: If not crawler available or not usable markup, we will work on a similar project but with different data.
+- A working prototype to visualize and monitor the execution of workflows
 
 ## Expected audience
 
-- * People with knowledge on Bioschemas, knowledge graphs, semantic technologies, and machine learning
+- Bioinformaticians and programmers, but everyone with technical background is more than welcome
 
-**Number of expected hacking days**: 3
+**Number of expected hacking days**: 4
 

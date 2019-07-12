@@ -1,39 +1,45 @@
 # Implementation of Bioschema for Orphanet and Orphadata
 
+**Project Number:** 15
+
 ## Research area alignment
 
-- This project is mainly aligned with the Human Data communities. 
- h-CNV community
- Platforms :Data, Compute and Tools
- ELIXIR::GA4GH projects alignment
+- Elxir Core Data Resources
+ Rare disease Elixir Communities
+ Federated Data
 
 ## Team
 
+**Submitter:** Marc Hanauer
+
 ### Proponent(s)
 
-- Victoria Dominguez Del Angel
+- Marc Hanauer
 
 ### Lead(s)
 
-- Jordi Rambla, Victoria Dominguez del Angel, Christophe Blanchet, David Salgado, Olivier Collin
+- Marc Hanauer
+ David Lagorce
 
 ### Nominated participant(s)
 
-- Christophe Blanchet,, Cloud expert
- Jordi Rambla,, EGA expert
- Victoria Dominguez del Angel,, help on cloud brokering and documentation
+- Rajaram Kaliyaperumal (FAIR expert)
+ Celine Rousselot (Orphanet PHP dev lead)
+ David Lagorce (Orphanet/Orphadata project manager & Dev)
+ Marc Hanauer (Orphanet CTO)
+ 
+ (Please note: no travel fundings for Rousselot, Lagorce and Hanauer, only accommodation)
 
 ## Expected outcomes
 
-- - Deployment a local EGA instance in the Cloud Federation Biosphere with publically available Human data
- - Creation of the Image
- - Improve best practice documentation on “how to” deployment a Local EGA in a Cloud : https://localega.readthedocs.io/en/latest/code.html
- - “How to use” Loca EGA from user’s prespective
- - Define and propose solutions on Human data sharing issues taking into account the French Legislation
+- Improve interoperability of our core data resources
+ FAIRdatapoint avalaible
 
 ## Expected audience
 
-- Bioinformaticians, computer scientists, docker experts, cloud brokers
+- FAIR expert
+ PHP dev. (Orphanet's website)
+ data model (RDF/Ontology)
 
 **Number of expected hacking days**: 4
 

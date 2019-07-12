@@ -1,34 +1,38 @@
 # Designing a Software Management Plan as ELIXIR guidelines
 
+**Project Number:** 25
+
 ## Research area alignment
 
-- The Data Stewardship Wizard is proposed as a way of presenting ELIXIR Data Management Resources (databases, tools, etc) to ELIXIR users in the submitted proposal for ELIXIR-Converge. The work proposed here is complementary to the work that will be performed in that project, but it will be possible to use the BioHackathon time also to refer to more ELIXIR services in the Wizard knowledge model, working on the preliminaries for the goals in ELIXIR-Converge (the recently submitted ELIXIR Data Management proposal).
+- Tools Platform, Training Platform, Software Development Best Practices WG
 
 ## Team
 
+**Submitter:** Mateusz Kuzak
+
 ### Proponent(s)
 
-- Rob Hooft
+- Mateusz Kuzak
 
 ### Lead(s)
 
-- Marek Suchánek;
- Rob Hooft;
+- Mateusz Kuzak
+ Fotis Psomopoulos
+ Allegra Via
 
 ### Nominated participant(s)
 
-- It would be useful to have a person from one of the major funders or funding platforms, e.g. Marie Timmermann from Science Europe may be able to recommend one of her colleagues. They may not stay for other hackathon subjects.
+- Dimitris Bampalikis
+ Neil Chue Hong (Software Sustainability Institute) or other expert from ReSA community
 
 ## Expected outcomes
 
-- * Templates for Science Europe and H2020 used by Data Stewardship Wizard to generate DMPs.
- * New expertise in the Wizard knowledge model
- * New ideas for future integrations based on input from participants
- * Extending Knowledge Model with Software Management relevant topics
+- The direct outcome of this project is going to be a draft checklist of a Software Management Plan (SMP). This will be further reviewed within the ELIXIR Software Best Practices WG, in conjunction with the involved stakeholders (i.e. from the ELIXIR network, relevant Journals as well as potential funding agencies such as EC). Mid-term goal of the project is to have an established SMP in place, that would be a requirement in at least one network. Moreover, the topics of the Management plan will be also included in the existing training material as extensions, so that targeted training can be provided.
 
 ## Expected audience
 
-- We expect to work with any ELIXIR-related data stewards and experts who have input on the knowledge model and/or the templates for funders, or who would simply like to learn how to add expertise to the system.
+- Participants: Software developers, Research Software Engineers, Researchers
+ Knowledge: GitHub, Data Management Plan, Software Development, Software Engineering Practices
 
 **Number of expected hacking days**: 4
 

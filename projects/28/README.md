@@ -1,37 +1,44 @@
 # Mapping RDF Graphs to Property Graphs towards Practical Applications
 
+**Project Number:** 28
+
 ## Research area alignment
 
-- Interop, IDP Community
+- This toolkit utilises the existing federated data shared in RDF. We will initially focus on human genetics data (disease annotation, gene mutation information, etc.) from projects such as KGX (Knowledge Graph Exchange) <https://github.com/NCATS-Tangerine/kgx>, Med2RDF <http://med2rdf.org/>, and DisGeNET <http://www.disgenet.org/>. However, this toolkit can be also applied to the RDF datasets in other research subdomains.
 
 ## Team
 
+**Submitter:** Ryota Yamanaka
+
 ### Proponent(s)
 
-- Alasdair Gray
+- Ryota Yamanaka
 
 ### Lead(s)
 
-- Ivan Mičetić
- Alasdair Gray
+- Ryota Yamanaka
+ Shota Matsumoto
+ Hirokazu Chiba
+ Ramona Röß
 
 ### Nominated participant(s)
 
-- Ivan Mičetić,, MobiDB 
- Balint Mészáros,, MFIB, DIBS
- Kenneth McLeod,, Bioschemas Crawler
+- Shota Matsumoto (Japan)
+ Ramona Röß (Germany)
+ Ryota Yamanaka (Thailand)
 
 ## Expected outcomes
 
-- 1) Source datasets marked-up with Bioschemas markup
- 2) Crawler to consume Bioschemas markup from a given set of sources
- 3) Data ingested into the MobiDB and DisProt
- 4) Expose Bioschemas markup on IDP datasets like MobiDB and DisProt 
- 5) Paper describing the achievements and the benefits of the work
+- - G2GML mapping definitions for several existing datasets (KGX, Med2RDF, DesGeNET)
+ - Generated property graph datasets for the projects above
+ - Sample analysis methods on graph databases and the results
+ - Paper to describe the practical use of G2GML
 
 ## Expected audience
 
-- IDP Community data resource providers, programmers for crawling the markup and transforming it into the the MobiDB database.
+- programmers (JavaScript, SPARQL, graph query languages)
+ ontologists, data modelers (RDF, property graph)
+ data analysts, algorithm developers (graph algorithms, machine learning)
 
-**Number of expected hacking days**: 3
+**Number of expected hacking days**: 4
 

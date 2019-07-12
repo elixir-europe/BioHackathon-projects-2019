@@ -1,34 +1,41 @@
 # Data Ingestion Pipeline for the IDP Community
 
+**Project Number:** 26
+
 ## Research area alignment
 
-- Omics researches that can be integrated with transcriptome data.
+- Interop, IDP Community
 
 ## Team
 
+**Submitter:** Alasdair Gray
+
 ### Proponent(s)
 
-- Hidemasa Bono
+- Alasdair Gray
 
 ### Lead(s)
 
-- Hidemasa Bono
- Hiromasa Ono
+- Ivan Mičetić
+ Alasdair Gray
 
 ### Nominated participant(s)
 
-- Hidemasa Bono 
- Takeya Kasukawa Specialist of the system for transcriptome data
- Hideki Hirakawa Specialist in plant genomics and bioinformatics
+- Ivan Mičetić,, MobiDB 
+ Balint Mészáros,, MFIB, DIBS
+ Kenneth McLeod,, Bioschemas Crawler
 
 ## Expected outcomes
 
-- Gene expression matrix (genes vs samples) for silkworm and rice with the data viewer which was originally developed for human and mouse reference expression dataset.
+- 1) Source datasets marked-up with Bioschemas markup
+ 2) Crawler to consume Bioschemas markup from a given set of sources
+ 3) Data ingested into the MobiDB and DisProt
+ 4) Expose Bioschemas markup on IDP datasets like MobiDB and DisProt 
+ 5) Paper describing the achievements and the benefits of the work
 
 ## Expected audience
 
-- Bioinformatists interested in analyzing transcriptome data for agricultural important organisms.
- Ontologists for biological samples from those.
+- IDP Community data resource providers, programmers for crawling the markup and transforming it into the the MobiDB database.
 
-**Number of expected hacking days**: 4
+**Number of expected hacking days**: 3
 

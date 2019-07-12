@@ -1,80 +1,52 @@
 # Plant Genotyping Metadata Standard Specification Hackathon
 
+**Project Number:** 10
+
 ## Research area alignment
 
-- Training Platform, Galaxy communities, tool, interoperability
-- Training Platform, Galaxy, Bioinformatics Training, Train the Researcher
-- Training Platform, Galaxy, Bioinformatics Training, Train the Trainer, Metabolomics, Marine Metagenomics, Rare disease
-
-## Merged from
-
-- Development of a suite of web tools to facilitate contribution to the training materials for Galaxy
-- Scalable delivery of FAIR training in Life Sciences using Galaxy and the Carpentries training material
-- Galaxy Training Material content expansion
+- - Plant Sciences
+ - Interoperability
+ - ELIXIR Deposition Databases : EVA 
+ - Address the lack of existing standard or API to exchange plant genotyping data in a FAIR compliant way
+ - Development of community standards supporting metadata validation (Elixir Validation IS)
+ - FONDUE Plant Sciences Community-led Implementation Study of ELIXIR (lead by U. Scholz)
+ - Continuation of the BRAPI and MIAPPE alignment that successfully emerged from the 2018 biohackathon (Plant Validation track) and will provide the first step of an improvement of the FAIRness of genotyping data.
 
 ## Team
 
+**Submitter:** Nacer Mohellibi
+
 ### Proponent(s)
 
-- Helena Rasche
-- Saskia Hiltemann
-- Saskia Hiltemann
+- Nacer Mohellibi
 
 ### Lead(s)
 
-- Helena Rasche
- Saskia Hiltemann
- Bérénice Batut
-- Saskia Hiltemann
- Bérénice Batut
- Helena Rasche
- Mateusz Kuza
- Fotis Psomopoulos
-- Bérénice Batut
- Helena Rasche 
- Björn Grüning 
- Saskia Hiltemann
+- Nacer Mohellibi, Uwe Scholz
 
 ### Nominated participant(s)
 
-- Helena Rasche - Systems administrator for usegalaxy.eu + their Training Infrastructure as a Service, and expert on Galaxy training materials infrastructure 
- Saskia Hiltemann - Co-developer of the Galaxy training materials infrastructure and frequent contributor of training materials
- Bérénice Batut - Co-developer of the Galaxy training materials infrastructure and familiarity with Monod
-- 1) Fotis Psomopoulos - Lesson developer for the Carpentries and Gallantries project member
- 2) Mateusz Kuza - Instructor trainer for the Carpentries and Gallantries project member
- 3) Saskia Hiltemann - Galaxy training materials expert and Gallantries project member
-- 1) Bérénice Batut - Community manager of Galaxy Training Network and co-developer of the training materials infrastructure.
- 2) Anne Fiebig - Plant scientist developing plant genomics community in Germany.
- 3) Helena Rasche - Developer of UseGalaxy.eu’s training infrastructure-as-a-service (TIaaS) and frequent contributor of training materials.
+- 1.Iain Milne (JHI,, API developper & Data Manager, Experience in manipulating genotyping datasets, Semantics, ontologies concepts, JSON schema, data validation)
+ 2.Guilhem Sempere (Southgreen,, Information System and API developper / JSON Schema)
+ 3.Bilal El Houdaigui (URGI,, API developer, JSON Schema)
 
 ## Expected outcomes
 
-- Evaluation of contribution barriers for the Galaxy Training Materials
- Evaluation of current strategies of different training communities to support their contributors
- Web service to generate tutorial skeleton from a link to a Galaxy workflow
- Exploration of possibility for the customization of Monod to support Galaxy Training Material templates and generate live website previews
-- Direct outcomes of this project include: (a) at least two additional end-to-end Gallantry lessons that will have been evaluated by the involved communities (Galaxy, The Carpentries), (b) interaction and direct involvement of additional relevant communities in the project (such as ELIXIR, GOBLET and H3ABioNet), and (c) evaluation and potential pilot case of scaled up hybrid training within the newly involved networks.
-- 1) Discussion with the different ELIXIR communities regarding training needs
- 2) Mentoring of interested communities
-  - Teaching use of Galaxy Training Materials infrastructure
-  - Planning the development of new materials
-  - Identifying useful resources for their community
-  - Assistance getting started developing new training materials
-  - Teaching training best practices
- 3) Contributions from underrepresented communities to the GTN
- 4) Better training material for ELIXIR Galaxy communities
+- - Produce a 1st version of the Plant Genotyping standard specification (including Polymorphism Discovery).
+ - Through FONDUE 1st deliverable: build genomic data sets using the standard we started to define during the hackathon.
 
 ## Expected audience
 
-- Type of participants: programmers, web developers, trainers
- Knowledge: Galaxy training materials, markdown, github
- Skills: JavaScript, React.js, python
-- Type of participants: Bioinformaticians, Instructors, Trainers in Life Sciences
- Knowledge: Single Cell transcriptomics, ChIP-Seq, Variant Analysis and/or Machine Learning
- Skills: Markdown, GitHub, Galaxy, Training
-- Type of participants: training developers, trainers and members of the different ELIXIR communities
- Knowledge: training needs
- Skills: none (optional: GitHub, markdown)
+- Audience:
+ - Plant Genotyping Data Managers
+ - API developpers with experience of JSON schema and data validation
+ - Ontologists
+ - Breeders
+ Required skills:
+ - Experience in manipulating genotyping datasets
+ - Semantics and especially ontologies concepts
+ - API developpment
+ - Data management
 
 **Number of expected hacking days**: 4
 

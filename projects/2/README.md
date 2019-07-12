@@ -1,34 +1,39 @@
 # bio.tools & EDAM drop-in hackathon & discussions
 
+**Project Number:** 2
+
 ## Research area alignment
 
-- The Data Stewardship Wizard is proposed as a way of presenting ELIXIR Data Management Resources (databases, tools, etc) to ELIXIR users in the submitted proposal for ELIXIR-Converge. The work proposed here is complementary to the work that will be performed in that project, but it will be possible to use the BioHackathon time also to refer to more ELIXIR services in the Wizard knowledge model, working on the preliminaries for the goals in ELIXIR-Converge (the recently submitted ELIXIR Data Management proposal).
+- Aligns with ELIXIR Tools Platform and other end-users of bio.tools and EDAM ontology.
 
 ## Team
 
+**Submitter:** Jon Ison
+
 ### Proponent(s)
 
-- Rob Hooft
+- Jon Ison
 
 ### Lead(s)
 
-- Marek Suchánek;
- Rob Hooft;
+- Jon Ison
+ Hans Ienasescu
 
 ### Nominated participant(s)
 
-- It would be useful to have a person from one of the major funders or funding platforms, e.g. Marie Timmermann from Science Europe may be able to recommend one of her colleagues. They may not stay for other hackathon subjects.
+- Hans Ienasescu, (bio.tools expert)
+ Veit Schwämmle, (bio.tools & EDAM expert)
 
 ## Expected outcomes
 
-- * Templates for Science Europe and H2020 used by Data Stewardship Wizard to generate DMPs.
- * New expertise in the Wizard knowledge model
- * New ideas for future integrations based on input from participants
- * Extending Knowledge Model with Software Management relevant topics
+- 1. Definition of EDAM conceptual relationships and plans on how to leverage these within bio.tools to improve content quality and optimise the registration process.
+ 2. Putting pubfetcher into the bio.tools curation process.
+ 3. Optimising EDAMMap and EDAM Browser in light of user testing.
+ 4. Technical planning for the GitHub-based content management architecture.
 
 ## Expected audience
 
-- We expect to work with any ELIXIR-related data stewards and experts who have input on the knowledge model and/or the templates for funders, or who would simply like to learn how to add expertise to the system.
+- programmers, ontologists, technical project managers
 
 **Number of expected hacking days**: 4
 

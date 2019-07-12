@@ -1,40 +1,42 @@
 # A graph database of Galaxy tool interoperability
 
+**Project Number:** 30
+
 ## Research area alignment
 
-- This toolkit utilises the existing federated data shared in RDF. We will initially focus on human genetics data (disease annotation, gene mutation information, etc.) from projects such as KGX (Knowledge Graph Exchange) <https://github.com/NCATS-Tangerine/kgx>, Med2RDF <http://med2rdf.org/>, and DisGeNET <http://www.disgenet.org/>. However, this toolkit can be also applied to the RDF datasets in other research subdomains.
+- ELIXIR Galaxy Community
+ ELIXIR Tools platform, Tools and Services Registry, Workflows & Interoperability groups
 
 ## Team
 
+**Submitter:** Wolfgang Maier
+
 ### Proponent(s)
 
-- Ryota Yamanaka
+- Wolfgang Maier
 
 ### Lead(s)
 
-- Ryota Yamanaka
- Shota Matsumoto
- Hirokazu Chiba
- Ramona Röß
+- Wolfgang Maier,
+ Jon Ison,
 
 ### Nominated participant(s)
 
-- Shota Matsumoto (Japan)
- Ramona Röß (Germany)
- Ryota Yamanaka (Thailand)
+- Anup Kumar,: Member of the Galaxy EU team working on deep learning models for tool suggestions
+ Piotr Jaroslaw Chmura, & Ivan Kuzmin,: bio.tools developers
 
 ## Expected outcomes
 
-- - G2GML mapping definitions for several existing datasets (KGX, Med2RDF, DesGeNET)
- - Generated property graph datasets for the projects above
- - Sample analysis methods on graph databases and the results
- - Paper to describe the practical use of G2GML
+- - a graph-based database of tools the traversal of which defines analysis workflows at various levels of tool interoperability confidence levels
+ - a public frontend for Galaxy instances for exploring networks of tools and suggesting possible workflows from analysis start and end points
 
 ## Expected audience
 
-- programmers (JavaScript, SPARQL, graph query languages)
- ontologists, data modelers (RDF, property graph)
- data analysts, algorithm developers (graph algorithms, machine learning)
+- Galaxy tool developers and experienced end-users & Galaxy server admins for curated content development
+ Bioinformatics operations ontologists (EDAM, bioschema) for automated content generation
+ bio.tools ecosystem developers and experts
+ Graph database developers for database layout decisions
+ Members of the Galaxy Working Group within the ELIXIR Tools Platform for integration into Galaxy
 
 **Number of expected hacking days**: 4
 
