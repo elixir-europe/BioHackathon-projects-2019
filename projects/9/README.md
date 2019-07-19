@@ -4,7 +4,10 @@
 
 ## Research area alignment
 
-- Tools Platform, Training Platform, Software Development Best Practices WG
+- Data Platform
+ Compute Platform - EOSC-Life
+ Interoperability Platform - FAIRplus, Infradev-3
+ ELIXIR-CONVERGE
 
 ## Team
 
@@ -12,27 +15,25 @@
 
 ### Proponent(s)
 
-- Mateusz Kuzak
+- Stuart Owen
 
 ### Lead(s)
 
-- Mateusz Kuzak
- Fotis Psomopoulos
- Allegra Via
+- Stuart Owen
+ Frederik Coppens
 
 ### Nominated participant(s)
 
-- Dimitris Bampalikis
- Neil Chue Hong (Software Sustainability Institute) or other expert from ReSA community
+- Inge Jonassen (Data Management)
+ Niall Beard (Bioschema's, Development)
+ Cyril Pommier (Usecases, COPO, Development)
 
 ## Expected outcomes
 
-- The direct outcome of this project is going to be a draft checklist of a Software Management Plan (SMP). This will be further reviewed within the ELIXIR Software Best Practices WG, in conjunction with the involved stakeholders (i.e. from the ELIXIR network, relevant Journals as well as potential funding agencies such as EC). Mid-term goal of the project is to have an established SMP in place, that would be a requirement in at least one network. Moreover, the topics of the Management plan will be also included in the existing training material as extensions, so that targeted training can be provided.
+- A Data Management toolkit that assembles various existing ELIXIR tools and services and ensures that these services are well connected across ELIXIR Nodes.
 
 ## Expected audience
 
-- Participants: Software developers, Research Software Engineers, Researchers
- Knowledge: GitHub, Data Management Plan, Software Development, Software Engineering Practices
+- Software developers, data analysts
 
 **Number of expected hacking days**: 4
-
