@@ -5,8 +5,8 @@
 ## Research area alignment
 
 This project is mainly aligned with the Human Data communities: 
- - h-CNV community
- - Platforms:Data, Compute and Tools
+ - [H-CNV](https://elixir-europe.org/communities/hcnv) community
+ - Platforms: [Data](https://elixir-europe.org/platforms/data), [Compute](https://elixir-europe.org/platforms/compute) and [Tools](https://elixir-europe.org/platforms/tools)
  - ELIXIR: [GA4GH](https://www.ga4gh.org) projects alignment
 
 ## Team
