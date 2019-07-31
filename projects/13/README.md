@@ -6,8 +6,8 @@
 
 This project is mainly aligned with the Human Data communities: 
  - h-CNV community
- - Platforms :Data, Compute and Tools
- - ELIXIR::GA4GH projects alignment
+ - Platforms:Data, Compute and Tools
+ - ELIXIR: [GA4GH](https://www.ga4gh.org) projects alignment
 
 ## Team
 
@@ -23,11 +23,12 @@ This project is mainly aligned with the Human Data communities:
 
 ### Nominated participant(s)
 
-***NAME***|***Responsibility***
-:-----|-----:
+|***NAME***|***Responsibility***|
+| :-----|:-----:|
 |Christophe Blanchet   | Cloud expert |
 |Jordi Rambla          | EGA expert   |
-|Victoria Dominguez Del Angel | support on cloud brokering and documentation |
+|Victoria Dominguez Del Angel | Support on Cloud brokering |
+|                             |and Documentation |
 
 ## Expected outcomes
 
