@@ -1,4 +1,4 @@
-# Nightingale
+# Nightingale - Data visualization web components for the life sciences
 
 **Project Number:** 32
 
