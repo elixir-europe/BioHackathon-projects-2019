@@ -17,13 +17,13 @@
 ### Lead(s)
 
 - Michael Baudis
- David Salgado
- Gary Saunders
+- David Salgado
+- Gary Saunders
 
 ### Nominated participant(s)
 
 - David Salgado
- Bo Gao
+- Bo Gao
 
 ## Expected outcomes
 
