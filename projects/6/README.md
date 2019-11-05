@@ -22,9 +22,8 @@
 
 ### Nominated participant(s)
 
-- Michael Baudis
- David Salgado
- Gary Saunders
+- David Salgado
+ Bo Gao
 
 ## Expected outcomes
 
