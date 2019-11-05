@@ -28,13 +28,13 @@
 
 ## Expected outcomes
 
-- 1. Setup a prototype of a minimal CNV database
-- 2. Identify which queries are suitable by default to CNV / which one need customization
-- 3. Build/Adapt a Beacon API on top of the prototype.
-- 4. "Portable" functional Beacon for sharing CNV data
-- 5. Try to implement new beacon features (in plan from Beacon V2)
-- 6. Build training and tutorial material for dissemination and large adoption
-- 7. Have fun by sharing expertises and skills !
+1. Setup a prototype of a minimal CNV database
+2. Identify which queries are suitable by default to CNV / which one need customization
+3. Build/Adapt a Beacon API on top of the prototype.
+4. "Portable" functional Beacon for sharing CNV data
+5. Try to implement new beacon features (in plan from Beacon V2)
+6. Build training and tutorial material for dissemination and large adoption
+7. Have fun by sharing expertises and skills !
 
 ## Expected audience
 - Open to all with or without skills +
