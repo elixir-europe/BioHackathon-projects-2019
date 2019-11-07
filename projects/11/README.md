@@ -17,7 +17,7 @@
 
 ### Lead(s)
 
-- Venkata Satagopam  >, Johanna McEntyre, Aravind Venkatesan, Carlos Vega Moreno
+- Venkata Satagopam, Johanna McEntyre, Aravind Venkatesan, Carlos Vega Moreno
 
 ### Nominated participant(s)
 
