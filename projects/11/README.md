@@ -21,8 +21,7 @@
 
 ### Nominated participant(s)
 
-- Dr. Lars Juhl Jensen, University of Copenhagen,
-Valentin Groues, University of Luxembourg
+- Lars Juhl Jensen, University of Copenhagen; Valentin Groues, University of Luxembourg
 
 ## Expected outcomes
 
