@@ -22,7 +22,7 @@
 ### Nominated participant(s)
 
 - Dr. Lars Juhl Jensen, University of Copenhagen,
- Dr. Martin Krallinger, CNIO,
+Valentin Groues, University of Luxembourg
 
 ## Expected outcomes
 
