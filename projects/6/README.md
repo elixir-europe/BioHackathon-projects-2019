@@ -36,7 +36,7 @@
 7. Have fun by sharing expertises and skills !
 
 ## Expected audience
-- Open to all with or without skills +
+- Open to all, everyone is welcome 
 - Anyone interested in database creation, CNV, Beacon, Web API, Data Sharing, Interoperability, controlled vocabulary, controlled access, ...
 
 **Number of expected hacking days**: 4
