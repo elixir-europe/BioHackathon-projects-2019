@@ -1,5 +1,7 @@
 # FAIR Identifier Mapping: Building Bridges Between Communities
 
+[![Join the chat at https://gitter.im/elixir-europe/27-FAIR-identifiers](https://badges.gitter.im/elixir-europe/27-FAIR-identifiers.svg)](https://gitter.im/elixir-europe/27-FAIR-identifiers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Project Number:** 27
 
 ## Research area alignment
