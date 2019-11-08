@@ -15,6 +15,7 @@ Access for this repository can be requested over the gitter channel [![Join the 
 
 (ordered by project number)
 
+* [Project 6](projects/6): Copy Number Variation Beacon
 * [Project 27](projects/27): FAIR Identifier Mapping: Building Bridges Between Communities
 * 
 
