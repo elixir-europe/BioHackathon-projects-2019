@@ -17,25 +17,27 @@
 
 ### Lead(s)
 
-- Denise Slenter,
- Chris Evelo,
- Egon Willighagen,
- Alasdair Gray
+- Denise Slenter
+- Egon Willighagen
+- Alasdair Gray
 
 ### Nominated participant(s)
 
-- 1. Emma Schymanski - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
- 2. Nick Juty - University of Manchester -, identifiers.org and Compact Identifiers expert
- 3. Tobias Kuhn - Free University of Amsterdam -, nanopublications
+- Emma Schymanski - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
+
+Nominated but not invited by ELIXIR
+
+- Nick Juty - University of Manchester -, identifiers.org and Compact Identifiers expert
+- Tobias Kuhn - Free University of Amsterdam -, nanopublications
 
 ## Expected outcomes
 
-- 1. Improve the FAIR metrics of existing BridgeDb ID mapping databases
- 2. Automation of generation of Scientific Lenses for chemical compounds
- 3. Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME)
- 4. BridgeDb application to create link sets from Bioschemas (MolecularEntity) annotation
- 5. Faster identifier mapping (with Apache Derby replacement)
- 6. ID mapping data exchange using nanopublications, allowing explicit provenance being stored
+- Improve the FAIR metrics of existing BridgeDb ID mapping databases
+- Automation of generation of Scientific Lenses for chemical compounds
+- Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME)
+- BridgeDb application to create link sets from Bioschemas (MolecularEntity) annotation
+- Faster identifier mapping (with Apache Derby replacement)
+- ID mapping data exchange using nanopublications, allowing explicit provenance being stored
 
 ## Expected audience
 
