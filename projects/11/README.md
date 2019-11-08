@@ -13,7 +13,7 @@
 
 ### Proponent(s)
 
-- Venkata Pardhasaradhi Satagopam
+- Venkata Satagopam
 
 ### Lead(s)
 
