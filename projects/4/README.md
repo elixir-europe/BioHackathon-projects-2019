@@ -23,7 +23,7 @@
 
 ### Lead(s)
 
-- Manuel Bernal Llinares
+- Manuel Bernal Llinares, EMBL-EBI
 - Daniela Butano - InterMine, UK Node
 - Sergio Contrino - InterMine, UK Node
 
