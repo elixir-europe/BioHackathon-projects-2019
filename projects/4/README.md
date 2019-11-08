@@ -18,7 +18,7 @@
 
 ### Proponent(s)
 
-- Manuel Bernal Llinares [GitHub](https://github.com/mbdebian)
+- Manuel Bernal Llinares ([GitHub](https://github.com/mbdebian))
 - Daniela Butano
 
 ### Lead(s)
