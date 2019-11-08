@@ -17,26 +17,27 @@
 ### Lead(s)
 
 - Michael Baudis
- David Salgado
- Gary Saunders
+- David Salgado
+- Gary Saunders
 
 ### Nominated participant(s)
 
-- Michael Baudis
- David Salgado
- Gary Saunders
+- David Salgado
+- Bo Gao
 
 ## Expected outcomes
 
-- 1. Functional Beacon sharing CNV data
- 2, Registering this Beacon to the ELIXIR Beacon Network
- 3 Controlled vocabulary / Common data elements used to describe a CNV
- 4.. Specifications
- 5.. Draft implementation
+1. Setup a prototype of a minimal CNV database
+2. Identify which queries are suitable by default to CNV / which one need customization
+3. Build/Adapt a Beacon API on top of the prototype.
+4. "Portable" functional Beacon for sharing CNV data
+5. Try to implement new beacon features (in plan from Beacon V2)
+6. Build training and tutorial material for dissemination and large adoption
+7. Have fun by sharing expertises and skills !
 
 ## Expected audience
-
-- Anyone interested in CNV, Beacon, Interoperability, controlled vocabulary...
+- Open to all with or without skills +
+- Anyone interested in database creation, CNV, Beacon, Web API, Data Sharing, Interoperability, controlled vocabulary, controlled access, ...
 
 **Number of expected hacking days**: 4
 
