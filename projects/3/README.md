@@ -14,15 +14,15 @@
 
 ## Team
 
-**Submitter:** Herve Menager
+**Submitter:** Hervé Ménager
 
 ### Proponent(s)
 
-- Herve Menager
+- Hervé Ménager
 
 ### Lead(s)
 
-- Hervé Ménager, John Chilto, Michael R. Crusoe,
+- Hervé Ménager, John Chilton, Michael R. Crusoe,
 
 ### Nominated participant(s)
 
