@@ -8,17 +8,17 @@
 
 ## Team
 
-**Submitter:** Leyla Jael García Castro
+**Submitter:** Leyla Jael García Castro ([ZBMED](https://www.zbmed.de/))
 
 ### Proponent(s)
 
-* Leyla Jael García Castro
+* Leyla Jael García Castro (ZBMED)
 
 ### Lead(s)
 
-* Leyla Garcia
-* Juliane Fluck
-* Dietrich Rebholz-Schuhmann
+* Leyla Garcia (ZBMED)
+* Juliane Fluck (ZBMED)
+* Dietrich Rebholz-Schuhmann (ZBMED)
 
 ### Nominated participant(s)
 
@@ -28,8 +28,9 @@
 
 ## Expected outcomes
 
- * Knowledge graph from the existing markup
- * Selection of an evaluation case
+ * Bioschemas markup draft for a sample of articles from [Livivo search portal](https://www.livivo.de/) data base 
+ * Knowledge graph from Livivo markup --> We will use differnt approaches/technologies to create the KG
+ * Selection of an evaluation/proof case 
  * Findings regarding the selected evaluation case
  * Beyond the hackathon, the work done here can be used as a proof-of-concept and model for a Bioschemas knowledge graph
  Note: If not crawler available or not usable markup, we will work on a similar project but with different data.
