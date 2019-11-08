@@ -18,28 +18,29 @@
 
 ### Proponent(s)
 
-- Manuel Bernal Llinares
+- Manuel Bernal Llinares [GitHub](https://github.com/mbdebian)
 - Daniela Butano
 
 ### Lead(s)
 
 - Manuel Bernal Llinares
 - Daniela Butano - InterMine, UK Node
- Sergio Contrino - InterMine, UK Node
+- Sergio Contrino - InterMine, UK Node
 
 ### Nominated participant(s)
 
 - Sarala Wimalaratne;; identifiers.org / Bioschemas expert
- Javier Ferrer Gómez;; Javascript, Angular, Java, Python
- Nick Juty;; identifiers expert
+- Javier Ferrer Gómez;; Javascript, Angular, Java, Python
+- Nick Juty;; identifiers expert
 - For UniProt (has agreed): Jerven Bolleman - UniProt expert, Swiss Node
- For Identifiers.org (has agreed): Sarala Wimalaratne OR Nick Juty - Identifiers.org expert, ELIXIR Hub
+- For Identifiers.org (has agreed): Sarala Wimalaratne OR Nick Juty - Identifiers.org expert, ELIXIR Hub
 
 ## Expected outcomes
 
-- The outcome of this project will be a fast lightweight javascript widget for searching and visualising metadata related to a given Compact Identifier, which can easily be integrated within Identfiers.org or third party web applications.
-- 1.Facilitated registration of data resources in Identifiers.org
- 2.Identifiers.org automatically updated with any changes to resources
+- The outcome of this project is multiple:
+    - A fast lightweight javascript widget for searching and visualising metadata related to a given Compact Identifier, which can easily be integrated within Identfiers.org or third party web applications.
+    - Discuss the feasibility to register resources with Identifiers.org even if they do not provide the whole dataset.
+    - Modeling of possible automation mechanisms by which, resources could be updated, after registering with Identifiers.org. This automation is important to increase the scale and timeliness of identifier resolution, as part of ongoing efforts to increase the FAIR-ness of resources.
 
 ## Expected audience
 
