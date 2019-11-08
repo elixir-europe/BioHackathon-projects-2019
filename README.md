@@ -10,3 +10,10 @@ This repository is meant for the participants of the BioHackathon hosted in Pari
 ### Requesting access to this repo
 
 Access for this repository can be requested over the gitter channel [![Join the chat at https://gitter.im/elixir-europe/BioHackathon-projects-2019](https://badges.gitter.im/elixir-europe/BioHackathon-projects-2019.svg)](https://gitter.im/elixir-europe/BioHackathon-projects-2019?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge), [e-mail](mailto:biohackathon-europe@elixir-europe.org) including your GitHub username or in the following GitHub [issue #13](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/13).
+
+## Projects
+
+(ordered by project number)
+
+* [Project 27](projects/27): FAIR Identifier Mapping: Building Bridges Between Communities
+* 
