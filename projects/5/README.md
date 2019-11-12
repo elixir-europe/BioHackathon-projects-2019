@@ -6,6 +6,10 @@
 
 - This biohackathon aligns with the following ELIXIR platforms: data, tools and interoperability. ELIXIR communities which may find it relevant are Human Data and Rare Diseases.
 
+## Resources and guidelines
+
+A breakdown of work, suggested resources and approach [can be found here](http://bit.ly/bh-rdmaps).
+
 ## Team
 
 **Submitter:** Marek Ostaszewski
