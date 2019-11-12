@@ -17,13 +17,12 @@
 ### Lead(s)
 
 - Hidemasa Bono
- Hiromasa Ono
 
 ### Nominated participant(s)
 
 - Hidemasa Bono 
- Takeya Kasukawa Specialist of the system for transcriptome data
- Hideki Hirakawa Specialist in plant genomics and bioinformatics
+Takeya Kasukawa Specialist of the system for transcriptome data
+
 
 ## Expected outcomes
 
