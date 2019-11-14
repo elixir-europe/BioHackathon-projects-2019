@@ -12,11 +12,11 @@
 
 ### Proponent(s)
 
-- Hidemasa Bono
+- Hidemasa Bono ([@bonohu](https://github.com/bonohu))
 
 ### Lead(s)
 
-- Hidemasa Bono
+- Hidemasa Bono ([@bonohu](https://github.com/bonohu))
 
 ### Nominated participant(s)
 
