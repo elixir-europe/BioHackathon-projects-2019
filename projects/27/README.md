@@ -20,7 +20,7 @@
 ### Lead(s)
 
 - Denise Slenter
-- Egon Willighagen
+- Egon Willighagen ([@egonw](https://github.com/egonw))
 - Alasdair Gray
 
 ### Nominated participant(s)
