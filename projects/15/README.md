@@ -25,7 +25,7 @@
 ---
 Orphanet is a website dedicated to rare diseases, providing several kind of information such nomenclature, classifications, textual information, disorders/genes relations and also dedicated resources in the field (Experts centres, Diagnostic tests, clinical trials, orphandrugs, registries and biobanks, supports groups etc.) for more than 40 countries. 
 The site has a huge audience, around 1 million unique visitors/month and 8 languages. 
-![Orphanet](images/Orphanet.png)
+![Orphanet](https://raw.githubusercontent.com/elixir-europe/BioHackathon/master/interoperability/Development%20of%20a%20catalog%20of%20federated%20SPARQL%20queries%20in%20the%20field%20of%20Rare%20Diseases/images/Orphanet.png)
 
 The database content is linked to the Orphanet nomenclature
 
