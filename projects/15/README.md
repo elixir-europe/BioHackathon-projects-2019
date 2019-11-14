@@ -29,14 +29,14 @@ The site has a huge audience, around 1 million unique visitors/month and 8 langu
 
 The database content is linked to the Orphanet nomenclature
 
-![Orphanet_Map](images/ORPHANET-map.png)
+![Orphanet_Map](https://github.com/elixir-europe/BioHackathon/blob/master/interoperability/Development%20of%20a%20catalog%20of%20federated%20SPARQL%20queries%20in%20the%20field%20of%20Rare%20Diseases/images/ORPHANET-map.png)
 
 and we provide several dataset, also accessible on our platform Orphadata https://www.orphadata.org
 
-![Orphadata](images/Screenshot_Orphadata.png)
+![Orphadata](https://github.com/elixir-europe/BioHackathon/raw/master/interoperability/Development%20of%20a%20catalog%20of%20federated%20SPARQL%20queries%20in%20the%20field%20of%20Rare%20Diseases/images/Screenshot_Orphadata.png)
 
 Orphanet produce also the Orphanet Rare Diseases Ontology and clinical description of diseases using HPO ontology. Each disease concept has a unique, stable, identifier (Orphacode) which could be used to identify diseases in health information system. The orphacode has been integrated in several countries.
-![Codification](images/map-codificationOrpha2018.jpg)
+![Codification](https://github.com/elixir-europe/BioHackathon/raw/master/interoperability/Development%20of%20a%20catalog%20of%20federated%20SPARQL%20queries%20in%20the%20field%20of%20Rare%20Diseases/images/map-codificationOrpha2018.jpg)
 
 ### Nominated participant(s)
 
