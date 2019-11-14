@@ -17,10 +17,9 @@ Access for this repository can be requested over the gitter channel [![Join the 
 
 * [Project 6](projects/6): Copy Number Variation Beacon
 * [Project 12](projects/12): Knowledge graph for scholarly publications in Bioschemas 
+* [Project 14](projects/14): panoptes: monitor computational workflows in real time 
 * [Project 15](projects/15): Implementation of Bioschema for Orphanet and Orphadata
 * [Project 27](projects/27): FAIR Identifier Mapping: Building Bridges Between Communities
-* 
-
 
 ## BioHackathon IP disclaimer
 
