@@ -37,6 +37,8 @@ Discussion & planning:
  1. How to leverage EDAM conceptual relationships within software catalogues (bio.tools, IFB catalogue) to improve content quality and optimise the registration process.
  2. Technical planning and ideas around task queues and scheduling for maintenance and housekeeping of bio.tools (e.g. Celery).
  3. Discussions around GitHub-based content management architecture.
+    - continuous integration of bio.tools with GitHub
+    - managing pull requests in a sustainable way, e.g. for high volume of automatically generated entries
 
 ## Expected audience
 
