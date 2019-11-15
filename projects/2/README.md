@@ -26,12 +26,17 @@
 
 ## Expected outcomes
 
- 1. Definition of EDAM conceptual relationships and plans on how to leverage these within bio.tools to improve content quality and optimise the registration process.
- 2. Putting pubfetcher into the bio.tools curation process.
- 3. Optimising EDAMMap and EDAM Browser in light of user testing.
- 4. Technical planning for the GitHub-based content management architecture.
- 5. Improved support for bio.tools Dockerisation process (especially Windows) and local development environment
- 6. Technical planning and ideas around task queues and scheduling in bio.tools (e.g. Celery)
+At least a couple of the following:
+
+For implementation:
+ 1. Technical quality assurance tests and user guidelines for EDAM ontology.
+ 2. Validator for quality control of EDAM Formats subontology. 
+ 3. Improved support for bio.tools Dockerisation process (especially Windows) and local development environment.
+ 
+Discussion & planning:
+ 1. How to leverage EDAM conceptual relationships within software catalogues (bio.tools, IFB catalogue) to improve content quality and optimise the registration process.
+ 2. Technical planning and ideas around task queues and scheduling for maintenance and housekeeping of bio.tools (e.g. Celery).
+ 3. Discussions around GitHub-based content management architecture.
 
 ## Expected audience
 
