@@ -47,7 +47,7 @@ Discussion & planning:
 
 ## Expected audience
 
-- programmers (Django REST Framework, Celery), software tool developers, ontologists, technical project managers
+- programmers (Python, Django REST Framework, Python Celery), software tool developers, ontologists, technical project managers
 
 **Number of expected hacking days**: 4
 
