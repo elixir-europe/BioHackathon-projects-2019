@@ -22,7 +22,7 @@
 ### Nominated participant(s)
 
 - Hans Ienasescu, (bio.tools expert)
- Veit Schwämmle, (bio.tools & EDAM expert)
+- Veit Schwämmle, (bio.tools & EDAM expert)
 
 ## Expected outcomes
 
