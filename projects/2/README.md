@@ -32,7 +32,7 @@ For implementation:
  1. Technical quality assurance tests and user guidelines for EDAM ontology.
  2. Validator for quality control of EDAM Formats subontology. 
  3. Improved support for bio.tools Dockerisation process (especially Windows) and local development environment.
- 4. Using bio.tools & EDAM to curate complex online tools, e.g. RSAT 
+ 4. Using bio.tools & EDAM to curate complex online tools, e.g. [RSAT](http://rsat01.biologie.ens.fr/rsa-tools/RSAT_home.cgi) 
  
 Discussion & planning:
  1. How to leverage EDAM conceptual relationships within software catalogues (bio.tools, IFB catalogue) to improve content quality and optimise the registration process.
