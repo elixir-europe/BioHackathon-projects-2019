@@ -16,6 +16,7 @@ Access for this repository can be requested over the gitter channel [![Join the 
 (ordered by project number)
 
 * [Project 6](projects/6): Copy Number Variation Beacon
+* [Project 8](projects/8): Scalable delivery of FAIR training in Life Sciences using Galaxy and the Carpentries training material
 * [Project 12](projects/12): Knowledge graph for scholarly publications in Bioschemas 
 * [Project 14](projects/14): panoptes: monitor computational workflows in real time 
 * [Project 15](projects/15): Implementation of Bioschema for Orphanet and Orphadata
