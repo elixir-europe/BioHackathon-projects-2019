@@ -22,7 +22,7 @@
 ### Nominated participant(s)
 
 - Hans Ienasescu, (bio.tools expert)
-- Veit Schwämmle, (bio.tools & EDAM expert)
+- Alban Gaignard (ELIXIR-FR)
 
 ## Expected outcomes
 
@@ -31,7 +31,7 @@
  3. Optimising EDAMMap and EDAM Browser in light of user testing.
  4. Technical planning for the GitHub-based content management architecture.
  5. Improved support for bio.tools Dockerisation process (especially Windows) and local development environment
- 6. Technical planning and ideas around task queues and scheduling in bio.tools
+ 6. Technical planning and ideas around task queues and scheduling in bio.tools (e.g. Celery)
 
 ## Expected audience
 
