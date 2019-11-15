@@ -8,20 +8,13 @@
 
 ## Team
 
-**Submitter:** Yo Yehudi
-
-### Proponent(s)
-
-- Yo Yehudi
-
 ### Lead(s)
 
 - Yo Yehudi -
 
 ### Nominated participant(s)
 
-- Daniela Butano / University of Cambridge /
- Anthony Bretaudeau / Galaxy
+- Sergio Contrino
 
 ## Expected outcomes
 
@@ -32,8 +25,13 @@
 ## Expected audience
 
 - Galaxy and InterMine users to gather additional requirements.
- Galaxy developers to help create the Galaxy data export tool
- Java or Clojure developers to help work on the InterMine side of importing the data
+- Galaxy developers to help create the Galaxy data export tool
+- Java or Clojure developers to help work on the InterMine side of importing the data
 
 **Number of expected hacking days**: 2
 
+## Useful tools to set up on your machine: 
+
+- [InterMine Registry](https://github.com/intermine/intermine-registry) (For js/node contributors)
+- [InterMine BioTestMine](https://github.com/intermine/biotestmine) (For Java lovers)
+- [InterMine BlueGenes](https://github.com/intermine/bluegenes) (For UI + Clojure people)
