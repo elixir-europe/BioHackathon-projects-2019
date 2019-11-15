@@ -17,7 +17,7 @@
 ### Lead(s)
 
 - Jon Ison
- Hans Ienasescu
+- Hans Ienasescu
 
 ### Nominated participant(s)
 
