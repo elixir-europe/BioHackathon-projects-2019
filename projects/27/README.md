@@ -34,10 +34,10 @@ Nominated but not invited by ELIXIR
 
 ## Expected outcomes
 
-- Improve the FAIR metrics of existing BridgeDb ID mapping databases
-- Automation of generation of Scientific Lenses for chemical compounds
+- Improve the FAIR metrics of [existing BridgeDb ID mapping databases](https://www.bridgedb.org/mapping-databases/)
+- Automation of generation of Scientific Lenses for chemical compounds (see [10.1007/978-3-319-11964-9_7](https://doi.org/10.1007/978-3-319-11964-9_7))
 - Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME)
-- BridgeDb application to create link sets from Bioschemas (MolecularEntity) annotation
+- BridgeDb application to create link sets from [Bioschemas](https://bioschemas.org/) (MolecularEntity) annotation
 - Faster identifier mapping (with Apache Derby replacement)
 - ID mapping data exchange using nanopublications, allowing explicit provenance being stored
 
