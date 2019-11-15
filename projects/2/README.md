@@ -30,8 +30,8 @@ At least a couple of the following:
 
 For implementation:
  1. Improving the EDAM Formats subontology:
-    - Technical quality assurance tests and user guidelines for EDAM ontology
-    - Validator for quality control of EDAM Formats subontology
+    - Technical quality assurance tests and user guidelines 
+    - Validator for quality control 
     - Curation to bring things up to standard
  2. Using bio.tools & EDAM to curate complex online tools, e.g. [RSAT](http://rsat01.biologie.ens.fr/rsa-tools/RSAT_home.cgi).
  3. Improved support for bio.tools Dockerisation process (especially Windows) and local development environment.
@@ -47,7 +47,7 @@ Discussion & planning:
 
 ## Expected audience
 
-- programmers, ontologists, technical project managers
+- programmers (Django REST Framework, Celery), software tool developers, ontologists, technical project managers
 
 **Number of expected hacking days**: 4
 
