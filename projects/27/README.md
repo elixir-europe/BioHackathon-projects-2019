@@ -13,33 +13,28 @@
 
 **Submitter:** Denise Slenter
 
-### Proponent(s)
+### Proponent
 
 - Denise Slenter
 
-### Lead(s)
+### Leads
 
 - Denise Slenter
 - Egon Willighagen ([@egonw](https://github.com/egonw))
 - Alasdair Gray
 
-### Nominated participant(s)
+### Nominated participants
 
 - Emma Schymanski - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
 
-Nominated but not invited by ELIXIR
-
-- Nick Juty - University of Manchester -, identifiers.org and Compact Identifiers expert
-- Tobias Kuhn - Free University of Amsterdam -, nanopublications
-
 ## Expected outcomes
 
-- Improve the FAIR metrics of [existing BridgeDb ID mapping databases](https://www.bridgedb.org/mapping-databases/)
-- Automation of generation of Scientific Lenses for chemical compounds (see [10.1007/978-3-319-11964-9_7](https://doi.org/10.1007/978-3-319-11964-9_7))
-- Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME)
-- BridgeDb application to create link sets from [Bioschemas](https://bioschemas.org/) (MolecularEntity) annotation
-- Faster identifier mapping (with Apache Derby replacement)
-- ID mapping data exchange using nanopublications, allowing explicit provenance being stored
+- Improve the FAIR metrics of [existing BridgeDb ID mapping databases](https://www.bridgedb.org/mapping-databases/) ([issue 27](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/27))
+- Automation of generation of Scientific Lenses for chemical compounds (see [10.1007/978-3-319-11964-9_7](https://doi.org/10.1007/978-3-319-11964-9_7)) ([issue 28](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/28))
+- Expand integration of BridgeDb for workflow systems (Galaxy and/or KNIME) ([issue 29](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/29))
+- BridgeDb application to create link sets from [Bioschemas](https://bioschemas.org/) (MolecularEntity) annotation ([issue 30](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/30))
+- Faster identifier mapping (with Apache Derby replacement) ([issue 31](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/31))
+- ID mapping data exchange using nanopublications, allowing explicit provenance being stored ([issue 32](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/32))
 
 ## Expected audience
 
