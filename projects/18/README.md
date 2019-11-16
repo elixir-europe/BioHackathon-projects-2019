@@ -4,7 +4,9 @@
 
 ## Research area alignment
 
-- tools, compute, data, personal data sharing e.g. EGA/JGA
+- Tools and workflow development and deployment
+- Cloud computing
+- Personal data sharing and analysis
 
 ## Team
 
@@ -20,18 +22,50 @@
 
 ### Nominated participant(s)
 
-- Hirotaka Suetake, main developer of the SAPPORO system
- Manabu Ishii, CWL project commiter 
- Tazro Ohta, SAPPORO project lead
+![Hiro](http://data.dbcls.jp/~inutano/misc/bh19paris/images/suecharo_paris2018.png)
+
+Hirotaka Suetake [@suecharo](https://github.com/suecharo): Main developer of the SAPPORO system
+
+![Manabu](http://data.dbcls.jp/~inutano/misc/bh19paris/images/manabu_paris2019.png)
+
+Manabu Ishii [@manabuishii](https://github.com/manabuishii): CWL project commiter
+
+![Taz](http://data.dbcls.jp/~inutano/misc/bh19paris/images/inutano_paris2018.png)
+
+Tazro Ohta [@inutano](https://github.com/inutano): SAPPORO project lead
+
+...And you!
 
 ## Expected outcomes
 
-- This proposal is based on the idea of sharing workflows, so the outcomes may vary with the people we can work with. If we could have audiences who already have workflows that analyze the personal genomic data, we will describe them in CWL, and then test on our system running on DDBJ's HPC platform. We can help to package tools in containers for that as well, but it will be more productive if there were the BioConda/BioContainers team and/or the Elixir tool registry team. We already have CWL workflows that run on our system, so we can share our workflows and test if they are truly portable when there is a workflow execution platform team such as Galaxy. Our system can run workflows for non-human data as well, so we can import and test the workflows already described in CWL such as the MGnify workflow developed by the EBI Metagenome team or pgap pipeline developed by NCBI. We would be happy to present our system in details and help to deploy if there were people interested in having a similar system on their computing platform.
+- Help people who want to deploy the Sapporo system
+  - Requirements: Docker & Docker Compose
+- Improve Sapporo system
+  - Support runners
+    - [x] [cwltool](https://github.com/common-workflow-language/cwltool)
+    - [ ] [Toil](https://github.com/BD2KGenomics/toil)
+    - [ ] [Cromwell](https://github.com/broadinstitute/cromwell)
+    - [ ] [nextflow](http://nextflow.io/)
+  - integration of utilities
+    - [ ] [CWL-metrics](https://github.com/inutano/cwl-metrics), runtime metrics collection system
+    - [ ] [tonkaz](https://github.com/suecharo/tonkaz), a test framework for command line tool
+- Test systems with existing workflows
+  - [ ] [DAT2-CWL](https://github.com/pitagora-network/dat2-cwl)
+  - [ ] [bio-cwl-tools](https://github.com/common-workflow-library/bio-cwl-tools)
+  - [ ] [nf.core](https://nf-co.re/)
+- Work with the other GA4GH WES implementation
+  - Elixir WES by [project number 16](../16/)
 
 ## Expected audience
 
-- Developers who are familiar with workflow languages such as CWL
- Data producers who are interested in sharing personal genome data
+- Data scientists for human genome sequence
+- Workflow developers
+  - CWL, WDL, nextflow, or other WF languages
+- Infrastructure Dev/Ops engineers
+  - Container deployment
+    - Docker
+    - Singularity
+  - Public cloud operation
+    - AWS batch
 
-**Number of expected hacking days**: 4
-
+**Number of expected hacking days**: 4+
