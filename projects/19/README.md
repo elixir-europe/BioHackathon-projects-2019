@@ -7,25 +7,16 @@
 - Galaxy Working Group
  (making bioinformatics more accessible for biologists)
 
+You can find the code here: https://github.com/SGBC/galaksio
+It will be merged here properly when I got my computer.
+
 ## Team
 
 **Submitter:** Tomas Klingström
 
-### Proponent(s)
-
-- Tomas Klingström
-
 ### Lead(s)
 
 - Tomas Klingstrom
-
-### Nominated participant(s)
-
-- 1. Rafael Hernández de Diego, Is the original programmer behind Galaksio and a very skilled programmer in both front-end and back-end development. His current work is demanding but the BioHackaton can hopefully be seen as a bit of a prestige collaboration for his current employer and thus make him available to us for this.
- 
- 2. Marius van den Beek, One of the key developers in Europe for Galaxy with many major contributions to both Galaxy and Galaksio.
- 
- 3. Nicola Soranzo, of the key developers in Europe for Galaxy and has developed Bioblend which is used to connect tools such as Galaksio with Galaxy.
 
 ## Expected outcomes
 
