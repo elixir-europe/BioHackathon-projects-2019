@@ -21,31 +21,30 @@ Refer editable [google doc](https://docs.google.com/document/d/1tJslhIdvLVZ1L8hc
 
 ### Lead(s)
 
-- Venkata Satagopam
- Senior Research Scientist, and Technical coordinator of ELIXIR Luxembourg Node
- Université du Luxembourg
- Luxembourg Centre for Systems Biomedicine (LCSB)
- 6, avenue du Swing
+- Venkata Satagopam,
+ Senior Research Scientist, and Technical coordinator of ELIXIR Luxembourg Node,
+ Université du Luxembourg,
+ Luxembourg Centre for Systems Biomedicine (LCSB),
+ 6, avenue du Swing,
  L-4367 Belvaux, Luxembourg
  email: venkata.satagopam@uni.lu
  
-- Johanna McEntyre
-Team Lead, Literature services (EMBL-EBI) and Elixir Data Platform Lead
-EMBL-EBI
+- Johanna McEntyre,
+Team Lead, Literature services (EMBL-EBI) and Elixir Data Platform Lead,
+EMBL-EBI,
 Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK
 email: mcentyre@ebi.ac.uk 
 
-- Aravind Venkatesan
-Senior Data Scientist, Literature Services, EMBL-EBI
-EMBL-EBI
+- Aravind Venkatesan,
+Senior Data Scientist, Literature Services, EMBL-EBI,
 Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK
 email: avenkat@ebi.ac.uk 
 
 - Carlos Vega Moreno
-Research Fellow
- Université du Luxembourg
- Luxembourg Centre for Systems Biomedicine (LCSB)
- 6, avenue du Swing
+Research Fellow,
+ Université du Luxembourg,
+ Luxembourg Centre for Systems Biomedicine (LCSB),
+ 6, avenue du Swing,
  L-4367 Belvaux, Luxembourg
  email: carlos.vega@uni.lu
  
