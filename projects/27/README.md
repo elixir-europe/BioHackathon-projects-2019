@@ -35,6 +35,7 @@
 - BridgeDb application to create link sets from [Bioschemas](https://bioschemas.org/) (MolecularEntity) annotation ([issue 30](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/30))
 - Faster identifier mapping (with Apache Derby replacement) ([issue 31](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/31))
 - ID mapping data exchange using nanopublications, allowing explicit provenance being stored ([issue 32](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/32))
+- Compact Identifiers support  ([issue 33](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/33))
 
 ## Expected audience
 
