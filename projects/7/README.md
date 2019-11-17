@@ -10,7 +10,7 @@
 
 ### Lead(s)
 
-- Yo Yehudi -
+- [Yo Yehudi](https://github.com/yochannah)
 
 ### Nominated participant(s)
 
