@@ -22,6 +22,7 @@ Access for this repository can be requested over the gitter channel [![Join the 
 * [Project 14](projects/14): panoptes: monitor computational workflows in real time 
 * [Project 15](projects/15): Implementation of Bioschema for Orphanet and Orphadata
 * [Project 27](projects/27): FAIR Identifier Mapping: Building Bridges Between Communities
+* [Project 31](projects/31): Bioconda and Biocontainers helpdesk
 
 ## BioHackathon IP disclaimer
 
