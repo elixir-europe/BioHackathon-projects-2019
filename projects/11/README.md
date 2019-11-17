@@ -7,6 +7,10 @@
 - ELIXIR platforms: Data/Interoperability 
  ELIXIR Communities: Rare Disease/Proteomics/Metabolomics
 
+## Resources and guidelines
+
+Refer editable [google doc](https://docs.google.com/document/d/1tJslhIdvLVZ1L8hcEOmN-TcqoOTJ4zbq_kQR7NjKeZY/edit?usp=sharing) for usecases, breakdown of tasks, roadmap and progress logbook
+
 ## Team
 
 **Submitter:** Venkata Satagopam
