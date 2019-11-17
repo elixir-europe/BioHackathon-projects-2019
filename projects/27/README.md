@@ -25,7 +25,7 @@
 
 ### Nominated participants
 
-- Emma Schymanski - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
+- Emma Schymanski ([@schymane](https://github.com/schymane)) - Luxembourg Centre for Systems Biomedicine -, Metabolomics and Toxicology expert, and provider of specific use case + data
 
 ## Expected outcomes
 
@@ -39,10 +39,10 @@
 ## Expected audience
 
 - ELIXIR Core Resource representations (mapping need and mapping providers)
- Semantic Web and interoperability experts
- Technicians with knowledge of Docker and/or OpenAPI
- Workflow developers (Galaxy, KNIME, CWL)
- Java developers
+- Semantic Web and interoperability experts
+- Technicians with knowledge of Docker and/or OpenAPI
+- Workflow developers (Galaxy, KNIME, CWL)
+- Java developers
 
 **Number of expected hacking days**: 4
 
