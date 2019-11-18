@@ -18,6 +18,12 @@ It will be merged here properly when I got my computer.
 
 - Tomas Klingstrom
 
+### Nominated participant(s)
+
+ 1. Marius van den Beek, One of the key developers in Europe for Galaxy with many major contributions to both Galaxy and Galaksio.
+
+ 2. Nicola Soranzo, of the key developers in Europe for Galaxy and has developed Bioblend which is used to connect tools such as Galaksio with Galaxy.
+
 ## Expected outcomes
 
 - The overall objective is to provide a simplified interface for running best practice workflows hosted on Galaxy servers. Specifically the hackaton will:
