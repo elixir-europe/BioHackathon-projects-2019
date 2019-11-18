@@ -8,7 +8,6 @@
  (making bioinformatics more accessible for biologists)
 
 You can find the code here: https://github.com/SGBC/galaksio
-It will be merged here properly when I got my computer.
 
 ## Team
 
