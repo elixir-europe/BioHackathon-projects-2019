@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "05-csparql-biorxiv"
+name = "29-semantic-recommendation-system"
 version = "0.0.1"
 description = "Building an ontology for biology publications in real-time using event stream processing"
 
@@ -13,7 +13,7 @@ authors = [
 
 readme = "README.md"
 
-repository = "https://github.com/elixir-europe/BioHackathon/"
+repository = "https://github.com/elixir-europe/BioHackathon-projects-2019/"
 
 
 [tool.poetry.dependencies]
