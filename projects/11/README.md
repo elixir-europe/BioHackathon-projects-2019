@@ -52,6 +52,8 @@ Research Fellow,
 
 - Lars Juhl Jensen, University of Copenhagen; Valentin Groues, University of Luxembourg
 
+### Participant(s)
+- Gurnoor Sing, RadboudUMC, Nijmegen
 ## Expected outcomes
 
 - We look forward to the development of a common integration between cross-resource literature knowledgebase projects, delivering advancements on interoperability and accessibility of text-mining resources by developing an interface by extending existing APIs and application of standards, for example, W3C Web Annotation Data Model. This common interface will be tangentially beneficial for the different use cases that, for example, creation of interaction networks and disease maps and annotate corresponding entities, relationships and events through such knowledge databases. We are planned to submit a manuscript on Biohackathon outcome. Between the potential achievements, we could find an extended and lasting collaboration between institutions as well as scientific literature contributions, exploring the deployment of joint multi-institutional services.
