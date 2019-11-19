@@ -2,7 +2,7 @@ from abc import ABCMeta, abstractmethod
 from typing import List
 
 
-class Publication():
+class Publication:
     def __init__(self, pmc_id, pm_id, doi, preprint_id, other_id):
         self.pmc_id = pmc_id
         self.pm_id = pm_id
@@ -18,8 +18,8 @@ class TextMiningService(metaclass=ABCMeta):
         self.description = description
 
     @abstractmethod
-    def getMentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
-        """Returs a list of publications for a given list of entity IDs in which the entities appear.
+    def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        """Returns a list of publications for a given list of entity IDs in which the entities appear.
 
         Arguments:
             entities {List[str]} -- [description]
@@ -33,7 +33,7 @@ class TextMiningService(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def getCoOccurrences(self, entity: str) -> List[str]:
+    def get_co_occurrences(self, entity: str) -> List[str]:
         """
         Co-occurrences at publication level.
 
