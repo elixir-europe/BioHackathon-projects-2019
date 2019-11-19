@@ -57,7 +57,7 @@ class JensenLabService(TextMiningService):
         url_mentions = JensenLabService.MENTION_URL.format(entity_type, entity, limit)
         results = requests.get(url_mentions)
         assert results.ok
-        publications_string = results.content.decode().strip().replace('True', 'true').replace('False', 'false')
+        publications_string = results.content.decode().strip()
         publications_list, has_more = json.loads(publications_string)
         return set(publications_list)
 
