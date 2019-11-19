@@ -1,0 +1,13 @@
+{
+  "@context": "http://schema.org",
+  "@type": "DataRecord",
+  "@id": "https://www.disprot.org/DP00086r026#",
+  "includedInDataset": "https://www.disprot.org/",
+  "mainEntity":
+      {
+        "@type": "SequenceAnnotation",
+        "@id": "https://www.disprot.org/DP00086r026",
+        "name":
+      }
+  }
+}
