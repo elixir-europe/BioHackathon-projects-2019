@@ -1,6 +1,7 @@
 <script type="application/ld+json" >
 {
   "@context": "http://schema.org",
+  "@type": "DataRecord",
   "@id": "https://www.disprot.org/DP00086",
   "includedInDataset": "https://www.disprot.org/",
   "mainEntity":
