@@ -1,5 +1,5 @@
 from typing import List
-from utils import uri_to_entity_code, standarise_underscored_entity_code
+from .utils import uri_to_entity_code, standarise_underscored_entity_code
 from interface.TextMiningService import TextMiningService
 from models.publication import Publication
 from models.coocurrence import CoOccurrence
@@ -58,7 +58,10 @@ class BioKBservice(TextMiningService):
 
         return values
 
-    def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = []) -> List[CoOccurrence]:
+    def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+
+        if types is None:
+            types = []
 
         entity_types_filter = ''
         if len(types) > 0:
