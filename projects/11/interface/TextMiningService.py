@@ -3,7 +3,7 @@ from typing import List
 
 
 class Publication:
-    def __init__(self, pmc_id, pm_id, doi, preprint_id, other_id):
+    def __init__(self, pmc_id=None, pm_id=None, doi=None, preprint_id=None, other_id=None):
         self.pmc_id = pmc_id
         self.pm_id = pm_id
         self.doi = doi
