@@ -40,7 +40,7 @@ $ npm run-script build
 ```
 
 ```bash
-$ poetry run python web_server/run.py
+$ poetry run uvicorn web_server.main:app
 ```
 
 
