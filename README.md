@@ -15,7 +15,7 @@ Access for this repository can be requested over the gitter channel [![Join the 
 
 (ordered by project number)
 
-* [Project 6](projects/5): Disease and pathway maps for Rare Diseases
+* [Project 5](projects/5): Disease and pathway maps for Rare Diseases
 * [Project 6](projects/6): Copy Number Variation Beacon
 * [Project 8](projects/8): Scalable delivery of FAIR training in Life Sciences using Galaxy and the Carpentries training material
 * [Project 7](projects/7): Towards seamless Galaxy and InterMine integration: Enhanced region analysis
