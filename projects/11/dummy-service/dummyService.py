@@ -15,3 +15,10 @@ class DummyService(TextMiningService):
 
     def get_co_occurrences(self, entity: str) -> List[str]:
         pass
+
+
+if __name__ == '__main__':
+    text_mining_service = DummyService()
+    print("Using service {}".format(text_mining_service.name))
+    publications = text_mining_service.get_mentions(["DOID:0000"])
+    print(", ".join([p.pm_id for p in publications]))
