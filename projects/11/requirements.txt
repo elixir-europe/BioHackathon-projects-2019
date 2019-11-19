@@ -1,0 +1,15 @@
+astroid==2.3.3
+autopep8==1.4.4
+isodate==0.6.0
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pep8==1.7.1
+pycodestyle==2.5.0
+pylint==2.4.4
+pyparsing==2.4.5
+rdflib==4.2.2
+six==1.13.0
+SPARQLWrapper==1.8.4
+typed-ast==1.4.0
+wrapt==1.11.2
