@@ -2,7 +2,7 @@ from typing import List
 from interface.TextMiningService import TextMiningService
 from models.publication import Publication
 from models.coocurrence import CoOccurrence
-from biokb.utils import uri_to_code
+from utils import uri_to_entity_code, standarise_underscored_entity_code
 
 from SPARQLWrapper import SPARQLWrapper, JSON
 from SPARQLWrapper.SPARQLExceptions import EndPointNotFound, EndPointInternalError, QueryBadFormed
@@ -39,6 +39,7 @@ class BioKBservice(TextMiningService):
 
         entity_subquery = ""
         for entity in entities:
+            entity = standarise_underscored_entity_code(entity)
             entity_subquery += f"?publication <http://lcsb.uni.lu/biokb#containsEntity> <http://lcsb.uni.lu/biokb/entities/{entity}> .\n"
 
         query = """
@@ -59,6 +60,7 @@ class BioKBservice(TextMiningService):
         return values
 
     def get_co_occurrences(self, entity: str) -> List[CoOccurrence]:
+        entity = standarise_underscored_entity_code(entity)
         query = """
             select * where {
     
@@ -93,7 +95,7 @@ class BioKBservice(TextMiningService):
         values = []
         values = []
         for result in results['results']['bindings']:
-            entity_code = uri_to_code(result['other_entity']['value'])
+            entity_code = uri_to_entity_code(result['other_entity']['value'])
             count = int(result['count']['value'])
             co_occur = CoOccurrence(entity_code, count)
             values.append(co_occur)
