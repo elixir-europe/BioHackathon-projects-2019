@@ -4,7 +4,7 @@ from models.publication import Publication
 from models.coocurrence import CoOccurrence
 from utils import uri_to_entity_code, standarise_underscored_entity_code
 
-from SPARQLWrapper import SPARQLWrapper, JSON
+from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
 from SPARQLWrapper.SPARQLExceptions import EndPointNotFound, EndPointInternalError, QueryBadFormed
 
 import logging
@@ -22,6 +22,7 @@ class MalformedQueryException(BioKBClientException):
 class BioKBservice(TextMiningService):
     def __init__(self, sparql_url="https://biokb.lcsb.uni.lu/sparql"):
         self.sparql = SPARQLWrapper(sparql_url)
+        self.sparql.setRequestMethod(POSTDIRECTLY)
         super().__init__('BioKB',
                          'This client communicates with BioKB triple store and Publication Solr index.')
 
