@@ -1,10 +1,10 @@
 # Get human genes from Wikidata
 # @endpoint http://query.wikidata.org/sparql
+
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
 SELECT * WHERE {
-   ?item wdt:P31 wd:Q7187 ; # instance of gene
+   ?item wdt:P31 wd:Q7187 ;      # instance of gene
          wdt:P703 wd:Q15978631 . # found in taxon Homo sapiens
 }
-
