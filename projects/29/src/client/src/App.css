@@ -1,22 +1,11 @@
-.App {
-  text-align: center;
+::-webkit-input-placeholder { /* Edge */
+  color: #bbbbbb;
 }
 
-.App-logo {
-  height: 40vmin;
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #bbbbbb;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+::placeholder {
+  color: #bbbbbb;
 }
