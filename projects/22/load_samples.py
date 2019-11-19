@@ -1,47 +1,43 @@
-from py2neo import Graph
+import json
 
-import config
-
-
-def main():
-    clear_graph()
-
-    sample = config.example_sample
-    load_sample_to_neo4j(sample)
+from neo4j import GraphDatabase
+from decouple import config
 
 
-def load_sample_to_neo4j(sample):
-    graph = connect_to_graph()
-    merge_node = "MERGE (a:Sample {accession: '" + sample["accession"] + "'}) RETURN a"
-    graph.run(merge_node)
+class LoadSamples(object):
 
-    merge_sample = "MERGE (keanu:Person { name: 'Keanu Reeves' }) " \
-                   "ON CREATE SET keanu.created = timestamp() " \
-                   "RETURN keanu.name, keanu.created"
+    def __init__(self, _uri, _user, _password, _json_path):
+        self.json_path = _json_path
+        # Create driver instance and clean database
+        self._driver = GraphDatabase.driver(_uri, auth=(_user, _password))
+        self.clear_graph()
 
-    if "relationships" in sample:
-        for rel in sample["relationships"]:
-            rel_node = "MERGE (a:Sample {accession: '" + rel["target"] + "'}) RETURN a"
-            graph.run(rel_node)
-            rel_query= "MATCH (source:Sample { accession: '" + rel["source"] + "' }), " \
-                              "(target:Sample { accession: '" + rel["target"] + "' }) " \
-                       "MERGE (source)-[r:DERIVED_FROM]->(target) " \
-                       "RETURN source, r, target"
-            graph.run(rel_query)
-# config.relationships[rel["type"]]
+    def close(self):
+        self._driver.close()
 
+    def load_biosamples_to_database(self):
+        with self._driver.session() as session:
+            with open(self.json_path) as json_file:
+                data = json.load(json_file)
+                for record in data:
+                    print(record['accession'])
+            # greeting = session.write_transaction(self._create_biosample, id)
 
+    @staticmethod
+    def _create_biosample(tx, _id):
+        result = tx.run("CREATE (a:Greeting) "
+                        "SET a.message = $message "
+                        "RETURN a.message + ', from node ' + id(a)", id=_id)
 
-def clear_graph():
-    graph = connect_to_graph()
-    graph.delete_all()
-
-
-def connect_to_graph():
-    graph = Graph(config.neo4j_url, user=config.neo4j_user, password=config.neo4j_password)
-    return graph
+    def clear_graph(self):
+        # self._driver.delete_all()
+        pass
 
 
 if __name__ == "__main__":
-    main()
-
+    uri = config('URI')
+    user = config('USERNAME')
+    password = config('PASSWORD')
+    json_path = config('JSON_FILE_PATH')
+    load_samples_obj = LoadSamples(uri, user, password, json_path)
+    load_samples_obj.load_biosamples_to_database()
