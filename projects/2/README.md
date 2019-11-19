@@ -24,7 +24,7 @@
 - Hans Ienasescu, (bio.tools expert)
 - Alban Gaignard (ELIXIR-FR)
 
-## Priorities (set during the hackathon)
+## New priorities (set during the hackathon)
 
 1. **ELIXIR Tools platform ecosystem** - gathering technical requirements from the tools platform and stakeholders. Planning.
 2. **Tool information profiles** - to specifies which tool attributes - defined in biotoolsSchema - should be specified within a set of tool descriptions, e.g. from a project, institute, ELIXIR node *etc.*
