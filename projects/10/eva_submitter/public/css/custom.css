@@ -1,0 +1,77 @@
+.summary-box {
+    background-color: #f3f3f3;
+    padding: 7px;
+    margin: 2px 0;
+    border-radius: 10px;
+}
+
+.summary-box-title {
+    font-size: 1.25rem;
+}
+
+.summary-box:hover {
+    background-color: #e7e7e7;
+}
+
+.summary-box a {
+    color: black;
+}
+
+.summary-box a:hover {
+    text-decoration: none;
+}
+
+.summary-box a:hover .summary-box-title {
+    text-decoration: underline;
+}
+
+.sidebar-custom {
+    background-color: #006B59;
+    padding: 10px;
+    color: white;
+    border-radius: 10px
+}
+
+.sidebar-custom a {
+    color: white;
+    text-decoration: underline;
+}
+
+div.custom-picture {
+    height: 100px;
+    margin: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+img.custom-picture {
+    width: 100%;
+    max-height: 100px;
+}
+
+div.tags {
+    margin: 5px 0 0 5px;
+}
+
+div.tags p {
+    font-size: 0.75rem;
+    margin: 1px;
+    padding: 0 2px;
+    background-color: #b9b9b9;
+    border-radius: 3px;
+    font-weight: bolder;
+}
+
+.workflow-img {
+    width: 100%;
+}
+
+p.list-number {
+    width: 3%;
+    text-align: right;
+    margin-right: 2%;
+}
+
+p.list-value {
+    width: 95%
+}
