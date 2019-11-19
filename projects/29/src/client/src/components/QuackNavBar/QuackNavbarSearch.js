@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{useContext, useState} from 'react';
 import styled from 'styled-components';
+import QuackContext from '../../context';
 
 const Input = styled.input`
     margin-top: 0.7rem;
@@ -15,9 +16,20 @@ const Input = styled.input`
 
 `
 const QuackNavbarSearch = () => {
+    const {state, dispatch} = useContext(QuackContext);
+    const [value, setValue] = useState(state.query);
+    const deleteQuery = () => {
+        dispatch({type: 'DELETE_SEARCH'})
+        setValue('')
+    }
+    const changeValue = (evt) => {
+        setValue(evt.target.value)
+        dispatch({type: 'SET_QUERY', data: evt.target.value})
+
+    }
     return (
         <div>
-            <Input placeholder="type your query" type="search"/>
+            <Input onChange={(evt)=>changeValue(evt)} onClick={()=>deleteQuery()} value={value} placeholder="type your query"  type="search"/>
         </div>
     );
 };

@@ -1,7 +1,6 @@
-
 const SET_RESULTS = 'SET_RESULTS';
-
 const DELETE_SEARCH = 'DELETE_SEARCH'
+const SET_QUERY = 'SET_QUERY';
 
 function reducer(state, action) {
     switch (action.type) {
@@ -16,6 +15,12 @@ function reducer(state, action) {
                 ...state,
                 results: [],
                 query: ''
+            }
+        }
+        case SET_QUERY: {
+            return {
+                ...state,
+                query: action.data
             }
         }
         default:

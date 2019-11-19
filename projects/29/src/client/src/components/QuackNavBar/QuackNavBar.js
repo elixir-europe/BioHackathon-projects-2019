@@ -16,7 +16,7 @@ const Style = styled.div`
 `
 
 
-const QuackNavBar = () => {
+const QuackNavBar = ({query}) => {
     return (
         <Style>
             <QuackNavBarLogo/>

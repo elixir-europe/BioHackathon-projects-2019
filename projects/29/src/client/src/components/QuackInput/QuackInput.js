@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import styled from 'styled-components';
+import QuackContext from "../../context";
 
 const Input = styled.input`
     margin-top: 3rem;
@@ -13,9 +14,22 @@ const Input = styled.input`
 `
 
 function QuackInput(props) {
+    const {state, dispatch} = useContext(QuackContext);
+    const [value, setValue] = useState('')
+    const setQuery = (evt) => {
+        setValue(evt.target.value)
+        console.log("pressed", evt)
+    }
+
+    const handleSubmit = (evt) =>{
+        if (evt.key === 'Enter') {
+            dispatch({type: 'SET_QUERY', data: evt.target.value})
+        }
+
+    }
     return (
         <div>
-            <Input placeholder="type your query" type="search"/>
+            <Input onKeyDown={(evt)=>handleSubmit(evt)} onChange={(evt) => setQuery(evt)} value={value} placeholder="type your query" type="search"/>
         </div>
     );
 }
