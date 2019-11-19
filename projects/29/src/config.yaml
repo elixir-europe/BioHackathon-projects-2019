@@ -1,8 +1,8 @@
 sparql_endpoint: http://idefix.local:8890/sparql
 neo4j:
-  neo4j_endpoint: http://idefix.local:8890/neo4j
+  neo4j_endpoint: bolt://idefix.local:7687
   user: neo4j
-  pass: neo4j
+  pass: password
 biorxiv:
   base_url: https://www.biorxiv.org/content/
   user_agent: research project - contact valentin.groues@uni.lu
