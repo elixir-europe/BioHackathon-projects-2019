@@ -29,7 +29,7 @@
 
 ## Expected outcomes
 
-- - G2GML mapping definitions for several existing datasets (KGX, Med2RDF, DesGeNET)
+ - G2GML mapping definitions for several existing datasets (KGX, Med2RDF, DesGeNET)
  - Generated property graph datasets for the projects above
  - Sample analysis methods on graph databases and the results
  - Paper to describe the practical use of G2GML
