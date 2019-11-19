@@ -26,7 +26,7 @@
 
 ### Nominated participant(s)
 
-- 1.Iain Milne (JHI,, API developper & Data Manager, Experience in manipulating genotyping datasets, Semantics, ontologies concepts, JSON schema, data validation)
+- 1.Jeremy Destin (INRA)
  2.Guilhem Sempere (Southgreen,, Information System and API developper / JSON Schema)
  3.Bilal El Houdaigui (URGI,, API developer, JSON Schema)
 
