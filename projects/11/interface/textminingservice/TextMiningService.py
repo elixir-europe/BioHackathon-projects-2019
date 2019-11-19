@@ -1,8 +1,8 @@
 from abc import ABCMeta, abstractmethod
 from typing import List
 
-from models.coocurrence import CoOccurrence
-from models.publication import Publication
+from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.publication import Publication
 
 
 class TextMiningService(metaclass=ABCMeta):

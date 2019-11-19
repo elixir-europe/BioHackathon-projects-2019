@@ -1,8 +1,9 @@
 import logging
 from typing import List
 
-from interface.TextMiningService import TextMiningService, Publication
-from models.coocurrence import CoOccurrence
+from textminingservice.TextMiningService import TextMiningService
+from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.publication import Publication
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +19,7 @@ class DummyService(TextMiningService):
         values = []
         for idx in range(limit):
             entity_code = f'{entity}_{idx}'
-            count = int(idx*idx)
+            count = int(idx * idx)
             co_occur = CoOccurrence(entity_code, count)
             values.append(co_occur)
         return values

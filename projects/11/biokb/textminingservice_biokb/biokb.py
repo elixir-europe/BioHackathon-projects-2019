@@ -4,10 +4,10 @@ from typing import List
 from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
 from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
 
-from interface.TextMiningService import TextMiningService
-from models.coocurrence import CoOccurrence
-from models.publication import Publication
-from .utils import uri_to_entity_code, standarise_underscored_entity_code
+from textminingservice.TextMiningService import TextMiningService
+from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.publication import Publication
+from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code
 
 logger = logging.getLogger(__name__)
 
@@ -41,7 +41,7 @@ class BioKBService(TextMiningService):
 
         entity_subquery = ""
         for entity in entities:
-            entity = standarise_underscored_entity_code(entity)
+            entity = standardise_underscored_entity_code(entity)
             entity_subquery += f"?publication <http://lcsb.uni.lu/biokb#containsEntity> <http://lcsb.uni.lu/biokb/entities/{entity}> .\n"
 
         query = """
@@ -70,7 +70,7 @@ class BioKBService(TextMiningService):
             types_str = ', '.join((f'<{t}>' for t in types))
             entity_types_filter = f'FILTER (?e_type IN ({types_str}) )'
 
-        entity = standarise_underscored_entity_code(entity)
+        entity = standardise_underscored_entity_code(entity)
         query = """
             select * where {
     
