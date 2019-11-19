@@ -20,8 +20,8 @@
 
 ### Nominated participant(s)
 
-- Hidemasa Bono 
-Takeya Kasukawa Specialist of the system for transcriptome data
+- Hidemasa Bono: Maintainer of [All of gene expression (AOE)](https://aoe.dbcls.jp/) 
+- Takeya Kasukawa: Specialist of the system for transcriptome data
 
 
 ## Expected outcomes
