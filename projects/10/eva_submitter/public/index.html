@@ -1,32 +1,98 @@
 <html>
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>EVA Submitter</title>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integ15rity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 
 </head>
 
 <body>
-    <div class="main">
-        <div class="row">
-            <div class="col-sm-8 offset-sm-2" style="margin: 30px 0 0 30px">
-                EVA Submitter Test
+<div class= "main" style="margin-left: 5%">
+    <div class="mt-4 mb-3">
+        <img src="./images/European_Bioinformatics_Institute_EMBL-EBI.png" alt="EBI Band" width="388"
+             height="72">
+    </div>
+
+    <div style="margin-right: 35%">
+        <span class="mt-5 mb-4">
+        This is a basic submission tool for genotypic data to the European Variation Archive.
+        Before selecting the apropriate genotypic data by hitting the 'Submit' button, please fill out the
+        mandatory forms below that specify the submitting person, laboratory and center.</br>
+            </br>(<span class="red-star" style="color: red">*</span>)<span>mandatory fields</span></br>
+        </span></br>
+    </div>
+
+    <div>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="lastName">Last Name</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
+                </div>
+                <div class="form-group col-md-4 mb-3 ">
+                    <label for="firstName">First Name</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+                </div>
+
             </div>
-        </div>
-        <div class="row">
-            <div id="refSetList" class="col-sm-12" style="margin: 30px 0 0 30px">
-                <div class="btn btn-info col-sm-8 offset-sm-2" onclick="refSetSearch();">
-                    GO!
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="phoneNumber">Phone number</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="number" class="form-control" id="phoneNumber"
+                           placeholder="Enter phone number (+44(0)12228875)" required>
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                           placeholder="Enter email" required>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="laboratory">Laboratory</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="laboratory" placeholder="Enter your laboratory"
+                           required>
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                    <label for="center">Center</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="center" placeholder="Enter your center name"
+                           required>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="address" placeholder="Enter the center address"
+                           required>
                 </div>
             </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12" style="margin: 30px 0 0 30px">
         </div>
     </div>
+</div>
 </body>
 
 </html>
