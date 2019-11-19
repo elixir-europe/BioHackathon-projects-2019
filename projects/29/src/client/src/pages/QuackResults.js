@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, {useContext} from 'react';
 import {QuackNavBar} from '../components/QuackNavBar';
 import QuackContext from '../context';
 import styled from 'styled-components';
@@ -9,6 +9,10 @@ const ResultWrapper = styled.div`
     flex-flow: row wrap;
     justify-content: center;
 `
+const Content = styled.div`
+    padding-top:5rem;
+`
+
 
 const QuackResults = () => {
     const {state, dispatch} = useContext(QuackContext);
@@ -16,11 +20,13 @@ const QuackResults = () => {
     return (
         <div>
             <QuackNavBar/>
-            <ResultWrapper>
-            {state.results.map((ele) => {
-                return (<QuackCard data={ele}/>)
-            })}
-            </ResultWrapper>
+            <Content>
+                <ResultWrapper>
+                    {state.results.map((ele) => {
+                        return (<QuackCard data={ele}/>)
+                    })}
+                </ResultWrapper>
+            </Content>
         </div>
     );
 };

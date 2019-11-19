@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa6e0f0f-db2e-403a-9d64-8d578ae06a32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/public/sign_of_horns.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/QuackVote/QuackVote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/QuackVote/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/QuackCard/QuackCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackCard/QuackCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/QuackCard/happy_duck.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackVote/happy_duck.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/QuackCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackCard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/QuackCard/sad_duck.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackVote/sad_duck.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/QuackInput/QuackInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackInput/QuackInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/QuackLogo/quack_logo.sketch" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackLogo/quack_logo.sketch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/QuackVote/happy_duck.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackVote/happy_duck.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/QuackVote/sad_duck.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/QuackVote/sad_duck.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/QuackResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/QuackResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/QuackSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/QuackSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/testdata/testdata.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/testdata/testdata.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="190">
+              <caret line="10" column="20" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="20" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -49,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/QuackInput/QuackInput.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -64,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/pages/QuackResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-end-line="14" />
+            <state relative-caret-position="532">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -77,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/components/QuackCard/QuackCard.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="181">
-              <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+              <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -100,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="26" column="12" selection-start-line="26" selection-end-line="27" />
+            <state relative-caret-position="255">
+              <caret line="14" column="14" selection-start-line="14" selection-end-line="15" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -109,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="82">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -126,15 +115,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
               <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/QuackLogo/QuackLogo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -168,13 +148,13 @@
         <option value="$PROJECT_DIR$/client/src/testdata/testdata.json" />
         <option value="$PROJECT_DIR$/client/src/components/QuackCard/QuackCard.js" />
         <option value="$PROJECT_DIR$/client/src/components/QuackVote/QuackVote.js" />
-        <option value="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js" />
-        <option value="$PROJECT_DIR$/client/src/pages/QuackResults.js" />
-        <option value="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js" />
         <option value="$PROJECT_DIR$/client/src/reducer.js" />
-        <option value="$PROJECT_DIR$/client/src/App.js" />
         <option value="$PROJECT_DIR$/client/src/pages/QuackSearch.js" />
         <option value="$PROJECT_DIR$/client/src/components/QuackInput/QuackInput.js" />
+        <option value="$PROJECT_DIR$/client/src/pages/QuackResults.js" />
+        <option value="$PROJECT_DIR$/client/src/App.js" />
+        <option value="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js" />
+        <option value="$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js" />
       </list>
     </option>
   </component>
@@ -206,13 +186,29 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="QuackNavBar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -258,12 +254,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574168771457</updated>
-      <workItem from="1574168781671" duration="15422000" />
+      <workItem from="1574168781671" duration="17979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15422000" />
+    <option name="totallyTimeSpent" value="17979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="27" width="1626" height="974" extended-state="0" />
@@ -347,13 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBarLogo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="33" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -378,7 +367,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/QuackLogo/QuackLogo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+          <caret line="1" column="23" selection-start-line="1" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -387,16 +376,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/QuackVote/happy_duck.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/QuackCard/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -408,7 +387,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/QuackCard/QuackCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
-          <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -432,36 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="26" column="12" selection-start-line="26" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/QuackResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/pages/QuackSearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -472,7 +421,57 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/QuackInput/QuackInput.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/QuackResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBarLogo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavbarSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="14" column="14" selection-start-line="14" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/QuackNavBar/QuackNavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

@@ -7,7 +7,7 @@ import './App.css';
 import results from './testdata/testdata.json';
 
 const initialState = {
-    query: '',
+    query: 'gene signatures',
     results: results
 }
 
@@ -17,7 +17,7 @@ function App() {
   return (
 
         <QuackContext.Provider value={{state, dispatch}}>
-            {state.query ?
+            {state.results ?
             <QuackResults/>:<QuackSearch/>}
         </QuackContext.Provider>
   );
