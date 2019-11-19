@@ -10,4 +10,6 @@
 
 * Travis now runs the tests for BridgeDb git master (but not webservices, mysql)
 * PubChemLite benckmark now done for first dataset (Eawag EA) from [MetFrag Relaunched 2016](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-016-0115-9). Reusing downloaded [SI data](https://msbi.ipb-halle.de/~cruttkie/CHIN-D-15-00088/). Coding in R and prelim results encouraging. 
+* PubChemLite benchmark now running for Eawag QEx data (see above). tier1 running, tier0 likely a Wed job. 
+* New MetFrag COCONUT database [added](https://github.com/sneumann/container-metfrag/pull/3) c/o Maria, FSU Jena
 
