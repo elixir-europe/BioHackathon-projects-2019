@@ -9,3 +9,5 @@
 # Tuesday 2019-11-19
 
 * Travis now runs the tests for BridgeDb git master (but not webservices, mysql)
+* PubChemLite benckmark now done for first dataset (Eawag EA) from [MetFrag Relaunched 2016](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-016-0115-9). Reusing downloaded [SI data](https://msbi.ipb-halle.de/~cruttkie/CHIN-D-15-00088/). Coding in R and prelim results encouraging. 
+
