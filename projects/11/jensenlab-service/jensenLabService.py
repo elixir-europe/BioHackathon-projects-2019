@@ -29,7 +29,7 @@ class JensenLabService(TextMiningService):
         publications_ids_intersection = set.intersection(*publications_ids)
         return [Publication(pm_id=pid) for pid in publications_ids_intersection]
 
-    def get_co_occurrences(self, entity: str) -> List[str]:
+    def get_co_occurrences(self, entity: str, limit: int = 20) -> List[str]:
         pass
 
     @staticmethod
