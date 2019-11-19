@@ -28,6 +28,7 @@ Access for this repository can be requested over the gitter channel [![Join the 
 * [Project 26](projects/26): Data Ingestion Pipeline for the IDP Community
 * [Project 27](projects/27): FAIR Identifier Mapping: Building Bridges Between Communities
 * [Project 31](projects/31): Bioconda and Biocontainers helpdesk
+* [Project 32](projects/32): Nightingale - Data visualization web components for the life sciences
 
 ## BioHackathon IP disclaimer
 
