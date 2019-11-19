@@ -12,10 +12,16 @@ class DummyService(TextMiningService):
         super().__init__("DummyService", "Service that returns dummy results")
 
     def get_mentions(self, entities: List, limit: int = 20) -> List[Publication]:
-        return [Publication(pm_id="00000" + str(i)) for i in range(20)]
+        return [Publication(pm_id="00000" + str(i)) for i in range(limit)]
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
-        pass
+        values = []
+        for idx in range(limit):
+            entity_code = str(idx)
+            count = int(idx*idx)
+            co_occur = CoOccurrence(entity_code, count)
+            values.append(co_occur)
+        return values
 
 
 if __name__ == '__main__':
