@@ -7,6 +7,6 @@ Checks if there are any cyclic relationships for "derived from"
 #### Query
 [source,cypher]
 ----
-MATCH (a)-[:DERIVED_FROM*1..5]->(a) RETURN a
+MATCH (a:Sample)-[:DERIVED_FROM*1..5]->(a:Sample) RETURN a
 ----
 
