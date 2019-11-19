@@ -3,11 +3,30 @@
   "@type": "DataRecord",
   "@id": "https://www.disprot.org/DP00086r026#",
   "includedInDataset": "https://www.disprot.org/",
+  "creator": "Borbála Hajdu-Soltész",
+  "citation": {"@id": "pmid:16793543"},
   "mainEntity":
+  {
+    "@type": "SequenceAnnotation",
+    "@id": "https://www.disprot.org/DP00086r026",
+    "description": "Chemical shift analysis and the NOE pattern demonstrated that p53 in complex with Tfb1 adopts an a-helical fold that extends from Pro47 to Thr55. Outside this region, p53 is flexible, as also supported by the 15N-1H heteronuclear NOE data.",
+    "creationMethod": "Nuclear magnetic resonance",
+    "sequenceLocation": {
+      "@type": "SequenceRange",
+      "rangeStart": 20,
+      "rangeEnd": 73
+    },
+    "additionalProperty": [
       {
-        "@type": "SequenceAnnotation",
-        "@id": "https://www.disprot.org/DP00086r026",
-        "name":
+        "@type": "PropertyValue",
+        "name": "Term",
+        "value": "http://edamontology.org/topic_3538"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Ambiguous",
+        "value": "AMBSEQ"
       }
+    ]
   }
 }
