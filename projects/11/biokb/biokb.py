@@ -97,7 +97,6 @@ class BioKBservice(TextMiningService):
 
             } ORDER BY DESC(?count) LIMIT %LIMIT%
         """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit)).replace('%ENTITY_TYPE_FILTER%', entity_types_filter)
-        print(query)
         results = self._run_sparql_query(query)
         values = []
         values = []
