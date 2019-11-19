@@ -10,6 +10,7 @@ from SPARQLWrapper.SPARQLExceptions import EndPointNotFound, EndPointInternalErr
 import logging
 logger = logging.getLogger(__name__)
 
+
 class BioKBClientException(Exception):
     pass
 
@@ -93,7 +94,7 @@ class BioKBservice(TextMiningService):
         values = []
         for result in results['results']['bindings']:
             entity_code = uri_to_code(result['other_entity']['value'])
-            count       = int(result['count']['value'])
-            co_occur    = CoOccurrence(entity_code, count)
+            count = int(result['count']['value'])
+            co_occur = CoOccurrence(entity_code, count)
             values.append(co_occur)
         return values

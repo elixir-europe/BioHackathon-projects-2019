@@ -3,6 +3,7 @@ from typing import List
 from models.publication import Publication
 from models.coocurrence import CoOccurrence
 
+
 class TextMiningService(metaclass=ABCMeta):
 
     def __init__(self, name: str, description: str):
