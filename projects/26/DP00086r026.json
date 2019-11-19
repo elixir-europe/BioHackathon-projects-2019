@@ -20,7 +20,19 @@
       {
         "@type": "PropertyValue",
         "name": "Term",
-        "value": "http://edamontology.org/topic_3538"
+        "value": {
+          "@type": "DefinedTerm",
+          "@id": "http://edamontology.org/topic_3538",
+          "inDefinedTermSet":
+          {
+            "@type": "DefinedTermSet",
+            "@id": "http://edamontology.org/EDAM.owl",
+            "name": "EDAM Ontology"
+          },
+          "termCode": "EDAM:topic_3538",
+          "name": "Protein disordered structure",
+          "url": "http://edamontology.org/topic_3538"
+        }
       },
       {
         "@type": "PropertyValue",
