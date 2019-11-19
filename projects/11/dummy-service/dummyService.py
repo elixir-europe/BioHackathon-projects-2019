@@ -17,7 +17,7 @@ class DummyService(TextMiningService):
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
         values = []
         for idx in range(limit):
-            entity_code = str(idx)
+            entity_code = f'{entity}_{idx}'
             count = int(idx*idx)
             co_occur = CoOccurrence(entity_code, count)
             values.append(co_occur)
@@ -29,3 +29,5 @@ if __name__ == '__main__':
     print("Using service {}".format(text_mining_service.name))
     publications = text_mining_service.get_mentions(["DOID:0000"])
     print(", ".join([p.pm_id for p in publications]))
+    cooccurrences = text_mining_service.get_co_occurrences('DOID:0000')
+    print(cooccurrences)
