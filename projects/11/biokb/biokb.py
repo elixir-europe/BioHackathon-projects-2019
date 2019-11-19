@@ -100,3 +100,10 @@ class BioKBservice(TextMiningService):
             co_occur = CoOccurrence(entity_code, count)
             values.append(co_occur)
         return values
+
+
+if __name__ == "__main__":
+    bkb = BioKBservice()
+    print(bkb.get_co_occurrences('DOID:2841'))
+    print('')
+    print(bkb.get_mentions(['DOID:2841', 'DOID:1205']))
