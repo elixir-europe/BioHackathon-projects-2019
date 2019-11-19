@@ -2,6 +2,7 @@ import logging
 from typing import List
 
 from interface.TextMiningService import TextMiningService, Publication
+from models.coocurrence import CoOccurrence
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +14,7 @@ class DummyService(TextMiningService):
     def get_mentions(self, entities: List, limit: int = 20) -> List[Publication]:
         return [Publication(pm_id="00000" + str(i)) for i in range(20)]
 
-    def get_co_occurrences(self, entity: str) -> List[str]:
+    def get_co_occurrences(self, entity: str, limit: int = 20) -> List[CoOccurrence]:
         pass
 
 
