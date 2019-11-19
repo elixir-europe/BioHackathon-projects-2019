@@ -18,13 +18,17 @@ class TextMiningService(metaclass=ABCMeta):
     
     @abstractmethod
     def getMentions(self, entities: List) -> List[Publication]:
+        """
+        Mentions at publication level
+        """
         pass
 
     @abstractmethod
     def getCoOccurrences(self, entity: str) -> List[str]:
+        """
+        Co-occurrences at publication level.
+
+        To-do: decide how to handle resources that can provide co-occurrences at sentence level
+        """
         pass
-
-
-    
-
 
