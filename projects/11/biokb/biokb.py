@@ -60,7 +60,7 @@ class BioKBservice(TextMiningService):
 
         return values
 
-    def get_co_occurrences(self, entity: str) -> List[CoOccurrence]:
+    def get_co_occurrences(self, entity: str, limit: int = 20) -> List[CoOccurrence]:
         entity = standarise_underscored_entity_code(entity)
         query = """
             select * where {
@@ -89,9 +89,8 @@ class BioKBservice(TextMiningService):
                 
                 GROUP BY ?other_entity 
 
-            } ORDER BY DESC(?count)
-        """.replace('%ENTITY', entity)
-
+            } ORDER BY DESC(?count) LIMIT %LIMIT%
+        """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit))
         results = self._run_sparql_query(query)
         values = []
         values = []
