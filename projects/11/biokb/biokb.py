@@ -53,9 +53,8 @@ class BioKBservice(TextMiningService):
         values = []
         for result in results['results']['bindings']:
             solr_id = result['solrId']['value']
-            publication_uri = result['publication']['value']
-            values.append(
-                {"solr_id": solr_id, "publication_uri": publication_uri})
+            pub = Publication(other_id=solr_id)
+            values.append(pub)
 
         return values
 
