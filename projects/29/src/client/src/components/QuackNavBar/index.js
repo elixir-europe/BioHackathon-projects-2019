@@ -1,1 +1,1 @@
-export {default as QuackNavbar} from './QuackNavBar';
+export {default as QuackNavBar} from './QuackNavBar';

@@ -1,5 +1,6 @@
 import React,{useReducer} from 'react';
-import QuackSearch from './pages/QuackSearch'
+import QuackSearch from './pages/QuackSearch';
+import QuackResults from './pages/QuackResults';
 import QuackContext from "./context";
 import reducer from "./reducer";
 import './App.css';
