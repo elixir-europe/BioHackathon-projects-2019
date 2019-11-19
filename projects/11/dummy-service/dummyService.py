@@ -14,7 +14,7 @@ class DummyService(TextMiningService):
     def get_mentions(self, entities: List, limit: int = 20) -> List[Publication]:
         return [Publication(pm_id="00000" + str(i)) for i in range(20)]
 
-    def get_co_occurrences(self, entity: str, limit: int = 20) -> List[CoOccurrence]:
+    def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = []) -> List[CoOccurrence]:
         pass
 
 
