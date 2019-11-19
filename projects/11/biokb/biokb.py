@@ -20,7 +20,7 @@ class MalformedQueryException(BioKBClientException):
 
 
 class BioKBservice(TextMiningService):
-    def __init__(self, sparql_url="https://biokb.lcsb.uni.lu/sparql"):
+    def __init__(self, sparql_url="http://10.240.6.71:8890/sparql"):
         self.sparql = SPARQLWrapper(sparql_url)
         self.sparql.setRequestMethod(POSTDIRECTLY)
         super().__init__('BioKB',
