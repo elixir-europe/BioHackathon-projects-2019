@@ -21,13 +21,13 @@ class LoadSamples(object):
                 data = json.load(json_file)
                 for record in data:
                     print(record['accession'])
-            # greeting = session.write_transaction(self._create_biosample, id)
+                    session.write_transaction(self._create_biosample,
+                                              record['accession'])
 
     @staticmethod
     def _create_biosample(tx, _id):
-        result = tx.run("CREATE (a:Greeting) "
-                        "SET a.message = $message "
-                        "RETURN a.message + ', from node ' + id(a)", id=_id)
+        tx.run("CREATE (b:Biosample) SET b.accession = $accession ",
+               accession=_id)
 
     def clear_graph(self):
         # self._driver.delete_all()
