@@ -25,7 +25,7 @@ class TextMiningService(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def get_co_occurrences(self, entity: str) -> List[str]:
+    def get_co_occurrences(self, entity: str) -> List[CoOccurrence]:
         """
         Co-occurrences at publication level.
 
