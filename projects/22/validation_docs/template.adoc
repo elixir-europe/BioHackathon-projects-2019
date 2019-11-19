@@ -1,0 +1,14 @@
+
+
+## Title: cyclic DERIVED_FROM relationships
+
+#### Description
+
+Checks if there are any cyclic relationships for DERIVED_FROM
+
+#### The test
+[source,cypher]
+----
+MATCH (a)-[:DERIVED_FROM*1..5]->(a) RETURN a
+----
+
