@@ -17,11 +17,11 @@ class TextMiningService(metaclass=ABCMeta):
         self.description = description
     
     @abstractmethod
-    def getMentions(entities: List) -> List[Publication]:
+    def getMentions(self, entities: List) -> List[Publication]:
         pass
 
     @abstractmethod
-    def getCoOccurrences(entity: str) -> List[str]:
+    def getCoOccurrences(self, entity: str) -> List[str]:
         pass
 
 
