@@ -9,6 +9,7 @@ class LoadSamples(object):
     def __init__(self, _uri, _user, _password, _json_path):
         self.json_path = _json_path
         self.accessions = list()
+        self.relationships = list()
         # Create driver instance and clean database
         self._driver = GraphDatabase.driver(_uri, auth=(_user, _password))
         self.clear_graph()
@@ -46,12 +47,29 @@ class LoadSamples(object):
                             session.write_transaction(
                                 self._create_biosample, relationship['target'],
                                 'Unknown', 'not FAANG')
+                        relationship_key = f"{relationship['source']}_" \
+                                           f"{relationship['type']}_" \
+                                           f"{relationship['target']}"
+                        if relationship_key not in self.relationships:
+                            self.relationships.append(relationship_key)
+                            session.write_transaction(self._add_relationship,
+                                                      relationship['source'],
+                                                      relationship['target'],
+                                                      relationship['type'])
 
     @staticmethod
     def _create_biosample(tx, _id, _material, _project):
         tx.run("CREATE (b:Biosample) SET b.accession = $accession, "
                "b.material = $material, b.project = $project ",
                accession=_id, material=_material, project=_project)
+
+    @staticmethod
+    def _add_relationship(tx, _source, _target, _relation_name):
+        name = ":" + "_".join(_relation_name.upper().split(" "))
+        tx.run(f"MATCH (a:Biosample),(b:Biosample) "
+               f"WHERE a.accession=$source AND b.accession=$target "
+               f"CREATE (a)-[{name}]->(b)",
+               source=_source, target=_target)
 
     def clear_graph(self):
         with self._driver.session() as session:
