@@ -1,12 +1,14 @@
-from typing import List
-from utils import uri_to_entity_code, standarise_underscored_entity_code
-from interface.TextMiningService import TextMiningService
-from models.publication import Publication
-from models.coocurrence import CoOccurrence
-from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
-from SPARQLWrapper.SPARQLExceptions import EndPointNotFound, EndPointInternalError, QueryBadFormed
-
 import logging
+from typing import List
+
+from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
+from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
+
+from interface.TextMiningService import TextMiningService
+from models.coocurrence import CoOccurrence
+from models.publication import Publication
+from .utils import uri_to_entity_code, standarise_underscored_entity_code
+
 logger = logging.getLogger(__name__)
 
 
@@ -18,7 +20,7 @@ class MalformedQueryException(BioKBClientException):
     pass
 
 
-class BioKBservice(TextMiningService):
+class BioKBService(TextMiningService):
     def __init__(self, sparql_url="http://10.240.6.71:8890/sparql"):
         self.sparql = SPARQLWrapper(sparql_url)
         self.sparql.setRequestMethod(POSTDIRECTLY)
@@ -99,7 +101,8 @@ class BioKBservice(TextMiningService):
                 GROUP BY ?other_entity 
 
             } ORDER BY DESC(?count) LIMIT %LIMIT%
-        """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit)).replace('%ENTITY_TYPE_FILTER%', entity_types_filter)
+        """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit)).replace('%ENTITY_TYPE_FILTER%',
+                                                                               entity_types_filter)
         results = self._run_sparql_query(query)
         values = []
         values = []
@@ -112,9 +115,9 @@ class BioKBservice(TextMiningService):
 
 
 if __name__ == "__main__":
-    bkb = BioKBservice()
+    bkb = BioKBService()
     print(bkb.get_co_occurrences('DOID:2841', types=[
-          'http://lcsb.uni.lu/biokb#Disease']))
+        'http://lcsb.uni.lu/biokb#Disease']))
     print('')
     print(bkb.get_co_occurrences('DOID:2841'))
     print('')
