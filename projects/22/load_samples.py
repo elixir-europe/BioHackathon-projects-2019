@@ -30,8 +30,12 @@ class LoadSamples(object):
                accession=_id)
 
     def clear_graph(self):
-        # self._driver.delete_all()
-        pass
+        with self._driver.session() as session:
+            session.write_transaction(self._delete_all)
+
+    @staticmethod
+    def _delete_all(tx):
+        tx.run("MATCH (n) DETACH DELETE n")
 
 
 if __name__ == "__main__":
