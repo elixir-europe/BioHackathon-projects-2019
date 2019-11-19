@@ -17,15 +17,15 @@
 ### Lead(s)
 
 - Ryota Yamanaka
- Shota Matsumoto
- Hirokazu Chiba
- Ramona Röß
+- Shota Matsumoto
+- Hirokazu Chiba
+- Ramona Röß
 
 ### Nominated participant(s)
 
 - Shota Matsumoto (Japan)
- Ramona Röß (Germany)
- Ryota Yamanaka (Thailand)
+- Ramona Röß (Germany)
+- Ryota Yamanaka (Thailand)
 
 ## Expected outcomes
 
@@ -37,8 +37,8 @@
 ## Expected audience
 
 - programmers (JavaScript, SPARQL, graph query languages)
- ontologists, data modelers (RDF, property graph)
- data analysts, algorithm developers (graph algorithms, machine learning)
+- ontologists, data modelers (RDF, property graph)
+- data analysts, algorithm developers (graph algorithms, machine learning)
 
 **Number of expected hacking days**: 4
 
