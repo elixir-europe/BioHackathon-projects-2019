@@ -34,10 +34,7 @@
 6. **bio.tools subdomains** (discussion) more flexible / sustainable ways to define *bio.tools* subdomain content
 
 
-
-
-
-## Expected outcomes
+## Original plans
 
 At least a couple of the following:
 
