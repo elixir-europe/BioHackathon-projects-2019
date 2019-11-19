@@ -110,6 +110,9 @@ class BioKBservice(TextMiningService):
 
 if __name__ == "__main__":
     bkb = BioKBservice()
+    print(bkb.get_co_occurrences('DOID:2841', types=[
+          'http://lcsb.uni.lu/biokb#Disease']))
+    print('')
     print(bkb.get_co_occurrences('DOID:2841'))
     print('')
     print(bkb.get_mentions(['DOID:2841', 'DOID:1205']))
