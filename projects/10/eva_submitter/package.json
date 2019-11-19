@@ -1,0 +1,11 @@
+{
+  "name": "eva_submitter",
+  "version": "1.0.0",
+  "description": "a tool for submitting data to eva",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
