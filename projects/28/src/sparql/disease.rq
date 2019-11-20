@@ -1,0 +1,11 @@
+# Get diseases from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT * WHERE {
+    ?disease wdt:P31 wd:Q12136 ; # instance of disease
+             rdfs:label ?label .
+    FILTER(lang(?label) = "en")
+}
