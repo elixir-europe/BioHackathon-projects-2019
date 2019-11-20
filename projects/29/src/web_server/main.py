@@ -23,7 +23,7 @@ def query(doi: str = None):
 
 @app.get('/api/v1/query')
 def query(q: str = None, page: int = 1):
-    res = execute_query({q: q})
+    res = execute_query({"q": q})
     #pagination = Pagination(
     #page=page, page_parameter=page, per_page_parameter=10, found=len(res), total=get_total_papers(),
     #record_name='papers', format_total=True, format_number=True,
