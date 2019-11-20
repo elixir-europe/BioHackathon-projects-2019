@@ -1,0 +1,12 @@
+## Title: "ebi equivalent biosamples" relationships
+
+#### Description
+
+Checks that 'source' of 'ebi equivalent biosamples' relationship has a material
+that is equal to  a material of 'target' or 'source' nas 'Unknown' material
+
+#### Query
+[source,cypher]
+----
+MATCH (a:Biosample)-[r:EBI_EQUIVALENT_BIOSAMPLE]->(b:Biosample) WHERE NOT ((a.material=b.material) OR (a.material='Unknown')) RETURN a.accession, b.accession
+----

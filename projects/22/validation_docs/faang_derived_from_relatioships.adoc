@@ -1,15 +1,3 @@
-## Title: cyclic "derived from" relationships
-
-#### Description
-
-Checks if there are any cyclic relationships for "derived from"
-
-#### Query
-[source,cypher]
-----
-MATCH (a:Sample)-[:DERIVED_FROM*1..5]->(a:Sample) RETURN a
-----
-
 ## Title: specimen from organism "derived from" relationships
 
 #### Description
@@ -62,30 +50,3 @@ Checks that 'source' of 'derived from' relationship has a material
 ----
 MATCH (a:Biosample)-[r:DERIVED_FROM]->(b:Biosample) WHERE a.material='cell culture' AND NOT (b.material='specimen from organism' OR b.material='cell specimen') RETURN a.accession, b.accession
 ----
-
-## Title: "ebi equivalent biosamples" relationships
-
-#### Description
-
-Checks that 'source' of 'ebi equivalent biosamples' relationship has a material
-that is equal to  a material of 'target' or 'source' nas 'Unknown' material
-
-#### Query
-[source,cypher]
-----
-MATCH (a:Biosample)-[r:EBI_EQUIVALENT_BIOSAMPLE]->(b:Biosample) WHERE NOT ((a.material=b.material) OR (a.material='Unknown')) RETURN a.accession, b.accession
-----
-
-## Title: "same as" relationships
-
-#### Description
-
-Checks that 'source' of 'same as' relationship has a material
-that is equal to  a material of 'target' or 'target' nas 'Unknown' material
-
-#### Query
-[source,cypher]
-----
-MATCH (a:Biosample)-[r:SAME_AS]->(b:Biosample) WHERE NOT ((a.material=b.material) OR (b.material='Unknown')) RETURN a.accession, b.accession
-----
-

@@ -39,6 +39,8 @@ class LoadSamples(object):
                 data = json.load(json_file)
                 for record in data:
                     for relationship in record['relationships']:
+                        if relationship['type'] == 'has member':
+                            continue
                         if relationship['source'] not in self.accessions:
                             session.write_transaction(
                                 self._create_biosample, relationship['source'],
