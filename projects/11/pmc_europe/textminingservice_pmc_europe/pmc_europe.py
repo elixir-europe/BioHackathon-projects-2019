@@ -31,7 +31,7 @@ class PMC_Europe_Service(TextMiningService):
         super().__init__('PCM Europe',
                          'This client communicates with PCM Europe API.')
 
-    def _get_single_entity_mentions(self, entity: str):
+    def _get_single_entity_mentions(self, entity: str, pageSize: int = None):
         """
         Generator that yields each article and article id that mentions the given entity
 
@@ -39,14 +39,20 @@ class PMC_Europe_Service(TextMiningService):
 
         The articles come up sorted by number of mentions
         """
+        if pageSize is None:
+            pageSize = PMC_Europe_Service.MAX_PAGE_SIZE
+
         prevCursorMark = -1
         cursorMark = 0
         counter = 0
         while cursorMark != prevCursorMark:
             url = PMC_Europe_Service.MENTION_URL.format(
-                entity, 1, 'ID_LIST', cursorMark, PMC_Europe_Service.MAX_PAGE_SIZE)
+                entity, 1, 'ID_LIST', cursorMark, pageSize)
+            logger.info(
+                f'{datetime.datetime.now()} Getting {counter} to {counter+pageSize}')
             results = requests.get(url)
             assert results.ok
+            logger.info(f'{datetime.datetime.now()} Ok')
             data = json.loads(results.content.decode().strip())
             prevCursorMark = cursorMark
             cursorMark = data['nextCursorMark']
@@ -86,73 +92,90 @@ class PMC_Europe_Service(TextMiningService):
 
         return new_article_list, new_white_list
 
-    def get_mentions_alt(self, entities: List[str], limit: int = 20) -> List[Publication]:
+    def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        if len(entities) == 1:
+            pageSize = min(limit+1, PMC_Europe_Service.MAX_PAGE_SIZE)
+            generator = self._get_single_entity_mentions(
+                entities[0], pageSize=pageSize)
+            publications = []
+            for article, _ in generator:
+                if len(publications) == limit:
+                    return publications
+                else:
+                    publications.append(Publication(
+                        pm_id=article['extId'], pmc_id=article['pmcid']))
+        else:
+            # raise NotImplementedError
+            # once PMC is fast enough to deal with multiple entities, use either the following line
+            # or _get_mentions_for_single_entity which can also be used with multiple entities
+            return self._get_mentions_for_multiple_entities(entities, limit=limit)
 
-        types = ['Gene_Proteins',
-                 'Organisms',
-                 'Chemicals',
-                 'Gene Ontology',
-                 'Diseases',
-                 'Accession Numbers',
-                 'Resources',
-                 'Gene Function',
-                 'Gene Disease',
-                 'Protein Interaction',
-                 'Biological Event',
-                 'Gene Mutations',
-                 'TF_TG',
-                 'Cell Line',
-                 'Cell',
-                 'Sequence',
-                 'Organ Tissue',
-                 'Molecular Process',
-                 'Clinical Drug']
-
-        # normalize
+    def _get_mentions_for_multiple_entities(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        """
+        Method for multiple entities retrieval. It's slow but a bit faster than _get_mentions_for_single_entity if there is a limit.
+        """
         entities = list(map(str.lower, entities))
         first_entity = entities[0]
         rest_of_entities = entities[1:]
 
+        if len(rest_of_entities) == 0:
+            pageSize = min(PMC_Europe_Service.MAX_PAGE_SIZE, limit)
+        else:
+            pageSize = PMC_Europe_Service.MAX_PAGE_SIZE
+
         prevCursorMark = -1
         cursorMark = 0
-        counter = 0
-        while cursorMark != prevCursorMark:
-            print(f'get {counter}')
+        total_counter = 0
+        yielded_counter = 0
+        publications = []
+        scores = []
+        while cursorMark != prevCursorMark and len(publications) < limit:
             url = PMC_Europe_Service.MENTION_URL.format(
-                first_entity, 0, 'JSON', cursorMark, PMC_Europe_Service.MAX_PAGE_SIZE)
+                first_entity, 0, 'JSON', cursorMark, pageSize)
+            logger.info(
+                f'{datetime.datetime.now()} Getting {total_counter} to {total_counter+pageSize}')
             results = requests.get(url)
             assert results.ok
+            logger.info(f'{datetime.datetime.now()} Ok')
             data = json.loads(results.content.decode().strip())
             prevCursorMark = cursorMark
             cursorMark = data['nextCursorMark']
             for article in data['articles']:
-                article_id = article['extId']
                 bool_table = dict(
-                    zip(rest_of_entities, [False]*len(rest_of_entities)))
-                counter += 1
+                    zip(rest_of_entities, [0]*len(rest_of_entities)))
+                total_counter += 1
                 for annotation in article['annotations']:
                     other_entity = annotation['exact'].lower()
                     # check if this entity is what we look for
                     if other_entity in bool_table:
-                        bool_table[other_entity] = True
+                        bool_table[other_entity] += 1
                 # if the article includes all entities, then
                 if all(bool_table.values()):
-                    yield article, article['extId']
+                    yielded_counter += 1
+                    pub = Publication(pm_id=article_id,
+                                      pmc_id=article['pmcid'])
+                    publications.append(pub)
+                    scores.append(sum(bool_table.values()))
 
-    def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        publications = np.array(publications)
+        scores = np.array(scores)
+        inds = scores.argsort()[::-1]
+        return publications[inds]
+
+    def _get_mentions_for_single_entity(self, entities: List[str], limit: int = 20) -> List[Publication]:
         """
         This method returns a list of publications sorted by importance.
-        Since PMC Europe sorts the publications based on the number of occurrences, 
+        Since PMC Europe sorts the publications based on the number of occurrences,
          this new score could be seen as the degree of co-occurrence.
 
-         Right now this does not work well because the pageSize is to small, hence the mentions retrieval time is too slow
+        It works well for single entity pub mention retrieval.
+        Right now this does not work well for multiple entities because the pageSize is too small and PMC resource is too slow, hence the mentions retrieval time is too slow.
         """
         white_list = None
         article_list = []
         for entity in entities:
             article_list, white_list = self._incremental_intersection(
                 entity, white_list=white_list)
-            print(article_list)
         # last iteration contains the final intersection
         scores = []
         publications = []
