@@ -190,6 +190,14 @@
       container: $('#cy')
     });
 
+   cy.on('tap', 'node', function(){
+    try { // your browser may block popups
+        window.open( this.data('uri') );
+    } catch(e){ // fall back on url change
+        window.location.href = this.data('uri');
+    }
+    });
+
     tryPromise( applyDatasetFromSelect ).then( applyStylesheetFromSelect ).then( applyLayoutFromSelect );
 
     $dataset.addEventListener('change', function(){
@@ -206,15 +214,10 @@
 
     $('#redo-algorithm').addEventListener('click', applyAlgorithmFromSelect);
   });
+
+
 })();
 
-cy.on('tap', 'node', function(){
-  try { // your browser may block popups
-    window.open( this.data('uri ') );
-  } catch(e){ // fall back on url change
-    window.location.href = this.data('href');
-  }
-});
 
 
 // tooltips with jQuery

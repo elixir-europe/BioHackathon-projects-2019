@@ -1,186 +1,496 @@
-[
-	{
-    "data": {
-      "id": "0",
-      "uri": 1,
-      "name": "Group of Input entities (Entity 1 \\n Entity2)",
-      "query": true,
-      "gene": true
-    },
-    "group": "nodes",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": "fn6935"
-  },
-  {
-    "data": {
-      "id": "2",
-      "uri": 2,
-      "name": "PMC463212",
-      "query": false,
-      "gene": true
-    },
-    "group": "nodes",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": "fn6935"
-  },
-	{
-    "data": {
-      "id": "3",
-      "uri": 3,
-      "name": "PMC463213",
-      "query": false,
-      "gene": true
-    },
-    "group": "nodes",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": "fn6935"
-  },
-	{
-    "data": {
-      "id": "4",
-      "uri": 4,
-      "name": "PMC463214",
-      "query": false,
-      "gene": true
-    },
-    "group": "nodes",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": "fn6935"
-  },
-	{
-    "data": {
-      "id": "5",
-      "uri": 5,
-      "name": "PMC463215",
-      "query": false,
-      "gene": true
-    },
-    "group": "nodes",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": "fn6935"
-  },
-	{
-    "data": {
-      "id": "6",
-      "uri": 6,
-      "name": "PMC463216",
-      "query": false,
-      "gene": true
-    },
-    "group": "nodes",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": "fn6935"
-  },
-  {
-    "data": {
-      "source": "0",
-      "target": "2",
-      "networkId": 1133,
-      "networkGroupId": 18,
-      "intn": true,
-      "id": "e1"
-    },
-    "position": {},
-    "group": "edges",
-    "removed": false,
-    "selected": false,
-    "selectable": true,
-    "locked": false,
-    "grabbable": true,
-    "classes": ""
-  },
-	{
-		"data": {
-			"source": "0",
-			"target": "3",
-			"networkId": 1133,
-			"networkGroupId": 18,
-			"intn": true,
-			"id": "e2"
-		},
-		"position": {},
-		"group": "edges",
-		"removed": false,
-		"selected": false,
-		"selectable": true,
-		"locked": false,
-		"grabbable": true,
-		"classes": ""
+[{
+	"data": {
+		"id": "0",
+		"uri": "",
+		"name": "DOID:10652, DOID:10935",
+		"query": true,
+		"gene": true
 	},
-	{
-		"data": {
-			"source": "0",
-			"target": "4",
-			"networkId": 1133,
-			"networkGroupId": 18,
-			"intn": true,
-			"id": "e3"
-		},
-		"position": {},
-		"group": "edges",
-		"removed": false,
-		"selected": false,
-		"selectable": true,
-		"locked": false,
-		"grabbable": true,
-		"classes": ""
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "1",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/27834145",
+		"name": "27834145",
+		"query": true,
+		"gene": true
 	},
-	{
-		"data": {
-			"source": "0",
-			"target": "5",
-			"networkId": 1133,
-			"networkGroupId": 18,
-			"intn": true,
-			"id": "e4"
-		},
-		"position": {},
-		"removed": false,
-		"selected": false,
-		"selectable": true,
-		"locked": false,
-		"grabbable": true,
-		"classes": ""
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "2",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/29980548",
+		"name": "29980548",
+		"query": true,
+		"gene": true
 	},
-	{
-		"data": {
-			"source": "0",
-			"target": "6",
-			"networkId": 1133,
-			"networkGroupId": 18,
-			"intn": true,
-			"id": "e5"
-		},
-		"position": {},
-		"removed": false,
-		"selected": false,
-		"selectable": true,
-		"locked": false,
-		"grabbable": true,
-		"classes": ""
-	}
-]
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "3",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/30997705",
+		"name": "30997705",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "4",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/29123402",
+		"name": "29123402",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "5",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/28659979",
+		"name": "28659979",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "6",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/30194318",
+		"name": "30194318",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "7",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/29031088",
+		"name": "29031088",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "8",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/30253809",
+		"name": "30253809",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "9",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/28217169",
+		"name": "28217169",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "10",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/29034195",
+		"name": "29034195",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "11",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/26973523",
+		"name": "26973523",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "12",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/27348599",
+		"name": "27348599",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "13",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/29312089",
+		"name": "29312089",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "14",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/29674970",
+		"name": "29674970",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"id": "15",
+		"uri": "https://www.ncbi.nlm.nih.gov/pubmed/30271035",
+		"name": "30271035",
+		"query": true,
+		"gene": true
+	},
+	"group": "nodes",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": "fn6935"
+}, {
+	"data": {
+		"source": "0",
+		"target": "1",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-1"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "2",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-2"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "3",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-3"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "4",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-4"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "5",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-5"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "6",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-6"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "7",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-7"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "8",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-8"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "9",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-9"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "10",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-10"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "11",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-11"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "12",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-12"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "13",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-13"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "14",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-14"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}, {
+	"data": {
+		"source": "0",
+		"target": "15",
+		"networkId": 1133,
+		"networkGroupId": 18,
+		"intn": true,
+		"id": "0-15"
+	},
+	"position": {},
+	"group": "edges",
+	"removed": false,
+	"selected": false,
+	"selectable": true,
+	"locked": false,
+	"grabbable": true,
+	"classes": ""
+}]
