@@ -1,12 +1,11 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import QuackNavBarLogo from './QuackNavBarLogo';
 import styled from 'styled-components';
-import QuackNavbarSearch from "./QuackNavbarSearch";
 import QuackBasket from './QuackBasket';
-
+import QuackContext from "../../context";
 
 const NavBar = styled.div`
-    height: 4rem;
+    height: 5rem;
     border-bottom: solid 4px;
     border-color: black;
     display: flex;
@@ -23,25 +22,33 @@ const Start = styled.div`
     justify-content: flex-start;
 `
 
+const Middle = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+`
 const End = styled.div`
     justify-content: End;
     margin-right: 1rem;
-`
-
-const Img = styled.img`
-    height: 2.5rem;
-    padding-top:0.5rem;
+    margin-top: 0.5rem;
 `
 
 
-const QuackNavBar = ({query, happyCount}) => {
+const QuackNavBar = () => {
+    const {state} = useContext(QuackContext);
+
     return (
         <NavBar>
             <Start>
                 <QuackNavBarLogo/>
             </Start>
+            <Middle>
+                <b>your query:</b>
+                <em>{state.query}</em>
+            </Middle>
             <End>
-                <QuackBasket count={happyCount} />
+                <QuackBasket/>
             </End>
         </NavBar>
     );
