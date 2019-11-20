@@ -1,3 +1,5 @@
+branches:
+  only: 11-text-mining-sw
 language: python
 sudo: required
 python:
