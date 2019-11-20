@@ -83,7 +83,17 @@ def main(fname_in, fname_out):
 
     df = df[df['variable'].isin(concept_variables)]
 
-    # df = df.iloc[:10]
+    # df = df.sample(1_000)
+
+    # only consider papers with enough concepts
+    doi_selection = (df.groupby('id:ID')
+                       .count()['value']
+                       .to_frame()
+                       .query('value >= 1')
+                       .index)
+    df = df[df['id:ID'].isin(doi_selection)]
+
+    analyze_data(df)
 
     # encode features
     logger.info(f'Encode features (raw-shape: {df.shape})')
