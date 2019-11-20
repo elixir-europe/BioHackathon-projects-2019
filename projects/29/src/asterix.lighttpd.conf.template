@@ -16,9 +16,10 @@ server.modules += ( "mod_rewrite" )
 url.rewrite-once = (
     "^(/favicon.ico|/robots.txt)$" => "/static/$1",
     "^(/static($|/.*))$" => "$1",
-    "^(/asterix.scgi(/static($|/.*)))$" => "$2",
-    "^(/asterix.scgi($|/.*)?)$" => "$1",
-    "^(/.*)$" => "/asterix.scgi$1"
+    "^(/(asterix.scgi|seal)(/static($|/.*)))$" => "$3",
+#    "^(/asterix.scgi($|/.*)?)$" => "$1",
+#    "^(/.*)$" => "/asterix.scgi$1"
+    "^(/seal($|/.*))$" => "/asterix.scgi$2"
 )
 
 server.modules   += ( "mod_alias" )

@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axiom": "^0.1.6",
     "bulma": "^0.8.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-filter-box": "^3.3.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^3.8.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-toastify": "^5.4.1",
     "styled-components": "^4.4.1"
   },
   "scripts": {
