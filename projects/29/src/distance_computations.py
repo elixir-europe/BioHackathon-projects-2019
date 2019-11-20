@@ -1,106 +1,111 @@
-"""Compute pairwise distances between nodes in Neo4J database."""
+"""Compute pairwise distances between nodes in Neo4J database.
+
+Neo4j cheatsheet:
+    * List all nodes:
+        MATCH (n) RETURN n, properties(n)
+
+    * Delete all nodes and relationships:
+        MATCH (n) DETACH DELETE n
+
+    * Delete only relationships:
+        MATCH ()-[r]->() DELETE r
+"""
+
+import sys
 
 import numpy as np
 import pandas as pd
 from scipy.spatial import distance
 
+import category_encoders as ce
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from neo4j import GraphDatabase
+import sh
+from loguru import logger
 
 
-class Neo4jWrapper:
-    """
-    MATCH (n)
-    DETACH DELETE n
-    """
-    def __init__(self, uri, user, password):
-        self._driver = GraphDatabase.driver(uri, auth=(user, password))
-
-    @staticmethod
-    def _exec(cypher_cmd):
-        """Return transaction function for given Cypher command."""
-        return lambda tx, **kwargs: tx.run(
-            cypher_cmd, **kwargs
-        ).value()
-
-    def get_nodes(self):
-        cypher_cmd = 'MATCH (n) RETURN n, properties(n)'
-        with self._driver.session() as session:
-            return session.read_transaction(self._exec(cypher_cmd))
-
-    def create_relationship(self, node1, node2, prop):
-        """Note: must be directed by Neo4j design."""
-        cypher_cmd = '''
-            MATCH (a:Person), (b:Person)
-            WHERE a.name = $node1 AND b.name = $node2
-            CREATE (a)-[r:distance { value: $prop }]->(b)
-            RETURN type(r), r.name
-        '''
-
-        with self._driver.session() as session:
-            return session.read_transaction(
-                self._exec(cypher_cmd),
-                node1=node1, node2=node2, prop=prop
-            )
-
-
-def compute_distances(nodes):
-    """Compute pairwise distances between all nodes."""
-    concept_keys = [
-        'hasTopic',
-        'containsOperation',
-        'containsDataFormat',
-        'containsData'
-    ]
-    all_concepts = list({x
-                         for n in nodes
-                         for key in concept_keys
-                         for x in n[key].split('|')})
-    mat = np.zeros(shape=(len(nodes), len(all_concepts)))
-
-    # compute feature vectors
-    for i, n in enumerate(nodes):
-        cur_concepts = [x
-                        for key in concept_keys
-                        for x in n[key].split('|')]
-        for x in cur_concepts:
-            mat[i, all_concepts.index(x)] = 1
-    df_mat = pd.DataFrame(
-        mat,
-        columns=all_concepts,
-        index=[n['doi'] for n in nodes]
-    )
-
-    # compute distances
-    dists = distance.squareform(distance.pdist(
-        df_mat,
-        metric='jaccard'
-    ))
-    df_dists = pd.DataFrame(
-        dists,
-        columns=df_mat.index,
-        index=df_mat.index
-    )
-
+def analyze_distances(df_dists):
     # analyse results
     sub_idx = np.random.randint(
-        0, df_mat.index.size,
+        0, df_dists.index.size,
         size=1000)
     df_sub = df_dists.iloc[sub_idx, sub_idx]
-    sns.clustermap(df_sub)
-    plt.show()
 
-    # df.idxmin(axis=0)
-    # tmp = {n['doi']: n for n in nodes}
+    g = sns.clustermap(df_sub, rasterized=True)
+    g.savefig('distances.pdf')
 
 
-def main():
-    wrapper = Neo4jWrapper(xxx)
-    nodes = wrapper.get_nodes()
-    res = compute_distances(nodes)
+def main(fname_in, fname_out):
+    # read data
+    logger.info('Read data')
+    df = pd.read_csv(fname_in)
+    # df.drop_duplicates(inplace=True)
+
+    concept_variables = ['containsData:string']
+    df = df[df['variable'].isin(concept_variables)]
+
+    # df = df.iloc[:10]
+
+    # encode features
+    logger.info('Encode features')
+    ohe = ce.OneHotEncoder(handle_unknown='error', use_cat_names=True)
+
+    df_trans = (ohe.fit_transform(df.set_index('id:ID')['value'])
+                   .reset_index()
+                   .groupby('id:ID')
+                   .sum())
+
+    # compute distances
+    logger.info('Compute distances')
+    df_dists = pd.DataFrame(
+        distance.squareform(distance.pdist(
+            df_trans,
+            metric='jaccard')),
+        columns=df_trans.index,
+        index=df_trans.index)
+
+    analyze_distances(df_dists)
+
+    # extract relationships
+    logger.info('Extract relationships')
+    keep = (np.triu(np.ones(df_dists.shape), k=1)
+              .astype('bool')
+              .reshape(df_dists.size))
+    tmp = df_dists.stack()[keep]
+
+    tmp.index.rename([':START_ID', ':END_ID'], inplace=True)
+    tmp.name = 'value:FLOAT'
+
+    df_edges = tmp.reset_index()
+    df_edges[':TYPE'] = 'distance'
+
+    df_edges[df_edges['value:FLOAT'] < 1]
+
+    df_edges.to_csv(fname_out, index=False)
+
+    # recreate Neo4j database
+    logger.info('Recreate Neo4j database')
+
+    node_file = 'node_tmp.csv'
+    (df['id:ID'].drop_duplicates()
+                .to_frame()
+                .to_csv(node_file, index=False))
+
+    sh.neo4j('stop')
+    sh.rm('-rf', '/usr/local/var/neo4j/')  # reset database
+
+    sh.Command('neo4j-admin')(
+        'import',
+        '--mode=csv',
+        '--nodes', node_file,
+        '--relationships', fname_out,
+        _out=sys.stdout, _err=sys.stderr)
+
+    sh.neo4j('start')
+    logger.info('Done')
 
 
 if __name__ == '__main__':
-    main()
+    main('node_file.csv', 'edge_file.csv')
