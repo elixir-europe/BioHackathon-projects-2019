@@ -2,6 +2,19 @@
 
 **Project Number:** 15
 
+## Orphanet DEV environnement links (not public, need VPN)
+Nb: JSON-LD is displayed in the page to show it (=> will be put into script)
+Nb: real implementation will need a new constructor within the framework engine (to optimize integration)
+Nb: it works (=> possible to search different drugs, tradename, genes...)
+
+Tradename example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Drugs_Search.php?lng=EN&data_id=2583&Substance=VINCERINONE&Typ=Med&title=VINCERINONE&data_type=Product)
+
+Drugs example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Drugs_Search.php?lng=EN&data_id=2082&Tradename=Alpha-tocotrienol-quinone&Typ=Sub&title=Alpha-tocotrienol%20quinone&data_type=Product)
+
+Gene example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Disease_Genes.php?lng=EN&data_id=20738&Disease_Disease_Genes_diseaseGroup=brca1&Disease_Disease_Genes_diseaseType=Gen&MISSING%20CONTENT=BRCA1-associated-protein-1---BAP1&search=Disease_Genes_Simple&title=BRCA1%20associated%20protein%201%20-%20BAP1)
+
+
+
 ## Research area alignment
 
 - Elxir Core Data Resources
