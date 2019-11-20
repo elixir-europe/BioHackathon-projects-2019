@@ -118,7 +118,7 @@ https://neo4j.com/download/neo4j-desktop/?edition=desktop
       
 - For neo4j running in docker:
    
-  `cp data/* $HOME/neo4j/data/import`
+  `cp data/* $HOME/neo4j/import`
 
 ### First connection to the database server
 1. Visit http://127.0.0.1:7474/browser/ in your browser and log in with the default credentials:
@@ -130,10 +130,17 @@ https://neo4j.com/download/neo4j-desktop/?edition=desktop
 2. Set a new password upon being prompted to do so
    
 ### Import the data
-From inside the cloned repo folder run:
-   
-`sh run_create_db.sh`
+Find the file `run_create_db.sh` inside the cloned repo folder, and:
 
-Building the database should take ~ 1 minute.
+1. Edit it to use
+   - the password you set for your database account
+   - the paths to the CSV data files in the neo4j import directory (see above)
+   
+2. From inside the cloned repo folder run:
+   
+   `sh run_create_db.sh`
+
+Building the database should take < 1 minute with an OS package manager-installed neo4j
+(expect 1-5 minutes with the less performant docker version).
 
 After that go back to the neo4j web interface and **start exploring**!
