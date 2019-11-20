@@ -21,25 +21,17 @@ def get_properties():
         return {"values": [(record["r"]) for record in value.records()]}
 
 def print_publications_simple(tx, doi):
-    #return tx.run("MATCH (n1 {id: 'http://identifiers.org/doi/10.1101/476457'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #print("MATCH (n1 {doi: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
     return tx.run("MATCH (n1 {doi: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #return tx.run("MATCH (n1 {id: '$doi'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25", doi=doi)
 
 
 def print_publications(tx, where):
-    #return tx.run("MATCH (n1 {id: 'http://identifiers.org/doi/10.1101/476457'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #print("MATCH (n1 {id: " + doi + "})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
     print("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 25")
     return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 25")
-    #return tx.run("MATCH (n1 {id: '$doi'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25", doi=doi)
 
 
 def execute_cypher_simple(query):
     with driver.session() as session:
         value = session.read_transaction(print_publications_simple, query)
-        #print(list(value.records()))
-        #print([record["r"] for record in value.records()])
         return {"values": [(record["r"], record["n2"]) for record in value.records()]}
 
 def test():
@@ -66,7 +58,6 @@ def category_builder(query_array):
             elif item["operator"] == "!contains":
                 operator = "CONTAINS"
                 TMP += "NOT (" + 'n1.' + item["category"] + ' ' + operator + " " + value + ")"
-        
         if "expressions" in item:
             TMP += "(" + category_builder(item["expressions"]) + ")"
     return TMP
@@ -77,4 +68,4 @@ def execute_cypher(query_array):
         value = session.read_transaction(print_publications, category_builder(query_array))
         #print(list(value.records()))
         #print([record["r"] for record in value.records()])
-        return {"values": [(record["r"], record["n2"]) for record in value.records()]}
+        return {"values": [(record["n1"], record["r"], record["n2"]) for record in value.records()]}
