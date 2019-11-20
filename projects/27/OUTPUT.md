@@ -18,5 +18,7 @@
 # Wednesday 2019-11-20
 
 * [schymane](https://github.com/schymane/) fixed legacy [MassBank-data](https://github.com/schymane/MassBank-data) repo issues resulting from dev branch creation after forking with the help of [meier-rene](https://github.com/meier-rene) to do long overdue curation of [CASMI2016 spectra](https://github.com/MassBank/MassBank-data/pull/101).
-* PubChemLite benchmark running for Eawag QExPlus data.
+* PubChemLite benchmarking completed for Eawag QExPlus and UFZ data (i.e. all intended datasets at this point).
 * fixed two issues in the rWikiPathways package, after discussions with the Debian Med team (Andreas Tille)
+* [NORMAN Suspect List Exchange](https://www.norman-network.com/nds/SLE/) upload feedback to Jeff from PubChem including error fixing my side on [Zenodo-SLE](https://zenodo.org/communities/norman-sle)$
+* PubChemLite [tier0 and tier1](https://doi.org/10.5281/zenodo.3548654) released on Zenodo DOI: [10.5281/zenodo.3548654](https://doi.org/10.5281/zenodo.3548654) and [pushed to MetFrag](https://github.com/sneumann/container-metfrag/pull/5)
