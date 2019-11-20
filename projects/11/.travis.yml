@@ -1,0 +1,18 @@
+language: python
+sudo: required
+python:
+  - "3.7"
+before_install:
+  - sudo apt-get install python3-pip
+  - sudo pip3 install virtualenv 
+install:
+  #install all modules
+  - virtualenv env 
+  - source env/bin/activate
+  - find . -name "setup.py" -maxdepth 2 | sed 's|/setup.py||g' | xargs pip install -e
+script:
+  - python biokb/textminingservice_biokb/biokb.py
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: always # default: always
