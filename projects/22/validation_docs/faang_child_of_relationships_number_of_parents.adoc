@@ -1,0 +1,11 @@
+## Title: "child of" relationships, checks for parents
+
+#### Description
+
+Checks that 'source' of 'child of' relationship has two parents as maximum
+
+#### Query
+[source,cypher]
+----
+MATCH (a)-[r:CHILD_OF]->(b) WITH a, b, count(*) as cnt WHERE cnt>2 RETURN a.accession
+----
