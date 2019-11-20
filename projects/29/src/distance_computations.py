@@ -48,14 +48,23 @@ class Neo4jWrapper:
 
 def compute_distances(nodes):
     """Compute pairwise distances between all nodes."""
+    concept_keys = [
+        'hasTopic',
+        'containsOperation',
+        'containsDataFormat',
+        'containsData'
+    ]
     all_concepts = list({x
                          for n in nodes
-                         for x in [*n['containsOperation'].split(','), *n['containsDataFormat'].split(',')]})
+                         for key in concept_keys
+                         for x in n[key].split('|')})
     mat = np.zeros(shape=(len(nodes), len(all_concepts)))
 
     # compute feature vectors
     for i, n in enumerate(nodes):
-        cur_concepts = n['containsOperation'].split(',') + n['containsDataFormat'].split(',')
+        cur_concepts = [x
+                        for key in concept_keys
+                        for x in n[key].split('|')]
         for x in cur_concepts:
             mat[i, all_concepts.index(x)] = 1
     df_mat = pd.DataFrame(
