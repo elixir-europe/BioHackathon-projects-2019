@@ -7,7 +7,10 @@ class Publication:
         self.year = year
         self.journal_title = journal_title
         self.pmc_id = pmc_id
-        self.pm_id = str(pm_id)  # pubmed_id
+        if pm_id is not None:
+            self.pm_id = str(pm_id)  # pubmed_id
+        else:
+            self.pmc_id = None
         self.doi = doi
         self.preprint_id = preprint_id
         self.other_id = other_id
