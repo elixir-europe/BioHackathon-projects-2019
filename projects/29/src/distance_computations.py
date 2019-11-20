@@ -74,14 +74,15 @@ def compute_distances(nodes):
     )
 
     # compute distances
+    sub = df_mat.sample(2000)
     dists = distance.squareform(distance.pdist(
-        df_mat.iloc[:100,:],
+        sub,
         metric='jaccard'
     ))
     df_dists = pd.DataFrame(
         dists,
-        columns=[n['doi'] for n in nodes][:100],
-        index=[n['doi'] for n in nodes][:100]
+        columns=sub.index,
+        index=sub.index
     )
 
     # analyse results
