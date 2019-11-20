@@ -23,6 +23,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 import sh
+from tqdm import tqdm
 from loguru import logger
 
 
@@ -86,36 +87,39 @@ def main(fname_in, fname_out):
                    .groupby('id:ID')
                    .sum())
 
+    weights = 1 / df_trans.sum(axis=0)
+
     # compute distances
-    logger.info('Compute distances')
+    logger.info(f'Compute distances (trans-shape: {df_trans.shape})')
+
+    dists = distance.pdist(
+        df_trans,
+        metric='jaccard') #, w=weights
+
     df_dists = pd.DataFrame(
-        distance.squareform(distance.pdist(
-            df_trans,
-            metric='jaccard')),
+        distance.squareform(dists),
         columns=df_trans.index,
         index=df_trans.index)
 
     analyze_distances(df_dists)
 
     # extract relationships
-    logger.info('Extract relationships')
-    keep = (np.triu(np.ones(df_dists.shape), k=1)
-              .astype('bool')
-              .reshape(df_dists.size))
-    tmp = df_dists.stack()[keep]
+    logger.info(f'Extract relationships (dists-shape: {df_dists.shape})')
 
-    tmp.index.rename([':START_ID', ':END_ID'], inplace=True)
-    tmp.name = 'value:FLOAT'
+    idx_trans = df_trans.index
+    triu_i, triu_j = np.triu_indices(df_trans.shape[0], k=1)
 
-    df_edges = tmp.reset_index()
-    df_edges[':TYPE'] = 'distance'
+    edge_count = 0
+    with open(fname_out, 'w') as fd:
+        fd.write(':START_ID,:END_ID,:TYPE,value:FLOAT\n')
 
-    df_edges[df_edges['value:FLOAT'] < 1]
-
-    df_edges.to_csv(fname_out, index=False)
+        for i, j, d in tqdm(zip(triu_i, triu_j, dists), total=len(dists)):
+            if d < 0.2:
+                fd.write(f'{idx_trans[i]},{idx_trans[j]},distance,{d}\n')
+                edge_count += 1
 
     # recreate Neo4j database
-    logger.info('Recreate Neo4j database')
+    logger.info(f'Recreate Neo4j database (edge-count: {edge_count})')
 
     node_file = 'node_tmp.csv'
     (df['id:ID'].drop_duplicates()
