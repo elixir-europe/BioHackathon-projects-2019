@@ -1,13 +1,14 @@
-import logging
-from typing import List
-
-from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
-from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
-
-from textminingservice.TextMiningService import TextMiningService
-from textminingservice.models.coocurrence import CoOccurrence
-from textminingservice.models.publication import Publication
 from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code
+from textminingservice.models.publication import Publication
+from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.TextMiningService import TextMiningService
+from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
+from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
+from typing import List
+import json
+import requests
+import logging
+
 
 logger = logging.getLogger(__name__)
 
