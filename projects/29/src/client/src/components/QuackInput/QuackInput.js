@@ -89,7 +89,11 @@ function QuackInput(props) {
     const submitQuery = () => {
         dispatch({type: 'SET_QUERY', data: value})
         axios.post('/api/v1/query', {q: state.expressions})
-            .then((res)=>dispatch({type: 'SET_RESULTS', data: res.data}))
+            .then((res) => {
+                    console.log("result", res.data);
+                    dispatch({type: 'SET_RESULTS', data: res.data.values})
+                }
+            )
         //axios.get('/api/v1/doi?doi=test')
     }
 
