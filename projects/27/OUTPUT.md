@@ -17,3 +17,4 @@
 
 * [schymane](https://github.com/schymane/) fixed legacy [MassBank-data](https://github.com/schymane/MassBank-data) repo issues resulting from dev branch creation after forking with the help of [meier-rene](https://github.com/meier-rene) to do long overdue curation of [CASMI2016 spectra](https://github.com/MassBank/MassBank-data/pull/101).
 * PubChemLite benchmark running for Eawag QExPlus data.
+* fixed two issues in the rWikiPathways package, after discussions with the Debian Med team
