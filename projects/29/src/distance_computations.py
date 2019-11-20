@@ -75,12 +75,21 @@ def main(fname_in, fname_out):
         'hasTopic:string'
     }
 
-    node_properties = (df[
-            df['variable'].isin(set(df['variable']) - concept_variables)
-        ].drop_duplicates(subset=['id:ID', 'variable'])
-         .pivot(index='id:ID', columns='variable', values='value')
-         .reset_index())
+    # save Neo4j compatible node list (including properties)
+    node_properties = (
+        df.groupby(['id:ID', 'variable'])
+          .apply(lambda x: '|'.join([str(val) for val in x['value'].tolist()]))
+          .reset_index()
+          .pivot(index='id:ID', columns='variable', values=0)
+          .reset_index())
 
+    node_file = 'node_tmp.csv'
+    (df['id:ID'].drop_duplicates()
+                .to_frame()
+                .merge(node_properties, on='id:ID')
+                .to_csv(node_file, index=False))
+
+    # only consider concepts for distance calculations
     df = df[df['variable'].isin(concept_variables)]
 
     # df = df.sample(1_000)
@@ -137,12 +146,6 @@ def main(fname_in, fname_out):
 
     # recreate Neo4j database
     logger.info(f'Recreate Neo4j database (edge-count: {edge_count})')
-
-    node_file = 'node_tmp.csv'
-    (df['id:ID'].drop_duplicates()
-                .to_frame()
-                .merge(node_properties, on='id:ID')
-                .to_csv(node_file, index=False))
 
     sh.neo4j('stop')
     sh.rm('-rf', '/usr/local/var/neo4j/')  # reset database
