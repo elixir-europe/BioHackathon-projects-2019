@@ -4,7 +4,8 @@ from typing import List
 
 import requests
 
-from textminingservice.TextMiningService import TextMiningService
+from textminingservice.TextMiningService import TextMiningService, TextMiningServiceOperationNotSupported
+from textminingservice.models.coocurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 
 logger = logging.getLogger(__name__)
@@ -14,6 +15,8 @@ class JensenLabService(TextMiningService):
     LIMIT_PER_ENTITY = 50000
     BASE_URL = "https://api.jensenlab.org"
     MENTION_URL = BASE_URL + "/Mentions?type={}&id={}&limit={}&format=json"
+    COOCCURRENCES_URL = BASE_URL + "/Textmining?type1={}&id1={}&limit={}&format=json"
+    COOCCURRENCES_URL_WITH_FILTER = BASE_URL + "/Textmining?type1={}&id1={}&limit={}&format=json&type2={}"
     IDS_MAPPING = {
         "CID": -1,
         "BTO": -25,
@@ -36,8 +39,26 @@ class JensenLabService(TextMiningService):
         publications_ids_intersection = set.intersection(*publications_ids)
         return [Publication(pm_id=pid) for pid in publications_ids_intersection][0:limit]
 
-    def get_co_occurrences(self, entity: str, limit: int = 20) -> List[str]:
-        pass
+    def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        entity_type = JensenLabService.guess_type_for_entity(entity)
+        if not types:
+            url_cooccurrences = JensenLabService.COOCCURRENCES_URL.format(entity_type, entity, limit)
+        else:
+            if len(types) > 1:
+                raise TextMiningServiceOperationNotSupported(
+                    "Only a single type is supported as a filter by the {} service".format(self.name))
+            filter_type = types[0]
+            url_cooccurrences = JensenLabService.COOCCURRENCES_URL_WITH_FILTER.format(entity_type, entity, limit,
+                                                                                      filter_type)
+        print(url_cooccurrences)
+        results = requests.get(url_cooccurrences)
+        assert results.ok
+        cooccurrences_list = json.loads(results.content.decode().strip())
+        cooccurrences_entities = cooccurrences_list[0]
+        cooccurrences_results = []
+        for entity2, entity2_dict in cooccurrences_entities.items():
+            cooccurrences_results.append(CoOccurrence(entity2, entity2_dict['evidence']))
+        return cooccurrences_results
 
     @staticmethod
     def guess_types_for_entities(entities):
@@ -71,3 +92,5 @@ if __name__ == '__main__':
     publications = text_mining_service.get_mentions(
         ["DOID:10652", "DOID:10935"], limit=1000000)
     print(", ".join([p.pm_id for p in publications]))
+    cooccurrences = text_mining_service.get_co_occurrences("DOID:10652", types=['-25'], limit=10)
+    print(cooccurrences)
