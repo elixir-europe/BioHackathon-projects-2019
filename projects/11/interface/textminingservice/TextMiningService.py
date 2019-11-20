@@ -29,6 +29,8 @@ class TextMiningService(metaclass=ABCMeta):
     @abstractmethod
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
         """
+        Returns a list of entities that co-appear together at publication level
+
         Co-occurrences at publication level.
 
         To-do: decide how to handle resources that can provide co-occurrences at sentence level
