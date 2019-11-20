@@ -116,11 +116,9 @@ class BioKBService(TextMiningService):
                         ?other_entity a <http://lcsb.uni.lu/biokb#Protein> .
                         ?other_entity owl:sameAs ?ensembl_protein .
                     }
-
                 }
                 
                 GROUP BY ?other_entity 
-
             } ORDER BY DESC(?count) LIMIT %LIMIT%
         """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit)).replace('%ENTITY_TYPE_FILTER%',
                                                                                entity_types_filter)
