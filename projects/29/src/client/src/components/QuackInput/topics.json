@@ -1,0 +1,4819 @@
+[
+  {
+    "Class ID": "http://edamontology.org/operation_0004",
+    "topic": "Operation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0224",
+    "topic": "Query and retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0225",
+    "topic": "Data retrieval (database cross-reference)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0226",
+    "topic": "Annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0227",
+    "topic": "Indexing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0228",
+    "topic": "Data index analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0229",
+    "topic": "Annotation retrieval (sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0230",
+    "topic": "Sequence generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0231",
+    "topic": "Sequence editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0232",
+    "topic": "Sequence merging"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0233",
+    "topic": "Sequence conversion"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0234",
+    "topic": "Sequence complexity calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0235",
+    "topic": "Sequence ambiguity calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0236",
+    "topic": "Sequence composition calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0237",
+    "topic": "Repeat sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0238",
+    "topic": "Sequence motif discovery"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0239",
+    "topic": "Sequence motif recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0240",
+    "topic": "Sequence motif comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0241",
+    "topic": "Transcription regulatory sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0242",
+    "topic": "Conserved transcription regulatory sequence identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0243",
+    "topic": "Protein property calculation (from structure)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0244",
+    "topic": "Simulation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0245",
+    "topic": "Protein structural motif recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0246",
+    "topic": "Protein domain recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0247",
+    "topic": "Protein architecture analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0248",
+    "topic": "Residue interaction calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0249",
+    "topic": "Protein geometry calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0250",
+    "topic": "Protein property calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0252",
+    "topic": "Peptide immunogenicity prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0253",
+    "topic": "Sequence feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0254",
+    "topic": "Data retrieval (feature table)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0255",
+    "topic": "Feature table query"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0256",
+    "topic": "Sequence feature comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0257",
+    "topic": "Data retrieval (sequence alignment)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0258",
+    "topic": "Sequence alignment analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0259",
+    "topic": "Sequence alignment comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0260",
+    "topic": "Sequence alignment conversion"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0261",
+    "topic": "Nucleic acid property processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0262",
+    "topic": "Nucleic acid property calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0264",
+    "topic": "Splice transcript prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0265",
+    "topic": "Frameshift detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0266",
+    "topic": "Vector sequence detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0267",
+    "topic": "Protein secondary structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0268",
+    "topic": "Protein super-secondary structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0269",
+    "topic": "Transmembrane protein prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0270",
+    "topic": "Transmembrane protein analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0271",
+    "topic": "Structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0272",
+    "topic": "Residue contact prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0273",
+    "topic": "Protein interaction raw data analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0274",
+    "topic": "Protein-protein interaction prediction (from protein sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0275",
+    "topic": "Protein-protein interaction prediction (from protein structure)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0276",
+    "topic": "Protein interaction network analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0277",
+    "topic": "Pathway or network comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0278",
+    "topic": "RNA secondary structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0279",
+    "topic": "Nucleic acid folding analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0280",
+    "topic": "Data retrieval (restriction enzyme annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0281",
+    "topic": "Genetic marker identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0282",
+    "topic": "Genetic mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0283",
+    "topic": "Linkage analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0284",
+    "topic": "Codon usage table generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0285",
+    "topic": "Codon usage table comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0286",
+    "topic": "Codon usage analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0287",
+    "topic": "Base position variability plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0288",
+    "topic": "Sequence word comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0289",
+    "topic": "Sequence distance matrix generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0290",
+    "topic": "Sequence redundancy removal"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0291",
+    "topic": "Sequence clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0292",
+    "topic": "Sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0293",
+    "topic": "Hybrid sequence alignment construction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0294",
+    "topic": "Structure-based sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0295",
+    "topic": "Structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0296",
+    "topic": "Sequence profile generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0297",
+    "topic": "3D profile generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0298",
+    "topic": "Profile-profile alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0299",
+    "topic": "3D profile-to-3D profile alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0300",
+    "topic": "Sequence profile alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0301",
+    "topic": "Sequence-to-3D-profile alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0302",
+    "topic": "Protein threading"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0303",
+    "topic": "Fold recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0304",
+    "topic": "Metadata retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0305",
+    "topic": "Literature search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0306",
+    "topic": "Text mining"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0307",
+    "topic": "Virtual PCR"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0308",
+    "topic": "PCR primer design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0309",
+    "topic": "Microarray probe design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0310",
+    "topic": "Sequence assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0311",
+    "topic": "Microarray data standardisation and normalisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0312",
+    "topic": "Sequencing-based expression profile data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0313",
+    "topic": "Expression profile clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0314",
+    "topic": "Gene expression profiling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0315",
+    "topic": "Expression profile comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0316",
+    "topic": "Functional profiling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0317",
+    "topic": "EST and cDNA sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0318",
+    "topic": "Structural genomics target selection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0319",
+    "topic": "Protein secondary structure assignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0320",
+    "topic": "Protein structure assignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0321",
+    "topic": "Protein structure validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0322",
+    "topic": "Molecular model refinement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0323",
+    "topic": "Phylogenetic tree generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0324",
+    "topic": "Phylogenetic tree analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0325",
+    "topic": "Phylogenetic tree comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0326",
+    "topic": "Phylogenetic tree editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0327",
+    "topic": "Phylogenetic footprinting / shadowing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0328",
+    "topic": "Protein folding simulation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0329",
+    "topic": "Protein folding pathway prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0330",
+    "topic": "Protein SNP mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0331",
+    "topic": "Variant effect prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0332",
+    "topic": "Immunogen design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0333",
+    "topic": "Zinc finger prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0334",
+    "topic": "Enzyme kinetics calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0335",
+    "topic": "Formatting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0336",
+    "topic": "Format validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0337",
+    "topic": "Visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0338",
+    "topic": "Sequence database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0339",
+    "topic": "Structure database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0340",
+    "topic": "Protein secondary database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0341",
+    "topic": "Motif database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0342",
+    "topic": "Sequence profile database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0343",
+    "topic": "Transmembrane protein database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0344",
+    "topic": "Sequence retrieval (by code)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0345",
+    "topic": "Sequence retrieval (by keyword)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0346",
+    "topic": "Sequence similarity search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0347",
+    "topic": "Sequence database search (by motif or pattern)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0348",
+    "topic": "Sequence database search (by amino acid composition)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0349",
+    "topic": "Sequence database search (by property)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0350",
+    "topic": "Sequence database search (by sequence using word-based methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0351",
+    "topic": "Sequence database search (by sequence using profile-based methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0352",
+    "topic": "Sequence database search (by sequence using local alignment-based methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0353",
+    "topic": "Sequence database search (by sequence using global alignment-based methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0354",
+    "topic": "Sequence database search (by sequence for primer sequences)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0355",
+    "topic": "Sequence database search (by molecular weight)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0356",
+    "topic": "Sequence database search (by isoelectric point)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0357",
+    "topic": "Structure retrieval (by code)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0358",
+    "topic": "Structure retrieval (by keyword)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0359",
+    "topic": "Structure database search (by sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0360",
+    "topic": "Structural similarity search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0361",
+    "topic": "Sequence annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0362",
+    "topic": "Genome annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0363",
+    "topic": "Reverse complement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0364",
+    "topic": "Random sequence generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0365",
+    "topic": "Restriction digest"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0366",
+    "topic": "Protein sequence cleavage"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0367",
+    "topic": "Sequence mutation and randomisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0368",
+    "topic": "Sequence masking"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0369",
+    "topic": "Sequence cutting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0370",
+    "topic": "Restriction site creation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0371",
+    "topic": "DNA translation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0372",
+    "topic": "DNA transcription"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0377",
+    "topic": "Sequence composition calculation (nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0378",
+    "topic": "Sequence composition calculation (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0379",
+    "topic": "Repeat sequence detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0380",
+    "topic": "Repeat sequence organisation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0383",
+    "topic": "Protein hydropathy calculation (from structure)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0384",
+    "topic": "Accessible surface calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0385",
+    "topic": "Protein hydropathy cluster calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0386",
+    "topic": "Protein dipole moment calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0387",
+    "topic": "Molecular surface calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0388",
+    "topic": "Protein binding site prediction (from structure)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0389",
+    "topic": "Protein-nucleic acid interaction analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0390",
+    "topic": "Protein peeling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0391",
+    "topic": "Protein distance matrix calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0392",
+    "topic": "Contact map calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0393",
+    "topic": "Residue cluster calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0394",
+    "topic": "Hydrogen bond calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0395",
+    "topic": "Residue non-canonical interaction detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0396",
+    "topic": "Ramachandran plot calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0397",
+    "topic": "Ramachandran plot validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0398",
+    "topic": "Protein molecular weight calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0399",
+    "topic": "Protein extinction coefficient calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0400",
+    "topic": "Protein pKa calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0401",
+    "topic": "Protein hydropathy calculation (from sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0402",
+    "topic": "Protein titration curve plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0403",
+    "topic": "Protein isoelectric point calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0404",
+    "topic": "Protein hydrogen exchange rate calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0405",
+    "topic": "Protein hydrophobic region calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0406",
+    "topic": "Protein aliphatic index calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0407",
+    "topic": "Protein hydrophobic moment plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0408",
+    "topic": "Protein globularity prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0409",
+    "topic": "Protein solubility prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0410",
+    "topic": "Protein crystallizability prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0411",
+    "topic": "Protein signal peptide detection (eukaryotes)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0412",
+    "topic": "Protein signal peptide detection (bacteria)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0413",
+    "topic": "MHC peptide immunogenicity prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0414",
+    "topic": "Protein feature prediction (from sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0415",
+    "topic": "Nucleic acid feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0416",
+    "topic": "Epitope mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0417",
+    "topic": "Post-translation modification site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0418",
+    "topic": "Protein signal peptide detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0419",
+    "topic": "Protein binding site prediction (from sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0420",
+    "topic": "Nucleic acids-binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0421",
+    "topic": "Protein folding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0422",
+    "topic": "Protein cleavage site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0423",
+    "topic": "Epitope mapping (MHC Class I)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0424",
+    "topic": "Epitope mapping (MHC Class II)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0425",
+    "topic": "Whole gene prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0426",
+    "topic": "Gene component prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0427",
+    "topic": "Transposon prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0428",
+    "topic": "PolyA signal detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0429",
+    "topic": "Quadruplex formation site detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0430",
+    "topic": "CpG island and isochore detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0431",
+    "topic": "Restriction site recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0432",
+    "topic": "Nucleosome formation or exclusion sequence prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0433",
+    "topic": "Splice site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0434",
+    "topic": "Integrated gene prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0435",
+    "topic": "Operon prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0436",
+    "topic": "Coding region prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0437",
+    "topic": "SECIS element prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0438",
+    "topic": "Transcriptional regulatory element prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0439",
+    "topic": "Translation initiation site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0440",
+    "topic": "Promoter prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0441",
+    "topic": "cis-regulatory element prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0442",
+    "topic": "Transcriptional regulatory element prediction (RNA-cis)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0443",
+    "topic": "trans-regulatory element prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0444",
+    "topic": "S/MAR prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0445",
+    "topic": "Transcription factor binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0446",
+    "topic": "Exonic splicing enhancer prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0447",
+    "topic": "Sequence alignment validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0448",
+    "topic": "Sequence alignment analysis (conservation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0449",
+    "topic": "Sequence alignment analysis (site correlation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0450",
+    "topic": "Chimera detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0451",
+    "topic": "Recombination detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0452",
+    "topic": "Indel detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0453",
+    "topic": "Nucleosome formation potential prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0455",
+    "topic": "Nucleic acid thermodynamic property calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0456",
+    "topic": "Nucleic acid melting profile plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0457",
+    "topic": "Nucleic acid stitch profile plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0458",
+    "topic": "Nucleic acid melting curve plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0459",
+    "topic": "Nucleic acid probability profile plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0460",
+    "topic": "Nucleic acid temperature profile plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0461",
+    "topic": "Nucleic acid curvature calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0463",
+    "topic": "miRNA target prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0464",
+    "topic": "tRNA gene prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0465",
+    "topic": "siRNA binding specificity prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0467",
+    "topic": "Protein secondary structure prediction (integrated)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0468",
+    "topic": "Protein secondary structure prediction (helices)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0469",
+    "topic": "Protein secondary structure prediction (turns)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0470",
+    "topic": "Protein secondary structure prediction (coils)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0471",
+    "topic": "Disulfide bond prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0472",
+    "topic": "GPCR prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0473",
+    "topic": "GPCR analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0474",
+    "topic": "Protein structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0475",
+    "topic": "Nucleic acid structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0476",
+    "topic": "Ab initio structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0477",
+    "topic": "Protein modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0478",
+    "topic": "Molecular docking"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0479",
+    "topic": "Backbone modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0480",
+    "topic": "Side chain modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0481",
+    "topic": "Loop modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0482",
+    "topic": "Protein-ligand docking"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0483",
+    "topic": "Structured RNA prediction and optimisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0484",
+    "topic": "SNP detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0485",
+    "topic": "Radiation Hybrid Mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0486",
+    "topic": "Functional mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0487",
+    "topic": "Haplotype mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0488",
+    "topic": "Linkage disequilibrium calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0489",
+    "topic": "Genetic code prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0490",
+    "topic": "Dot plot plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0491",
+    "topic": "Pairwise sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0492",
+    "topic": "Multiple sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0493",
+    "topic": "Pairwise sequence alignment generation (local)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0494",
+    "topic": "Pairwise sequence alignment generation (global)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0495",
+    "topic": "Local alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0496",
+    "topic": "Global alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0497",
+    "topic": "Constrained sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0498",
+    "topic": "Consensus-based sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0499",
+    "topic": "Tree-based sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0500",
+    "topic": "Secondary structure alignment generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0501",
+    "topic": "Protein secondary structure alignment generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0502",
+    "topic": "RNA secondary structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0503",
+    "topic": "Pairwise structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0504",
+    "topic": "Multiple structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0505",
+    "topic": "Structure alignment (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0506",
+    "topic": "Structure alignment (RNA)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0507",
+    "topic": "Pairwise structure alignment generation (local)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0508",
+    "topic": "Pairwise structure alignment generation (global)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0509",
+    "topic": "Local structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0510",
+    "topic": "Global structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0511",
+    "topic": "Profile-profile alignment (pairwise)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0512",
+    "topic": "Sequence alignment generation (multiple profile)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0513",
+    "topic": "3D profile-to-3D profile alignment (pairwise)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0514",
+    "topic": "Structural profile alignment generation (multiple)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0515",
+    "topic": "Data retrieval (tool metadata)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0516",
+    "topic": "Data retrieval (database metadata)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0517",
+    "topic": "PCR primer design (for large scale sequencing)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0518",
+    "topic": "PCR primer design (for genotyping polymorphisms)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0519",
+    "topic": "PCR primer design (for gene transcription profiling)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0520",
+    "topic": "PCR primer design (for conserved primers)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0521",
+    "topic": "PCR primer design (based on gene structure)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0522",
+    "topic": "PCR primer design (for methylation PCRs)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0523",
+    "topic": "Mapping assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0524",
+    "topic": "De-novo assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0525",
+    "topic": "Genome assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0526",
+    "topic": "EST assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0527",
+    "topic": "Sequence tag mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0528",
+    "topic": "SAGE data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0529",
+    "topic": "MPSS data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0530",
+    "topic": "SBS data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0531",
+    "topic": "Heat map generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0532",
+    "topic": "Gene expression profile analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0533",
+    "topic": "Expression profile pathway mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0534",
+    "topic": "Protein secondary structure assignment (from coordinate data)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0535",
+    "topic": "Protein secondary structure assignment (from CD data)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0536",
+    "topic": "Protein structure assignment (from X-ray crystallographic data)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0537",
+    "topic": "Protein structure assignment (from NMR data)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0538",
+    "topic": "Phylogenetic tree generation (data centric)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0539",
+    "topic": "Phylogenetic tree generation (method centric)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0540",
+    "topic": "Phylogenetic tree generation (from molecular sequences)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0541",
+    "topic": "Phylogenetic tree generation (from continuous quantitative characters)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0542",
+    "topic": "Phylogenetic tree generation (from gene frequencies)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0543",
+    "topic": "Phylogenetic tree generation (from polymorphism data)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0544",
+    "topic": "Phylogenetic species tree construction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0545",
+    "topic": "Phylogenetic tree generation (parsimony methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0546",
+    "topic": "Phylogenetic tree generation (minimum distance methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0547",
+    "topic": "Phylogenetic tree generation (maximum likelihood and Bayesian methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0548",
+    "topic": "Phylogenetic tree generation (quartet methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0549",
+    "topic": "Phylogenetic tree generation (AI methods)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0550",
+    "topic": "DNA substitution modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0551",
+    "topic": "Phylogenetic tree analysis (shape)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0552",
+    "topic": "Phylogenetic tree bootstrapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0553",
+    "topic": "Phylogenetic tree analysis (gene family prediction)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0554",
+    "topic": "Phylogenetic tree analysis (natural selection)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0555",
+    "topic": "Phylogenetic tree generation (consensus)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0556",
+    "topic": "Phylogenetic sub/super tree detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0557",
+    "topic": "Phylogenetic tree distances calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0558",
+    "topic": "Phylogenetic tree annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0559",
+    "topic": "Immunogenicity prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0560",
+    "topic": "DNA vaccine design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0561",
+    "topic": "Sequence formatting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0562",
+    "topic": "Sequence alignment formatting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0563",
+    "topic": "Codon usage table formatting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0564",
+    "topic": "Sequence visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0565",
+    "topic": "Sequence alignment visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0566",
+    "topic": "Sequence cluster visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0567",
+    "topic": "Phylogenetic tree visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0568",
+    "topic": "RNA secondary structure visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0569",
+    "topic": "Protein secondary structure visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0570",
+    "topic": "Structure visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0571",
+    "topic": "Expression data visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0572",
+    "topic": "Protein interaction network visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0573",
+    "topic": "Map drawing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0574",
+    "topic": "Sequence motif rendering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0575",
+    "topic": "Restriction map drawing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0577",
+    "topic": "DNA linear map rendering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0578",
+    "topic": "Plasmid map drawing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_0579",
+    "topic": "Operon drawing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1768",
+    "topic": "Nucleic acid folding family identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1769",
+    "topic": "Nucleic acid folding energy calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1774",
+    "topic": "Annotation retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1777",
+    "topic": "Protein function prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1778",
+    "topic": "Protein function comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1780",
+    "topic": "Sequence submission"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1781",
+    "topic": "Gene regulatory network analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1812",
+    "topic": "Parsing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1813",
+    "topic": "Sequence retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1814",
+    "topic": "Structure retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1816",
+    "topic": "Surface rendering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1817",
+    "topic": "Protein atom surface calculation (accessible)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1818",
+    "topic": "Protein atom surface calculation (accessible molecular)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1819",
+    "topic": "Protein residue surface calculation (accessible)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1820",
+    "topic": "Protein residue surface calculation (vacuum accessible)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1821",
+    "topic": "Protein residue surface calculation (accessible molecular)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1822",
+    "topic": "Protein residue surface calculation (vacuum molecular)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1823",
+    "topic": "Protein surface calculation (accessible molecular)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1824",
+    "topic": "Protein surface calculation (accessible)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1825",
+    "topic": "Backbone torsion angle calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1826",
+    "topic": "Full torsion angle calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1827",
+    "topic": "Cysteine torsion angle calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1828",
+    "topic": "Tau angle calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1829",
+    "topic": "Cysteine bridge detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1830",
+    "topic": "Free cysteine detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1831",
+    "topic": "Metal-bound cysteine detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1832",
+    "topic": "Residue contact calculation (residue-nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1834",
+    "topic": "Protein-metal contact calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1835",
+    "topic": "Residue contact calculation (residue-negative ion)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1836",
+    "topic": "Residue bump detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1837",
+    "topic": "Residue symmetry contact calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1838",
+    "topic": "Residue contact calculation (residue-ligand)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1839",
+    "topic": "Salt bridge calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1841",
+    "topic": "Rotamer likelihood prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1842",
+    "topic": "Proline mutation value calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1843",
+    "topic": "Residue packing validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1844",
+    "topic": "Protein geometry validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1845",
+    "topic": "PDB file sequence retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1846",
+    "topic": "HET group detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1847",
+    "topic": "DSSP secondary structure assignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1848",
+    "topic": "Structure formatting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1850",
+    "topic": "Protein cysteine and disulfide bond assignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1913",
+    "topic": "Residue validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_1914",
+    "topic": "Structure retrieval (water)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2008",
+    "topic": "siRNA duplex prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2089",
+    "topic": "Sequence alignment refinement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2120",
+    "topic": "Listfile processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2121",
+    "topic": "Sequence file editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2122",
+    "topic": "Sequence alignment file processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2123",
+    "topic": "Small molecule data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2222",
+    "topic": "Data retrieval (ontology annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2224",
+    "topic": "Data retrieval (ontology concept)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2233",
+    "topic": "Representative sequence identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2234",
+    "topic": "Structure file processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2237",
+    "topic": "Data retrieval (sequence profile)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2238",
+    "topic": "Statistical calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2239",
+    "topic": "3D-1D scoring matrix generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2241",
+    "topic": "Transmembrane protein visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2246",
+    "topic": "Demonstration"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2264",
+    "topic": "Data retrieval (pathway or network)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2265",
+    "topic": "Data retrieval (identifier)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2284",
+    "topic": "Nucleic acid density plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2403",
+    "topic": "Sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2404",
+    "topic": "Sequence motif analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2405",
+    "topic": "Protein interaction data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2406",
+    "topic": "Protein structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2407",
+    "topic": "Annotation processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2408",
+    "topic": "Sequence feature analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2409",
+    "topic": "Data handling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2410",
+    "topic": "Gene expression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2411",
+    "topic": "Structural profile processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2412",
+    "topic": "Data index processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2413",
+    "topic": "Sequence profile processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2414",
+    "topic": "Protein function analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2415",
+    "topic": "Protein folding analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2416",
+    "topic": "Protein secondary structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2417",
+    "topic": "Physicochemical property data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2419",
+    "topic": "Primer and probe design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2420",
+    "topic": "Operation (typed)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2421",
+    "topic": "Database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2422",
+    "topic": "Data retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2423",
+    "topic": "Prediction and recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2424",
+    "topic": "Comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2425",
+    "topic": "Optimisation and refinement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2426",
+    "topic": "Modelling and simulation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2427",
+    "topic": "Data handling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2428",
+    "topic": "Validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2429",
+    "topic": "Mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2430",
+    "topic": "Design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2432",
+    "topic": "Microarray data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2433",
+    "topic": "Codon usage table processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2434",
+    "topic": "Data retrieval (codon usage table)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2435",
+    "topic": "Gene expression profile processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2436",
+    "topic": "Gene-set enrichment analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2437",
+    "topic": "Gene regulatory network prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2438",
+    "topic": "Pathway or network processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2439",
+    "topic": "RNA secondary structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2440",
+    "topic": "Structure processing (RNA)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2441",
+    "topic": "RNA structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2442",
+    "topic": "DNA structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2443",
+    "topic": "Phylogenetic tree processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2444",
+    "topic": "Protein secondary structure processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2445",
+    "topic": "Protein interaction network processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2446",
+    "topic": "Sequence processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2447",
+    "topic": "Sequence processing (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2448",
+    "topic": "Sequence processing (nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2451",
+    "topic": "Sequence comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2452",
+    "topic": "Sequence cluster processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2453",
+    "topic": "Feature table processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2454",
+    "topic": "Gene prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2456",
+    "topic": "GPCR classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2457",
+    "topic": "GPCR coupling selectivity prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2459",
+    "topic": "Structure processing (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2460",
+    "topic": "Protein atom surface calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2461",
+    "topic": "Protein residue surface calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2462",
+    "topic": "Protein surface calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2463",
+    "topic": "Sequence alignment processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2464",
+    "topic": "Protein-protein binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2465",
+    "topic": "Structure processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2466",
+    "topic": "Map annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2467",
+    "topic": "Data retrieval (protein annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2468",
+    "topic": "Data retrieval (phylogenetic tree)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2469",
+    "topic": "Data retrieval (protein interaction annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2470",
+    "topic": "Data retrieval (protein family annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2471",
+    "topic": "Data retrieval (RNA family annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2472",
+    "topic": "Data retrieval (gene annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2473",
+    "topic": "Data retrieval (genotype and phenotype annotation)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2474",
+    "topic": "Protein architecture comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2475",
+    "topic": "Protein architecture recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2476",
+    "topic": "Molecular dynamics"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2478",
+    "topic": "Nucleic acid sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2479",
+    "topic": "Protein sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2480",
+    "topic": "Structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2481",
+    "topic": "Nucleic acid structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2482",
+    "topic": "Secondary structure processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2483",
+    "topic": "Structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2485",
+    "topic": "Helical wheel drawing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2486",
+    "topic": "Topology diagram drawing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2487",
+    "topic": "Protein structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2488",
+    "topic": "Protein secondary structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2489",
+    "topic": "Subcellular localisation prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2490",
+    "topic": "Residue contact calculation (residue-residue)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2491",
+    "topic": "Hydrogen bond calculation (inter-residue)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2492",
+    "topic": "Protein interaction prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2493",
+    "topic": "Codon usage data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2495",
+    "topic": "Expression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2496",
+    "topic": "Gene regulatory network processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2497",
+    "topic": "Pathway or network analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2498",
+    "topic": "Sequencing-based expression profile data analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2499",
+    "topic": "Splicing model analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2500",
+    "topic": "Microarray raw data analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2501",
+    "topic": "Nucleic acid analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2502",
+    "topic": "Protein analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2503",
+    "topic": "Sequence data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2504",
+    "topic": "Structural data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2505",
+    "topic": "Text processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2506",
+    "topic": "Protein sequence alignment analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2507",
+    "topic": "Nucleic acid sequence alignment analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2508",
+    "topic": "Nucleic acid sequence comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2509",
+    "topic": "Protein sequence comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2510",
+    "topic": "DNA back-translation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2511",
+    "topic": "Sequence editing (nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2512",
+    "topic": "Sequence editing (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2513",
+    "topic": "Sequence generation (nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2514",
+    "topic": "Sequence generation (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2515",
+    "topic": "Nucleic acid sequence visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2516",
+    "topic": "Protein sequence visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2518",
+    "topic": "Nucleic acid structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2519",
+    "topic": "Structure processing (nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2520",
+    "topic": "DNA mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2521",
+    "topic": "Map data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2574",
+    "topic": "Protein hydropathy calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2575",
+    "topic": "Binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2871",
+    "topic": "Sequence tagged site (STS) mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2928",
+    "topic": "Alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2929",
+    "topic": "Protein fragment weight comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2930",
+    "topic": "Protein property comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2931",
+    "topic": "Secondary structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2932",
+    "topic": "Hopp and Woods plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2934",
+    "topic": "Cluster textual view generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2935",
+    "topic": "Clustering profile plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2936",
+    "topic": "Dendrograph plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2937",
+    "topic": "Proximity map plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2938",
+    "topic": "Dendrogram visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2939",
+    "topic": "Principal component visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2940",
+    "topic": "Scatter plot plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2941",
+    "topic": "Whole microarray graph plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2942",
+    "topic": "Treemap visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2943",
+    "topic": "Box-Whisker plot plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2944",
+    "topic": "Physical mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2945",
+    "topic": "Analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2946",
+    "topic": "Alignment analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2947",
+    "topic": "Article analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2948",
+    "topic": "Molecular interaction analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2949",
+    "topic": "Protein-protein interaction analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2950",
+    "topic": "Residue distance calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2951",
+    "topic": "Alignment processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2952",
+    "topic": "Structure alignment processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2962",
+    "topic": "Codon usage bias calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2963",
+    "topic": "Codon usage bias plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2964",
+    "topic": "Codon usage fraction calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2990",
+    "topic": "Classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2993",
+    "topic": "Molecular interaction data processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2995",
+    "topic": "Sequence classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2996",
+    "topic": "Structure classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2997",
+    "topic": "Protein comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_2998",
+    "topic": "Nucleic acid comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3023",
+    "topic": "Prediction and recognition (protein)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3024",
+    "topic": "Prediction and recognition (nucleic acid)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3080",
+    "topic": "Structure editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3081",
+    "topic": "Sequence alignment editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3083",
+    "topic": "Pathway or network visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3084",
+    "topic": "Protein function prediction (from sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3087",
+    "topic": "Protein sequence feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3088",
+    "topic": "Protein property calculation (from sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3090",
+    "topic": "Protein feature prediction (from structure)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3092",
+    "topic": "Protein feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3093",
+    "topic": "Database search (by sequence)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3094",
+    "topic": "Protein interaction network prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3095",
+    "topic": "Nucleic acid design"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3096",
+    "topic": "Editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3180",
+    "topic": "Sequence assembly validation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3182",
+    "topic": "Genome alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3183",
+    "topic": "Localised reassembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3184",
+    "topic": "Sequence assembly visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3185",
+    "topic": "Base-calling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3186",
+    "topic": "Bisulfite mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3187",
+    "topic": "Sequence contamination filtering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3189",
+    "topic": "Trim ends"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3190",
+    "topic": "Trim vector"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3191",
+    "topic": "Trim to reference"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3192",
+    "topic": "Sequence trimming"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3194",
+    "topic": "Genome feature comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3195",
+    "topic": "Sequencing error detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3196",
+    "topic": "Genotyping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3197",
+    "topic": "Genetic variation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3198",
+    "topic": "Read mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3199",
+    "topic": "Split read mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3200",
+    "topic": "Community profiling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3201",
+    "topic": "SNP calling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3202",
+    "topic": "Polymorphism detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3203",
+    "topic": "Chromatogram visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3204",
+    "topic": "Methylation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3205",
+    "topic": "Methylation calling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3206",
+    "topic": "Whole genome methylation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3207",
+    "topic": "Gene methylation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3208",
+    "topic": "Genome visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3209",
+    "topic": "Genome comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3211",
+    "topic": "Genome indexing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3212",
+    "topic": "Genome indexing (Burrows-Wheeler)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3213",
+    "topic": "Genome indexing (suffix arrays)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3214",
+    "topic": "Spectral analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3215",
+    "topic": "Peak detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3216",
+    "topic": "Scaffolding"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3217",
+    "topic": "Scaffold gap completion"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3218",
+    "topic": "Sequencing quality control"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3219",
+    "topic": "Read pre-processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3221",
+    "topic": "Species frequency estimation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3222",
+    "topic": "Peak calling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3223",
+    "topic": "Differential gene expression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3224",
+    "topic": "Gene set testing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3225",
+    "topic": "Variant classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3226",
+    "topic": "Variant prioritisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3227",
+    "topic": "Variant calling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3228",
+    "topic": "Structural variation detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3229",
+    "topic": "Exome assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3230",
+    "topic": "Read depth analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3232",
+    "topic": "Gene expression QTL analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3233",
+    "topic": "Copy number estimation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3237",
+    "topic": "Primer removal"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3258",
+    "topic": "Transcriptome assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3259",
+    "topic": "Transcriptome assembly (de novo)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3260",
+    "topic": "Transcriptome assembly (mapping)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3267",
+    "topic": "Sequence coordinate conversion"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3278",
+    "topic": "Document similarity calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3279",
+    "topic": "Document clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3280",
+    "topic": "Named-entity and concept recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3282",
+    "topic": "ID mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3283",
+    "topic": "Anonymisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3289",
+    "topic": "ID retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3348",
+    "topic": "Sequence checksum generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3349",
+    "topic": "Bibliography generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3350",
+    "topic": "Protein quaternary structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3351",
+    "topic": "Molecular surface analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3352",
+    "topic": "Ontology comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3353",
+    "topic": "Ontology comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3357",
+    "topic": "Format detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3359",
+    "topic": "Splitting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3429",
+    "topic": "Generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3430",
+    "topic": "Nucleic acid sequence feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3431",
+    "topic": "Deposition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3432",
+    "topic": "Clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3433",
+    "topic": "Assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3434",
+    "topic": "Conversion"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3435",
+    "topic": "Standardisation and normalisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3436",
+    "topic": "Aggregation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3437",
+    "topic": "Article comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3438",
+    "topic": "Calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3439",
+    "topic": "Pathway or network prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3440",
+    "topic": "Genome assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3441",
+    "topic": "Plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3443",
+    "topic": "Image analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3445",
+    "topic": "Diffraction data analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3446",
+    "topic": "Cell migration analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3447",
+    "topic": "Diffraction data reduction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3450",
+    "topic": "Neurite measurement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3453",
+    "topic": "Diffraction data integration"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3454",
+    "topic": "Phasing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3455",
+    "topic": "Molecular replacement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3456",
+    "topic": "Rigid body refinement"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3457",
+    "topic": "Single particle analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3458",
+    "topic": "Single particle alignment and classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3459",
+    "topic": "Functional clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3460",
+    "topic": "Taxonomic classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3461",
+    "topic": "Virulence prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3463",
+    "topic": "Expression correlation analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3465",
+    "topic": "Correlation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3469",
+    "topic": "RNA structure covariance model generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3470",
+    "topic": "RNA secondary structure prediction (shape-based)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3471",
+    "topic": "Nucleic acid folding prediction (alignment-based)"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3472",
+    "topic": "k-mer counting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3478",
+    "topic": "Phylogenetic tree reconstruction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3480",
+    "topic": "Probabilistic data generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3481",
+    "topic": "Probabilistic sequence generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3482",
+    "topic": "Antimicrobial resistance prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3501",
+    "topic": "Enrichment analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3502",
+    "topic": "Chemical similarity enrichment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3503",
+    "topic": "Incident curve plotting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3504",
+    "topic": "Variant pattern analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3545",
+    "topic": "Mathematical modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3552",
+    "topic": "Microscope image visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3553",
+    "topic": "Image annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3557",
+    "topic": "Imputation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3559",
+    "topic": "Ontology visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3560",
+    "topic": "Maximum occurence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3561",
+    "topic": "Database comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3562",
+    "topic": "Network simulation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3563",
+    "topic": "RNA-seq read count analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3564",
+    "topic": "Chemical redundancy removal"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3565",
+    "topic": "RNA-seq time series data analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3566",
+    "topic": "Simulated gene expression data generation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3625",
+    "topic": "Relation extraction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3627",
+    "topic": "Mass spectra calibration"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3628",
+    "topic": "Chromatographic alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3629",
+    "topic": "Deisotoping"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3630",
+    "topic": "Protein quantification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3631",
+    "topic": "Peptide identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3632",
+    "topic": "Isotopic distributions calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3633",
+    "topic": "Retention time prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3634",
+    "topic": "Label-free quantification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3635",
+    "topic": "Labeled quantification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3636",
+    "topic": "MRM/SRM"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3637",
+    "topic": "Spectral counting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3638",
+    "topic": "SILAC"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3639",
+    "topic": "iTRAQ"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3640",
+    "topic": "18O labeling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3641",
+    "topic": "TMT-tag"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3642",
+    "topic": "Dimethyl"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3643",
+    "topic": "Tag-based peptide identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3644",
+    "topic": "de Novo sequencing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3645",
+    "topic": "PTM identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3646",
+    "topic": "Peptide database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3647",
+    "topic": "Blind peptide database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3648",
+    "topic": "Validation of peptide-spectrum matches"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3649",
+    "topic": "Target-Decoy"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3658",
+    "topic": "Statistical inference"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3659",
+    "topic": "Regression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3660",
+    "topic": "Metabolic network modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3661",
+    "topic": "SNP annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3662",
+    "topic": "Ab-initio gene prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3663",
+    "topic": "Homology-based gene prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3664",
+    "topic": "Statistical modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3666",
+    "topic": "Molecular surface comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3672",
+    "topic": "Gene functional annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3675",
+    "topic": "Variant filtering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3677",
+    "topic": "Differential binding analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3680",
+    "topic": "RNA-Seq analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3694",
+    "topic": "Mass spectrum visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3695",
+    "topic": "Filtering"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3703",
+    "topic": "Reference identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3704",
+    "topic": "Ion counting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3705",
+    "topic": "Isotope-coded protein label"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3715",
+    "topic": "Metabolic labeling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3730",
+    "topic": "Cross-assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3731",
+    "topic": "Sample comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3741",
+    "topic": "Differential protein expression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3742",
+    "topic": "Differential gene expression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3744",
+    "topic": "Multiple sample visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3745",
+    "topic": "Ancestral reconstruction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3755",
+    "topic": "PTM localisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3760",
+    "topic": "Service management"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3761",
+    "topic": "Service discovery"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3762",
+    "topic": "Service composition"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3763",
+    "topic": "Service invocation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3766",
+    "topic": "Weighted correlation network analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3767",
+    "topic": "Protein identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3778",
+    "topic": "Text annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3791",
+    "topic": "Collapsing methods"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3792",
+    "topic": "miRNA expression analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3793",
+    "topic": "Read summarisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3795",
+    "topic": "In vitro selection"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3797",
+    "topic": "Rarefaction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3798",
+    "topic": "Read binning"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3799",
+    "topic": "Quantification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3800",
+    "topic": "RNA-Seq quantification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3801",
+    "topic": "Spectral library search"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3802",
+    "topic": "Sorting"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3803",
+    "topic": "Natural product identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3809",
+    "topic": "Differentially-methylated region identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3840",
+    "topic": "Multilocus sequence typing"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3860",
+    "topic": "Spectrum calculation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3890",
+    "topic": "Trajectory visualization"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3891",
+    "topic": "Essential dynamics"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3893",
+    "topic": "Forcefield parameterisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3894",
+    "topic": "DNA profiling"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3896",
+    "topic": "Active site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3897",
+    "topic": "Ligand-binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3898",
+    "topic": "Metal-binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3899",
+    "topic": "Protein-protein docking"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3900",
+    "topic": "DNA-binding protein prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3901",
+    "topic": "RNA-binding protein prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3902",
+    "topic": "RNA binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3903",
+    "topic": "DNA binding site prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3904",
+    "topic": "Protein disorder prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3907",
+    "topic": "Information extraction"
+  },
+  {
+    "Class ID": "http://edamontology.org/operation_3908",
+    "topic": "Information retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0003",
+    "topic": "Topic"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0077",
+    "topic": "Nucleic acids"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0078",
+    "topic": "Proteins"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0079",
+    "topic": "Metabolites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0080",
+    "topic": "Sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0081",
+    "topic": "Structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0082",
+    "topic": "Structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0083",
+    "topic": "Alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0084",
+    "topic": "Phylogeny"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0085",
+    "topic": "Functional genomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0089",
+    "topic": "Ontology and terminology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0090",
+    "topic": "Information retrieval"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0091",
+    "topic": "Bioinformatics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0092",
+    "topic": "Data visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0094",
+    "topic": "Nucleic acid thermodynamics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0097",
+    "topic": "Nucleic acid structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0099",
+    "topic": "RNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0100",
+    "topic": "Nucleic acid restriction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0102",
+    "topic": "Mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0107",
+    "topic": "Genetic codes and codon usage"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0108",
+    "topic": "Protein expression"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0109",
+    "topic": "Gene finding"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0110",
+    "topic": "Transcription"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0111",
+    "topic": "Promoters"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0112",
+    "topic": "Nucleic acid folding"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0114",
+    "topic": "Gene structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0121",
+    "topic": "Proteomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0122",
+    "topic": "Structural genomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0123",
+    "topic": "Protein properties"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0128",
+    "topic": "Protein interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0130",
+    "topic": "Protein folding, stability and design"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0133",
+    "topic": "Two-dimensional gel electrophoresis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0134",
+    "topic": "Mass spectrometry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0135",
+    "topic": "Protein microarrays"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0137",
+    "topic": "Protein hydropathy"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0140",
+    "topic": "Protein targeting and localisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0141",
+    "topic": "Protein cleavage sites and proteolysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0143",
+    "topic": "Protein structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0144",
+    "topic": "Protein residue interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0147",
+    "topic": "Protein-protein interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0148",
+    "topic": "Protein-ligand interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0149",
+    "topic": "Protein-nucleic acid interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0150",
+    "topic": "Protein design"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0151",
+    "topic": "G protein-coupled receptors (GPCR)"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0152",
+    "topic": "Carbohydrates"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0153",
+    "topic": "Lipids"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0154",
+    "topic": "Small molecules"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0156",
+    "topic": "Sequence editing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0157",
+    "topic": "Sequence composition, complexity and repeats"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0158",
+    "topic": "Sequence motifs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0159",
+    "topic": "Sequence comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0160",
+    "topic": "Sequence sites, features and motifs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0163",
+    "topic": "Sequence database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0164",
+    "topic": "Sequence clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0166",
+    "topic": "Protein structural motifs and surfaces"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0167",
+    "topic": "Structural (3D) profiles"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0172",
+    "topic": "Protein structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0173",
+    "topic": "Nucleic acid structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0174",
+    "topic": "Ab initio structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0175",
+    "topic": "Homology modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0176",
+    "topic": "Molecular dynamics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0177",
+    "topic": "Molecular docking"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0178",
+    "topic": "Protein secondary structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0179",
+    "topic": "Protein tertiary structure prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0180",
+    "topic": "Protein fold recognition"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0182",
+    "topic": "Sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0183",
+    "topic": "Structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0184",
+    "topic": "Threading"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0188",
+    "topic": "Sequence profiles and HMMs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0191",
+    "topic": "Phylogeny reconstruction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0194",
+    "topic": "Phylogenomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0195",
+    "topic": "Virtual PCR"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0196",
+    "topic": "Sequence assembly"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0199",
+    "topic": "Genetic variation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0200",
+    "topic": "Microarrays"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0202",
+    "topic": "Pharmacology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0203",
+    "topic": "Gene expression"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0204",
+    "topic": "Gene regulation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0208",
+    "topic": "Pharmacogenomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0209",
+    "topic": "Medicinal chemistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0210",
+    "topic": "Fish"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0211",
+    "topic": "Flies"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0213",
+    "topic": "Mice or rats"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0215",
+    "topic": "Worms"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0217",
+    "topic": "Literature analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0218",
+    "topic": "Natural language processing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0219",
+    "topic": "Data submission, annotation and curation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0220",
+    "topic": "Document, record and content management"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0221",
+    "topic": "Sequence annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0222",
+    "topic": "Genome annotation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0593",
+    "topic": "NMR"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0594",
+    "topic": "Sequence classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0595",
+    "topic": "Protein classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0598",
+    "topic": "Sequence motif or profile"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0601",
+    "topic": "Protein modifications"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0602",
+    "topic": "Molecular interactions, pathways and networks"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0605",
+    "topic": "Informatics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0606",
+    "topic": "Literature data resources"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0607",
+    "topic": "Laboratory information management"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0608",
+    "topic": "Cell and tissue culture"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0610",
+    "topic": "Ecology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0611",
+    "topic": "Electron microscopy"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0612",
+    "topic": "Cell cycle"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0613",
+    "topic": "Peptides and amino acids"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0616",
+    "topic": "Organelles"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0617",
+    "topic": "Ribosomes"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0618",
+    "topic": "Scents"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0620",
+    "topic": "Drugs and target structures"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0621",
+    "topic": "Model organisms"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0622",
+    "topic": "Genomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0623",
+    "topic": "Gene and protein families"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0624",
+    "topic": "Chromosomes"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0625",
+    "topic": "Genotype and phenotype"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0629",
+    "topic": "Gene expression and microarray"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0632",
+    "topic": "Probes and primers"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0634",
+    "topic": "Pathology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0635",
+    "topic": "Specific protein resources"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0637",
+    "topic": "Taxonomy"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0639",
+    "topic": "Protein sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0640",
+    "topic": "Nucleic acid sequence analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0641",
+    "topic": "Repeat sequences"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0642",
+    "topic": "Low complexity sequences"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0644",
+    "topic": "Proteome"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0654",
+    "topic": "DNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0655",
+    "topic": "Coding RNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0659",
+    "topic": "Functional, regulatory and non-coding RNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0660",
+    "topic": "rRNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0663",
+    "topic": "tRNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0694",
+    "topic": "Protein secondary structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0697",
+    "topic": "RNA structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0698",
+    "topic": "Protein tertiary structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0722",
+    "topic": "Nucleic acid classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0724",
+    "topic": "Protein families"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0736",
+    "topic": "Protein folds and structural domains"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0740",
+    "topic": "Nucleic acid sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0741",
+    "topic": "Protein sequence alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0747",
+    "topic": "Nucleic acid sites and features"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0748",
+    "topic": "Protein sites and features"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0749",
+    "topic": "Transcription factors and regulatory sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0751",
+    "topic": "Phosphorylation sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0753",
+    "topic": "Metabolic pathways"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0754",
+    "topic": "Signaling pathways"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0767",
+    "topic": "Protein and peptide identification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0769",
+    "topic": "Workflows"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0770",
+    "topic": "Data types and objects"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0771",
+    "topic": "Theoretical biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0779",
+    "topic": "Mitochondria"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0780",
+    "topic": "Plant biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0781",
+    "topic": "Virology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0782",
+    "topic": "Fungi"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0783",
+    "topic": "Pathogens"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0786",
+    "topic": "Arabidopsis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0787",
+    "topic": "Rice"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0796",
+    "topic": "Genetic mapping and linkage"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0797",
+    "topic": "Comparative genomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0798",
+    "topic": "Mobile genetic elements"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0803",
+    "topic": "Human disease"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0804",
+    "topic": "Immunology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0820",
+    "topic": "Membrane and lipoproteins"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0821",
+    "topic": "Enzymes"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_0922",
+    "topic": "Primers"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1302",
+    "topic": "PolyA signal or sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1304",
+    "topic": "CpG island and isochores"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1305",
+    "topic": "Restriction sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1307",
+    "topic": "Splice sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1308",
+    "topic": "Matrix/scaffold attachment sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1311",
+    "topic": "Operon"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1312",
+    "topic": "Promoters"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1317",
+    "topic": "Structural biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1456",
+    "topic": "Protein membrane regions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1770",
+    "topic": "Structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1775",
+    "topic": "Function analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_1811",
+    "topic": "Prokaryotes and Archaea"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2225",
+    "topic": "Protein databases"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2226",
+    "topic": "Structure determination"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2229",
+    "topic": "Cell biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2230",
+    "topic": "Classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2232",
+    "topic": "Lipoproteins"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2257",
+    "topic": "Phylogeny visualisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2258",
+    "topic": "Cheminformatics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2259",
+    "topic": "Systems biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2269",
+    "topic": "Statistics and probability"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2271",
+    "topic": "Structure database search"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2275",
+    "topic": "Molecular modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2276",
+    "topic": "Protein function prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2277",
+    "topic": "SNP"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2278",
+    "topic": "Transmembrane protein prediction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2280",
+    "topic": "Nucleic acid structure comparison"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2397",
+    "topic": "Exons"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2399",
+    "topic": "Gene transcription"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2533",
+    "topic": "DNA mutation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2640",
+    "topic": "Oncology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2661",
+    "topic": "Toxins and targets"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2754",
+    "topic": "Introns"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2807",
+    "topic": "Tool topic"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2809",
+    "topic": "Study topic"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2811",
+    "topic": "Nomenclature"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2813",
+    "topic": "Disease genes and proteins"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2814",
+    "topic": "Protein structure analysis"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2815",
+    "topic": "Human biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2816",
+    "topic": "Gene resources"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2817",
+    "topic": "Yeast"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2818",
+    "topic": "Eukaryotes"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2819",
+    "topic": "Invertebrates"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2820",
+    "topic": "Vertebrates"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2821",
+    "topic": "Unicellular eukaryotes"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2826",
+    "topic": "Protein structure alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2828",
+    "topic": "X-ray diffraction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2829",
+    "topic": "Ontologies, nomenclature and classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2830",
+    "topic": "Immunoproteins, genes and antigens"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2839",
+    "topic": "Molecules"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2840",
+    "topic": "Toxicology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2842",
+    "topic": "High-throughput sequencing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2844",
+    "topic": "Structure clustering"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2846",
+    "topic": "Gene regulatory networks"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2847",
+    "topic": "Disease (specific)"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2867",
+    "topic": "VNTR"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2868",
+    "topic": "Microsatellites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2869",
+    "topic": "RFLP"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2885",
+    "topic": "DNA polymorphism"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_2953",
+    "topic": "Nucleic acid design"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3032",
+    "topic": "Primer or probe design"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3038",
+    "topic": "Structure databases"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3039",
+    "topic": "Nucleic acid structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3041",
+    "topic": "Sequence databases"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3042",
+    "topic": "Nucleic acid sequences"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3043",
+    "topic": "Protein sequences"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3044",
+    "topic": "Protein interaction networks"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3047",
+    "topic": "Molecular biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3048",
+    "topic": "Mammals"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3050",
+    "topic": "Biodiversity"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3052",
+    "topic": "Sequence clusters and classification"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3053",
+    "topic": "Genetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3055",
+    "topic": "Quantitative genetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3056",
+    "topic": "Population genetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3060",
+    "topic": "Regulatory RNA"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3061",
+    "topic": "Documentation and help"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3062",
+    "topic": "Genetic organisation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3063",
+    "topic": "Medical informatics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3064",
+    "topic": "Developmental biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3065",
+    "topic": "Embryology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3067",
+    "topic": "Anatomy"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3068",
+    "topic": "Literature and language"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3070",
+    "topic": "Biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3071",
+    "topic": "Data management"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3072",
+    "topic": "Sequence feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3073",
+    "topic": "Nucleic acid feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3074",
+    "topic": "Protein feature detection"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3075",
+    "topic": "Biological system modelling"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3077",
+    "topic": "Data acquisition"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3078",
+    "topic": "Genes and proteins resources"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3118",
+    "topic": "Protein topological domains"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3120",
+    "topic": "Protein variants"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3123",
+    "topic": "Expression signals"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3125",
+    "topic": "DNA binding sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3126",
+    "topic": "Nucleic acid repeats"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3127",
+    "topic": "DNA replication and recombination"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3135",
+    "topic": "Signal or transit peptide"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3139",
+    "topic": "Sequence tagged sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3168",
+    "topic": "Sequencing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3169",
+    "topic": "ChIP-seq"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3170",
+    "topic": "RNA-Seq"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3171",
+    "topic": "DNA methylation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3172",
+    "topic": "Metabolomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3173",
+    "topic": "Epigenomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3174",
+    "topic": "Metagenomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3175",
+    "topic": "DNA structural variation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3176",
+    "topic": "DNA packaging"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3177",
+    "topic": "DNA-Seq"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3178",
+    "topic": "RNA-Seq alignment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3179",
+    "topic": "ChIP-on-chip"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3263",
+    "topic": "Data security"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3277",
+    "topic": "Sample collections"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3292",
+    "topic": "Biochemistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3293",
+    "topic": "Phylogenetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3295",
+    "topic": "Epigenetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3297",
+    "topic": "Biotechnology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3298",
+    "topic": "Phenomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3299",
+    "topic": "Evolutionary biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3300",
+    "topic": "Physiology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3301",
+    "topic": "Microbiology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3302",
+    "topic": "Parasitology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3303",
+    "topic": "Medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3304",
+    "topic": "Neurobiology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3305",
+    "topic": "Public health and epidemiology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3306",
+    "topic": "Biophysics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3307",
+    "topic": "Computational biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3308",
+    "topic": "Transcriptomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3314",
+    "topic": "Chemistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3315",
+    "topic": "Mathematics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3316",
+    "topic": "Computer science"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3318",
+    "topic": "Physics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3320",
+    "topic": "RNA splicing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3321",
+    "topic": "Molecular genetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3322",
+    "topic": "Respiratory medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3323",
+    "topic": "Metabolic disease"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3324",
+    "topic": "Infectious disease"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3325",
+    "topic": "Rare diseases"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3332",
+    "topic": "Computational chemistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3334",
+    "topic": "Neurology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3335",
+    "topic": "Cardiology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3336",
+    "topic": "Drug discovery"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3337",
+    "topic": "Biobank"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3338",
+    "topic": "Mouse clinic"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3339",
+    "topic": "Microbial collection"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3340",
+    "topic": "Cell culture collection"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3341",
+    "topic": "Clone library"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3342",
+    "topic": "Translational medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3343",
+    "topic": "Compound libraries and screening"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3344",
+    "topic": "Biomedical science"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3345",
+    "topic": "Data identity and mapping"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3346",
+    "topic": "Sequence search"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3360",
+    "topic": "Biomarkers"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3361",
+    "topic": "Laboratory techniques"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3365",
+    "topic": "Data architecture, analysis and design"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3366",
+    "topic": "Data integration and warehousing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3368",
+    "topic": "Biomaterials"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3369",
+    "topic": "Chemical biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3370",
+    "topic": "Analytical chemistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3371",
+    "topic": "Synthetic chemistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3372",
+    "topic": "Software engineering"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3373",
+    "topic": "Drug development"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3374",
+    "topic": "Biotherapeutics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3375",
+    "topic": "Drug metabolism"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3376",
+    "topic": "Medicines research and development"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3377",
+    "topic": "Safety sciences"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3378",
+    "topic": "Pharmacovigilance"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3379",
+    "topic": "Preclinical and clinical studies"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3382",
+    "topic": "Imaging"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3383",
+    "topic": "Biological imaging"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3384",
+    "topic": "Medical imaging"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3385",
+    "topic": "Light microscopy"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3386",
+    "topic": "Laboratory animal science"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3387",
+    "topic": "Marine biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3388",
+    "topic": "Molecular medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3390",
+    "topic": "Nutritional science"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3391",
+    "topic": "Omics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3393",
+    "topic": "Quality affairs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3394",
+    "topic": "Regulatory affairs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3395",
+    "topic": "Regenerative medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3396",
+    "topic": "Systems medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3397",
+    "topic": "Veterinary medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3398",
+    "topic": "Bioengineering"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3399",
+    "topic": "Geriatric medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3400",
+    "topic": "Allergy, clinical immunology and immunotherapeutics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3401",
+    "topic": "Pain medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3402",
+    "topic": "Anaesthesiology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3403",
+    "topic": "Critical care medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3404",
+    "topic": "Dermatology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3405",
+    "topic": "Dentistry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3406",
+    "topic": "Ear, nose and throat medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3407",
+    "topic": "Endocrinology and metabolism"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3408",
+    "topic": "Haematology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3409",
+    "topic": "Gastroenterology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3410",
+    "topic": "Gender medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3411",
+    "topic": "Gynaecology and obstetrics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3412",
+    "topic": "Hepatic and biliary medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3413",
+    "topic": "Infectious tropical disease"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3414",
+    "topic": "Trauma medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3415",
+    "topic": "Medical toxicology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3416",
+    "topic": "Musculoskeletal medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3417",
+    "topic": "Opthalmology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3418",
+    "topic": "Paediatrics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3419",
+    "topic": "Psychiatry"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3420",
+    "topic": "Reproductive health"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3421",
+    "topic": "Surgery"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3422",
+    "topic": "Urology and nephrology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3423",
+    "topic": "Complementary medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3444",
+    "topic": "MRI"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3448",
+    "topic": "Neutron diffraction"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3452",
+    "topic": "Tomography"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3473",
+    "topic": "Data mining"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3474",
+    "topic": "Machine learning"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3489",
+    "topic": "Database management"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3500",
+    "topic": "Zoology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3510",
+    "topic": "Protein sites, features and motifs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3511",
+    "topic": "Nucleic acid sites, features and motifs"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3512",
+    "topic": "Gene transcripts"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3514",
+    "topic": "Protein-ligand interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3515",
+    "topic": "Protein-drug interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3516",
+    "topic": "Genotyping experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3517",
+    "topic": "GWAS study"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3518",
+    "topic": "Microarray experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3519",
+    "topic": "PCR experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3520",
+    "topic": "Proteomics experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3521",
+    "topic": "2D PAGE experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3522",
+    "topic": "Northern blot experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3523",
+    "topic": "RNAi experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3524",
+    "topic": "Simulation experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3525",
+    "topic": "Protein-nucleic acid interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3526",
+    "topic": "Protein-protein interactions"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3527",
+    "topic": "Cellular process pathways"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3528",
+    "topic": "Disease pathways"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3529",
+    "topic": "Environmental information processing pathways"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3530",
+    "topic": "Genetic information processing pathways"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3531",
+    "topic": "Protein super-secondary structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3533",
+    "topic": "Protein active sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3534",
+    "topic": "Protein binding sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3535",
+    "topic": "Protein-nucleic acid binding sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3536",
+    "topic": "Protein cleavage sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3537",
+    "topic": "Protein chemical modifications"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3538",
+    "topic": "Protein disordered structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3539",
+    "topic": "Protein domains"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3540",
+    "topic": "Protein key folding sites"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3541",
+    "topic": "Protein post-translational modifications"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3542",
+    "topic": "Protein secondary structure"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3543",
+    "topic": "Protein sequence repeats"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3544",
+    "topic": "Protein signal peptides"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3557",
+    "topic": "Protein interaction experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3569",
+    "topic": "Applied mathematics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3570",
+    "topic": "Pure mathematics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3571",
+    "topic": "Data governance"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3572",
+    "topic": "Data quality management"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3573",
+    "topic": "Freshwater biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3574",
+    "topic": "Human genetics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3575",
+    "topic": "Tropical medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3576",
+    "topic": "Medical biotechnology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3577",
+    "topic": "Personalised medicine"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3656",
+    "topic": "Immunoprecipitation experiment"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3673",
+    "topic": "Whole genome sequencing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3674",
+    "topic": "Methylated DNA immunoprecipitation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3676",
+    "topic": "Exome sequencing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3678",
+    "topic": "Experimental design and studies"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3679",
+    "topic": "Animal study"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3697",
+    "topic": "Microbial ecology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3794",
+    "topic": "RNA immunoprecipitation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3796",
+    "topic": "Population genomics"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3810",
+    "topic": "Agricultural science"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3837",
+    "topic": "Metagenomic sequencing"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3855",
+    "topic": "Environmental science"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3892",
+    "topic": "Biomolecular simulation"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3895",
+    "topic": "Synthetic biology"
+  },
+  {
+    "Class ID": "http://edamontology.org/topic_3912",
+    "topic": "Genetic engineering"
+  }
+]
+

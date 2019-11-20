@@ -7,8 +7,9 @@ import './App.css';
 import results from './testdata/testdata.json';
 
 const initialState = {
-    query: 'gene signatures',
-    results: results,
+    query: '',
+    expressions: [],
+    results: [],
     happyCount: 0
 }
 

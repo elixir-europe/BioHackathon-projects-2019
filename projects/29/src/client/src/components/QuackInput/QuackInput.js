@@ -6,7 +6,11 @@ import "./QuackInput.css"
 import sadDuck from './sad_duck.png';
 import happyDuck from './happy_duck.png';
 import neutralDuck from './neutral_duck.png';
-import testData from '../../testdata/testdata.json';
+import data from "./topics";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import results from '../../testdata/testdata.json';
+
 
 
 const Input = styled.input`
@@ -34,6 +38,7 @@ const QuackFilterBox = styled(ReactFilterBox)`
 const Img = styled.img`
     height: 50px;
      padding-top: 2%;
+     cursor: pointer; 
 `
 
 const OPTIONS = [
@@ -62,24 +67,7 @@ const OPTIONS = [
         type: "text"
     }
 ];
-const data = [{topic: 'asdf'},
-{topic: 'asdf'},
-{topic: 'asdfa'},
-{topic: 'gadsg4'},
-{topic: 'argag43ga4g'},
-{topic: 'g'},
-{topic: 'ag'},
-{topic: 'a44'},
-{topic: 'a4g'},
-{topic: 'a4'},
-{topic: 'ga4ga4tga'},
-{topic: 'rga'},
-{topic: 'ta'},
-{topic: 'rtaq3'},
-{topic: '4ta'},
-{topic: 'rga'},
-{topic: '4tga'},
-{topic: 'ergarag'}]
+
 
 function QuackInput(props) {
     const {state, dispatch} = useContext(QuackContext);
@@ -97,22 +85,36 @@ function QuackInput(props) {
         setIsOk(!result.isError)
         setValue(query)
     }
+
+    const submitQuery = () => {
+        dispatch({type: 'SET_QUERY', data: value })
+        dispatch({type: 'SET_RESULTS', data: results})
+    }
+
+    const syntaxError = () => {
+        toast.error("Please correct your query!");
+    }
+
+    const noQuery = () => {
+        toast.info("Please enter a query prior to clicking submit!");
+    }
+
     const renderIcon = () => {
         if (value==''){
-            return <Img title="type your query" src={neutralDuck}/>
+            return <Img onClick={()=>noQuery()} title="type your query" src={neutralDuck}/>
 
         }
-        return isOk ? <Img title="syntax correct!" src={happyDuck}/> :
-            <Img title="syntax error" src={sadDuck}/>
+        return isOk ? <Img onClick={()=>submitQuery()} title="syntax correct!" src={happyDuck}/> :
+            <Img onClick={()=>syntaxError()} title="syntax error" src={sadDuck}/>
     }
 
     const onParseOk = (expressions) => {
-        console.log(expressions);
-        if(value.trim()!=='')
-            dispatch({type:'SET_QUERY',value})
+        dispatch({type: 'SET_EXPRESSIONS', data:expressions})
 
-            dispatch({type:"SET_RESULTS", data: testData})
+
+        return null;
     }
+
     return (
 
         <InputWrapper>
@@ -120,9 +122,12 @@ function QuackInput(props) {
                 data={data}
                 onChange={(query, result) => onChange(query, result)}
                 options={OPTIONS}
-                onParseOk={(expr) => onParseOk(expr)}
+                onParseOk={(expr)=>onParseOk(expr)}
+
             />
             {renderIcon()}
+                      <ToastContainer />
+
         </InputWrapper>
 
     );
