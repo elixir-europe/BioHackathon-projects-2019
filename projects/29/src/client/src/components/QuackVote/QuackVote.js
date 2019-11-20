@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import happyDuck from './happy_duck.png';
 import sadDuck from './sad_duck.png';
 import styled from 'styled-components';
+import QuackContext from "../../context";
 
 const Wrapper = styled.div`
    display: flex;
@@ -16,19 +17,35 @@ const Tiler = styled.div`
     border-right: 1px solid black;
     
 `
-const cursor = process.env.PUBLIC_URL+"/sign_of_horns.png";
+const cursor = process.env.PUBLIC_URL + "/sign_of_horns.png";
 const Img = styled.img`
     cursor: pointer;
 `
 
-const Button = styled.button`
+
+const HappyButton = styled.button`
     border-radius:50%;
 
     border-width: 0px;
     background-color: transparent;
     :active{
         outline: 0;
-        background-color: yellow;
+          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 20px #93C5FF;
+
+    }
+    :focus{
+        outline: 0
+    }
+`
+const SadButton = styled.button`
+    border-radius:50%;
+
+    border-width: 0px;
+    background-color: transparent;
+    :active{
+        outline: 0;
+          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 20px #F6560D;
+
     }
     :focus{
         outline: 0
@@ -36,11 +53,15 @@ const Button = styled.button`
 `
 
 const QuackVote = () => {
+    const {state, dispatch} = useContext(QuackContext);
+    const addHappy = () => {
+        dispatch({type:'ADD_HAPPY', data: {}})
+    }
     return (
         <Wrapper>
-            <Button><Img src={happyDuck}/></Button>
-            <Tiler />
-            <Button><Img src={sadDuck}/></Button>
+            <HappyButton onClick={()=>addHappy()}><Img src={happyDuck}/></HappyButton>
+            <Tiler/>
+            <SadButton><Img src={sadDuck}/></SadButton>
         </Wrapper>
     );
 };
