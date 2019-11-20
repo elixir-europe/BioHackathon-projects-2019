@@ -84,13 +84,18 @@ def compute_distances(nodes):
         index=df_mat.index
     )
 
+    return df_dists
+
+
+def analyze_distances(nodes, df_dists):
     # analyse results
     sub_idx = np.random.randint(
-        0, df_mat.index.size,
+        0, df_dists.index.size,
         size=1000)
     df_sub = df_dists.iloc[sub_idx, sub_idx]
-    sns.clustermap(df_sub)
-    plt.show()
+
+    g = sns.clustermap(df_sub, rasterized=True)
+    g.savefig('distances.pdf')
 
     # df.idxmin(axis=0)
     # tmp = {n['doi']: n for n in nodes}
@@ -98,8 +103,13 @@ def compute_distances(nodes):
 
 def main():
     wrapper = Neo4jWrapper(xxx)
+
+    # compute all pairwise node distances
     nodes = wrapper.get_nodes()
-    res = compute_distances(nodes)
+    df_dists = compute_distances(nodes)
+
+    # analyze results
+    analyze_distances(nodes, df_dists)
 
 
 if __name__ == '__main__':
