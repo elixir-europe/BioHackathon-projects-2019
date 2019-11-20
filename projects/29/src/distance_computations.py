@@ -23,18 +23,43 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 import sh
+from tqdm import tqdm
 from loguru import logger
 
 
+def analyze_data(df):
+    # concept counts per paper
+    plt.figure(figsize=(8, 6))
+    sns.distplot(df.groupby('id:ID').count()['value'], kde=False)
+    plt.xlabel('Concept Count per Paper')
+    plt.ylabel('Count')
+    plt.yscale('log')
+    plt.tight_layout()
+    plt.savefig('concept_per_paper_counts.pdf')
+
+
 def analyze_distances(df_dists):
-    # analyse results
+    # subset data randomly
     sub_idx = np.random.randint(
         0, df_dists.index.size,
         size=1000)
     df_sub = df_dists.iloc[sub_idx, sub_idx]
 
+    # distance distribution
+    plt.figure(figsize=(8, 6))
+    sns.distplot(np.random.choice(
+        df_dists.values.ravel(),
+        1_000_000
+    ), kde=False)
+    plt.xlabel('Distance')
+    plt.ylabel('Count')
+    plt.yscale('log')
+    plt.tight_layout()
+    plt.savefig('distance_distribution.pdf')
+
+    # cluster papers
     g = sns.clustermap(df_sub, rasterized=True)
-    g.savefig('distances.pdf')
+    g.savefig('paper_clusters.pdf')
 
 
 def main(fname_in, fname_out):
@@ -43,18 +68,35 @@ def main(fname_in, fname_out):
     df = pd.read_csv(fname_in)
     # df.drop_duplicates(inplace=True)
 
-    concept_variables = [
+    concept_variables = {
         'containsData:string',
         'containsOperation:string',
         'containsDataFormat:string',
         'hasTopic:string'
-    ]
+    }
+
+    node_properties = (df[
+            df['variable'].isin(set(df['variable']) - concept_variables)
+        ].drop_duplicates(subset=['id:ID', 'variable'])
+         .pivot(index='id:ID', columns='variable', values='value')
+         .reset_index())
+
     df = df[df['variable'].isin(concept_variables)]
 
-    # df = df.iloc[:10]
+    # df = df.sample(1_000)
+
+    # only consider papers with enough concepts
+    doi_selection = (df.groupby('id:ID')
+                       .count()['value']
+                       .to_frame()
+                       .query('value >= 1')
+                       .index)
+    df = df[df['id:ID'].isin(doi_selection)]
+
+    analyze_data(df)
 
     # encode features
-    logger.info('Encode features')
+    logger.info(f'Encode features (raw-shape: {df.shape})')
     ohe = ce.OneHotEncoder(handle_unknown='error', use_cat_names=True)
 
     df_trans = (ohe.fit_transform(df.set_index('id:ID')['value'])
@@ -62,40 +104,44 @@ def main(fname_in, fname_out):
                    .groupby('id:ID')
                    .sum())
 
+    weights = 1 / df_trans.sum(axis=0)
+
     # compute distances
-    logger.info('Compute distances')
+    logger.info(f'Compute distances (trans-shape: {df_trans.shape})')
+
+    dists = distance.pdist(
+        df_trans,
+        metric='jaccard') #, w=weights
+
     df_dists = pd.DataFrame(
-        distance.squareform(distance.pdist(
-            df_trans,
-            metric='jaccard')),
+        distance.squareform(dists),
         columns=df_trans.index,
         index=df_trans.index)
 
     analyze_distances(df_dists)
 
     # extract relationships
-    logger.info('Extract relationships')
-    keep = (np.triu(np.ones(df_dists.shape), k=1)
-              .astype('bool')
-              .reshape(df_dists.size))
-    tmp = df_dists.stack()[keep]
+    logger.info(f'Extract relationships (dists-shape: {df_dists.shape})')
 
-    tmp.index.rename([':START_ID', ':END_ID'], inplace=True)
-    tmp.name = 'value:FLOAT'
+    idx_trans = df_trans.index
+    triu_i, triu_j = np.triu_indices(df_trans.shape[0], k=1)
 
-    df_edges = tmp.reset_index()
-    df_edges[':TYPE'] = 'distance'
+    edge_count = 0
+    with open(fname_out, 'w') as fd:
+        fd.write(':START_ID,:END_ID,:TYPE,value:FLOAT\n')
 
-    df_edges[df_edges['value:FLOAT'] < 1]
-
-    df_edges.to_csv(fname_out, index=False)
+        for i, j, d in tqdm(zip(triu_i, triu_j, dists), total=len(dists)):
+            if d < 0.2:
+                fd.write(f'{idx_trans[i]},{idx_trans[j]},distance,{d}\n')
+                edge_count += 1
 
     # recreate Neo4j database
-    logger.info('Recreate Neo4j database')
+    logger.info(f'Recreate Neo4j database (edge-count: {edge_count})')
 
     node_file = 'node_tmp.csv'
     (df['id:ID'].drop_duplicates()
                 .to_frame()
+                .merge(node_properties, on='id:ID')
                 .to_csv(node_file, index=False))
 
     sh.neo4j('stop')

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FULLPATH="$(dirname $(readlink -f $0))"
+
+source ${CONDA_PREFIX=${3-~/berryconda3}}/bin/activate
+
+cd ${FULLPATH}
+
+echo starting twitter stream
+export PYTHONPATH=${FULLPATH}${PYTHONPATH:+:${PYTHONPATH}}
+exec python publication_fetcher/twitter_stream.py
