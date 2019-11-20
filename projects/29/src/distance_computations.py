@@ -43,7 +43,12 @@ def main(fname_in, fname_out):
     df = pd.read_csv(fname_in)
     # df.drop_duplicates(inplace=True)
 
-    concept_variables = ['containsData:string']
+    concept_variables = [
+        'containsData:string',
+        'containsOperation:string',
+        'containsDataFormat:string',
+        'hasTopic:string'
+    ]
     df = df[df['variable'].isin(concept_variables)]
 
     # df = df.iloc[:10]
