@@ -11,6 +11,7 @@ import numpy as np
 from textminingservice.TextMiningService import TextMiningService
 from textminingservice.models.coocurrence import CoOccurrence
 from textminingservice.models.publication import Publication
+from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -104,10 +105,10 @@ class PMC_Europe_Service(TextMiningService):
                     publications.append(Publication(
                         pm_id=article['extId'], pmc_id=article['pmcid']))
         else:
-            # raise NotImplementedError
+            raise TextMiningServiceOperationNotSupported
             # once PMC is fast enough to deal with multiple entities, use either the following line
             # or _get_mentions_for_single_entity which can also be used with multiple entities
-            return self._get_mentions_for_multiple_entities(entities, limit=limit)
+            # return self._get_mentions_for_multiple_entities(entities, limit=limit)
 
     def _get_mentions_for_multiple_entities(self, entities: List[str], limit: int = 20) -> List[Publication]:
         """
@@ -192,7 +193,7 @@ class PMC_Europe_Service(TextMiningService):
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
         """Returns a list of co-occurrences from a given entity
         """
-        raise NotImplementedError
+        raise TextMiningServiceOperationNotSupported
 
 
 if __name__ == "__main__":
@@ -204,8 +205,8 @@ if __name__ == "__main__":
         print(pub)
 
     print(datetime.datetime.now())
-
-    print('get mentions for multiple entities PRDM1, GFP')
-    for pub in pmc.get_mentions(['PRDM1', 'GFP']):
-        print(pub)
-    print(datetime.datetime.now())
+    # right now it raises TextMiningServiceOperationNotSupported
+    # print('get mentions for multiple entities PRDM1, GFP')
+    # for pub in pmc.get_mentions(['PRDM1', 'GFP']):
+    #     print(pub)
+    # print(datetime.datetime.now())
