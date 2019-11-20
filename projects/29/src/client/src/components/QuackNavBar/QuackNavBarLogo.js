@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import logo from './quack_small_logo.png'; // Tell Webpack this JS file uses this image
 import styled from 'styled-components';
+import QuackContext from "../../context";
 
 const Logo = styled.img`
     height: 3rem;
@@ -14,9 +15,13 @@ const VerticalWrapper = styled.div`
 `
 
 const QuackNavBarLogo = () => {
+    const {state, dispatch} = useContext(QuackContext);
+    const onClick = () => {
+        dispatch({type: 'DELETE_ALL'})
+    }
     return (
         <VerticalWrapper>
-            <Logo src={logo} />
+            <Logo onClick={() => onClick()} src={logo}/>
         </VerticalWrapper>
     );
 };
