@@ -2,10 +2,12 @@
 
 **Project Number:** 15
 
-## Orphanet DEV environnement links (not public, need VPN)
-Nb: JSON-LD is displayed in the page to show it (=> will be put into script)
+## Orphanet DEV environment links (not public, need VPN)
+Nb: JSON-LD is displayed in the page to show it (=> will be put into script tags obviously)
+
 Nb: real implementation will need a new constructor within the framework engine (to optimize integration)
-Nb: it works (=> possible to search different drugs, tradename, genes...)
+
+Nb: it works (=> possible to search different drugs, tradename, genes, diseases...)
 
 Tradename example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Drugs_Search.php?lng=EN&data_id=2583&Substance=VINCERINONE&Typ=Med&title=VINCERINONE&data_type=Product)
 
@@ -13,7 +15,13 @@ Drugs example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Drugs_Search.
 
 Gene example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Disease_Genes.php?lng=EN&data_id=20738&Disease_Disease_Genes_diseaseGroup=brca1&Disease_Disease_Genes_diseaseType=Gen&MISSING%20CONTENT=BRCA1-associated-protein-1---BAP1&search=Disease_Genes_Simple&title=BRCA1%20associated%20protein%201%20-%20BAP1)
 
+Disease example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Disease_Search.php?lng=EN&data_id=91&Disease_Disease_Search_diseaseGroup=rett&Disease_Disease_Search_diseaseType=Pat&Disease(s)/group%20of%20diseases=Rett-syndrome&title=Rett%20syndrome&search=Disease_Search_Simple)
 
+## Docker image of Orphadata's FAIRdatapoint almost setup
+
+Giving a machine readable access to Orphadata's datasets
+
+Need look&feel customisation
 
 ## Research area alignment
 
