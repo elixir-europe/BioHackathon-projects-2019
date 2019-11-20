@@ -20,7 +20,7 @@ class PMC_Europe_Service(TextMiningService):
     Arguments:
         TextMiningService {[type]} -- [description]
     """
-    MAX_PAGE_SIZE = 8
+    MAX_PAGE_SIZE = 500
     BASE_URL = 'https://www.ebi.ac.uk'
     MENTION_URL = BASE_URL + \
         '/europepmc/annotations_api/annotationsByEntity?entity={}&filter={}&format={}&cursorMark={}&pageSize={}'
@@ -84,6 +84,59 @@ class PMC_Europe_Service(TextMiningService):
 
         return new_article_list, new_white_list
 
+    def get_mentions_alt(self, entities: List[str], limit: int = 20) -> List[Publication]:
+
+        types = ['Gene_Proteins',
+                 'Organisms',
+                 'Chemicals',
+                 'Gene Ontology',
+                 'Diseases',
+                 'Accession Numbers',
+                 'Resources',
+                 'Gene Function',
+                 'Gene Disease',
+                 'Protein Interaction',
+                 'Biological Event',
+                 'Gene Mutations',
+                 'TF_TG',
+                 'Cell Line',
+                 'Cell',
+                 'Sequence',
+                 'Organ Tissue',
+                 'Molecular Process',
+                 'Clinical Drug']
+
+        # normalize
+        entities = list(map(str.lower, entities))
+        first_entity = entities[0]
+        rest_of_entities = entities[1:]
+
+        prevCursorMark = -1
+        cursorMark = 0
+        counter = 0
+        while cursorMark != prevCursorMark:
+            print(f'get {counter}')
+            url = PMC_Europe_Service.MENTION_URL.format(
+                first_entity, 0, 'JSON', cursorMark, PMC_Europe_Service.MAX_PAGE_SIZE)
+            results = requests.get(url)
+            assert results.ok
+            data = json.loads(results.content.decode().strip())
+            prevCursorMark = cursorMark
+            cursorMark = data['nextCursorMark']
+            for article in data['articles']:
+                article_id = article['extId']
+                bool_table = dict(
+                    zip(rest_of_entities, [False]*len(rest_of_entities)))
+                counter += 1
+                for annotation in article['annotations']:
+                    other_entity = annotation['exact'].lower()
+                    # check if this entity is what we look for
+                    if other_entity in bool_table:
+                        bool_table[other_entity] = True
+                # if the article includes all entities, then
+                if all(bool_table.values()):
+                    yield article, article['extId']
+
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
         """
         This method returns a list of publications sorted by importance.
@@ -119,6 +172,10 @@ class PMC_Europe_Service(TextMiningService):
 
 if __name__ == "__main__":
     pmc = PMC_Europe_Service()
-    # get mentions for a single
-    for pub in pmc.get_mentions(['P53', 'PRDM1']):
-        print(pub)
+    print('get mentions alt')
+    counter = 0
+    for article, article_id in pmc.get_mentions_alt(['P53', 'PRDM1']):
+        print(article_id)
+        counter += 1
+        if counter > 20:
+            break
