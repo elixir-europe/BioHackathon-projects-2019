@@ -1,0 +1,13 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Drug",
+  "@id": "uri or url",
+  "activeIngredient": "substancename",
+  "description": "description of substance",
+  "alternateName": "id in dev of the molecule ?",
+  "proprietaryName": [
+    "tradename1",
+    "tradename2",
+    "tradename3"
+   ] 
+}

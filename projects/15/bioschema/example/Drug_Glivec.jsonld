@@ -1,1 +1,5 @@
-http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=69297
+{"@context": "http://schema.org/", 
+"@type": "Drug", 
+"identifier": "528", 
+"proprietaryName": "GLIVEC", 
+"activeIngredient": "Imatinib mesilate" } 
