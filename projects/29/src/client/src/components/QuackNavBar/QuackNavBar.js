@@ -2,7 +2,7 @@ import React from 'react';
 import QuackNavBarLogo from './QuackNavBarLogo';
 import styled from 'styled-components';
 import QuackNavbarSearch from "./QuackNavbarSearch";
-import basket from './basket.svg';
+import QuackBasket from './QuackBasket';
 
 
 const NavBar = styled.div`
@@ -34,15 +34,14 @@ const Img = styled.img`
 `
 
 
-const QuackNavBar = ({query}) => {
+const QuackNavBar = ({query, happyCount}) => {
     return (
         <NavBar>
             <Start>
                 <QuackNavBarLogo/>
-                <QuackNavbarSearch/>
             </Start>
             <End>
-                <Img src={basket}/>
+                <QuackBasket count={happyCount} />
             </End>
         </NavBar>
     );

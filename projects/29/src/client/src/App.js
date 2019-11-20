@@ -8,7 +8,8 @@ import results from './testdata/testdata.json';
 
 const initialState = {
     query: 'gene signatures',
-    results: results
+    results: results,
+    happyCount: 0
 }
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
 
         <QuackContext.Provider value={{state, dispatch}}>
-            {<QuackSearch/>}
+            {state.results.length>0?<QuackResults/>:<QuackSearch/>}
         </QuackContext.Provider>
   );
 }

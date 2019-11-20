@@ -19,7 +19,7 @@ const QuackResults = () => {
 
     return (
         <div>
-            <QuackNavBar/>
+            <QuackNavBar happyCount={state.happyCount}/>
             <Content>
                 <ResultWrapper>
                     {state.results.map((ele) => {
