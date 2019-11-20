@@ -34,8 +34,7 @@ class PMC_Europe_Service(TextMiningService):
     def _get_single_entity_mentions(self, entity: str, pageSize: int = None):
         """
         Generator that yields each article and article id that mentions the given entity
-
-        See https://europepmc.org/AnnotationsApi#!/annotations45api45controller/getAnnotationsArticlesByEntityUsingGET
+        See https://europepmc.org/AnnotationsApi!/annotations45api45controller/getAnnotationsArticlesByEntityUsingGET
 
         The articles come up sorted by number of mentions
         """
@@ -193,14 +192,20 @@ class PMC_Europe_Service(TextMiningService):
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
         """Returns a list of co-occurrences from a given entity
         """
+        raise NotImplementedError
 
 
 if __name__ == "__main__":
     pmc = PMC_Europe_Service()
-    print('get mentions alt')
-    counter = 0
-    for article, article_id in pmc.get_mentions_alt(['P53', 'PRDM1']):
-        print(article_id)
-        counter += 1
-        if counter > 20:
-            break
+    print(datetime.datetime.now())
+
+    print('get mentions for single entity PRDM1')
+    for pub in pmc.get_mentions(['PRDM1']):
+        print(pub)
+
+    print(datetime.datetime.now())
+
+    print('get mentions for multiple entities PRDM1, GFP')
+    for pub in pmc.get_mentions(['PRDM1', 'GFP']):
+        print(pub)
+    print(datetime.datetime.now())
