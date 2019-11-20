@@ -71,13 +71,21 @@ class BioKBService(TextMiningService):
         data = json.loads(response.content.decode().strip())
         publications = []
         for pub in data['publications']:
-            p = Publication(title=pub.get('title', None),
-                            journal_title=pub.get('journal_title', None),
-                            doi=pub.get('doi', None),
-                            pm_id=pub.get('pubmed_id', None),
-                            pmc_id=pub.get('pmc_id', None),
-                            other_id=pub['id'],
-                            year=pub.get('year', None))
+            title = pub.get('title', None)
+            journal_title = pub.get('journal_title', None)
+            doi = pub.get('doi', None)
+            pm_id = pub.get('pubmed_id', None)
+            pmc_id = pub.get('pmc_id', None)
+            other_id = pub['id']
+            year = pub.get('year', None)
+
+            p = Publication(title=title,
+                            journal_title=journal_title,
+                            doi=doi,
+                            pm_id=pm_id,
+                            pmc_id=pmc_id,
+                            other_id=other_id,
+                            year=year)
             publications.append(p)
         return publications
 
@@ -135,9 +143,9 @@ class BioKBService(TextMiningService):
 
 if __name__ == "__main__":
     bkb = BioKBService()
+    print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
+    print('')
     print(bkb.get_co_occurrences('DOID:2841', types=[
         'http://lcsb.uni.lu/biokb#Disease']))
     print('')
     print(bkb.get_co_occurrences('DOID:2841'))
-    print('')
-    print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
