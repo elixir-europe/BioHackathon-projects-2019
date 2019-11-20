@@ -74,19 +74,22 @@ def compute_distances(nodes):
     )
 
     # compute distances
-    sub = df_mat.sample(2000)
     dists = distance.squareform(distance.pdist(
-        sub,
+        df_mat,
         metric='jaccard'
     ))
     df_dists = pd.DataFrame(
         dists,
-        columns=sub.index,
-        index=sub.index
+        columns=df_mat.index,
+        index=df_mat.index
     )
 
     # analyse results
-    sns.clustermap(df_dists)
+    sub_idx = np.random.randint(
+        0, df_mat.index.size,
+        size=1000)
+    df_sub = df_dists.iloc[sub_idx, sub_idx]
+    sns.clustermap(df_sub)
     plt.show()
 
     # df.idxmin(axis=0)
