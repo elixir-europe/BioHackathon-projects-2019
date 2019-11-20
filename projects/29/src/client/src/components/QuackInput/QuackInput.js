@@ -37,8 +37,8 @@ const QuackFilterBox = styled(ReactFilterBox)`
 
 const Img = styled.img`
     height: 50px;
-     padding-top: 2%;
-     cursor: pointer; 
+    padding-top: 4%;
+    cursor: pointer; 
 `
 
 const OPTIONS = [
