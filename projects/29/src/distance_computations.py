@@ -68,18 +68,25 @@ def main(fname_in, fname_out):
     df = pd.read_csv(fname_in)
     # df.drop_duplicates(inplace=True)
 
-    concept_variables = [
+    concept_variables = {
         'containsData:string',
         'containsOperation:string',
         'containsDataFormat:string',
         'hasTopic:string'
-    ]
+    }
+
+    node_properties = (df[
+            df['variable'].isin(set(df['variable']) - concept_variables)
+        ].drop_duplicates(subset=['id:ID', 'variable'])
+         .pivot(index='id:ID', columns='variable', values='value')
+         .reset_index())
+
     df = df[df['variable'].isin(concept_variables)]
 
     # df = df.iloc[:10]
 
     # encode features
-    logger.info('Encode features')
+    logger.info(f'Encode features (raw-shape: {df.shape})')
     ohe = ce.OneHotEncoder(handle_unknown='error', use_cat_names=True)
 
     df_trans = (ohe.fit_transform(df.set_index('id:ID')['value'])
@@ -124,6 +131,7 @@ def main(fname_in, fname_out):
     node_file = 'node_tmp.csv'
     (df['id:ID'].drop_duplicates()
                 .to_frame()
+                .merge(node_properties, on='id:ID')
                 .to_csv(node_file, index=False))
 
     sh.neo4j('stop')
