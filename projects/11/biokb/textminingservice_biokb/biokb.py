@@ -51,19 +51,35 @@ class BioKBService(TextMiningService):
 
         query = """
             select ?publication str(?solrId) as ?solrId where {{
-                {} 
+                {}
                 ?publication <http://lcsb.uni.lu/biokb#solrId> ?solrId	.
             }} LIMIT {}
             """.format(entity_subquery, limit)
 
         results = self._run_sparql_query(query)
-        values = []
+        solr_ids = set()
         for result in results['results']['bindings']:
             solr_id = result['solrId']['value']
-            pub = Publication(other_id=solr_id)
-            values.append(pub)
+            solr_ids.add(solr_id)
+            # pub = Publication(other_id=solr_id)
+            # solr_ids[solr_id] = pub
 
-        return values
+        # translate ids
+        response = requests.get(BioKBService.SOLR_TRANSLATOR_URL,
+                                data={'solrIds': solr_ids})
+        assert response.ok
+        data = json.loads(response.content.decode().strip())
+        publications = []
+        for pub in data['publications']:
+            p = Publication(title=pub.get('title', None),
+                            journal_title=pub.get('journal_title', None),
+                            doi=pub.get('doi', None),
+                            pm_id=pub.get('pubmed_id', None),
+                            pmc_id=pub.get('pmc_id', None),
+                            other_id=pub['id'],
+                            year=pub.get('year', None))
+            publications.append(p)
+        return publications
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
 
