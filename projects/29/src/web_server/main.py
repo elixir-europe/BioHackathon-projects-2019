@@ -9,9 +9,7 @@ from web_server.sparql_wrapper import execute_query, get_total_papers
 from web_server.neo4j_wrapper import execute_cypher, test, get_properties, execute_cypher_simple
 
 class Query(BaseModel):
-    category: str
-    operator: str
-    value: str
+    q: list = []
 
 test()
 
@@ -23,17 +21,14 @@ def get_property():
 
 
 @app.get('/api/v1/doi')
-def query(doi: str = None):
+def doi(doi: str = None):
     res = execute_cypher_simple(doi)
     return res
 
 
-class Query(BaseModel):
-    q: list = []
-
 @app.post('/api/v1/query')
 def query(q: Query):
-    res = execute_cypher(q)
+    res = execute_cypher(q.q)
     return res
 
 #@app.get('/api/v1/query')

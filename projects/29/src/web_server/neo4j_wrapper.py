@@ -22,8 +22,8 @@ def get_properties():
 
 def print_publications_simple(tx, doi):
     #return tx.run("MATCH (n1 {id: 'http://identifiers.org/doi/10.1101/476457'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #print("MATCH (n1 {id: " + doi + "})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    return tx.run("MATCH (n1 {id: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
+    #print("MATCH (n1 {doi: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
+    return tx.run("MATCH (n1 {doi: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
     #return tx.run("MATCH (n1 {id: '$doi'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25", doi=doi)
 
 
