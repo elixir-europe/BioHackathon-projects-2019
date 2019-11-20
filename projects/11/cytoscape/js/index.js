@@ -48,6 +48,7 @@
       }
     };
 
+
     let $layout = $('#layout');
     let maxLayoutDuration = 1500;
     let layoutPadding = 50;
@@ -206,6 +207,15 @@
     $('#redo-algorithm').addEventListener('click', applyAlgorithmFromSelect);
   });
 })();
+
+cy.on('tap', 'node', function(){
+  try { // your browser may block popups
+    window.open( this.data('uri ') );
+  } catch(e){ // fall back on url change
+    window.location.href = this.data('href');
+  }
+});
+
 
 // tooltips with jQuery
 $(document).ready(() => $('.tooltip').tooltipster());
