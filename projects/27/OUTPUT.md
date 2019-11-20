@@ -25,3 +25,4 @@
 * Uploaded [Maven packages of Validator](https://github.com/bridgedb/Validator/packages) to GitHub Packages
 * Figured out how to use GitHub Tokens securely on Travis-CI (see [this](https://github.com/bridgedb/IdentityMappingService/commit/57529c1ab961d0c3868bf2e661286597f03348b5) and [this](https://github.com/bridgedb/IdentityMappingService/commit/135386dee382d90a2354ae4391267c7deca281f2) and setting GITHUB_USERNAME and GITHUB_TOKEN in Travis)
 * Travis now successfully compiles BridgeDb, Validator, queryExpender, and IdentifierMappingServices (closes [#43](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/43))
+* [added EDAM ontology annotation](https://salsa.debian.org/java-team/cdk/merge_requests/3) to the Debian libcdk-java package
