@@ -43,7 +43,6 @@ class PMC_Europe_Service(TextMiningService):
         while cursorMark != prevCursorMark:
             url = PMC_Europe_Service.MENTION_URL.format(
                 entity, 1, 'ID_LIST', cursorMark, PMC_Europe_Service.MAX_PAGE_SIZE)
-            print(f'Get {counter}')
             results = requests.get(url)
             assert results.ok
             data = json.loads(results.content.decode().strip())
@@ -90,6 +89,8 @@ class PMC_Europe_Service(TextMiningService):
         This method returns a list of publications sorted by importance.
         Since PMC Europe sorts the publications based on the number of occurrences, 
          this new score could be seen as the degree of co-occurrence.
+
+         Right now this does not work well because the pageSize is to small, hence the mentions retrieval time is too slow
         """
         white_list = None
         article_list = []
@@ -109,13 +110,15 @@ class PMC_Europe_Service(TextMiningService):
         publications = np.array(publications)
         scores = np.array(scores)
         inds = scores.argsort()[::-1]
-        return publications[inds]
+        return publications[inds][:limit]
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
-        pass
+        """Returns a list of co-occurrences from a given entity
+        """
 
 
 if __name__ == "__main__":
     pmc = PMC_Europe_Service()
+    # get mentions for a single
     for pub in pmc.get_mentions(['P53', 'PRDM1']):
         print(pub)
