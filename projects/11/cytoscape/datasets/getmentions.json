@@ -1,8 +1,8 @@
 [
 	{
     "data": {
-      "id": "1",
-      "idInt": 1,
+      "id": "0",
+      "uri": 1,
       "name": "Group of Input entities (Entity 1 \\n Entity2)",
       "query": true,
       "gene": true
@@ -18,7 +18,7 @@
   {
     "data": {
       "id": "2",
-      "idInt": 2,
+      "uri": 2,
       "name": "PMC463212",
       "query": false,
       "gene": true
@@ -34,7 +34,7 @@
 	{
     "data": {
       "id": "3",
-      "idInt": 3,
+      "uri": 3,
       "name": "PMC463213",
       "query": false,
       "gene": true
@@ -50,7 +50,7 @@
 	{
     "data": {
       "id": "4",
-      "idInt": 4,
+      "uri": 4,
       "name": "PMC463214",
       "query": false,
       "gene": true
@@ -66,7 +66,7 @@
 	{
     "data": {
       "id": "5",
-      "idInt": 5,
+      "uri": 5,
       "name": "PMC463215",
       "query": false,
       "gene": true
@@ -82,7 +82,7 @@
 	{
     "data": {
       "id": "6",
-      "idInt": 6,
+      "uri": 6,
       "name": "PMC463216",
       "query": false,
       "gene": true
@@ -97,9 +97,8 @@
   },
   {
     "data": {
-      "source": "1",
+      "source": "0",
       "target": "2",
-      "group": "coexp",
       "networkId": 1133,
       "networkGroupId": 18,
       "intn": true,
@@ -117,9 +116,8 @@
   },
 	{
 		"data": {
-			"source": "1",
+			"source": "0",
 			"target": "3",
-			"group": "coexp",
 			"networkId": 1133,
 			"networkGroupId": 18,
 			"intn": true,
@@ -137,9 +135,8 @@
 	},
 	{
 		"data": {
-			"source": "1",
+			"source": "0",
 			"target": "4",
-			"group": "coexp",
 			"networkId": 1133,
 			"networkGroupId": 18,
 			"intn": true,
@@ -157,9 +154,8 @@
 	},
 	{
 		"data": {
-			"source": "1",
+			"source": "0",
 			"target": "5",
-			"group": "coexp",
 			"networkId": 1133,
 			"networkGroupId": 18,
 			"intn": true,
@@ -167,7 +163,6 @@
 			"id": "e4"
 		},
 		"position": {},
-		"group": "edges",
 		"removed": false,
 		"selected": false,
 		"selectable": true,
@@ -177,9 +172,8 @@
 	},
 	{
 		"data": {
-			"source": "1",
+			"source": "0",
 			"target": "6",
-			"group": "coexp",
 			"networkId": 1133,
 			"networkGroupId": 18,
 			"intn": true,
@@ -187,7 +181,6 @@
 			"id": "e5"
 		},
 		"position": {},
-		"group": "edges",
 		"removed": false,
 		"selected": false,
 		"selectable": true,

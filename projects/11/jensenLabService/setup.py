@@ -8,7 +8,7 @@ except ImportError:
 
 requirements = [
 
-]
+    'requests']
 
 test_requirements = [
     'coverage'

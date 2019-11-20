@@ -36,11 +36,3 @@ class TextMiningService(metaclass=ABCMeta):
         To-do: decide how to handle resources that can provide co-occurrences at sentence level
         """
         pass
-
-
-class TextMiningServiceException(Exception):
-    pass
-
-
-class TextMiningServiceOperationNotSupported(TextMiningServiceException):
-    pass
