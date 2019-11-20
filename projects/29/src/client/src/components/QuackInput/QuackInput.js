@@ -55,13 +55,31 @@ const OPTIONS = [
     },
     {
         columnField: "topic",
-        type: "text"
+        type: "selection"
     },
     {
         columnField: "doi",
         type: "text"
     }
 ];
+const data = [{topic: 'asdf'},
+{topic: 'asdf'},
+{topic: 'asdfa'},
+{topic: 'gadsg4'},
+{topic: 'argag43ga4g'},
+{topic: 'g'},
+{topic: 'ag'},
+{topic: 'a44'},
+{topic: 'a4g'},
+{topic: 'a4'},
+{topic: 'ga4ga4tga'},
+{topic: 'rga'},
+{topic: 'ta'},
+{topic: 'rtaq3'},
+{topic: '4ta'},
+{topic: 'rga'},
+{topic: '4tga'},
+{topic: 'ergarag'}]
 
 function QuackInput(props) {
     const {state, dispatch} = useContext(QuackContext);
@@ -89,12 +107,17 @@ function QuackInput(props) {
     }
 
     const onParseOk = (expressions) => {
-        dispatch({type:"SET_RESULTS", data: testData})
+        console.log(expressions);
+        if(value.trim()!=='')
+            dispatch({type:'SET_QUERY',value})
+
+            dispatch({type:"SET_RESULTS", data: testData})
     }
     return (
 
         <InputWrapper>
             <QuackFilterBox
+                data={data}
                 onChange={(query, result) => onChange(query, result)}
                 options={OPTIONS}
                 onParseOk={(expr) => onParseOk(expr)}

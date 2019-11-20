@@ -30,7 +30,7 @@ const HappyButton = styled.button`
     background-color: transparent;
     :active{
         outline: 0;
-          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 20px #93C5FF;
+          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px #93C5FF;
 
     }
     :focus{
@@ -38,13 +38,13 @@ const HappyButton = styled.button`
     }
 `
 const SadButton = styled.button`
-    border-radius:50%;
+    border-radius:100%;
 
     border-width: 0px;
     background-color: transparent;
     :active{
         outline: 0;
-          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 20px #F6560D;
+          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px #F6560D;
 
     }
     :focus{
