@@ -71,7 +71,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <form className="form-group row" action="/query">
+        <form className="form-group row" action="/seal/query">
           <div className="input-group mb-3">
             <input type="text" className="form-control" name="q" placeholder="use keywords such as: 'doi:10.1000/182'" aria-label="search field"  aria-describedby="button" value={this.state.query} onChange={event => this.updateValue(event.target.value)} />
             <div className="input-group-append">
