@@ -7,10 +7,10 @@ import sadDuck from './sad_duck.png';
 import happyDuck from './happy_duck.png';
 import neutralDuck from './neutral_duck.png';
 import data from "./topics";
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import results from '../../testdata/testdata.json';
-
+import axios from 'axios';
 
 
 const Input = styled.input`
@@ -87,8 +87,10 @@ function QuackInput(props) {
     }
 
     const submitQuery = () => {
-        dispatch({type: 'SET_QUERY', data: value })
-        dispatch({type: 'SET_RESULTS', data: results})
+        dispatch({type: 'SET_QUERY', data: value})
+        axios.post('/api/v1/query', {q: state.expressions})
+            .then((res)=>dispatch({type: 'SET_RESULTS', data: res.data}))
+        //axios.get('/api/v1/doi?doi=test')
     }
 
     const syntaxError = () => {
@@ -100,16 +102,16 @@ function QuackInput(props) {
     }
 
     const renderIcon = () => {
-        if (value==''){
-            return <Img onClick={()=>noQuery()} title="type your query" src={neutralDuck}/>
+        if (value == '') {
+            return <Img onClick={() => noQuery()} title="type your query" src={neutralDuck}/>
 
         }
-        return isOk ? <Img onClick={()=>submitQuery()} title="syntax correct!" src={happyDuck}/> :
-            <Img onClick={()=>syntaxError()} title="syntax error" src={sadDuck}/>
+        return isOk ? <Img onClick={() => submitQuery()} title="syntax correct!" src={happyDuck}/> :
+            <Img onClick={() => syntaxError()} title="syntax error" src={sadDuck}/>
     }
 
     const onParseOk = (expressions) => {
-        dispatch({type: 'SET_EXPRESSIONS', data:expressions})
+        dispatch({type: 'SET_EXPRESSIONS', data: expressions})
 
 
         return null;
@@ -122,11 +124,11 @@ function QuackInput(props) {
                 data={data}
                 onChange={(query, result) => onChange(query, result)}
                 options={OPTIONS}
-                onParseOk={(expr)=>onParseOk(expr)}
+                onParseOk={(expr) => onParseOk(expr)}
 
             />
             {renderIcon()}
-                      <ToastContainer />
+            <ToastContainer/>
 
         </InputWrapper>
 

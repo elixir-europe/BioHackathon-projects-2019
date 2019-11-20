@@ -2,8 +2,7 @@ import os
 
 from fastapi import FastAPI
 # from fastapi_contrib.pagination import Pagination
-from flask_paginate import Pagination
-from flask import request
+
 from pydantic import BaseModel
 
 from web_server.sparql_wrapper import execute_query, get_properties, get_total_papers
@@ -28,8 +27,12 @@ def query(doi: str = None):
     res = execute_cypher(doi)
     return res
 
+
+class Query(BaseModel):
+    q: list = []
+
 @app.post('/api/v1/query')
-def query(q: list = []):
+def query(q: Query):
     res = execute_cypher(q)
     return res
 
