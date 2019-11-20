@@ -17,8 +17,7 @@ function App() {
   return (
 
         <QuackContext.Provider value={{state, dispatch}}>
-            {state.results ?
-            <QuackResults/>:<QuackSearch/>}
+            {<QuackSearch/>}
         </QuackContext.Provider>
   );
 }

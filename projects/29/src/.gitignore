@@ -139,3 +139,7 @@ pip-selfcheck.json
 
 # Javascript
 node_modules
+
+
+# jetbrains
+.idea
