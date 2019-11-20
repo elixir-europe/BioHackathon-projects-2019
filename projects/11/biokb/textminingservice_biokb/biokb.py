@@ -140,4 +140,4 @@ if __name__ == "__main__":
     print('')
     print(bkb.get_co_occurrences('DOID:2841'))
     print('')
-    print(bkb.get_mentions(['DOID:2841', 'DOID:1205']))
+    print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
