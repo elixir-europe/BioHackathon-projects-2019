@@ -26,15 +26,39 @@ import sh
 from loguru import logger
 
 
+def analyze_data(df):
+    # concept counts per paper
+    plt.figure(figsize=(8, 6))
+    sns.distplot(df.groupby('id:ID').count()['value'], kde=False)
+    plt.xlabel('Concept Count per Paper')
+    plt.ylabel('Count')
+    plt.yscale('log')
+    plt.tight_layout()
+    plt.savefig('concept_per_paper_counts.pdf')
+
+
 def analyze_distances(df_dists):
-    # analyse results
+    # subset data randomly
     sub_idx = np.random.randint(
         0, df_dists.index.size,
         size=1000)
     df_sub = df_dists.iloc[sub_idx, sub_idx]
 
+    # distance distribution
+    plt.figure(figsize=(8, 6))
+    sns.distplot(np.random.choice(
+        df_dists.values.ravel(),
+        1_000_000
+    ), kde=False)
+    plt.xlabel('Distance')
+    plt.ylabel('Count')
+    plt.yscale('log')
+    plt.tight_layout()
+    plt.savefig('distance_distribution.pdf')
+
+    # cluster papers
     g = sns.clustermap(df_sub, rasterized=True)
-    g.savefig('distances.pdf')
+    g.savefig('paper_clusters.pdf')
 
 
 def main(fname_in, fname_out):
