@@ -4,7 +4,8 @@ from typing import List
 
 import requests
 
-from textminingservice.TextMiningService import TextMiningService, TextMiningServiceOperationNotSupported
+from textminingservice.TextMiningService import TextMiningService
+from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 from textminingservice.models.coocurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 
