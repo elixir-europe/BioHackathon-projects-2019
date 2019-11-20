@@ -2,7 +2,7 @@
 	{
     "data": {
       "id": "1",
-      "idInt": 1,
+      "uri": 1,
       "name": "Input Entity 1",
       "query": true,
       "gene": true
@@ -18,7 +18,7 @@
   {
     "data": {
       "id": "2",
-      "idInt": 2,
+      "uri": 2,
       "name": "Co-occurence Entity 1",
       "query": false,
       "gene": true
@@ -34,7 +34,7 @@
 	{
     "data": {
       "id": "3",
-      "idInt": 3,
+      "uri": 3,
       "name": "Co-occurence Entity 2",
       "query": false,
       "gene": true
@@ -50,7 +50,7 @@
 	{
     "data": {
       "id": "4",
-      "idInt": 4,
+      "uri": 4,
       "name": "Co-occurence Entity 3",
       "query": false,
       "gene": true
@@ -66,7 +66,7 @@
 	{
     "data": {
       "id": "5",
-      "idInt": 5,
+      "uri": 5,
       "name": "Co-occurence Entity 4",
       "query": false,
       "gene": true
@@ -82,7 +82,7 @@
 	{
     "data": {
       "id": "6",
-      "idInt": 6,
+      "uri": 6,
       "name": "Co-occurence Entity 5",
       "query": false,
       "gene": true
