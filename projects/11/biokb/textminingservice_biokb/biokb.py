@@ -22,8 +22,12 @@ class MalformedQueryException(BioKBClientException):
 
 
 class BioKBService(TextMiningService):
-    def __init__(self, sparql_url="http://10.240.6.71:8890/sparql"):
-        self.sparql = SPARQLWrapper(sparql_url)
+    SOLR_TRANSLATOR_URL = 'https://biokb.lcsb.uni.lu/api/solr-ids-to-publications'
+    # ?solrIds=4b267858-bbde-11e5-9b9d-001a4ae51247&solrIds=593fa4e6-c87e-11e8-ac16-001a4a160176
+    SPARQL_URL = 'http://10.240.6.71:8890/sparql'
+
+    def __init__(self):
+        self.sparql = SPARQLWrapper(BioKBService.SPARQL_URL)
         self.sparql.setRequestMethod(POSTDIRECTLY)
         super().__init__('BioKB',
                          'This client communicates with BioKB triple store and Publication Solr index.')
