@@ -14,9 +14,9 @@ scgi.server = (
 
 server.modules += ( "mod_rewrite" )
 url.rewrite-once = (
-    "^(/favicon.ico|/robots.txt)$" => "/static/$1",
-    "^(/static($|/.*))$" => "$1",
-    "^(/(asterix.scgi|seal)(/static($|/.*)))$" => "$3",
+#    "^(/favicon.ico|/robots.txt)$" => "/static/$1",
+#    "^(/static($|/.*))$" => "$1",
+    "^(/(asterix.scgi|seal)(/static($|/.*)))$" => "/seal/$3",
 #    "^(/asterix.scgi($|/.*)?)$" => "$1",
 #    "^(/.*)$" => "/asterix.scgi$1"
     "^(/seal($|/.*))$" => "/asterix.scgi$2"
@@ -24,8 +24,17 @@ url.rewrite-once = (
 
 server.modules   += ( "mod_alias" )
 alias.url = (
-    "/static/" => var.asterixdir + "web_server/static/"
+    "/seal/static/" => var.asterixdir + "web_server/static/"
 )
+
+$HTTP["url"] =~ "^/" {
+	server.document-root = var.asterixdir + "client/build/"
+}
+
+$HTTP["url"] =~ "^(^|/seal)/static" {
+	dir-listing.encoding = "utf-8"
+	server.dir-listing   = "enable"
+}
 
 ### For Flask test server
 #server.modules += ( "mod_proxy" )
