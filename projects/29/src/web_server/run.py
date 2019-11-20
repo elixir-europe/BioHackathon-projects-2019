@@ -11,13 +11,13 @@ from web_server.sparql_wrapper import (
 
 class ScriptNameStripper(Flask):
     def __call__(self, environ, start_response):
-        environ['SCRIPT_NAME'] = ''
+        environ['SCRIPT_NAME'] = '/seal'
         return (super(ScriptNameStripper, self)
                 .__call__(environ, start_response))
 
 
 app = ScriptNameStripper(__name__)
-
+app.config["APPLICATION_ROOT"] = "/seal"
 
 @app.route('/')
 def index():
