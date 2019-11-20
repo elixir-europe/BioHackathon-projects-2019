@@ -1,12 +1,8 @@
-import logging
-
-from biokb.biokb import BioKBService
-from jensenLabService.jensenLabService import JensenLabService
-
-logger = logging.getLogger(__name__)
+from textminingservice_biokb.biokb import BioKBService
+from textminingservice_dummy.dummyService import DummyService
 
 if __name__ == '__main__':
-    text_mining_services = [JensenLabService(), BioKBService()]
+    text_mining_services = [DummyService(), BioKBService()]
     for text_mining_service in text_mining_services:
         print("Using service {}".format(text_mining_service.name))
         publications = text_mining_service.get_mentions(

@@ -1,4 +1,4 @@
-def standarise_underscored_entity_code(entity_code: str) -> str:
+def standardise_underscored_entity_code(entity_code: str) -> str:
     return entity_code.replace(':', '_', 1)
 
 

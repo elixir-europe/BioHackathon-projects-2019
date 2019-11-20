@@ -4,8 +4,8 @@ from typing import List
 
 import requests
 
-from interface.TextMiningService import TextMiningService
-from models.publication import Publication
+from textminingservice.TextMiningService import TextMiningService
+from textminingservice.models.publication import Publication
 
 logger = logging.getLogger(__name__)
 
