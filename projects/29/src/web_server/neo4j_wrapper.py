@@ -13,7 +13,14 @@ def print_node_types(tx):
     return tx.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() RETURN distinct keys(n) AS r")
 
 
-def print_publications(tx, doi):
+def get_properties():
+    with driver.session() as session:
+        value = session.read_transaction(print_node_types)
+        #print(list(value.records()))
+        #print([record["r"] for record in value.records()])
+        return {"values": [(record["r"]) for record in value.records()]}
+
+def print_publications_simple(tx, doi):
     #return tx.run("MATCH (n1 {id: 'http://identifiers.org/doi/10.1101/476457'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
     #print("MATCH (n1 {id: " + doi + "})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
     return tx.run("MATCH (n1 {id: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
@@ -30,7 +37,7 @@ def print_publications(tx, where):
 
 def execute_cypher_simple(query):
     with driver.session() as session:
-        value = session.read_transaction(print_publications, query)
+        value = session.read_transaction(print_publications_simple, query)
         #print(list(value.records()))
         #print([record["r"] for record in value.records()])
         return {"values": [(record["r"], record["n2"]) for record in value.records()]}

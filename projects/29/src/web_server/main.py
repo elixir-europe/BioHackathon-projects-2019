@@ -5,8 +5,8 @@ from fastapi import FastAPI
 
 from pydantic import BaseModel
 
-from web_server.sparql_wrapper import execute_query, get_properties, get_total_papers
-from web_server.neo4j_wrapper import execute_cypher, test
+from web_server.sparql_wrapper import execute_query, get_total_papers
+from web_server.neo4j_wrapper import execute_cypher, test, get_properties, execute_cypher_simple
 
 class Query(BaseModel):
     category: str
@@ -24,7 +24,7 @@ def get_property():
 
 @app.get('/api/v1/doi')
 def query(doi: str = None):
-    res = execute_cypher(doi)
+    res = execute_cypher_simple(doi)
     return res
 
 
