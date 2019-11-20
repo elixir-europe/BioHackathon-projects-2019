@@ -11,9 +11,13 @@ from neo4j import GraphDatabase
 
 
 class Neo4jWrapper:
-    """
-    MATCH (n)
-    DETACH DELETE n
+    """ Wrapper for Neo4j.
+
+    Delete all nodes and relationships:
+        MATCH (n) DETACH DELETE n
+
+    Delete only relationships:
+        MATCH ()-[r]->() DELETE r
     """
     def __init__(self, uri, user, password):
         self._driver = GraphDatabase.driver(uri, auth=(user, password))
@@ -30,20 +34,31 @@ class Neo4jWrapper:
         with self._driver.session() as session:
             return session.read_transaction(self._exec(cypher_cmd))
 
-    def create_relationship(self, node1, node2, prop):
+    def create_relationships(
+        self, doi_list1, doi_list2, prop_list
+    ):
         """Note: must be directed by Neo4j design."""
-        cypher_cmd = '''
-            MATCH (a:Person), (b:Person)
-            WHERE a.name = $node1 AND b.name = $node2
-            CREATE (a)-[r:distance { value: $prop }]->(b)
-            RETURN type(r), r.name
-        '''
+        # sanity checks
+        assert len(doi_list1) == len(doi_list2) == len(prop_list)
 
+        # prepare query statement
+        cypher_cmd = """
+            MATCH (a:AcademicArticle), (b:AcademicArticle)
+            WHERE a.doi = $doi1 AND b.doi = $doi2
+            CREATE (a)-[r:distance { value: $prop }]->(b)
+            RETURN type(r), r.value
+        """
+
+        # conduct transactions
+        res_list = []
         with self._driver.session() as session:
-            return session.read_transaction(
-                self._exec(cypher_cmd),
-                node1=node1, node2=node2, prop=prop
-            )
+            for doi1, doi2, prop in zip(doi_list1, doi_list2, prop_list):
+                res = session.read_transaction(
+                    self._exec(cypher_cmd),
+                    doi1=doi1, doi2=doi2, prop=prop
+                )
+                res_list.append(res)
+        return res_list
 
 
 def compute_distances(nodes):
@@ -110,6 +125,25 @@ def main():
 
     # analyze results
     analyze_distances(nodes, df_dists)
+
+    # add edges back to Neo4j network
+    doi_list1 = []
+    doi_list2 = []
+    prop_list = []
+    for i, j in zip(*np.triu_indices_from(df_dists, k=1)):
+        dist = df_dists.iloc[i, j]
+        if dist == 1:
+            continue
+
+        doi_list1.append(df_dists.index[i])
+        doi_list2.append(df_dists.index[j])
+        prop_list.append(dist)
+
+    print(f'Adding {len(prop_list)} edges')
+    wrapper.create_relationships(
+        doi_list1, doi_list2,
+        prop_list
+    )
 
 
 if __name__ == '__main__':
