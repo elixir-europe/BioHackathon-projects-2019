@@ -1,4 +1,5 @@
 import logging
+import datetime
 from typing import List, Set, DefaultDict
 from collections import defaultdict
 
@@ -11,6 +12,7 @@ from textminingservice.TextMiningService import TextMiningService
 from textminingservice.models.coocurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
