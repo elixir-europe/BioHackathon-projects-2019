@@ -1,0 +1,22 @@
+{
+  "@context": "http://schema.org",
+  "@id": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=205886",
+  "@type": "Organization",
+  "spatialCoverage": "National",
+  "contactPoint": [
+    {
+      "@id": "http://hupnvs.aphp.fr/liste-des-specialites/cardiologie-bichat/",
+      "@type": "Person",
+      "name": "Pr Guillaume JONDEAU",
+      "telephone": "33(0)140258236",
+      "address": "CHU Paris Nord-Val de Seine - Hôpital Xavier Bichat-Claude Bernard, 46 rue Henri Huchard,75018 PARIS,FRANCE"
+    }
+  ],
+  "dct:conformsTo": "https://bioschemas.org/specifications/Organization/0.2-DRAFT",
+  "keywords": "Patient registries",
+  "legalName": "RaDiCo-MARFAN: National cohort on Marfan syndrome and apparent diseases",
+  "name": "RaDiCo-MARFAN: National cohort on Marfan syndrome and apparent diseases",
+  "topic": [
+    "https://www.wikidata.org/wiki/Q5282128"
+  ]
+}

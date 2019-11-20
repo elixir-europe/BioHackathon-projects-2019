@@ -1,0 +1,41 @@
+{
+  "@context": "http://schema.org",
+  "@id": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=119007",
+  "@type": "Gene",
+  "alternateName": [
+    "Bcl-2",
+    "PPP1R50",
+    "protein phosphatase 1",
+    "regulatory subunit 50",
+    "B-cell CLL/lymphoma 2",
+    "BCL2",
+    "apoptosis regulator"    
+  ],
+  "associatedDisease": [
+    {
+      "@id": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=545",
+      "@type": "MedicalCondition"
+    },
+    {
+      "@id": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=480541",
+      "@type": "MedicalCondition"
+    },
+    {
+      "@id": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=98839",
+      "@type": "MedicalCondition"
+    }    
+  ],
+  "dct:conformsTo": "https://bioschemas.org/specifications/Gene/0.4",
+  "description": "gene with protein product",
+  "identifier": "119007",
+  "name": "BCL2 - BCL2 apoptosis regulator",
+  "sameAs": [
+    "http://omim.org/entry/151430",
+    "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:990",
+    "http://www.uniprot.org/uniprot/P10415",
+    "http://genatlas.medecine.univ-paris5.fr/gensearch.php?type=0&SYMBOL=BCL2",
+    "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000171791",
+    "http://www.reactome.org/content/query?q=P10415",
+    "http://www.lovd.nl/BCL2"    
+  ]
+}
