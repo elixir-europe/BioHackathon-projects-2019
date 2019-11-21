@@ -86,7 +86,7 @@ const QuackBasket = () => {
             </svg>
             <div className="dropdown-content">
                 {state.happy.map((ele)=>{
-                    return <a target='_blank' href={ele.seeAlso}>{ele.title}</a>
+                    return <a key={ele.doi} target='_blank' href={ele.seeAlso}>{ele.title}</a>
                 })}
 
             </div>
