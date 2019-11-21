@@ -88,7 +88,7 @@ class JensenLabService(TextMiningService):
         for prefix, entity_type in JensenLabService.IDS_MAPPING.items():
             if entity.startswith(prefix):
                 return entity_type
-        return -1
+        return -3
 
     @staticmethod
     def get_mentions_for_entity(entity, entity_type, limit):
