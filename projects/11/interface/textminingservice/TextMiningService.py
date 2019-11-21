@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 from typing import List
 
-from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 
 

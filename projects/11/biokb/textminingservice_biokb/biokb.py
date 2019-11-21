@@ -1,14 +1,15 @@
-from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code
-from textminingservice.models.publication import Publication
-from textminingservice.models.coocurrence import CoOccurrence
-from textminingservice.TextMiningService import TextMiningService
-from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
-from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
-from typing import List
 import json
-import requests
 import logging
+from typing import List
 
+import requests
+from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
+from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
+
+from textminingservice.TextMiningService import TextMiningService
+from textminingservice.models.cooccurrence import CoOccurrence
+from textminingservice.models.publication import Publication
+from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +25,7 @@ class MalformedQueryException(BioKBClientException):
 class BioKBService(TextMiningService):
     SOLR_TRANSLATOR_URL = 'https://biokb.lcsb.uni.lu/api/solr-ids-to-publications'
     # ?solrIds=4b267858-bbde-11e5-9b9d-001a4ae51247&solrIds=593fa4e6-c87e-11e8-ac16-001a4a160176
-    SPARQL_URL = 'http://10.240.6.71:8890/sparql'
+    SPARQL_URL = 'https://biokb.lcsb.uni.lu/sparql'
 
     def __init__(self):
         self.sparql = SPARQLWrapper(BioKBService.SPARQL_URL)
@@ -131,7 +132,6 @@ class BioKBService(TextMiningService):
         """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit)).replace('%ENTITY_TYPE_FILTER%',
                                                                                entity_types_filter)
         results = self._run_sparql_query(query)
-        values = []
         values = []
         for result in results['results']['bindings']:
             entity_code = uri_to_entity_code(result['other_entity']['value'])
