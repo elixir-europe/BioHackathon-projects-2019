@@ -56,7 +56,6 @@ class BioKBService(TextMiningService):
                 ?publication <http://lcsb.uni.lu/biokb#solrId> ?solrId	.
             }} LIMIT {}
             """.format(entity_subquery, limit)
-
         results = self._run_sparql_query(query)
         solr_ids = set()
         for result in results['results']['bindings']:
@@ -66,6 +65,8 @@ class BioKBService(TextMiningService):
         # translate ids
         response = requests.post(BioKBService.SOLR_TRANSLATOR_URL,
                                  data={'solrIds': solr_ids})
+        logger.info(
+            f'BioKB {entities} {limit} ({len(solr_ids)}): {response.url}')
         assert response.ok
         data = json.loads(response.content.decode().strip())
         publications = []
@@ -150,11 +151,11 @@ class BioKBService(TextMiningService):
 
 if __name__ == "__main__":
     bkb = BioKBService()
-    # print(bkb.get_mentions(["GO:0002206"]))
-    # print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
-    # print('')
-    # print(bkb.get_co_occurrences('DOID:2841', types=[
-    #     'http://lcsb.uni.lu/biokb#Disease']))
-    # print('')
+    print(bkb.get_mentions(["DOID:2841"]))
+    print(bkb.get_mentions(["GO:0002206"]))
+    print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
+    print('')
+    print(bkb.get_co_occurrences('DOID:2841', types=[-3]))
+    print('')
     print('test biokb protein and chemical co-occurrences')
     print(bkb.get_co_occurrences('DOID:2841', types=[-3, -1]))
