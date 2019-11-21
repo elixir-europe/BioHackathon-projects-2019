@@ -12,6 +12,11 @@ scgi.server = (
   )),
 )
 
+server.modules += ( "mod_proxy" )
+proxy.server = (
+   "/api" => (( "host" => "127.0.0.1", "port" => 8000 )),
+)
+
 server.modules += ( "mod_rewrite" )
 url.rewrite-once = (
 #    "^(/favicon.ico|/robots.txt)$" => "/static/$1",
