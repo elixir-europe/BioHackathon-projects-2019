@@ -4,7 +4,6 @@ import QuackResults from './pages/QuackResults';
 import QuackContext from "./context";
 import reducer from "./reducer";
 import './App.css';
-import results from './testdata/testdata.json';
 
 const initialState = {
     query: '',

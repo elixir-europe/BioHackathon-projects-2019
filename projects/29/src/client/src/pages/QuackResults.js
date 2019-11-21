@@ -23,7 +23,8 @@ const QuackResults = () => {
             <Content>
                 <ResultWrapper>
                     {state.results.map((ele) => {
-                        return (<QuackCard data={ele}/>)
+                        console.log("ELE", ele)
+                        return (<QuackCard data={ele[1]}/>)
                     })}
                 </ResultWrapper>
             </Content>

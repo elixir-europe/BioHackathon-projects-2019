@@ -13,26 +13,31 @@ def print_node_types(tx):
     return tx.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() RETURN distinct keys(n) AS r")
 
 
-def print_publications(tx, doi):
-    #return tx.run("MATCH (n1 {id: 'http://identifiers.org/doi/10.1101/476457'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #print("MATCH (n1 {id: " + doi + "})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    return tx.run("MATCH (n1 {id: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #return tx.run("MATCH (n1 {id: '$doi'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25", doi=doi)
+def get_properties():
+    with driver.session() as session:
+        value = session.read_transaction(print_node_types)
+        return {"values": [(record["r"]) for record in value.records()]}
+
+def print_publications_simple(tx, doi):
+    return tx.run("MATCH (n1 {doi: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 ORDER BY r.value DESC LIMIT 25")
 
 
 def print_publications(tx, where):
-    #return tx.run("MATCH (n1 {id: 'http://identifiers.org/doi/10.1101/476457'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
-    #print("MATCH (n1 {id: " + doi + "})-[r]->(n2) RETURN r, n1, n2 LIMIT 25")
     print("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 25")
-    return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 25")
-    #return tx.run("MATCH (n1 {id: '$doi'})-[r]->(n2) RETURN r, n1, n2 LIMIT 25", doi=doi)
+    return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 ORDER BY r.value DESC LIMIT 25")
 
+
+def print_publications_with_update(doi, score):
+    pass #TODO() Awesome weight propagation methods should be implemented!
 
 def execute_cypher_simple(query):
     with driver.session() as session:
-        value = session.read_transaction(print_publications, query)
-        #print(list(value.records()))
-        #print([record["r"] for record in value.records()])
+        value = session.read_transaction(print_publications_simple, query)
+        return {"values": [(record["r"], record["n2"]) for record in value.records()]}
+
+def execute_cypher_update(doi, score):
+    with driver.session() as session:
+        value = session.read_transaction(print_publications_with_update, doi, score)
         return {"values": [(record["r"], record["n2"]) for record in value.records()]}
 
 def test():
@@ -59,7 +64,6 @@ def category_builder(query_array):
             elif item["operator"] == "!contains":
                 operator = "CONTAINS"
                 TMP += "NOT (" + 'n1.' + item["category"] + ' ' + operator + " " + value + ")"
-        
         if "expressions" in item:
             TMP += "(" + category_builder(item["expressions"]) + ")"
     return TMP
@@ -68,6 +72,4 @@ def category_builder(query_array):
 def execute_cypher(query_array):
     with driver.session() as session:
         value = session.read_transaction(print_publications, category_builder(query_array))
-        #print(list(value.records()))
-        #print([record["r"] for record in value.records()])
-        return {"values": [(record["r"], record["n2"]) for record in value.records()]}
+        return {"values": [(record["n1"], record["r"], record["n2"]) for record in value.records()]}
