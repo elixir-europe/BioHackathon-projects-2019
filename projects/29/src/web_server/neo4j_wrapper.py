@@ -22,9 +22,9 @@ def print_publications_simple(tx, doi):
     return tx.run("MATCH (n1 {doi: '" + doi + "'})-[r]->(n2) RETURN r, n1, n2 ORDER BY r.value DESC LIMIT 25")
 
 
-def print_publications(tx, where):
-    print("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 25")
-    return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 ORDER BY r.value DESC LIMIT 25")
+def print_publications(tx, where, limit=9):
+    print("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 9")
+    return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 ORDER BY n2.centrality DESC LIMIT " + str(limit))
 
 
 def print_publications_with_update(doi, score):
@@ -72,4 +72,4 @@ def category_builder(query_array):
 def execute_cypher(query_array):
     with driver.session() as session:
         value = session.read_transaction(print_publications, category_builder(query_array))
-        return {"values": [(record["n1"], record["r"], record["n2"]) for record in value.records()]}
+        return {"values": [(record["n2"]) for record in value.records()]}
