@@ -1,23 +1,16 @@
 import React, {useContext} from 'react';
-import happyDuck from './happy_duck.png';
-import sadDuck from './sad_duck.png';
+import happyDuck from './happy_duck.svg';
+import sadDuck from './sad_duck.svg';
 import styled from 'styled-components';
 import QuackContext from "../../context";
+import classNames from 'classnames/bind';
+import testdata from '../../testdata/testdata.json';
 
 const Wrapper = styled.div`
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   padding-top: 0.5rem;
-   border-top: 1px dashed black;
-   padding-left: 2rem;
-   padding-right: 2rem;
+    display: flex;
+    justify-content: space-around;
 `
-const Tiler = styled.div`
-    border-right: 1px solid black;
-    
-`
-const cursor = process.env.PUBLIC_URL + "/sign_of_horns.png";
+
 const Img = styled.img`
     cursor: pointer;
 `
@@ -30,12 +23,17 @@ const HappyButton = styled.button`
     background-color: transparent;
     :active{
         outline: 0;
-          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px #93C5FF;
+          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px green;
 
     }
     :focus{
         outline: 0
     }
+       z-index:10000;
+    :focus{
+        outline: 0
+    }   
+
 `
 const SadButton = styled.button`
     border-radius:100%;
@@ -44,25 +42,46 @@ const SadButton = styled.button`
     background-color: transparent;
     :active{
         outline: 0;
-          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px #F6560D;
+          box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px red;
 
     }
+    z-index:10000;
     :focus{
         outline: 0
     }
+
 `
 
-const QuackVote = ({id}) => {
+const QuackVote = () => {
     const {state, dispatch} = useContext(QuackContext);
     const addToList = (listType) => {
-        console.log('Add to list', listType)
-        dispatch({type:listType, data: {id}}) // remove from result, add to happy
+        document.getElementById(state.index).style.visibility = "hidden";
+
+        dispatch({type: listType, data: state.results[state.index]})
+        if (state.index === 0) {
+            dispatch({type: 'SET_RESULTS', data: testdata.slice(0, 9)})
+            let eles = document.getElementsByClassName('outerCard');
+            for (let i = 0; i < eles.length; i++) {
+                eles[i].style.visibility = 'visible';
+            }
+        }
     }
+    const sadClasses = classNames({
+        'sadShine': state.sadState
+    });
+    const happyClasses = classNames({
+        'happyShine': state.happyState
+    });
+
+
     return (
         <Wrapper>
-            <HappyButton onClick={()=>addToList('ADD_HAPPY')}><Img src={happyDuck}/></HappyButton>
-            <Tiler/>
-            <SadButton onClick={()=>addToList('ADD_SAD')}><Img src={sadDuck}/></SadButton>
+            <SadButton className={sadClasses} onClick={() => addToList('ADD_SAD')}>
+                <Img src={sadDuck}/>
+            </SadButton>
+            <HappyButton className={happyClasses} onClick={() => addToList('ADD_HAPPY')}>
+                <Img src={happyDuck}/>
+            </HappyButton>
         </Wrapper>
     );
 };

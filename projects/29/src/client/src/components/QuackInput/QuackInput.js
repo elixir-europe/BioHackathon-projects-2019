@@ -91,7 +91,7 @@ function QuackInput(props) {
         axios.post('/api/v1/query', {q: state.expressions})
             .then((res) => {
                     console.log("result", res.data);
-                    dispatch({type: 'SET_RESULTS', data: res.data.values.slice(0,9)})
+                    dispatch({type: 'SET_RESULTS', data: res.data.values.slice(0, 9)})
                 }
             )
         //axios.get('/api/v1/doi?doi=test')
