@@ -42,3 +42,16 @@ class Publication:
             other_id=self.other_id,
             id=self.id
         )
+
+    @staticmethod
+    def merge_publications(p1: 'Publication', p2: 'Publication') -> 'Publication':
+        return Publication(
+            title=p1.title or p2.title,
+            year=p1.year or p2.year,
+            journal_title=p1.journal_title or p2.journal_title,
+            pmc_id=p1.pmc_id or p2.pmc_id,
+            pm_id=p1.pm_id or p2.pm_id,
+            doi=p1.doi or p2.doi,
+            preprint_id=p1.preprint_id or p2.preprint_id,
+            other_id=p1.preprint_id or p2.preprint_id
+        )
