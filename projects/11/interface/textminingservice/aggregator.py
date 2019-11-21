@@ -21,7 +21,7 @@ class Aggregator():
                     publication = pub_dict[pub.id]['info']
                     pub_dict[pub.id]['info'] = Publication.merge_publications(
                         publication, pub)
-                    pub_dict[pub.id] += 1
+                    pub_dict[pub.id]['score'] += 1
                     pub_dict[pub.id]['resources'].append(service)
                 else:
                     pub_dict[pub.id]['info'] = pub

@@ -31,7 +31,7 @@ class Publication:
         return ' '.join([str(id) for id in ids if id[1] is not None])
 
     def as_dict(self):
-        return dict(
+        d = dict(
             title=self.title,
             year=self.year,
             journal_title=self.journal_title,
@@ -42,6 +42,8 @@ class Publication:
             other_id=self.other_id,
             id=self.id
         )
+        # remove elements with None as value
+        return {k: v for k, v in d.items() if v is not None}
 
     @staticmethod
     def merge_publications(p1: 'Publication', p2: 'Publication') -> 'Publication':
