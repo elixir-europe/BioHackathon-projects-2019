@@ -32,6 +32,26 @@ class Aggregator():
 
         return sorted(pub_dict.values(), key=lambda x: x['score'], reverse=True)
 
+    def aggregate_cooccurrences(self, entity_collections: Dict):
+        co_dict = defaultdict(dict)
+        for service, co_lst in entity_collections.items():
+            # sort desc by score
+            for idx, co in enumerate(sorted(co_lst, key=lambda c: c.score, reverse=True)):
+                if co.entity in co_dict:
+                    cooccurrence = co_dict[co.entity]
+                    co_dict[co.entity]['score'] += idx
+                    co_dict[co.entity]['resources'].append(service)
+                else:
+                    co_dict[co.entity]['info'] = co
+                    co_dict[co.entity]['score'] = idx
+                    co_dict[co.entity]['resources'] = [service]
+
+        for entity in co_dict:
+            co_dict[entity]['info'].score = None
+            co_dict[entity]['info'] = co_dict[entity]['info'].as_dict()
+
+        return sorted(co_dict.values(), key=lambda x: x['score'], reverse=True)
+
 
 class TextMiningDeMultiplexer():
     def __init__(self):
@@ -62,6 +82,9 @@ class TextMiningDeMultiplexer():
                     entity, limit=limit, types=types)
             except Exception:
                 results = []
+            entity_collections[service.name] = results
+
+        return self.agg.aggregate_cooccurrences(entity_collections)
 
 
 if __name__ == "__main__":
