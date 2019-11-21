@@ -1,0 +1,9 @@
+# Get genetic association from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT * WHERE {
+    ?gene wdt:P2293 ?disease . # genetic association
+}
