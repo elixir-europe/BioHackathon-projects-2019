@@ -130,6 +130,13 @@ def main(fname_in):
         columns=df_trans.index,
         index=df_trans.index)
 
+    # convert distance to similarity
+    dists = 1 - dists
+
+    df_dists = 1 - df_dists
+    np.fill_diagonal(df_dists.values, 1)
+
+    # analyze distances
     analyze_distances(df_dists)
 
     # extract relationships
@@ -143,8 +150,8 @@ def main(fname_in):
         fd.write(':START_ID,:END_ID,:TYPE,value:FLOAT\n')
 
         for i, j, d in tqdm(zip(triu_i, triu_j, dists), total=len(dists)):
-            if d < 0.2:
-                fd.write(f'{idx_trans[i]},{idx_trans[j]},distance,{d}\n')
+            if d > 0:
+                fd.write(f'{idx_trans[i]},{idx_trans[j]},similarity,{d}\n')
                 edge_count += 1
 
     # recreate Neo4j database
