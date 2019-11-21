@@ -48,7 +48,7 @@ def getCooccurrences(entity: str):
     logger.info(
         f'getCooccurrences parameters. Entity {entity} limit: {limit} types: {entity_types}')
     tmdm = TextMiningDeMultiplexer()
-    return json.dumps(tmdm.get_co_occurrences(entity, limit=limit, types=entity_types))
+    return jsonify(tmdm.get_co_occurrences(entity, limit=limit, types=entity_types))
 
 
 # Type	entity type
