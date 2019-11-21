@@ -26,19 +26,26 @@ def print_publications(tx, where, limit=9):
     print("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 LIMIT 9")
     return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 ORDER BY n2.centrality DESC LIMIT " + str(limit))
 
-
-def print_publications_with_update(doi, score):
-    pass #TODO() Awesome weight propagation methods should be implemented!
+def print_publications_with_update(tx, doi):
+    print("[" + ",".join(['"' + item + '"' for item in doi.positive]) + "]")
+    print("[" + ",".join(['"' + item + '"' for item in doi.negative]) + "]")
+    negatives = "[" + ",".join(['"' + item + '"' for item in doi.negative]) + "]"
+    positives = "[" + ",".join(['"' + item + '"' for item in doi.positive]) + "]"
+    unvoted = "[" + ",".join(['"' + item + '"' for item in doi.unvoted]) + "]"
+    print("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN " + negatives + " AND n3.doi IN" + negatives + " WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN " + positives + " AND (NOT n.doi IN removeList) AND (NOT n.doi IN " + unvoted + " ) RETURN n as n2")
+    return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN " + negatives + " AND n3.doi IN " + negatives + " WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN " + positives + " AND (NOT n.doi IN removeList) AND (NOT n.doi IN " + unvoted + " ) RETURN n as n2"
+    )
+    #return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN $negatives AND n3.doi IN $negatives WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN $positives AND (NOT n.doi IN removeList) AND (NOT n.doi IN $unvoted) RETURN n as n2", negatives="[" + ",".join(['"' + item + '"' for item in doi.negative]) + "]", positives="[" + ",".join(['"' + item + '"' for item in doi.positive]) + "]", unvoted= "[" + ",".join(['"' + item + '"' for item in doi.unvoted]) + "]")
 
 def execute_cypher_simple(query):
     with driver.session() as session:
         value = session.read_transaction(print_publications_simple, query)
-        return {"values": [(record["r"], record["n2"]) for record in value.records()]}
+        return {"values": [record["n2"] for record in value.records()]}
 
-def execute_cypher_update(doi, score):
+def execute_cypher_update(doi):
     with driver.session() as session:
-        value = session.read_transaction(print_publications_with_update, doi, score)
-        return {"values": [(record["r"], record["n2"]) for record in value.records()]}
+        value = session.read_transaction(print_publications_with_update, doi)
+        return {"values": [record["n2"] for record in value.records()]}
 
 def test():
     print(category_builder([{"category":"topic","operator":"==","value":"Query and retrieval"}]))
@@ -69,7 +76,7 @@ def category_builder(query_array):
     return TMP
 
 
-def execute_cypher(query_array):
+def execute_cypher(query_array, limit):
     with driver.session() as session:
-        value = session.read_transaction(print_publications, category_builder(query_array))
-        return {"values": [(record["n2"]) for record in value.records()]}
+        value = session.read_transaction(print_publications, category_builder(query_array), limit)
+        return {"values": [record["n2"] for record in value.records()]}

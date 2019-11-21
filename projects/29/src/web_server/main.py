@@ -6,6 +6,13 @@ from web_server.neo4j_wrapper import execute_cypher, test, get_properties, execu
 
 class Query(BaseModel):
     q: list = []
+    limit: int = 9
+
+class DOIs(BaseModel):
+    positive: list = []
+    negative: list = []
+    unvoted: list = []
+
 
 test()
 
@@ -24,13 +31,13 @@ def doi(doi: str = None):
 
 @app.post('/api/v1/query')
 def query(q: Query):
-    res = execute_cypher(q.q)
+    res = execute_cypher(q.q, q.limit)
     return res
 
 
 @app.post('/api/v1/update')
-def update(id: str = None, score: int = 0):
-    res = execute_cypher_update(id, score)
+def update(q: DOIs):
+    res = execute_cypher_update(q)
     return res
 
 

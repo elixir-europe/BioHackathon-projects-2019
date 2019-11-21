@@ -4,7 +4,7 @@ import {QuackVote} from '../QuackVote';
 
 const Card = styled.div`
     height: 400px;
-    width: 400px;
+    width: 800px;
     margin: 1rem;
     border-radius: 5px;
     display: flex;
@@ -30,11 +30,18 @@ const CardTitle = styled.h1`
     color: red;
     }
 `
-
-const CardContent = styled.div`
-    border-radius: 5px;
+const CardAddInformation = styled.div`
+    font-size: 0.8rem;
     padding-left: 1rem;
     padding-right: 1rem;
+
+`
+const CardContent = styled.div`
+    border-radius: 5px;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: justify;
 
 `
 const CardBottom = styled.div`
@@ -43,24 +50,35 @@ const CardBottom = styled.div`
 `
 
 const A = styled.a`
-    color: black;
+    color: blue;
+    text-decoration: none;
     :hover{
         color: #FF6F2F;
     }
     
 `
+
+var truncate = function (s, n) {
+    // truncate a string with an ellipsis
+    if (s.length > n) {
+        return s.substr(0, n-3) + '...';
+    } else {
+        return s;
+    }
+};
+
 const QuackCard = ({data}) => {
     return (
-        <Card>
+        <Card className={"card"}>
             <TitleContentWrapper>
-                <CardTitle><A target='_blank' href={data.seeAlso}>{data.title}</A>  </CardTitle>
+                <CardTitle><A target='_blank' href={data.seeAlso}>{data.title}</A></CardTitle>
+                <CardAddInformation>
+                    (2019) doi: <a href={data.seeAlso}>{data.doi}</a>
+                </CardAddInformation>
                 <CardContent>
-                    {data.abstract}
+                    {truncate(data.abstract,1700)}
                 </CardContent>
             </TitleContentWrapper>
-            <CardBottom>
-                <QuackVote id={data.id}/>
-            </CardBottom>
         </Card>
     );
 };
