@@ -155,7 +155,12 @@ function getItemStorage(key) {
 }
 
 function goToValidator() {
-    const body = { alias: "MTB1" };
+    const body = [
+        { alias: "MTB1" },
+        { aliased: "erf" },
+        { aliasss: "etff" },
+        { als: "abc" }
+    ];
     $.ajax({
         url: '/validate',
         type: 'post',
