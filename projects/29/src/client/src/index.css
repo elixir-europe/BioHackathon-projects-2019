@@ -11,4 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.outerCard {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
+.innerCard {
+  background-color: white;
+  background-size: auto 85%;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+
+  will-change: transform;
+  border-radius: 10px;
+  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+}
+
+.sadShine {
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px #f6560d;
+}
+
+.happyShine {
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0), 0 0 100px #00f63b;
+}

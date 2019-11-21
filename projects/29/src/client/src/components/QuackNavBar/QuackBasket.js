@@ -53,7 +53,7 @@ const QuackBasket = () => {
               strokeLinejoin="round"
               d="M16 18v3h-2v-3h2z"
             ></path>
-            <ellipse cx="13.5" cy="22" fill="#FF6F2E" rx="1.5" ry="1"></ellipse>
+            <ellipse cx="13.5" cy="22" fill="#A2FDC8" rx="1.5" ry="1"></ellipse>
             <path
               fill="#F6560D"
               d="M14 20c2.32 3 3.768 4.61 4.343 4.833.576.223 1.462.223 2.657 0v-2.71L14 20z"
@@ -68,16 +68,16 @@ const QuackBasket = () => {
             fill="#4A90E2"
             d="M55 6v7.083h53.451a33.844 33.844 0 014.549 17c0 18.778-15.222 34-34 34s-34-15.222-34-34C45 20.673 48.823 12.156 55 6z"
           ></path>
-          <circle cx="79.5" cy="31.5" r="26.5" fill="#93C5FF"></circle>
+          <circle cx="79.5" cy="31.5" r="26.5" fill="#A2FDC8"></circle>
         </g>
         <text
-          fill="#FFF"
+          fill="#000"
           fontFamily="Monospace"
           fontSize="30"
           fontWeight="400"
           transform="translate(-417 -660) translate(417 660)"
         >
-          <tspan x="60" y="40">
+          <tspan x="62" y="41">
               {state.happy.length.toString().padStart(2,'0')}
           </tspan>
         </text>
