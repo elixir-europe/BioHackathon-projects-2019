@@ -6,7 +6,6 @@ var app = new Vue({
   },
   methods: {
     showRipple: function () {
-      console.log("Show Ripple called");
       var x = document.getElementById("lds-ripple");
       x.style.display = "inline-block";
     },
@@ -24,7 +23,7 @@ var app = new Vue({
     getMentions: function () {
       var that = this;
       var entity = that.entity;
-      var url = `http://9b9a4973.ngrok.io/getMentions/?entity=${entity}&limit=30`;
+      var url = `http://9b9a4973.ngrok.io/getMentions/?entity=${entity}&limit=100`;
       console.log(url);
       if (!entity) {
         alert("Enter an entity!");
