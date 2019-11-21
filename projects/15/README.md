@@ -17,6 +17,9 @@ Gene example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Disease_Genes.
 
 Disease example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Disease_Search.php?lng=EN&data_id=91&Disease_Disease_Search_diseaseGroup=rett&Disease_Disease_Search_diseaseType=Pat&Disease(s)/group%20of%20diseases=Rett-syndrome&title=Rett%20syndrome&search=Disease_Search_Simple)
 
+Disease HPO annotations example (http://dev.orpha.net/hanauer/consor4.01/www/cgi-bin/Disease_HPOTerms.php?lng=EN&data_id=8&Disease_Disease_HPOTerms_diseaseGroup=canavan&Disease_Disease_HPOTerms_diseaseType=Pat&Disease(s)/group%20of%20diseases=Canavan-disease&title=Canavan%20disease&search=Disease_HPOTerms_Simple)
+
+
 ## Docker image of Orphadata's FAIRdatapoint almost setup
 
 Giving a machine readable access to Orphadata's datasets
