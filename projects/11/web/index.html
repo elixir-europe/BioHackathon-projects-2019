@@ -30,7 +30,7 @@
     ></script>
   </head>
   <body>
-    <div id="container">
+    <div class="container" id="container">
       <div
         class="mx-auto"
         style="width: 200px; margin-top: 50px; margin-bottom: 0px;"
@@ -59,11 +59,14 @@
       </div>
 
       <div id="papers_list">
-        <ol>
-          <li v-for="paper in papers">
-            {{ paper.info.title }} {{ paper.info.id }}
+        <ul class="list-group list-group-flush">
+          <li v-for="paper in papers" class="list-group-item">
+            <ul style="list-style-type:none">
+              <li><a href="#">{{ paper.info.title }}</a></li>
+              <li>{{ paper.info.id }}</li>
+            </ul>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
 
