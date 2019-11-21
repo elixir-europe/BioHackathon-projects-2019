@@ -3,7 +3,7 @@
 * discusses BridgeDb<>identifiers.org with Nick, including use of MIRIAM and enhancement of compact identifiers
 * Egon, Petros: discussed an attack plan to get the BridgeDb IMS Docker working again
    * worked on updating MySQL, but this requires completion of the `@Tag("mysql")` (the tests time out, a bug)
-* Denise: worked on SPARQL to [count how many genes from a list occur in one or more pathways](https://www.wikipathways.org/index.php/Help:WikiPathways_Sparql_queries#Count_how_many_genes_from_a_list_occur_in_one_or_more_pathways)
+* Denise: worked on SPARQL to [count how many genes from a list occur in one or more pathways](https://www.wikipathways.org/index.php/Help:WikiPathways_Sparql_queries#Count_how_many_genes_from_a_list_occur_in_one_or_more_pathways). Also started with disease database mappings (from Wikidata).
 * Emma: worked on PubChemLite evaluation, benchmarking subsets of [PubChem](https://pubchem.ncbi.nlm.nih.gov/) against [MassBank-data](https://github.com/MassBank/MassBank-data/) (starting with [CASMI2016](http://casmi-contest.org/2016/solutions-cat2+3.shtml))
 
 # Tuesday 2019-11-19
@@ -14,6 +14,7 @@
 * New MetFrag COCONUT database [added](https://github.com/sneumann/container-metfrag/pull/3) c/o Maria, FSU Jena
 * Worked on getting Validator, queryExpander, and IdentifierMappingService compiling on Travis too
 * Worked with Andreas Tille on the Debian package of the [CDK](https://cdk.github.io/)
+* Denise: added Disease ONtology, UMLS CUI and Orphanet.
 
 # Wednesday 2019-11-20
 
@@ -26,3 +27,7 @@
 * Figured out how to use GitHub Tokens securely on Travis-CI (see [this](https://github.com/bridgedb/IdentityMappingService/commit/57529c1ab961d0c3868bf2e661286597f03348b5) and [this](https://github.com/bridgedb/IdentityMappingService/commit/135386dee382d90a2354ae4391267c7deca281f2) and setting GITHUB_USERNAME and GITHUB_TOKEN in Travis)
 * Travis now successfully compiles BridgeDb, Validator, queryExpender, and IdentifierMappingServices (closes [#43](https://github.com/elixir-europe/BioHackathon-projects-2019/issues/43))
 * [added EDAM ontology annotation](https://salsa.debian.org/java-team/cdk/merge_requests/3) to the Debian libcdk-java package
+* Denise: added MeSH descriptor IDs, discussed BridgeDb API with Intermine team.
+
+# Thrusday 2019-11-21
+* Denise: added ICD9+10+11.
