@@ -24,7 +24,8 @@ class JensenLabService(TextMiningService):
         "CID": -1,
         "BTO": -25,
         "DOID": -26,
-        "GO": -23
+        "GO": -23,
+        "ENSP": 9606
     }
 
     def __init__(self):
