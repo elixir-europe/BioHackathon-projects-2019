@@ -92,7 +92,30 @@ class PMC_Europe_Service(TextMiningService):
 
         return new_article_list, new_white_list
 
+    def _convert_entity(self, entity: str) -> str:
+        EBI_URL = 'https://www.ebi.ac.uk/ols/api/ontologies/{}/terms?short_form={}_{}'
+        try:
+            ontology, number = entity.split(':', 1)
+        except ValueError:
+            logger.info(f'(_convert_entity) Error spliting entity {entity}')
+            return entity
+        url = EBI_URL.format(ontology, ontology, number)
+        response = requests.get(url)
+        try:
+            assert response.ok
+        except AssertionError:
+            return entity
+        data = json.loads(response.content.decode().strip())
+        for term in data['_embedded']['terms']:
+            if term['obo_id'] == entity:
+                label = term['label']
+                logger.info(
+                    f'(_convert_entity) Found label {label} for entity {entity}')
+                return label
+        return entity
+
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        entities = [self._convert_entity(entity) for entity in entities]
         if len(entities) == 1:
             pageSize = min(limit+1, PMC_Europe_Service.MAX_PAGE_SIZE)
             generator = self._get_single_entity_mentions(
