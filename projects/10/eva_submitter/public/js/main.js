@@ -161,12 +161,13 @@ function packageSampleData() {
         if (germplasm['germplasmPreprocessing'])
             sampleObj.biological_material_preprocessing = germplasm['germplasmPreprocessing'];
         if (germplasm['instituteCode'] && germplasm['accessionNumber'])
-            sampleObj.material_source_ID = germplasm['instituteCode'] + ':' + germplasm['accessionNumber'];
+            sampleObj.material_source_ID = [germplasm['instituteCode'] + ':' + germplasm['accessionNumber']];
         if (germplasm['germplasmPUI'])
-            sampleObj.material_source_DOI = germplasm['germplasmPUI'];
+            sampleObj.material_source_DOI = [germplasm['germplasmPUI']];
         //if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
-        sampleObj.organism = 'test';
         //sampleObj.organism = germplasm['taxonIds'][0]['sourceName'] + ':' + germplasm['taxonIds'][0]['taxonId'];
+        if (germplasm['germplasmGenus'] && germplasm['germplasmSpecies'])
+            sampleObj.organism = germplasm['germplasmGenus'] + ' ' + germplasm['germplasmSpecies'];
         if (germplasm['germplasmOrigin'] && germplasm['germplasmOrigin'][0]) {
             var germplasmOrigin = germplasm['germplasmOrigin'][0];
             if (germplasmOrigin['latitudeDecimal'])
