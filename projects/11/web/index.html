@@ -18,11 +18,19 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="build/ols-autocomplete.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"
       integrity="sha256-ufGElb3TnOtzl5E4c/qQnZFGP+FYEZj5kbSEdJNrw0A="
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../css/ols-colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/ols.css" type="text/css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../css/typeaheadjs.css" type="text/css"/>
   </head>
   <body>
     <div class="container" id="container">
@@ -38,7 +46,12 @@
           id="inputEntity"
           placeholder="Entity"
           autocomplete="on"
+          data-olswidget="select"
+          data-olsontology="" data-selectpath="https://www.ebi.ac.uk/ols/"
+          olstype=""
+          class="ac_input"
         />
+        <!--  -->
         <div id="examples">
           <a href="#" class="badge badge-light" @click="getAsthmaExample()"
             >Asthma</a
@@ -82,6 +95,13 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function() {
+        var app = require("ols-autocomplete");
+        var instance = new app();
+        instance.start()
+      });
+  </script>
     <script src="scripts.js"></script>
   </body>
 </html>
