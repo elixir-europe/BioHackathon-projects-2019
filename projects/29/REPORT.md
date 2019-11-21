@@ -15,7 +15,7 @@ Keeping up with the recent advancements in science is a challenge. BioRxiv.org, 
 
 ## System architecture
 
-The system implements the event stream listener we developed during the European Biohackathon 2018 to retrieve scientific publications in real-time. Afterwards, we extract meta- and semantic-information from these publications using a custom-built parser, as well as EDAMmap [4]. The resulting RDF graph is converted to a property graph using Graph to Graph Mapping Language (G2GML) [5]. The property graph enables downstream analytical operations and algorithms to be performed such as centrality detection and recommendation. Finally, we provide a friendly user interface that allows users to find relevant research items in the search space of semantically annotated publications.
+The system applies the event stream listener we developed during the European Biohackathon 2018 to retrieve scientific publications in real-time using the bioRxiv Twitter feed. We extract meta- and semantic-information from these publications using a custom-built parser, as well as EDAMmap [4]. The resulting RDF graph is converted to a property graph using Graph to Graph Mapping Language (G2GML) [5]. The property graph enables downstream analytical operations and algorithms such as centrality detection and recommendation to be performed. Finally, we provide a friendly user interface that allows users to find relevant research items in the search space of semantically annotated publications.
 
 ## References
 
