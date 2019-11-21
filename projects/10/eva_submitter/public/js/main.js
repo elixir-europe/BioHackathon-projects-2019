@@ -1,112 +1,4 @@
-$(document).ready(function() {
-    window.localStorage.setItem('projectInfo', {});
-    window.localStorage.setItem('sampleInfo', []);
-    window.localStorage.setItem('analysisInfo', {});
-    $('go-btn').click(refSetSearch)
-})
-
-const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/brapi/v2/"
-    //const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/ga4gh/"
-    //const baseURL = "http://gigwa.southgreen.fr/gigwa/rest/ga4gh/"
-
-function refSetSearch() {
-    var URL = baseURL + "referencesets"
-    var body = {}
-    $.ajax({
-        url: URL,
-        type: 'get',
-        //data: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*'
-        },
-        dataType: 'json',
-        success: function(data, status) {
-            console.log(data);
-            $('#mainPanel').empty();
-            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Reference Sets </p>')
-
-            for (var refSet of data['result']['data']) {
-                var id = refSet['referenceSetDbId'];
-                var name = refSet['referenceSetName'];
-                $('#mainPanel').append('<div class=\"btn btn-info col-sm-8 offset-sm-2\" onclick=\"variantSetSearch(\'' + id + '\');\">' + name + '</div>')
-            }
-        }
-    });
-}
-
-function variantSetSearch(referenceSetID) {
-    var URL = baseURL + "variantsets/search"
-    var body = { "datasetId": referenceSetID }
-    $.ajax({
-        url: URL,
-        type: 'post',
-        data: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*'
-        },
-        dataType: 'json',
-        success: function(data, status) {
-            console.log(data);
-            $('#mainPanel').empty();
-            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Variant Sets </p>')
-            for (var variantset of data['variantSets']) {
-                $('#mainPanel').append('<div class=\"btn btn-info col-sm-8 offset-sm-2\" onclick=\"callSetSearch(\'' + variantset['id'] + '\');\">' + variantset['name'] + '</div>')
-            }
-        }
-    });
-}
-
-function callSetSearch(variantSetID) {
-    var URL = baseURL + "callsets/search"
-    var body = { "variantSetId": variantSetID, "pageSize": 10 }
-    $.ajax({
-        url: URL,
-        type: 'post',
-        data: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*'
-        },
-        dataType: 'json',
-        success: function(data, status) {
-            console.log(data);
-            $('#mainPanel').empty();
-            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Call Sets </p>')
-            for (var callSet of data['callSets']) {
-                $('#mainPanel').append('<div class=\"btn btn-info col-sm-8 offset-sm-2\" onclick=\"variantSearch(\'' + callSet['id'] + '\', \'' + variantSetID + '\');\">' + callSet['name'] + '</div>')
-            }
-        }
-    });
-}
-
-function variantSearch(callSetID, variantSetID) {
-    var URL = baseURL + "variants/search"
-    var body = {
-        "callSetIds": [callSetID],
-        "variantSetId": variantSetID,
-        "pageSize": 10
-    }
-    $.ajax({
-        url: URL,
-        type: 'post',
-        data: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*'
-        },
-        dataType: 'json',
-        success: function(data, status) {
-            console.log(data);
-            $('#mainPanel').empty();
-            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Variant </p>')
-            for (var variant of data['variants']) {
-                $('#mainPanel').append('<div class=\"btn btn-info col-sm-8 offset-sm-2\">' + variant['id'] + '</div>')
-            }
-        }
-    });
-}
+$(document).ready(function() {})
 
 function setSubbmitterDetails() {
     var formData = {};
@@ -120,7 +12,141 @@ function setSubbmitterDetails() {
     console.log('formData');
     console.log(formData);
 
-    window.localStorage.setItem('submitterDetails', formData);
-    refSetSearch();
+    setItemStorage('submitterDetails', formData);
 
+    var sampleDetails = {};
+    refSetSearch(
+        function(data, status) {
+            console.log(data);
+
+            $('#mainPanel').empty();
+            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Reference Sets </p>')
+
+            var refernceSets = {}
+
+            for (var refSet of data['result']['data']) {
+                var id = refSet['referenceSetDbId'];
+                var name = refSet['referenceSetName'];
+                refernceSets[id] = refSet;
+                $('#mainPanel').append('\
+                    <div \
+                    class=\"btn btn-info col-sm-8 offset-sm-2\" \
+                    onclick=\"setReferenceSet(\'' + id + '\');\">' +
+                    name + '</div>')
+            }
+
+            setItemStorage('refernceSetsRaw', refernceSets);
+        }
+    );
+
+}
+
+function setReferenceSet(referenceSetId) {
+    console.log(getItemStorage('refernceSetsRaw'));
+    var referenceSet = getItemStorage('refernceSetsRaw')[referenceSetId];
+    setItemStorage('refernceSet', referenceSet);
+
+    variantSetSearch(referenceSet['referenceSetDbId'], function(data, status) {
+        console.log(data);
+
+        $('#mainPanel').empty();
+        $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Variant Sets </p>')
+
+        var variantSets = {};
+
+        for (var variantSet of data['result']['data']) {
+            var id = variantSet['variantSetDbId'];
+            var name = variantSet['variantSetName'];
+            variantSets[id] = variantSet;
+            $('#mainPanel').append('<div \
+            class=\"btn btn-info col-sm-8 offset-sm-2\" \
+            onclick=\"setVariantSet(\'' + id + '\');\">' +
+                name + '</div>')
+        }
+
+        setItemStorage('variantSetsRaw', variantSets);
+    })
+}
+
+function setVariantSet(variantSetId) {
+    var variantSet = getItemStorage('variantSetsRaw')[variantSetId];
+    setItemStorage('variantSet', variantSet);
+
+    gatherSampleData(variantSet['variantSetDbId']);
+}
+
+function gatherSampleData(variantSetId) {
+
+    $('#mainPanel').empty();
+    $('#mainPanel').append('<div class="row"><div id="loading-log" class="col-xs-6"></div><img id="loading-gif" class="col-xs-6" src="images/spinner.gif" /></div>')
+    $('#loading-log').append('<p class=\"col-xs-12\"> Gathering Sample Data </p>')
+
+    callSetSearch(variantSetId, function(data, status) {
+        console.log(data);
+
+        var callSets = {};
+        var sampleDbIds = [];
+
+        for (var callSet of data['result']['data']) {
+            callSets[callSet['callSetDbId']] = callSet;
+            sampleDbIds.push(callSet['sampleDbId']);
+        }
+
+        setItemStorage('callSets', callSets);
+        $('#loading-log').append('<p class=\"col-xs-12\">' + Object.keys(callSets).length + ' Call Sets Found </p>')
+
+        sampleSearch(sampleDbIds, function(data, status) {
+            console.log(data);
+
+            var samples = {};
+            var germplasmDbIds = [];
+
+            for (var sample of data['result']['data']) {
+                samples[sample['sampleDbId']] = sample;
+                germplasmDbIds.push(sample['germplasmDbId']);
+            }
+
+            setItemStorage('samples', samples);
+            $('#loading-log').append('<p class=\"col-xs-12\">' + Object.keys(samples).length + ' Samples Found </p>')
+
+            germplasmSearch(germplasmDbIds, function(data, status) {
+                console.log(data);
+
+                var germplasmList = {};
+
+                for (var germplasm of data['result']['data']) {
+                    germplasmList[germplasm['germplasmDbId']] = germplasm;
+                }
+
+                setItemStorage('germplasmList', germplasmList);
+                $('#loading-log').append('<p class=\"col-xs-12\">' + Object.keys(germplasmList).length + ' Germplasm Found </p>')
+
+                packageSampleData();
+
+                $('#loading-log').append('<p class=\"col-xs-12\"> Finished </p>')
+                $('#loading-gif').remove();
+            });
+        });
+    });
+}
+
+function packageSampleData() {
+    var callSets = getItemStorage('callSets');
+    var samples = getItemStorage('samples');
+    var germplasmList = getItemStorage('germplasmList');
+    for (var callSetDbId of Object.keys(callSets)) {
+        var callSet = callSets[callSetDbId];
+        var sample = samples[callSet['sampleDbId']];
+        var germplasm = germplasmList[sample['germplasmDbId']];
+    }
+
+}
+
+function setItemStorage(key, value) {
+    window.localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getItemStorage(key) {
+    var obj = JSON.parse(window.localStorage.getItem(key));
+    return obj;
 }
