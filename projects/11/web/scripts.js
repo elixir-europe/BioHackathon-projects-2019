@@ -33,8 +33,9 @@ var app = new Vue({
         var jqxhr = $.ajax(url)
           .done(function (data) {
             that.hideRipple();
-            that.$set(that, "entities", data);
-            console.log("success", data);
+            that.$set(that, "entities", []);
+            that.$set(that, "papers", data);
+            console.log("success mentions", data);
           })
           .fail(function () {
             alert("error");
@@ -54,9 +55,10 @@ var app = new Vue({
         var jqxhr = $.ajax(url)
           .done(function (data) {
             that.hideRipple();
+            that.$set(that, "papers", []);
             that.$set(that, "entities", data);
-            console.log("success", data);
-            that.$set(that, "papers", data);
+            console.log("success entities", data);
+
           })
           .fail(function () {
             alert("error");

@@ -57,7 +57,7 @@
         <div></div>
       </div>
     </div>
-    <div id="entitiess_list">
+    <div id="entities_list">
       <ul class="list-group list-group-flush">
         <li v-for="entity in entities" class="list-group-item">
           <ul style="list-style-type:none">
@@ -94,27 +94,29 @@
       </ul>
     </div>
 
-    <!-- Optional JavaScript -->
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script src="scripts.js"></script>
-    <script>
-      $(document).ready(function () {
-        var autocomplete = require("ols-autocomplete");
-        var instance = new autocomplete();
-        options = {
-          action: function (relativePath, suggestion_ontology, type, iri, data) {
-            app.$set(app, "entity", data.shortForm);
-          }
-        };
-        instance.start(options);
-      });
-    </script>
+  <!-- Optional JavaScript -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+  <script>
+    $(document).ready(function () {
+      var autocomplete = require("ols-autocomplete");
+      var instance = new autocomplete();
+      options = {
+        action: function (relativePath, suggestion_ontology, type, iri, data) {
+          app.$set(app, "entity", data.shortForm);
+        }
+      };
+      instance.start(options);
+    });
+  </script>
 </body>
 
 </html>
