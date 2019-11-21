@@ -52,16 +52,17 @@ const SadButton = styled.button`
     }
 `
 
-const QuackVote = () => {
+const QuackVote = ({id}) => {
     const {state, dispatch} = useContext(QuackContext);
-    const addHappy = () => {
-        dispatch({type:'ADD_HAPPY', data: {}})
+    const addToList = (listType) => {
+        console.log('Add to list', listType)
+        dispatch({type:listType, data: {id}}) // remove from result, add to happy
     }
     return (
         <Wrapper>
-            <HappyButton onClick={()=>addHappy()}><Img src={happyDuck}/></HappyButton>
+            <HappyButton onClick={()=>addToList('ADD_HAPPY')}><Img src={happyDuck}/></HappyButton>
             <Tiler/>
-            <SadButton><Img src={sadDuck}/></SadButton>
+            <SadButton onClick={()=>addToList('ADD_SAD')}><Img src={sadDuck}/></SadButton>
         </Wrapper>
     );
 };

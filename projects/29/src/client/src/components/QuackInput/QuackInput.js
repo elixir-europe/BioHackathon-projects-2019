@@ -37,8 +37,8 @@ const QuackFilterBox = styled(ReactFilterBox)`
 
 const Img = styled.img`
     height: 50px;
-     padding-top: 2%;
-     cursor: pointer; 
+    padding-top: 4%;
+    cursor: pointer; 
 `
 
 const OPTIONS = [
@@ -91,7 +91,7 @@ function QuackInput(props) {
         axios.post('/api/v1/query', {q: state.expressions})
             .then((res) => {
                     console.log("result", res.data);
-                    dispatch({type: 'SET_RESULTS', data: res.data.values})
+                    dispatch({type: 'SET_RESULTS', data: res.data.values.slice(0,9)})
                 }
             )
         //axios.get('/api/v1/doi?doi=test')

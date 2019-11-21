@@ -2,8 +2,9 @@ const SET_RESULTS = 'SET_RESULTS';
 const SET_QUERY = 'SET_QUERY';
 const SET_EXPRESSIONS = 'SET_EXPRESSIONS';
 const DELETE_SEARCH = 'DELETE_SEARCH'
-const ADD_HAPPY = 'ADD_HAPPY';
 const DELETE_ALL = 'DELETE_ALL';
+const ADD_HAPPY = 'ADD_HAPPY';
+const ADD_SAD = 'ADD_SAD';
 
 
 function reducer(state, action) {
@@ -44,12 +45,31 @@ function reducer(state, action) {
         }
 
         case ADD_HAPPY: {
-            console.log("in ADD HAPPY", state.happyCount)
+            console.log("ACTION", action.data)
+
+            let happyElement = state.results.filter((ele)=>ele.id === action.data.id)
+
+            let newHappy = [...state.happy, ...happyElement]
+            let newResults = state.results.filter((ele)=>ele.id !== action.data.id)
+            console.log('IN ADD HAPPY', happyElement, newHappy)
             return {
                 ...state,
-                happyCount: state.happyCount + 1
+                happy: newHappy,
+                results: newResults
             }
         }
+        case ADD_SAD: {
+            let sadElement = state.results.filter((ele)=>ele.id === action.data.id)
+            let newSad = [...state.sad, sadElement]
+            let newResults = state.results.filter((ele)=>ele.id !== action.data.id)
+            return {
+                ...state,
+                sad: newSad,
+                results: newResults
+            }
+        }
+
+
         default:
             return state
     }

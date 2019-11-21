@@ -7,4 +7,4 @@ source ~/.poetry/env
 
 cd ${FULLPATH}
 envsubst '$PWD' < asterix.lighttpd.conf.template > asterix.lighttpd.conf
-exec uwsgi --socket ${1-/tmp/asterix.sock} --chmod-socket=660 --chown-socket=$(whoami):www-data --protocol=uwsgi --master --manage-script-name --enable-threads --threads ${2-4} --wsgi web_server.run:app
+exec uvicorn --host 0.0.0.0 --port 8000 web_server.main:app
