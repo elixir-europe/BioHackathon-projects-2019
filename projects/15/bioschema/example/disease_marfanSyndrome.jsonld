@@ -1,7 +1,7 @@
 {
   "@context": "http://schema.org",
   "@id": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=558",
-  "@type": "MedicalCondition",
+  "@type": "MedicalEntity",
   "alternateName": "MFS",  
   "name": "Marfan syndrome",  
   "description": "Marfan syndrome is a systemic disease of connective tissue characterized by a variable combination of cardiovascular, musculo-skeletal, ophthalmic and pulmonary manifestations.",
