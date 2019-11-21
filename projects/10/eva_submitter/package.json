@@ -10,6 +10,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "body-parser": "^1.19.0",
+        "core-util-is": "^1.0.2",
+        "elixir-jsonschema-validator": "^1.4.2",
+        "exceljs": "^3.4.0",
         "express": "^4.17.1",
         "finalhandler": "^1.1.2",
         "http": "0.0.0",

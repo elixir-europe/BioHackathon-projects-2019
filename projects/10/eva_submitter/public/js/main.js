@@ -17,6 +17,7 @@ function setSubbmitterDetails() {
     var sampleDetails = {};
     refSetSearch(
         function(data, status) {
+
             console.log(data);
 
             $('#mainPanel').empty();
@@ -62,6 +63,7 @@ function setReferenceSet(referenceSetId) {
             class=\"btn btn-info col-sm-8 offset-sm-2\" \
             onclick=\"setVariantSet(\'' + id + '\');\">' +
                 name + '</div>')
+
         }
 
         setItemStorage('variantSetsRaw', variantSets);
@@ -96,6 +98,7 @@ function gatherSampleData(variantSetId) {
         $('#loading-log').append('<p class=\"col-xs-12\">' + Object.keys(callSets).length + ' Call Sets Found </p>')
 
         sampleSearch(sampleDbIds, function(data, status) {
+
             console.log(data);
 
             var samples = {};
@@ -149,4 +152,23 @@ function setItemStorage(key, value) {
 function getItemStorage(key) {
     var obj = JSON.parse(window.localStorage.getItem(key));
     return obj;
+}
+
+function goToValidator() {
+    const body = { alias: "MTB1" };
+    $.ajax({
+        url: '/validate',
+        type: 'post',
+        data: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
+        },
+        dataType: 'json',
+        success: function(data, status) {
+            console.log(data);
+            // $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Valid </p>')
+
+        }
+    });
 }
