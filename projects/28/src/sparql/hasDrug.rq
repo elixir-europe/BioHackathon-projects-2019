@@ -1,0 +1,8 @@
+# Get human genes from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT * WHERE {
+    ?disease wdt:P2176 ?drug . # drug used for treatment
+}
