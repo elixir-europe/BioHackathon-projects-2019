@@ -139,6 +139,7 @@ class BioKBService(TextMiningService):
 
 if __name__ == "__main__":
     bkb = BioKBService()
+    print(bkb.get_mentions(["GO:0002206"]))
     print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
     print('')
     print(bkb.get_co_occurrences('DOID:2841', types=[
