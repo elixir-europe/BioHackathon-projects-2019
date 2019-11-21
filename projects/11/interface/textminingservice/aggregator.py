@@ -43,8 +43,14 @@ class TextMiningDeMultiplexer():
         self.agg = Aggregator()
 
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
-        pub_collections = {service.name: service.get_mentions(
-            entities, limit=limit) for service in self.services}
+        pub_collections = {}
+
+        for service in self.services:
+            try:
+                results = service.get_mentions(entities, limit=limit)
+            except Exception:
+                results = []
+            pub_collections[service.name] = results
         return self.agg.aggregate_mentions(pub_collections)
 
 
