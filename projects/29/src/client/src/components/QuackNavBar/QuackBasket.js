@@ -1,5 +1,7 @@
 import React, {useContext} from 'react';
 import QuackContext from "../../context";
+import {v4 as uuidv4} from 'uuid';
+
 
 const QuackBasket = () => {
     const {state} = useContext(QuackContext);
@@ -86,7 +88,7 @@ const QuackBasket = () => {
             </svg>
             <div className="dropdown-content">
                 {state.happy.map((ele)=>{
-                    return <a key={ele.doi} target='_blank' href={ele.seeAlso}>{ele.title}</a>
+                    return <a key={uuidv4()} target='_blank' href={ele.seeAlso}>{ele.title}</a>
                 })}
 
             </div>
