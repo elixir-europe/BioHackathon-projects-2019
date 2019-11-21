@@ -9,7 +9,7 @@ import json
 import numpy as np
 
 from textminingservice.TextMiningService import TextMiningService
-from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 
