@@ -1,11 +1,13 @@
+import json
+from collections import defaultdict
+from typing import List, Dict
+
 from textminingservice_biokb.biokb import BioKBService
 from textminingservice_jensenlab.jensenlabservice import JensenLabService
 from textminingservice_pmc_europe.pmc_europe import PMC_Europe_Service
+
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
-from typing import List, Dict, Any
-from collections import defaultdict
-import json
 
 
 class Aggregator():
@@ -52,7 +54,7 @@ class Aggregator():
         return sorted(co_dict.values(), key=lambda x: x['score'], reverse=True)
 
 
-class TextMiningDeMultiplexer():
+class TextMiningDeMultiplexer:
     def __init__(self):
         biokb = BioKBService()
         jensen = JensenLabService()
@@ -60,7 +62,7 @@ class TextMiningDeMultiplexer():
         self.services = [biokb, jensen, pmc]
         self.agg = Aggregator()
 
-    def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+    def get_mentions(self, entities: List[str], limit: int = 20) -> List[dict]:
         pub_collections = {}
 
         for service in self.services:

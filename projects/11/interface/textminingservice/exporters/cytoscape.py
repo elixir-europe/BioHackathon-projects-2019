@@ -10,14 +10,17 @@ class CytoscapeSerializer(object):
 
     @staticmethod
     def serialize_node(node):
+        data_dict = {
+            "id": str(node.node_id),
+            "uri": node.uri or '',
+            "name": node.label,
+            "query": True,
+            "gene": True
+        }
+        if node.score:
+            data_dict['score'] = node.score
         return {
-            "data": {
-                "id": str(node.node_id),
-                "uri": node.uri or '',
-                "name": node.label,
-                "query": True,
-                "gene": True
-            },
+            "data": data_dict,
             "group": "nodes",
             "removed": False,
             "selected": False,
