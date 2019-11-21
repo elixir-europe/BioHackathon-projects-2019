@@ -29,3 +29,16 @@ class Publication:
         ids = [("PMC_ID", self.pmc_id), ("PUBMED_ID", self.pm_id), ("DOI", self.doi),
                ("PREPRINT ID", self.preprint_id), ("OTHER ID", self.other_id)]
         return ' '.join([str(id) for id in ids if id[1] is not None])
+
+    def as_dict(self):
+        return dict(
+            title=self.title,
+            year=self.year,
+            journal_title=self.journal_title,
+            pmc_id=self.pmc_id,
+            pm_id=self.pm_id,
+            doi=self.doi,
+            preprint_id=self.preprint_id,
+            other_id=self.other_id,
+            id=self.id
+        )
