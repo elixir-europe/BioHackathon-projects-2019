@@ -69,7 +69,7 @@ def main(fname_in):
 
     # read data
     logger.info('Read data')
-    df = pd.read_csv(fname_in)
+    df = pd.read_csv(fname_in, sep='\t')
     # df.drop_duplicates(inplace=True)
 
     concept_variables = {
@@ -165,4 +165,4 @@ def main(fname_in):
 
 
 if __name__ == '__main__':
-    main('node_file.csv')
+    main('node_file.tsv')
