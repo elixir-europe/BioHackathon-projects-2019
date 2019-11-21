@@ -2,11 +2,11 @@ var app = new Vue({
   el: "#container",
   data: {
     entity: "",
-    papers: []
+    papers: [],
+    entities: []
   },
   methods: {
     showRipple: function() {
-      console.log("Show Ripple called");
       var x = document.getElementById("lds-ripple");
       x.style.display = "inline-block";
     },
@@ -31,7 +31,7 @@ var app = new Vue({
     getMentions: function() {
       var that = this;
       var entity = that.entity;
-      var url = `http://9b9a4973.ngrok.io/getMentions/?entity=${entity}&limit=30`;
+      var url = `http://9b9a4973.ngrok.io/getCooccurrence/?entity=${entity}&limit=30`;
       console.log(url);
       if (!entity) {
         alert("Enter an entity!");
@@ -40,7 +40,28 @@ var app = new Vue({
         var jqxhr = $.ajax(url)
           .done(function(data) {
             that.hideRipple();
-            that.$set(that, "papers", data);
+            that.$set(that, "entities", data);
+            console.log("success", data);
+          })
+          .fail(function() {
+            alert("error");
+          })
+          .always(function() {});
+      }
+    },
+    getCooccurrences: function() {
+      var that = this;
+      var entity = that.entity;
+      var url = "http://9b9a4973.ngrok.io/getCooccurrence/DOID:2841?type=9606";
+      console.log(url);
+      if (!entity) {
+        alert("Enter an entity!");
+      } else {
+        this.showRipple();
+        var jqxhr = $.ajax(url)
+          .done(function(data) {
+            that.hideRipple();
+            that.$set(that, "entities", data);
             console.log("success", data);
           })
           .fail(function() {

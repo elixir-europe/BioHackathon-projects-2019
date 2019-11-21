@@ -76,6 +76,13 @@
           >
             Get papers
           </button>
+          <button
+            class="btn btn-primary mb-2"
+            style="margin-top: 10px;"
+            @click="getCooccurrences()"
+          >
+            Get entities
+          </button>
         </div>
 
         <div class="mx-auto text-center" style="padding-top: 15px;">
@@ -92,6 +99,18 @@
             <ul style="list-style-type:none">
               <li><a href="#">{{ paper.info.title }}</a></li>
               <li>{{ paper.info.id }}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="entitiess_list">
+        <ul class="list-group list-group-flush">
+          <li v-for="entity in entities" class="list-group-item">
+            <ul style="list-style-type:none">
+              <li>
+                <span href="#">{{ entity.info.entity_type }}</span>
+                <a href="#">{{ entity.info.entity }}</a>
+              </li>
             </ul>
           </li>
         </ul>
