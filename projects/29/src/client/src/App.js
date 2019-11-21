@@ -4,11 +4,13 @@ import QuackResults from './pages/QuackResults';
 import QuackContext from "./context";
 import reducer from "./reducer";
 import './App.css';
-
+import testdata from './testdata/testdata'
 const initialState = {
-    query: '',
+    query: 'doi == 10.1101/443275',
     expressions: [],
-    results: [],
+    results: testdata.slice(0,9),
+    happy: [],
+    sad: [],
     happyCount: 0
 }
 

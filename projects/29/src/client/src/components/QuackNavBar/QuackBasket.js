@@ -16,17 +16,6 @@ const QuackBasket = () => {
             fill="#4A90E2"
             rx="20.454"
           ></rect>
-          <text
-            fill="#FFF"
-            fontFamily="Dosis-Medium, Dosis"
-            fontSize="18"
-            fontWeight="400"
-          >
-            <tspan x="67" y="37">
-              {state.happyCount}
-                {console.log("TEST")}
-            </tspan>
-          </text>
           <g transform="translate(9 3)">
             <circle cx="14.5" cy="17.5" r="14.5" fill="#F8E71C"></circle>
             <path
@@ -89,7 +78,7 @@ const QuackBasket = () => {
           transform="translate(-417 -660) translate(417 660)"
         >
           <tspan x="60" y="40">
-              {state.happyCount.toString().padStart(2,'0')}
+              {state.happy.length.toString().padStart(2,'0')}
           </tspan>
         </text>
       </g>
