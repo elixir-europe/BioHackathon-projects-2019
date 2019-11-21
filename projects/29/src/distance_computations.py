@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial import distance
 
+import umap
 import category_encoders as ce
 
 import seaborn as sns
@@ -38,6 +39,16 @@ def analyze_results(df, df_trans, df_dists):
     plt.tight_layout()
     plt.savefig('concept_per_paper_counts.pdf')
 
+    ## transformed data
+    # umap
+    reducer = umap.UMAP(metric='jaccard')
+
+    embedding = reducer.fit_transform(df_trans)
+    df_emb = pd.DataFrame(embedding, index=df_trans.index)
+
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(x=0, y=1, data=df_emb)
+    plt.savefig('umap.pdf')
 
     ## distances
     # subset data randomly
