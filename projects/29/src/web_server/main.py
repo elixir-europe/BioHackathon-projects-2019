@@ -29,8 +29,8 @@ def query(q: Query):
 
 
 @app.post('/api/v1/update')
-def update(doi: str = None, score: int = 0):
-    res = execute_cypher_update(doi, score)
+def update(id: str = None, score: int = 0):
+    res = execute_cypher_update(id, score)
     return res
 
 

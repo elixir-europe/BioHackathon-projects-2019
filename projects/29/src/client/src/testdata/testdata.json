@@ -1,47 +1,72 @@
 [
   {
-    "title": "You'd better decide first: overt and covert decisions improve metacognitive accuracy",
-    "subtitle": "(2018) doi: 10.1101/470146",
-    "abstract": "Abstract How can we assess the accuracy of our decisions? Recent theoretical and empirical work suggest that confidence in one's decision is influenced by the characteristics of motor response in a preceding decisional task. In this paper we present experiment designed to test..."
+    "id": "http://identifiers.org/doi/10.1101/476663",
+    "title": "Convolutional Sparse Coded Dynamic Brain Functional Connectivity | bioRxiv",
+    "authorList": "nodeID://b13424",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/27/476663.full.pdf",
+    "doi": "10.1101/476663"
   },
   {
-    "title": "Nonlinear Effects of Intraspecific Competition Alter Landscape-Wide Upscaling of Ecosystem Function",
-    "subtitle": "(2018) doi: 10.1101/470591",
-    "abstract": "Abstract A major focus of ecology is to understand and predict ecosystem function across scales. Many ecosystem functions are only measured at local scales, while their effects occur at a landscape level. Here, we investigate how landscape-scale predictions of ecosystem functi..."
+    "id": "http://identifiers.org/doi/10.1101/476655",
+    "title": "No Significant Effect of Dietary Carbohydrate versus Fat on the Reduction in Total Energy Expenditure During Maintenance of Lost Weight: A Secondary Analysis | bioRxiv",
+    "authorList": "nodeID://b13908",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/28/476655.full.pdf",
+    "doi": "10.1101/476655"
   },
   {
-    "title": "Genomic signatures of evolutionary rescue in bats surviving white-nose syndrome",
-    "subtitle": "(2018) doi: 10.1101/470294",
-    "abstract": "Abstract Evolutionary rescue can in theory help populations avoid extinction after abrupt environmental change through the rapid evolution of advantageous traits that promote population growth. However, evolutionary rescue is thought to be rare in taxa with long generation tim..."
+    "id": "http://identifiers.org/doi/10.1101/476648",
+    "title": "Attraction to pheromones in Caenorhabditis elegans can be reversed through associative learning | bioRxiv",
+    "authorList": "nodeID://b11393",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/22/476648.full.pdf",
+    "doi": "10.1101/476648"
   },
   {
-    "title": "Chance is an important element in phagolysosomal acidification that favors the macrophage",
-    "subtitle": "(2018) doi: 10.1101/470617",
-    "abstract": "Abstract Phagosome acidification is a critical mechanism of defense in phagocytic cells, which inhibits microbes by producing a less hospitable pH that also activates microbicidal mechanisms. We analyzed the dynamic distribution of phagolysosome pH measurements after bone marr..."
+    "id": "http://identifiers.org/doi/10.1101/476630",
+    "title": "ESCRT-III accumulates in micronuclei with ruptured nuclear envelopes | bioRxiv",
+    "authorList": "nodeID://b16262",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/12/01/476630.full.pdf",
+    "doi": "10.1101/476630"
   },
   {
-    "title": "Deep Residual Learning for Neuroimaging: An application to Predict Progression to Alzheimer's Disease",
-    "subtitle": "(2018) doi: 10.1101/470252",
-    "abstract": "Abstract This work investigates the suitability of deep residual neural networks (ResNets) for studying neuroimaging data in the specific application of predicting progression from mild cognitive impairment (MCI) to Alzheimer's disease (AD). We focus on predicting the subset o..."
+    "id": "http://identifiers.org/doi/10.1101/476622",
+    "title": "Comparative assessment of long-read error-correction software applied to RNA-sequencing data | bioRxiv",
+    "authorList": "nodeID://b11804",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/23/476622.full.pdf",
+    "doi": "10.1101/476622"
   },
   {
-    "title": "Cortical network fingerprints predict deep brain stimulation outcome in dystonia",
-    "subtitle": "(2018) doi: 10.1101/470526",
-    "abstract": "Abstract Background: Deep brain stimulation (DBS) is an effective evidence-based therapy for dystonia. However, no unequivocal predictors of therapy responses exist. We investigate whether patients optimally responding to DBS present distinct brain network organization and str..."
+    "id": "http://identifiers.org/doi/10.1101/476614",
+    "title": "Visual field advantage: Redefined by training? | bioRxiv",
+    "authorList": "nodeID://b13384",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/27/476614.full.pdf",
+    "doi": "10.1101/476614"
   },
   {
-    "title": "Modular organization of the murine locomotor pattern in presence and absence of sensory feedback from muscle spindles",
-    "subtitle": "(2018) doi: 10.1101/470492",
-    "abstract": "Abstract For exploiting terrestrial and aquatic locomotion, vertebrates must build their locomotor patterns based on an enormous amount of variables. The great number of muscles and joints, together with the constant need for sensory feedback information (e.g. proprioception),..."
+    "id": "http://identifiers.org/doi/10.1101/476598",
+    "title": "Genotyping-by-sequencing and microarrays are complementary for detecting quantitative trait loci by tagging different haplotypes in association studies | bioRxiv",
+    "authorList": "nodeID://b11721",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/23/476598.full.pdf",
+    "doi": "10.1101/476598"
   },
   {
-    "title": "Predictiveness and Reward Effects on Attention can be Explained by a Single Mechanism",
-    "subtitle": "(2018) doi: 10.1101/469809",
-    "abstract": "Abstract In order to learn efficiently, organisms must learn how to distribute their attention to the available cues. Traditionally, most experiments on attention learning have involved discrete outcomes (e.g. no food vs. one food pellet, or category A vs. category B). A basic..."
+    "id": "http://identifiers.org/doi/10.1101/476580",
+    "title": "Aerodigestive sampling reveals altered microbial exchange between lung, oropharyngeal, and gastric microbiomes in children with impaired swallow function | bioRxiv",
+    "authorList": "nodeID://b11910",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/23/476580.full.pdf",
+    "doi": "10.1101/476580"
   },
   {
-    "title": "Discovery of volatile biomarkers of Parkinsons disease from sebum",
-    "subtitle": "(2018) doi: 10.1101/469726",
-    "abstract": "Abstract Parkinsons disease (PD) is a progressive, neurodegenerative disease that presents with significant motor symptoms, for which there is no diagnostic test (1-3). We have serendipitously identified a hyperosmic individual, a Super Smeller that can detect PD by odor alone..."
+    "id": "http://identifiers.org/doi/10.1101/476572",
+    "title": "Analysis of Single Nucleotide Polymorphisms in human Voltage-Gated Ion Channels | bioRxiv",
+    "authorList": "nodeID://b11866",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/23/476572.full.pdf",
+    "doi": "10.1101/476572"
+  },
+  {
+    "id": "http://identifiers.org/doi/10.1101/476564",
+    "title": "Gentamicin B1 is not a minor gentamicin component with major nonsense mutation suppression activity | bioRxiv",
+    "authorList": "nodeID://b11950",
+    "seeAlso": "https://www.biorxiv.org/content/early/2018/11/23/476564.full.pdf",
+    "doi": "10.1101/476564"
   }
 ]

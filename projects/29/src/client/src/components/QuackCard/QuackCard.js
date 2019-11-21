@@ -11,6 +11,7 @@ const Card = styled.div`
     flex-direction: column;
     justify-content: space-between;
     background-color: #eee;
+    color: black;
 `
 const TitleContentWrapper = styled.div`
     display: flex;
@@ -22,9 +23,12 @@ const CardTitle = styled.h1`
     padding-right: 1rem;
     padding-bottom: 0.5rem;
     font-style: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: Dosis;
     padding-bottom: 0px;
+    .a{
+    color: red;
+    }
 `
 
 const CardContent = styled.div`
@@ -38,17 +42,24 @@ const CardBottom = styled.div`
       padding-bottom: 0.5rem;
 `
 
+const A = styled.a`
+    color: black;
+    :hover{
+        color: #FF6F2F;
+    }
+    
+`
 const QuackCard = ({data}) => {
     return (
         <Card>
             <TitleContentWrapper>
-                <CardTitle>{data.title}</CardTitle>
+                <CardTitle><A target='_blank' href={data.seeAlso}>{data.title}</A>  </CardTitle>
                 <CardContent>
                     {data.abstract}
                 </CardContent>
             </TitleContentWrapper>
             <CardBottom>
-                <QuackVote/>
+                <QuackVote id={data.id}/>
             </CardBottom>
         </Card>
     );
