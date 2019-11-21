@@ -100,10 +100,11 @@ class PMC_Europe_Service(TextMiningService):
             publications = []
             for article, _ in generator:
                 if len(publications) == limit:
-                    return publications
+                    break
                 else:
                     publications.append(Publication(
                         pm_id=article['extId'], pmc_id=article['pmcid']))
+            return publications
         else:
             raise TextMiningServiceOperationNotSupported
             # once PMC is fast enough to deal with multiple entities, use either the following line
