@@ -1,8 +1,9 @@
 class Node:
-    def __init__(self, node_id, label, uri=None):
+    def __init__(self, node_id, label, uri=None, score=None):
         self.uri = uri
         self.label = label
         self.node_id = node_id
+        self.score = score
 
 
 class Edge:

@@ -8,7 +8,7 @@ if __name__ == '__main__':
     for text_mining_service in text_mining_services:
         print("Using service {}".format(text_mining_service.name))
         # publications = text_mining_service.get_mentions(entities, limit=100)
-        cooccurrences = text_mining_service.get_co_occurrences(entities[0], limit=1000)
+        cooccurrences = text_mining_service.get_co_occurrences(entities[0], limit=100)
         # print(", ".join([str(p) for p in publications]))
 
     # json_cytoscape = export_mentions_cytoscape(entities, publications)

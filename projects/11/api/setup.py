@@ -21,7 +21,7 @@ setup(
     url='',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     package_dir={'textmining-server':
-                 'textmining-server'},
+                     'textmining-server'},
     include_package_data=True,
     install_requires=requirements,
     zip_safe=False,
