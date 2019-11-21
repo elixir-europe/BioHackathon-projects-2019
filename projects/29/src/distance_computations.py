@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial import distance
 
+import umap
 import category_encoders as ce
 
 import seaborn as sns
@@ -27,7 +28,8 @@ from tqdm import tqdm
 from loguru import logger
 
 
-def analyze_data(df):
+def analyze_results(df, df_trans, df_dists):
+    ## raw data
     # concept counts per paper
     plt.figure(figsize=(8, 6))
     sns.distplot(df.groupby('id:ID').count()['value'], kde=False)
@@ -37,8 +39,18 @@ def analyze_data(df):
     plt.tight_layout()
     plt.savefig('concept_per_paper_counts.pdf')
 
+    ## transformed data
+    # umap
+    reducer = umap.UMAP(metric='jaccard')
 
-def analyze_distances(df_dists):
+    embedding = reducer.fit_transform(df_trans)
+    df_emb = pd.DataFrame(embedding, index=df_trans.index)
+
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(x=0, y=1, data=df_emb)
+    plt.savefig('umap.pdf')
+
+    ## distances
     # subset data randomly
     sub_idx = np.random.randint(
         0, df_dists.index.size,
@@ -69,7 +81,7 @@ def main(fname_in):
 
     # read data
     logger.info('Read data')
-    df = pd.read_csv(fname_in)
+    df = pd.read_csv(fname_in, sep='\t')
     # df.drop_duplicates(inplace=True)
 
     concept_variables = {
@@ -105,8 +117,6 @@ def main(fname_in):
                        .index)
     df = df[df['id:ID'].isin(doi_selection)]
 
-    analyze_data(df)
-
     # encode features
     logger.info(f'Encode features (raw-shape: {df.shape})')
     ohe = ce.OneHotEncoder(handle_unknown='error', use_cat_names=True)
@@ -130,7 +140,14 @@ def main(fname_in):
         columns=df_trans.index,
         index=df_trans.index)
 
-    analyze_distances(df_dists)
+    # convert distance to similarity
+    dists = 1 - dists
+
+    df_dists = 1 - df_dists
+    np.fill_diagonal(df_dists.values, 1)
+
+    # analyze results
+    analyze_results(df, df_trans, df_dists)
 
     # extract relationships
     logger.info(f'Extract relationships (dists-shape: {df_dists.shape})')
@@ -143,8 +160,8 @@ def main(fname_in):
         fd.write(':START_ID,:END_ID,:TYPE,value:FLOAT\n')
 
         for i, j, d in tqdm(zip(triu_i, triu_j, dists), total=len(dists)):
-            if d < 0.2:
-                fd.write(f'{idx_trans[i]},{idx_trans[j]},distance,{d}\n')
+            if d > 0:
+                fd.write(f'{idx_trans[i]},{idx_trans[j]},similarity,{d}\n')
                 edge_count += 1
 
     # recreate Neo4j database
@@ -165,4 +182,4 @@ def main(fname_in):
 
 
 if __name__ == '__main__':
-    main('node_file.csv')
+    main('node_file.tsv')
