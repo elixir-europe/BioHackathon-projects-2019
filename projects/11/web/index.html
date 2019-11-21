@@ -16,11 +16,16 @@
       crossorigin="anonymous"
     />
 
-    <title>Hello, world!</title>
+    <title>Entity Explore</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"
+      integrity="sha256-ufGElb3TnOtzl5E4c/qQnZFGP+FYEZj5kbSEdJNrw0A="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="mx-auto" style="width: 200px;">
-      <form class="form-inline">
+    <div id="container">
+      <div class="mx-auto" style="width: 200px; margin-top: 50px;">
         <div class="form-group">
           <label for="inputEntity" class="sr-only">Entity</label>
           <input
@@ -30,10 +35,18 @@
             placeholder="Entity"
           />
         </div>
-        <button type="submit" class="btn btn-primary mb-2">
+        <button class="btn btn-primary mb-2" @click="getPapers()">
           Get papers
         </button>
-      </form>
+      </div>
+
+      <div id="papers_list">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -53,5 +66,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
