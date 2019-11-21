@@ -1,4 +1,6 @@
 import json
+import sys
+import logging
 from collections import defaultdict
 from typing import List, Dict
 
@@ -8,6 +10,8 @@ from textminingservice_pmc_europe.pmc_europe import PMC_Europe_Service
 
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class Aggregator():
@@ -66,10 +70,17 @@ class TextMiningDeMultiplexer:
         pub_collections = {}
 
         for service in self.services:
+            results = []
             try:
                 results = service.get_mentions(entities, limit=limit)
+            except AssertionError:
+                details = sys.exc_info()[0]
+                logger.info(
+                    f'AssertionError from service {service}: {details}')
             except Exception:
-                results = []
+                details = sys.exc_info()[0]
+                logger.info(
+                    f'Exception from service {service}: {details}')
             pub_collections[service.name] = results
         return self.agg.aggregate_mentions(pub_collections)
 
