@@ -38,7 +38,6 @@ class Aggregator():
             # sort desc by score
             for idx, co in enumerate(sorted(co_lst, key=lambda c: c.score, reverse=True)):
                 if co.entity in co_dict:
-                    cooccurrence = co_dict[co.entity]
                     co_dict[co.entity]['score'] += idx
                     co_dict[co.entity]['resources'].append(service)
                 else:
@@ -89,5 +88,9 @@ class TextMiningDeMultiplexer():
 
 if __name__ == "__main__":
     tmdm = TextMiningDeMultiplexer()
+    print('get mentions')
     results = tmdm.get_mentions(['DOID:2841'])
+    print(json.dumps(results))
+    print('get cooccurrences')
+    results = tmdm.get_co_occurrences('DOID:2841')
     print(json.dumps(results))
