@@ -1,5 +1,6 @@
 import json
 import logging
+import urllib
 from typing import List
 
 import requests
@@ -22,6 +23,7 @@ class JensenLabService(TextMiningService):
         "CID": -1,
         "BTO": -25,
         "DOID": -26,
+        "GO": -23
     }
 
     def __init__(self):
@@ -53,13 +55,21 @@ class JensenLabService(TextMiningService):
                                                                                       filter_type)
         print(url_cooccurrences)
         results = requests.get(url_cooccurrences)
-        assert results.ok
+        results.raise_for_status()
         cooccurrences_list = json.loads(results.content.decode().strip())
         cooccurrences_entities = cooccurrences_list[0]
         cooccurrences_results = []
         for entity2, entity2_dict in cooccurrences_entities.items():
-            cooccurrences_results.append(CoOccurrence(entity2, entity2_dict['evidence']))
+            type2 = self.get_type2_from_url(entity2_dict)
+            cooccurrences_results.append(CoOccurrence(entity2, entity2_dict['evidence'], type2))
         return cooccurrences_results
+
+    def get_type2_from_url(self, entity2_dict):
+        url = entity2_dict['url']
+        query = urllib.parse.urlparse(url).query
+        query_dict = urllib.parse.parse_qs(query)
+        type2 = query_dict['type2'][0]
+        return type2
 
     @staticmethod
     def guess_types_for_entities(entities):
@@ -81,7 +91,10 @@ class JensenLabService(TextMiningService):
         url_mentions = JensenLabService.MENTION_URL.format(
             entity_type, entity, limit)
         results = requests.get(url_mentions)
-        assert results.ok
+        try:
+            results.raise_for_status()
+        except requests.exceptions.HTTPError:
+            return set()
         publications_string = results.content.decode().strip()
         publications_list, has_more = json.loads(publications_string)
         return set(publications_list)
@@ -90,8 +103,8 @@ class JensenLabService(TextMiningService):
 if __name__ == '__main__':
     text_mining_service = JensenLabService()
     print("Using service {}".format(text_mining_service.name))
-    publications = text_mining_service.get_mentions(
-        ["DOID:10652", "DOID:10935"], limit=1000000)
-    print(", ".join([p.pm_id for p in publications]))
+    # publications = text_mining_service.get_mentions(
+    #     ["DOID:10652", "DOID:10935"], limit=1000000)
+    # print(", ".join([p.pm_id for p in publications]))
     cooccurrences = text_mining_service.get_co_occurrences("DOID:10652", types=['-25'], limit=10)
     print(cooccurrences)
