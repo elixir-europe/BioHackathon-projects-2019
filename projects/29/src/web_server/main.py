@@ -7,6 +7,12 @@ from web_server.neo4j_wrapper import execute_cypher, test, get_properties, execu
 class Query(BaseModel):
     q: list = []
 
+class DOIs(BaseModel):
+    positive: list = []
+    negative: list = []
+    unvoted: list = []
+
+
 test()
 
 app = FastAPI()
@@ -29,8 +35,8 @@ def query(q: Query):
 
 
 @app.post('/api/v1/update')
-def update(id: str = None, score: int = 0):
-    res = execute_cypher_update(id, score)
+def update(q: DOIs):
+    res = execute_cypher_update(q)
     return res
 
 
