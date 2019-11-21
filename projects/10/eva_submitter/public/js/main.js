@@ -1,17 +1,17 @@
-$(document).ready(function() {
+$(document).ready(function () {
     window.localStorage.setItem('projectInfo', {});
     window.localStorage.setItem('sampleInfo', []);
     window.localStorage.setItem('analysisInfo', {});
     $('go-btn').click(refSetSearch)
 })
 
-const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/brapi/v2/"
-    //const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/ga4gh/"
-    //const baseURL = "http://gigwa.southgreen.fr/gigwa/rest/ga4gh/"
+const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/brapi/v2/";
+//const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/ga4gh/"
+//const baseURL = "http://gigwa.southgreen.fr/gigwa/rest/ga4gh/"
 
 function refSetSearch() {
     var URL = baseURL + "referencesets"
-    var body = {}
+    var body = {};
     $.ajax({
         url: URL,
         type: 'get',
@@ -21,7 +21,7 @@ function refSetSearch() {
             'Accept': '*/*'
         },
         dataType: 'json',
-        success: function(data, status) {
+        success: function (data, status) {
             console.log(data);
             $('#mainPanel').empty();
             $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Reference Sets </p>')
@@ -37,7 +37,7 @@ function refSetSearch() {
 
 function variantSetSearch(referenceSetID) {
     var URL = baseURL + "variantsets/search"
-    var body = { "datasetId": referenceSetID }
+    var body = {"datasetId": referenceSetID}
     $.ajax({
         url: URL,
         type: 'post',
@@ -47,7 +47,7 @@ function variantSetSearch(referenceSetID) {
             'Accept': '*/*'
         },
         dataType: 'json',
-        success: function(data, status) {
+        success: function (data, status) {
             console.log(data);
             $('#mainPanel').empty();
             $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Variant Sets </p>')
@@ -59,8 +59,8 @@ function variantSetSearch(referenceSetID) {
 }
 
 function callSetSearch(variantSetID) {
-    var URL = baseURL + "callsets/search"
-    var body = { "variantSetId": variantSetID, "pageSize": 10 }
+    var URL = baseURL + "callsets/search";
+    var body = {"variantSetId": variantSetID, "pageSize": 10}
     $.ajax({
         url: URL,
         type: 'post',
@@ -70,7 +70,7 @@ function callSetSearch(variantSetID) {
             'Accept': '*/*'
         },
         dataType: 'json',
-        success: function(data, status) {
+        success: function (data, status) {
             console.log(data);
             $('#mainPanel').empty();
             $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Call Sets </p>')
@@ -82,7 +82,7 @@ function callSetSearch(variantSetID) {
 }
 
 function variantSearch(callSetID, variantSetID) {
-    var URL = baseURL + "variants/search"
+    var URL = baseURL + "variants/search";
     var body = {
         "callSetIds": [callSetID],
         "variantSetId": variantSetID,
@@ -97,7 +97,7 @@ function variantSearch(callSetID, variantSetID) {
             'Accept': '*/*'
         },
         dataType: 'json',
-        success: function(data, status) {
+        success: function (data, status) {
             console.log(data);
             $('#mainPanel').empty();
             $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Variant </p>')
@@ -119,8 +119,28 @@ function setSubbmitterDetails() {
     formData.address = document.getElementById("address").value;
     console.log('formData');
     console.log(formData);
-
+    var myJsonData = JSON.stringify(formData);
     window.localStorage.setItem('submitterDetails', formData);
     refSetSearch();
 
+}
+
+
+function goToValidator() {
+    const body = {alias : "MTB1"};
+    $.ajax({
+        url: '/validate',
+        type: 'post',
+        data: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
+        },
+        dataType: 'json',
+        success: function (data, status) {
+            console.log(data);
+            // $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Valid </p>')
+
+        }
+    });
 }
