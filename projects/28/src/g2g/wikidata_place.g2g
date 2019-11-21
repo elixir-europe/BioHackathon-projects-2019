@@ -1,0 +1,10 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+(p:Place {coordinate: c})
+    ?p wdt:P31 wd:Q486972 ; # instance of human settlement
+       wdt:P625 ?location ;           # coordinate location
+       rdfs:label ?label .
+    FILTER(lang(?label) = "en")
+    BIND(str(?label) AS ?name)
+    BIND(str(?location) AS ?c)
