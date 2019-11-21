@@ -1,0 +1,1 @@
+find . -name "setup.py" -maxdepth 2 | sed 's|/setup.py||g' | xargs pip install -e
