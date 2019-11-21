@@ -44,14 +44,30 @@
         <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click="getMentions()">
           Get papers
         </button>
-      </div>
 
-      <div class="mx-auto text-center" style="padding-top: 15px;">
-        <div class="lds-ripple" id="lds-ripple">
-          <div></div>
-          <div></div>
-        </div>
+        <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click="getCooccurrences()">
+          Get entities
+        </button>
       </div>
+    </div>
+
+    <div class="mx-auto text-center" style="padding-top: 15px;">
+      <div class="lds-ripple" id="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div id="entitiess_list">
+      <ul class="list-group list-group-flush">
+        <li v-for="entity in entities" class="list-group-item">
+          <ul style="list-style-type:none">
+            <li>
+              <span href="#">{{ entity.info.entity_type }}</span>
+              <a href="#">{{ entity.info.entity }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
     <div id="papers_list">
@@ -77,33 +93,28 @@
         </li>
       </ul>
     </div>
-  </div>
 
+    <!-- Optional JavaScript -->
 
-
-  <!-- Optional JavaScript -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="scripts.js"></script>
-  <script>
-    $(document).ready(function () {
-      var autocomplete = require("ols-autocomplete");
-      var instance = new autocomplete();
-      options = {
-        action: function (relativePath, suggestion_ontology, type, iri, data) {
-          app.$set(app, 'entity', data.shortForm);
-        }
-      }
-      instance.start(options)
-    });
-
-  </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <script>
+      $(document).ready(function () {
+        var autocomplete = require("ols-autocomplete");
+        var instance = new autocomplete();
+        options = {
+          action: function (relativePath, suggestion_ontology, type, iri, data) {
+            app.$set(app, "entity", data.shortForm);
+          }
+        };
+        instance.start(options);
+      });
+    </script>
 </body>
 
 </html>
