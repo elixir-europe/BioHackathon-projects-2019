@@ -8,7 +8,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link rel="stylesheet" href="style.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css" />
 
@@ -19,8 +18,8 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
     <script src="build/ols-autocomplete.js"></script>
 
     <script
@@ -33,6 +32,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="../css/typeaheadjs.css" type="text/css" />
   </head>
+
   <body>
     <div class="container" id="container">
       <div
@@ -45,7 +45,7 @@
           type="Entity"
           class="form-control"
           id="inputEntity"
-          placeholder="Entity"
+          placeholder="Entity: i.e. DOID:2841"
           autocomplete="on"
           data-olswidget="select"
           data-olsontology="doid,go"
@@ -70,12 +70,6 @@
           >
             Get papers
           </button>
-        </div>
-        <div class="mx-auto text-center" style="padding-top: 15px;">
-          <div class="lds-ripple" id="lds-ripple">
-            <div></div>
-            <div></div>
-          </div>
         </div>
       </div>
 
