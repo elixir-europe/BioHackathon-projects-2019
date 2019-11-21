@@ -6,6 +6,7 @@ from web_server.neo4j_wrapper import execute_cypher, test, get_properties, execu
 
 class Query(BaseModel):
     q: list = []
+    limit: int = 9
 
 class DOIs(BaseModel):
     positive: list = []
@@ -30,7 +31,7 @@ def doi(doi: str = None):
 
 @app.post('/api/v1/query')
 def query(q: Query):
-    res = execute_cypher(q.q)
+    res = execute_cypher(q.q, q.limit)
     return res
 
 
