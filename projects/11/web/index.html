@@ -58,11 +58,20 @@
       <ul class="list-group list-group-flush">
         <li v-for="paper in papers" class="list-group-item">
           <ul style="list-style-type:none">
-            <li>
-              <a href="#">{{ paper.info.title }}</a>
+            <li v-if="paper.info.title != undefined">
+              Title: <a href="#">{{ paper.info.title }}</a>
+            </li>
+            <li v-if="paper.info.doi != undefined">
+              DOI: <a target="_blank" :href="'http://doi.org/'+paper.info.doi">{{ paper.info.doi }}</a>
+            </li>
+            <li v-if="paper.info.pmc_id != undefined">
+              PMC ID: {{ paper.info.pmc_id }}
+            </li>
+            <li v-if="paper.info.pm_id != undefined">
+              PM ID: {{ paper.info.pm_id }}
             </li>
             <li>
-              {{ paper.info.id }}
+              Resources: {{ paper.resources.join(', ') }}
             </li>
           </ul>
         </li>
