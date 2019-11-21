@@ -19,7 +19,22 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="mx-auto" style="width: 200px;">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="inputEntity" class="sr-only">Entity</label>
+          <input
+            type="Entity"
+            class="form-control"
+            id="inputEntity"
+            placeholder="Entity"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">
+          Get papers
+        </button>
+      </form>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
