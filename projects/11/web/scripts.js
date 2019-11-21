@@ -5,6 +5,14 @@ var app = new Vue({
     papers: []
   },
   methods: {
+    showRipple: function() {
+      var x = document.getElementById("lds-ripple");
+      x.style.display = "inline-block";
+    },
+    hideRipple: function() {
+      var x = document.getElementById("lds-ripple");
+      x.style.display = "none";
+    },
     //exmples for demo
     getAsthmaExample: function() {
       var exampleDataJson =
@@ -27,10 +35,10 @@ var app = new Vue({
       if (!entity) {
         alert("Enter an entity!");
       } else {
+        this.showRipple();
         var jqxhr = $.ajax(url)
           .done(function(data) {
-            data = JSON.parse(data);
-
+            that.hideRipple();
             that.$set(that, "papers", data);
             console.log("success", data);
           })

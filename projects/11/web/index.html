@@ -8,6 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <link rel="stylesheet" href="style.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css" />
 
@@ -18,8 +19,8 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
     <script src="build/ols-autocomplete.js"></script>
 
     <script
@@ -30,7 +31,7 @@
     <link rel="stylesheet" href="../css/ols-colors.css" type="text/css" />
     <link rel="stylesheet" href="../css/ols.css" type="text/css" />
     <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="../css/typeaheadjs.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/typeaheadjs.css" type="text/css" />
   </head>
   <body>
     <div class="container" id="container">
@@ -47,7 +48,8 @@
           placeholder="Entity"
           autocomplete="on"
           data-olswidget="select"
-          data-olsontology="" data-selectpath="https://www.ebi.ac.uk/ols/"
+          data-olsontology=""
+          data-selectpath="https://www.ebi.ac.uk/ols/"
           olstype=""
           class="ac_input"
         />
@@ -68,6 +70,12 @@
           >
             Get papers
           </button>
+        </div>
+        <div class="mx-auto text-center" style="padding-top: 15px;">
+          <div class="lds-ripple" id="lds-ripple">
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
 
@@ -99,9 +107,9 @@
       $(document).ready(function() {
         var app = require("ols-autocomplete");
         var instance = new app();
-        instance.start()
+        instance.start();
       });
-  </script>
+    </script>
     <script src="scripts.js"></script>
   </body>
 </html>
