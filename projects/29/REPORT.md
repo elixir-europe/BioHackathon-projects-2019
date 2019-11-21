@@ -17,6 +17,9 @@ Keeping up with the recent advancements in science is a challenge. BioRxiv.org, 
 
 The system applies the event stream listener we developed during the European Biohackathon 2018 to retrieve scientific publications in real-time using the bioRxiv Twitter feed. We extract meta- and semantic-information from these publications using a custom-built parser, as well as EDAMmap [4]. The resulting RDF graph is converted to a property graph using Graph to Graph Mapping Language (G2GML) [5]. The property graph enables downstream analytical operations and algorithms such as centrality detection and recommendation to be performed. Finally, we provide a friendly user interface that allows users to find relevant research items in the search space of semantically annotated publications.
 
+In order to test the efficiency and robustness of our system, we ran it on a single board computer (SBC) -- a Raspberry Pi 3B+. 
+Our system showed resilience in this low spec environment. This gave us a reasonable expectation of its performance on more powerful hardware once we try scaling it to a huge data set and a large number of concurrent users.
+
 ## References
 
 1. Abdill, R. J., & Blekhman, R. (2019). Meta-Research: Tracking the popularity and outcomes of all bioRxiv preprints. ELife, 8, e45133.

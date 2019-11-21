@@ -2,6 +2,8 @@ import React,{useContext} from 'react';
 import QuackNavBarLogo from './QuackNavBarLogo';
 import styled from 'styled-components';
 import QuackBasket from './QuackBasket';
+import QuackSadBasket from './QuackSadBasket';
+
 import QuackContext from "../../context";
 import { TiDelete } from "react-icons/ti";
 
@@ -19,8 +21,9 @@ const NavBar = styled.div`
 `
 
 const Start = styled.div`
-    display: flex;
-    justify-content: flex-start;
+    justify-content: End;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
 `
 
 const Middle = styled.div`
@@ -28,6 +31,7 @@ const Middle = styled.div`
     justify-content: center;
     align-items: center;
     font-family: Montserrat;
+    color: black;
 `
 const End = styled.div`
     justify-content: End;
@@ -44,12 +48,11 @@ const QuackNavBar = () => {
     return (
         <NavBar>
             <Start>
-                <QuackNavBarLogo/>
+                            <QuackSadBasket/>
+
             </Start>
             <Middle>
-                <b>your query:</b>
-               &nbsp;<em>{state.query}</em>
-                <TiDelete onClick={()=>removeResults()} style={{fontSize: "1.5rem", cursor: 'pointer'}}/>
+                <QuackNavBarLogo />
             </Middle>
             <End>
                 <QuackBasket/>
