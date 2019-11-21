@@ -27,7 +27,8 @@ from tqdm import tqdm
 from loguru import logger
 
 
-def analyze_data(df):
+def analyze_results(df, df_trans, df_dists):
+    # raw data
     # concept counts per paper
     plt.figure(figsize=(8, 6))
     sns.distplot(df.groupby('id:ID').count()['value'], kde=False)
@@ -38,7 +39,7 @@ def analyze_data(df):
     plt.savefig('concept_per_paper_counts.pdf')
 
 
-def analyze_distances(df_dists):
+    ## distances
     # subset data randomly
     sub_idx = np.random.randint(
         0, df_dists.index.size,
@@ -105,8 +106,6 @@ def main(fname_in):
                        .index)
     df = df[df['id:ID'].isin(doi_selection)]
 
-    analyze_data(df)
-
     # encode features
     logger.info(f'Encode features (raw-shape: {df.shape})')
     ohe = ce.OneHotEncoder(handle_unknown='error', use_cat_names=True)
@@ -136,8 +135,8 @@ def main(fname_in):
     df_dists = 1 - df_dists
     np.fill_diagonal(df_dists.values, 1)
 
-    # analyze distances
-    analyze_distances(df_dists)
+    # analyze results
+    analyze_results(df, df_trans, df_dists)
 
     # extract relationships
     logger.info(f'Extract relationships (dists-shape: {df_dists.shape})')
