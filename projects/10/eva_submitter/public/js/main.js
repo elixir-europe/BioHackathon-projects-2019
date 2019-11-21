@@ -164,8 +164,9 @@ function packageSampleData() {
             sampleObj.material_source_ID = germplasm['instituteCode'] + ':' + germplasm['accessionNumber'];
         if (germplasm['germplasmPUI'])
             sampleObj.material_source_DOI = germplasm['germplasmPUI'];
-        if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
-            sampleObj.organism = germplasm['taxonIds'][0]['sourceName'] + ':' + germplasm['taxonIds'][0]['taxonId'];
+        //if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
+        sampleObj.organism = 'test';
+        //sampleObj.organism = germplasm['taxonIds'][0]['sourceName'] + ':' + germplasm['taxonIds'][0]['taxonId'];
         if (germplasm['germplasmOrigin'] && germplasm['germplasmOrigin'][0]) {
             var germplasmOrigin = germplasm['germplasmOrigin'][0];
             if (germplasmOrigin['latitudeDecimal'])
@@ -187,6 +188,7 @@ function packageSampleData() {
         }
         sampleObjs.push(sampleObj);
     }
+    console.log(sampleObjs);
     return sampleObjs;
 }
 

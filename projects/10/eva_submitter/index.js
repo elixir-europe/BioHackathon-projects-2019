@@ -1,12 +1,8 @@
-// var finalhandler = require('finalhandler');
-// var http = require('http');
 var serveStatic = require('serve-static');
 var express = require('express');
 var { ElixirValidator } = require('elixir-jsonschema-validator');
-var bodyParser = require("body-parser");
-
-// Serve up public folder
-//var serve = serveStatic('public', {'index': ['index.html']});
+var bodyParser = require('body-parser');
+var request = require('request');
 
 var app = express();
 
@@ -15,34 +11,31 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.post('/validate', async function(req, res) {
-    console.log('step 1');
-    var response = await validator(req.body.alias)
-        .then((validationResult) => {
-            console.log(validationResult);
-            res.send(validationResult);
-        });
-    console.log('step 2');
+    console.log(req.body);
+    var responseList = [];
+    for (var sample of req.body) {
+        var response = await validator(sample)
+            .then((validationResult) => {
+                responseList.push(validationResult)
+            })
+    }
+    res.send(responseList);
 });
 
 
 // Listen
 app.listen(3000);
 
-let jsonSchema = {
-    $schema: "http://json-schema.org/draft-07/schema#",
-    type: "object",
-    properties: {
-        alias: {
-            description: "A sample unique identifier in a submission.",
-            type: "string"
-        }
-    },
-    required: ["alias"]
-};
+let jsonSchema;
+request('https://raw.githubusercontent.com/FAIRsharing/mircat/mircat-ebiusi/miappe/schema/biological_material_schema.json', function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+        jsonSchema = JSON.parse(body);
+    }
+});
 
 function validator(data) {
     console.log('Doing validation...');
-    let jsonObj = { 'alias': data };
+    let jsonObj = data;
     let validator = new ElixirValidator();
     let validatorResponse = {};
     let validatorMessages = [];
