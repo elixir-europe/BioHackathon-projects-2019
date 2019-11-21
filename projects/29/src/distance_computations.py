@@ -96,7 +96,10 @@ def analyze_results(
     plt.savefig('distance_distribution.pdf')
 
     # cluster papers
-    g = sns.clustermap(df_sub, rasterized=True)
+    g = sns.clustermap(
+        df_dists, rasterized=True,
+        cbar_kws={'label': 'Jaccard similarity'})
+    g.ax_heatmap.axis('off')
     g.savefig('paper_clusters.pdf')
 
 
