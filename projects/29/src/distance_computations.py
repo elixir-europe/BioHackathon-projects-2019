@@ -62,7 +62,11 @@ def analyze_distances(df_dists):
     g.savefig('paper_clusters.pdf')
 
 
-def main(fname_in, fname_out):
+def main(fname_in):
+    neo4j_nodefile = 'neo4j_nodes.csv'
+    neo4j_edgefile = 'neo4j_edges.csv'
+
+
     # read data
     logger.info('Read data')
     df = pd.read_csv(fname_in)
@@ -83,11 +87,10 @@ def main(fname_in, fname_out):
           .pivot(index='id:ID', columns='variable', values=0)
           .reset_index())
 
-    node_file = 'node_tmp.csv'
     (df['id:ID'].drop_duplicates()
                 .to_frame()
                 .merge(node_properties, on='id:ID')
-                .to_csv(node_file, index=False))
+                .to_csv(neo4j_nodefile, index=False))
 
     # only consider concepts for distance calculations
     df = df[df['variable'].isin(concept_variables)]
@@ -136,7 +139,7 @@ def main(fname_in, fname_out):
     triu_i, triu_j = np.triu_indices(df_trans.shape[0], k=1)
 
     edge_count = 0
-    with open(fname_out, 'w') as fd:
+    with open(neo4j_edgefile, 'w') as fd:
         fd.write(':START_ID,:END_ID,:TYPE,value:FLOAT\n')
 
         for i, j, d in tqdm(zip(triu_i, triu_j, dists), total=len(dists)):
@@ -153,8 +156,8 @@ def main(fname_in, fname_out):
     sh.Command('neo4j-admin')(
         'import',
         '--mode=csv',
-        '--nodes', node_file,
-        '--relationships', fname_out,
+        '--nodes', neo4j_nodefile,
+        '--relationships', neo4j_edgefile,
         _out=sys.stdout, _err=sys.stderr)
 
     sh.neo4j('start')
@@ -162,4 +165,4 @@ def main(fname_in, fname_out):
 
 
 if __name__ == '__main__':
-    main('node_file.csv', 'edge_file.csv')
+    main('node_file.csv')
