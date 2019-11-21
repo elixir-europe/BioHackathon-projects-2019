@@ -96,3 +96,18 @@ function germplasmSearch(germplasmDbIds, successCallback) {
         success: successCallback
     });
 }
+
+function goToValidator(samplesJSON, successCallback) {
+    const body = samplesJSON;
+    $.ajax({
+        url: '/validate',
+        type: 'post',
+        data: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
+        },
+        dataType: 'json',
+        success: successCallback
+    });
+}

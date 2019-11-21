@@ -124,10 +124,12 @@ function gatherSampleData(variantSetId) {
                 setItemStorage('germplasmList', germplasmList);
                 $('#loading-log').append('<p class=\"col-xs-12\">' + Object.keys(germplasmList).length + ' Germplasm Found </p>')
 
-                packageSampleData();
+                var sampleObjs = packageSampleData();
+                goToValidator(sampleObjs, function(data, status) {
 
-                $('#loading-log').append('<p class=\"col-xs-12\"> Finished </p>')
-                $('#loading-gif').remove();
+                    $('#loading-log').append('<p class=\"col-xs-12\"> Finished </p>')
+                    $('#loading-gif').remove();
+                });
             });
         });
     });
@@ -137,12 +139,55 @@ function packageSampleData() {
     var callSets = getItemStorage('callSets');
     var samples = getItemStorage('samples');
     var germplasmList = getItemStorage('germplasmList');
+    var sampleObjs = [];
     for (var callSetDbId of Object.keys(callSets)) {
         var callSet = callSets[callSetDbId];
         var sample = samples[callSet['sampleDbId']];
         var germplasm = germplasmList[sample['germplasmDbId']];
-    }
+        var sampleObj = {};
 
+        if (callSet['callSetDbId'])
+            sampleObj.biological_material_ID = callSet['callSetDbId'];
+
+        if (sample['sampleDescription'])
+            sampleObj.material_source_description = sample['sampleDescription'];
+
+        if (germplasm['germplasmGenus'])
+            sampleObj.genus = germplasm['germplasmGenus'];
+        if (germplasm['germplasmSpecies'])
+            sampleObj.species = germplasm['germplasmSpecies'];
+        if (germplasm['subtaxa'])
+            sampleObj.infraspecific_name = germplasm['subtaxa'];
+        if (germplasm['germplasmPreprocessing'])
+            sampleObj.biological_material_preprocessing = germplasm['germplasmPreprocessing'];
+        if (germplasm['instituteCode'] && germplasm['accessionNumber'])
+            sampleObj.material_source_ID = germplasm['instituteCode'] + ':' + germplasm['accessionNumber'];
+        if (germplasm['germplasmPUI'])
+            sampleObj.material_source_DOI = germplasm['germplasmPUI'];
+        if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
+            sampleObj.organism = germplasm['taxonIds'][0]['sourceName'] + ':' + germplasm['taxonIds'][0]['taxonId'];
+        if (germplasm['germplasmOrigin'] && germplasm['germplasmOrigin'][0]) {
+            var germplasmOrigin = germplasm['germplasmOrigin'][0];
+            if (germplasmOrigin['latitudeDecimal'])
+                sampleObj.biological_material_latitude = germplasmOrigin['latitudeDecimal'];
+            if (germplasmOrigin['longitudeDecimal'])
+                sampleObj.biological_material_longitude = germplasmOrigin['longitudeDecimal'];
+            if (germplasmOrigin['altitude'])
+                sampleObj.biological_material_altitude = germplasmOrigin['altitude'];
+            if (germplasmOrigin['coordinateUncertainty'])
+                sampleObj.biological_material_coordinate_uncertainty = germplasmOrigin['coordinateUncertainty'];
+            if (germplasmOrigin['latitudeDecimal'])
+                sampleObj.material_source_latitude = germplasmOrigin['latitudeDecimal'];
+            if (germplasmOrigin['longitudeDecimal'])
+                sampleObj.material_source_longitude = germplasmOrigin['longitudeDecimal'];
+            if (germplasmOrigin['altitude'])
+                sampleObj.material_source_altitude = germplasmOrigin['altitude'];
+            if (germplasmOrigin['coordinateUncertainty'])
+                sampleObj.material_source_coordinate_uncertainty = germplasmOrigin['coordinateUncertainty'];
+        }
+        sampleObjs.push(sampleObj);
+    }
+    return sampleObjs;
 }
 
 function setItemStorage(key, value) {
@@ -152,23 +197,4 @@ function setItemStorage(key, value) {
 function getItemStorage(key) {
     var obj = JSON.parse(window.localStorage.getItem(key));
     return obj;
-}
-
-function goToValidator() {
-    const body = { alias: "MTB1" };
-    $.ajax({
-        url: '/validate',
-        type: 'post',
-        data: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*'
-        },
-        dataType: 'json',
-        success: function(data, status) {
-            console.log(data);
-            // $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Valid </p>')
-
-        }
-    });
 }
