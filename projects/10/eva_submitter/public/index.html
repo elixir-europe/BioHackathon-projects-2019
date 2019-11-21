@@ -1,89 +1,95 @@
 <html>
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>EVA Submitter</title>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integ15rity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integ15rity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="js/ws-handler.js"></script>
     <script src="js/main.js"></script>
 
 </head>
 
 <body>
-    <div class="main" style="margin-left: 5%">
-        <div class="mt-4 mb-3">
-            <img src="./images/European_Bioinformatics_Institute_EMBL-EBI.png" alt="EBI Band" width="388" height="72">
-        </div>
+<div class="main" style="margin-left: 5%">
+    <div class="mt-4 mb-3">
+        <img src="./images/European_Bioinformatics_Institute_EMBL-EBI.png" alt="EBI Band" width="388" height="72">
+    </div>
 
-        <div style="margin-right: 35%">
+    <div style="margin-right: 35%">
             <span class="mt-5 mb-4">
         This is a basic submission tool for genotypic data to the European Variation Archive.
         Before selecting the apropriate genotypic data by hitting the 'Submit' button, please fill out the
         mandatory forms below that specify the submitting person, laboratory and center.</br>
-            </br>(<span class="red-star" style="color: red">*</span>)<span>mandatory fields</span></br>
+                </br><span id="mandatoryIndicator">
+                (<span  class="red-star"
+                       style="color: red">*</span>)<span>mandatory fields</span></br>
             </span>
-            </br>
-        </div>
-
-        <div id="mainPanel">
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-4 mb-3">
-                        <label for="lastName">Last Name</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
-                    </div>
-                    <div class="form-group col-md-4 mb-3 ">
-                        <label for="firstName">First Name</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
-                    </div>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4 mb-3">
-                        <label for="phoneNumber">Phone number</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="number" class="form-control" id="phoneNumber" placeholder="Enter phone number (+44(0)12228875)" required>
-                    </div>
-                    <div class="form-group col-md-4 mb-3">
-                        <label for="email">Email address</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
-                    </div>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4 mb-3">
-                        <label for="laboratory">Laboratory</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="text" class="form-control" id="laboratory" placeholder="Enter your laboratory" required>
-                    </div>
-                    <div class="form-group col-md-4 mb-3">
-                        <label for="center">Center</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="text" class="form-control" id="center" placeholder="Enter your center name" required>
-                    </div>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <span class="red-star" style="color: red">*</span>
-                        <input type="text" class="form-control" id="address" placeholder="Enter the center address" required>
-                    </div>
-                </div>
-
-                <div class="btn btn-primary" onclick="setSubbmitterDetails();">Submit</div>
-
-                <div class="btn btn-primary" onclick="goToValidator();">Validate</div>
-            </form>
-        </div>
+            </span>
+        </br>
     </div>
+
+    <div id="mainPanel">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="lastName">Last Name</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
+                </div>
+                <div class="form-group col-md-4 mb-3 ">
+                    <label for="firstName">First Name</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="phoneNumber">Phone number</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="number" class="form-control" id="phoneNumber"
+                           placeholder="Enter phone number (+44(0)12228875)" required>
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                    <label for="email">Email address</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                           placeholder="Enter email" required>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="laboratory">Laboratory</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="laboratory" placeholder="Enter your laboratory"
+                           required>
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                    <label for="center">Center</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="center" placeholder="Enter your center name" required>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <span class="red-star" style="color: red">*</span>
+                    <input type="text" class="form-control" id="address" placeholder="Enter the center address"
+                           required>
+                </div>
+            </div>
+
+            <div class="btn btn-primary" onclick="setSubbmitterDetails();">Submit</div>
+        </form>
+    </div>
+</div>
 </body>
 
 </html>
