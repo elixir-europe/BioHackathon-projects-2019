@@ -44,7 +44,6 @@ class BioKBService(TextMiningService):
             raise MalformedQueryException(e)
 
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
-
         entity_subquery = ""
         for entity in entities:
             entity = standardise_underscored_entity_code(entity)
@@ -62,12 +61,10 @@ class BioKBService(TextMiningService):
         for result in results['results']['bindings']:
             solr_id = result['solrId']['value']
             solr_ids.add(solr_id)
-            # pub = Publication(other_id=solr_id)
-            # solr_ids[solr_id] = pub
 
         # translate ids
         response = requests.get(BioKBService.SOLR_TRANSLATOR_URL,
-                                data={'solrIds': solr_ids})
+                                params={'solrIds': solr_ids})
         assert response.ok
         data = json.loads(response.content.decode().strip())
         publications = []
@@ -79,7 +76,6 @@ class BioKBService(TextMiningService):
             pmc_id = pub.get('pmc_id', None)
             other_id = pub['id']
             year = pub.get('year', None)
-
             p = Publication(title=title,
                             journal_title=journal_title,
                             doi=doi,
@@ -143,6 +139,7 @@ class BioKBService(TextMiningService):
 
 if __name__ == "__main__":
     bkb = BioKBService()
+    print(bkb.get_mentions(["GO:0002206"]))
     print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
     print('')
     print(bkb.get_co_occurrences('DOID:2841', types=[

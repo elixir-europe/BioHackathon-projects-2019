@@ -7,7 +7,7 @@ except ImportError:
     from distutils.core import setup
 
 requirements = [
-    'flask'
+    'flask', 'flask-cors'
 ]
 
 test_requirements = [
