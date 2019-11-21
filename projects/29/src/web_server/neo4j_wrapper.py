@@ -68,7 +68,7 @@ def category_builder(query_array):
     return TMP
 
 
-def execute_cypher(query_array):
+def execute_cypher(query_array, limit):
     with driver.session() as session:
-        value = session.read_transaction(print_publications, category_builder(query_array))
+        value = session.read_transaction(print_publications, category_builder(query_array), limit)
         return {"values": [record["n2"] for record in value.records()]}
