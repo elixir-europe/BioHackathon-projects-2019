@@ -8,6 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
   <title>Entity Explore</title>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -37,17 +38,19 @@
       <!--  -->
       <div id="examples">
         <a href="#" class="badge badge-light" @click="getAsthmaExample()">Asthma</a>
-        <a href="#" class="badge badge-light" @click="getOtherExample()">GO:0002206</a>
+        <a href="#" class="badge badge-light" @click="getGOExample()">GO:0002206</a>
       </div>
       <div class="mx-auto text-center">
-        <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click.prevent="getMentions()">
+        <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click="getMentions()">
           Get papers
         </button>
       </div>
 
-      <div class="lds-ripple" id="lds-ripple">
-        <div></div>
-        <div></div>
+      <div class="mx-auto text-center" style="padding-top: 15px;">
+        <div class="lds-ripple" id="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
 
@@ -55,13 +58,19 @@
       <ul class="list-group list-group-flush">
         <li v-for="paper in papers" class="list-group-item">
           <ul style="list-style-type:none">
-            <li><a href="#">{{ paper.info.title }}</a></li>
-            <li>{{ paper.info.id }}</li>
+            <li>
+              <a href="#">{{ paper.info.title }}</a>
+            </li>
+            <li>
+              {{ paper.info.id }}
+            </li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
+
+
 
   <!-- Optional JavaScript -->
 

@@ -6,6 +6,7 @@ var app = new Vue({
   },
   methods: {
     showRipple: function () {
+      console.log("Show Ripple called");
       var x = document.getElementById("lds-ripple");
       x.style.display = "inline-block";
     },
@@ -17,10 +18,9 @@ var app = new Vue({
     getAsthmaExample: function () {
       this.$set(this, "entity", 'DOID:2841');
     },
-    getOtherExample: function () {
+    getGOExample: function () {
       this.$set(this, "entity", 'GO:0002206');
     },
-
     getMentions: function () {
       var that = this;
       var entity = that.entity;
@@ -34,7 +34,6 @@ var app = new Vue({
           .done(function (data) {
             that.hideRipple();
             that.$set(that, "papers", data);
-            console.log("success", data);
           })
           .fail(function () {
             alert("error");
