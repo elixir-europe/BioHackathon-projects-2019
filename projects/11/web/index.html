@@ -17,6 +17,12 @@
     />
 
     <title>Entity Explore</title>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"
       integrity="sha256-ufGElb3TnOtzl5E4c/qQnZFGP+FYEZj5kbSEdJNrw0A="
@@ -25,37 +31,44 @@
   </head>
   <body>
     <div id="container">
-      <div class="mx-auto" style="width: 200px; margin-top: 50px;">
-        <div class="form-group">
-          <label for="inputEntity" class="sr-only">Entity</label>
-          <input
-            type="Entity"
-            class="form-control"
-            id="inputEntity"
-            placeholder="Entity"
-          />
+      <div
+        class="mx-auto"
+        style="width: 200px; margin-top: 50px; margin-bottom: 0px;"
+      >
+        <label for="inputEntity" class="sr-only">Entity</label>
+        <input
+          v-model="entity"
+          type="Entity"
+          class="form-control"
+          id="inputEntity"
+          placeholder="Entity"
+          autocomplete="on"
+        />
+        <div id="examples">
+          <a href="#" class="badge badge-light" @click="getExample()">Asthma</a>
         </div>
-        <button class="btn btn-primary mb-2" @click="getPapers()">
-          Get papers
-        </button>
+        <div class="mx-auto text-center">
+          <button
+            class="btn btn-primary mb-2"
+            style="margin-top: 10px;"
+            @click="getMentions()"
+          >
+            Get papers
+          </button>
+        </div>
       </div>
 
       <div id="papers_list">
         <ol>
-          <li v-for="todo in todos">
-            {{ todo.text }}
+          <li v-for="paper in papers">
+            {{ paper.info.title }} {{ paper.info.id }}
           </li>
         </ol>
       </div>
     </div>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
