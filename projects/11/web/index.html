@@ -31,23 +31,30 @@
   </head>
   <body>
     <div id="container">
-      <div class="mx-auto" style="width: 200px; margin-top: 50px;">
-        <div class="form-group">
-          <label for="inputEntity" class="sr-only">Entity</label>
-          <input
-            v-model="entity"
-            type="Entity"
-            class="form-control"
-            id="inputEntity"
-            placeholder="Entity"
-          />
+      <div
+        class="mx-auto"
+        style="width: 200px; margin-top: 50px; margin-bottom: 0px;"
+      >
+        <label for="inputEntity" class="sr-only">Entity</label>
+        <input
+          v-model="entity"
+          type="Entity"
+          class="form-control"
+          id="inputEntity"
+          placeholder="Entity"
+        />
+        <div id="examples">
+          <a href="#" class="badge badge-light" @click="getExample()">Asthma</a>
         </div>
-        <button class="btn btn-primary mb-2" @click="getExample()">
-          Get example
-        </button>
-        <button class="btn btn-primary mb-2" @click="getMentions()">
-          Get papers
-        </button>
+        <div class="mx-auto text-center">
+          <button
+            class="btn btn-primary mb-2"
+            style="margin-top: 10px;"
+            @click="getMentions()"
+          >
+            Get papers
+          </button>
+        </div>
       </div>
 
       <div id="papers_list">
