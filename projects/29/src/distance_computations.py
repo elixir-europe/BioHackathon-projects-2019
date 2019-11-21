@@ -29,7 +29,7 @@ from loguru import logger
 
 
 def analyze_results(df, df_trans, df_dists):
-    # raw data
+    ## raw data
     # concept counts per paper
     plt.figure(figsize=(8, 6))
     sns.distplot(df.groupby('id:ID').count()['value'], kde=False)
