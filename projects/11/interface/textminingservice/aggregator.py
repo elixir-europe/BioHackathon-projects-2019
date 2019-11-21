@@ -15,7 +15,6 @@ class Aggregator():
     def aggregate_mentions(self, pub_collections: Dict):
         pub_dict = defaultdict(dict)
         for service, pub_lst in pub_collections.items():
-            print(service)
             for pub in pub_lst:
                 if pub.id in pub_dict:
                     publication = pub_dict[pub.id]['info']
