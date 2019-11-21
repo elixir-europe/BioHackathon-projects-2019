@@ -68,7 +68,7 @@ function reducer(state, action) {
         }
         case ADD_SAD: {
             let sadElement = state.results.filter((ele) => ele.id === action.data.id)
-            let newSad = [...state.sad, sadElement]
+            let newSad = [...state.sad, ...sadElement]
             //let newResults = state.results.filter((ele)=>ele.id !== action.data.id)
             return {
                 ...state,

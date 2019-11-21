@@ -1,10 +1,11 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import happyDuck from './happy_duck.svg';
 import sadDuck from './sad_duck.svg';
 import styled from 'styled-components';
 import QuackContext from "../../context";
 import classNames from 'classnames/bind';
 import testdata from '../../testdata/testdata.json';
+import axios from 'axios';
 
 const Wrapper = styled.div`
     display: flex;
@@ -56,16 +57,26 @@ const QuackVote = () => {
     const {state, dispatch} = useContext(QuackContext);
     const addToList = (listType) => {
         document.getElementById(state.index).style.visibility = "hidden";
+            dispatch({type: listType, data: state.results[state.index]})
 
-        dispatch({type: listType, data: state.results[state.index]})
-        if (state.index === 0) {
-            dispatch({type: 'SET_RESULTS', data: testdata.slice(0, 9)})
-            let eles = document.getElementsByClassName('outerCard');
-            for (let i = 0; i < eles.length; i++) {
-                eles[i].style.visibility = 'visible';
-            }
-        }
+
     }
+    useEffect(() => {
+        if (state.index === -1) {
+            let happyDois = state.happy.map((ele) => ele.doi)
+            let sadDois = state.sad.map((ele) => ele.doi)
+            console.log(happyDois)
+            axios.post('/api/v1/update', {positive: happyDois, negative: sadDois, unvoted: []})
+                .then((res) => {
+                    dispatch({type: 'SET_RESULTS', data: res.data.values.slice(0, 9)})
+                    let eles = document.getElementsByClassName('outerCard');
+                    for (let i = 0; i < eles.length; i++) {
+                        eles[i].style.visibility = 'visible';
+                    }
+
+                })
+        }
+    }, [state.index])
     const sadClasses = classNames({
         'sadShine': state.sadState
     });
