@@ -27,19 +27,17 @@ def print_publications(tx, where, limit=9):
     return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 ORDER BY n2.centrality DESC LIMIT " + str(limit))
 
 def print_publications_with_update(tx, doi):
-    #return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN $negatives AND n3.doi IN $negatives WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN $positives AND (NOT n.doi in removeList) AND (NOT n.doi IN $unvoted) RETURN n as n2", negatives=doi.negative, positives=doi.positive, unvoted=doi.unvoted)
-
     return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN $negatives AND n3.doi IN [$negatives] WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN [$positives] AND (NOT n.doi in removeList) AND (NOT n.doi IN $unvoted) RETURN n as n2", negatives=",".join(doi.negative), positives=",".join(doi.positive), unvoted=",".join(doi.unvoted))
 
 def execute_cypher_simple(query):
     with driver.session() as session:
         value = session.read_transaction(print_publications_simple, query)
-        return {"values": [(record["r"], record["n2"]) for record in value.records()]}
+        return {"values": [record["n2"] for record in value.records()]}
 
 def execute_cypher_update(doi):
     with driver.session() as session:
         value = session.read_transaction(print_publications_with_update, doi)
-        return {"values": [(record["n2"]) for record in value.records()]}
+        return {"values": [record["n2"] for record in value.records()]}
 
 def test():
     print(category_builder([{"category":"topic","operator":"==","value":"Query and retrieval"}]))
@@ -73,4 +71,4 @@ def category_builder(query_array):
 def execute_cypher(query_array):
     with driver.session() as session:
         value = session.read_transaction(print_publications, category_builder(query_array))
-        return {"values": [(record["n2"]) for record in value.records()]}
+        return {"values": [record["n2"] for record in value.records()]}
