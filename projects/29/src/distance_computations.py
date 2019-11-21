@@ -28,7 +28,13 @@ from tqdm import tqdm
 from loguru import logger
 
 
-def analyze_results(df, df_trans, df_dists):
+sns.set_context('talk')
+
+
+def analyze_results(
+    df, df_trans, df_dists,
+    umap_highlight=False
+):
     ## raw data
     # concept counts per paper
     plt.figure(figsize=(8, 6))
@@ -40,14 +46,34 @@ def analyze_results(df, df_trans, df_dists):
     plt.savefig('concept_per_paper_counts.pdf')
 
     ## transformed data
+    # highlight certain DOIs
+    query_doi = 'xxx'
+    wave_dois = [
+        ['yyy', 'zzz'],
+        ['111', '222']
+    ]
+
     # umap
     reducer = umap.UMAP(metric='jaccard')
 
     embedding = reducer.fit_transform(df_trans)
     df_emb = pd.DataFrame(embedding, index=df_trans.index)
 
+    df_emb['color'] = 'all'
+    if umap_highlight:
+        df_emb['color'] = 'all'
+        for i, wave_dois in enumerate(wave_dois):
+            wave_dois = [f'http://identifiers.org/doi/{x}' for x in wave_dois]
+
+            df_emb.loc[wave_dois, 'color'] = f'wave_{i+1:02}'
+
+        df_emb.loc[f'http://identifiers.org/doi/{query_doi}', 'color'] = 'query'
+
     plt.figure(figsize=(8, 6))
-    sns.scatterplot(x=0, y=1, data=df_emb)
+    sns.scatterplot(x=0, y=1, hue='color', data=df_emb)
+    plt.xlabel('')
+    plt.ylabel('')
+    plt.tight_layout()
     plt.savefig('umap.pdf')
 
     ## distances
@@ -77,7 +103,6 @@ def analyze_results(df, df_trans, df_dists):
 def main(fname_in):
     neo4j_nodefile = 'neo4j_nodes.csv'
     neo4j_edgefile = 'neo4j_edges.csv'
-
 
     # read data
     logger.info('Read data')
