@@ -30,4 +30,10 @@
 * Denise: added MeSH descriptor IDs, discussed BridgeDb API with Intermine team.
 
 # Thrusday 2019-11-21
+
 * Denise: added ICD9+10+11.
+* Uploaded BridgeDb 2.3.4 to Maven Central
+* Further attempts failed to use Validator from the GitHub Package Repository
+* Started uploading PubChemLite compounds (full stereochemistry only) to Wikidata (resulting in more identifier mappings)
+* FAIRPlus "ingredient" for calculateing InChI identifiers for SDF files
+
