@@ -14,9 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.post('/validate', (req, res) => {
-    res.send(validator(req.body.alias));
-
+app.post('/validate', async function(req, res) {
+    console.log('step 1');
+    var response = await validator(req.body.alias)
+        .then((validationResult) => {
+            console.log(validationResult);
+            res.send(validationResult);
+        });
+    console.log('step 2');
 });
 
 
@@ -41,7 +46,7 @@ function validator(data) {
     let validator = new ElixirValidator();
     let validatorResponse = {};
     let validatorMessages = [];
-    validator.validate(jsonSchema, jsonObj).then((validationResult) => {
+    return validator.validate(jsonSchema, jsonObj).then((validationResult) => {
         validatorResponse = { status: validationResult.validationState };
         console.log(validationResult.validationState);
         for (let errors of validationResult.validationErrors) {
