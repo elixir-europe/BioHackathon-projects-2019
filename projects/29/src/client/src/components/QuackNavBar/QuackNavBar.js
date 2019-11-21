@@ -57,6 +57,7 @@ const QuackNavBar = () => {
             <End>
                 <QuackBasket/>
             </End>
+
         </NavBar>
     );
 };
