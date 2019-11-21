@@ -9,7 +9,7 @@ from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
 from textminingservice.TextMiningService import TextMiningService
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
-from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code
+from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code, reflect_type_to_biokb, standardise_entity_type
 
 logger = logging.getLogger(__name__)
 
@@ -91,6 +91,14 @@ class BioKBService(TextMiningService):
         if types is None:
             types = []
 
+        # translate types, keep only those != None
+        new_types = []
+        for t in types:
+            new_t = reflect_type_to_biokb(t)
+            if new_t is not None:
+                new_types.append(new_t)
+        types = new_types
+
         entity_types_filter = ''
         if len(types) > 0:
             types_str = ', '.join((f'<{t}>' for t in types))
@@ -100,7 +108,7 @@ class BioKBService(TextMiningService):
         query = """
             select * where {
     
-                select ?other_entity, (COUNT(*) AS ?count) where {
+                select ?other_entity, ?e_type, (COUNT(*) AS ?count) where {
                     
                     ?s <http://lcsb.uni.lu/biokb#containsEntity> <http://lcsb.uni.lu/biokb/entities/%ENTITY%> .
                     ?s a  <http://lcsb.uni.lu/biokb#Publication> .
@@ -123,7 +131,7 @@ class BioKBService(TextMiningService):
                     }
                 }
                 
-                GROUP BY ?other_entity 
+                GROUP BY ?other_entity ?e_type
             } ORDER BY DESC(?count) LIMIT %LIMIT%
         """.replace('%ENTITY%', entity).replace('%LIMIT%', str(limit)).replace('%ENTITY_TYPE_FILTER%',
                                                                                entity_types_filter)
@@ -132,17 +140,20 @@ class BioKBService(TextMiningService):
         for result in results['results']['bindings']:
             entity_code = uri_to_entity_code(result['other_entity']['value'])
             count = int(result['count']['value'])
-            co_occur = CoOccurrence(entity_code, count)
+            entity_type = result['e_type']['value']
+            entity_type = standardise_entity_type(entity_type)
+            co_occur = CoOccurrence(entity_code, count, entity_type)
             values.append(co_occur)
         return values
 
 
 if __name__ == "__main__":
     bkb = BioKBService()
-    print(bkb.get_mentions(["GO:0002206"]))
-    print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
-    print('')
-    print(bkb.get_co_occurrences('DOID:2841', types=[
-        'http://lcsb.uni.lu/biokb#Disease']))
-    print('')
-    print(bkb.get_co_occurrences('DOID:2841'))
+    # print(bkb.get_mentions(["GO:0002206"]))
+    # print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))
+    # print('')
+    # print(bkb.get_co_occurrences('DOID:2841', types=[
+    #     'http://lcsb.uni.lu/biokb#Disease']))
+    # print('')
+    print('test biokb protein and chemical co-occurrences')
+    print(bkb.get_co_occurrences('DOID:2841', types=[-3, -1]))
