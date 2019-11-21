@@ -64,7 +64,7 @@
           <a href="#" class="badge badge-light" @click="getAsthmaExample()"
             >Asthma</a
           >
-          <a href="#" class="badge badge-light" @click="getOtherExample()"
+          <a href="#" class="badge badge-light" @click="getGOExample()"
             >GO:0002206</a
           >
         </div>
@@ -76,6 +76,7 @@
           >
             Get papers
           </button>
+
           <button
             class="btn btn-primary mb-2"
             style="margin-top: 10px;"
@@ -84,24 +85,13 @@
             Get entities
           </button>
         </div>
-
-        <div class="mx-auto text-center" style="padding-top: 15px;">
-          <div class="lds-ripple" id="lds-ripple">
-            <div></div>
-            <div></div>
-          </div>
-        </div>
       </div>
 
-      <div id="papers_list">
-        <ul class="list-group list-group-flush">
-          <li v-for="paper in papers" class="list-group-item">
-            <ul style="list-style-type:none">
-              <li><a href="#">{{ paper.info.title }}</a></li>
-              <li>{{ paper.info.id }}</li>
-            </ul>
-          </li>
-        </ul>
+      <div class="mx-auto text-center" style="padding-top: 15px;">
+        <div class="lds-ripple" id="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
       </div>
       <div id="entitiess_list">
         <ul class="list-group list-group-flush">
@@ -110,6 +100,21 @@
               <li>
                 <span href="#">{{ entity.info.entity_type }}</span>
                 <a href="#">{{ entity.info.entity }}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div id="papers_list">
+        <ul class="list-group list-group-flush">
+          <li v-for="paper in papers" class="list-group-item">
+            <ul style="list-style-type:none">
+              <li>
+                <a href="#">{{ paper.info.title }}</a>
+              </li>
+              <li>
+                {{ paper.info.id }}
               </li>
             </ul>
           </li>
@@ -129,13 +134,18 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts.js"></script>
     <script>
       $(document).ready(function() {
-        var app = require("ols-autocomplete");
-        var instance = new app();
-        instance.start();
+        var autocomplete = require("ols-autocomplete");
+        var instance = new autocomplete();
+        options = {
+          action: function(relativePath, suggestion_ontology, type, iri, data) {
+            app.$set(app, "entity", data.shortForm);
+          }
+        };
+        instance.start(options);
       });
     </script>
-    <script src="scripts.js"></script>
   </body>
 </html>
