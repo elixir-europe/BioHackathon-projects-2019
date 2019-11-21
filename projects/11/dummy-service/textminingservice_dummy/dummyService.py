@@ -2,7 +2,7 @@ import logging
 from typing import List
 
 from textminingservice.TextMiningService import TextMiningService
-from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 
 logger = logging.getLogger(__name__)

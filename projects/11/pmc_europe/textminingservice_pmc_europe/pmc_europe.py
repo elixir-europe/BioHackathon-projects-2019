@@ -9,7 +9,7 @@ import json
 import numpy as np
 
 from textminingservice.TextMiningService import TextMiningService
-from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 
@@ -100,10 +100,11 @@ class PMC_Europe_Service(TextMiningService):
             publications = []
             for article, _ in generator:
                 if len(publications) == limit:
-                    return publications
+                    break
                 else:
                     publications.append(Publication(
                         pm_id=article['extId'], pmc_id=article['pmcid']))
+            return publications
         else:
             raise TextMiningServiceOperationNotSupported
             # once PMC is fast enough to deal with multiple entities, use either the following line

@@ -7,7 +7,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON, POSTDIRECTLY
 from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
 
 from textminingservice.TextMiningService import TextMiningService
-from textminingservice.models.coocurrence import CoOccurrence
+from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code
 
