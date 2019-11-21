@@ -40,7 +40,7 @@
         <a href="#" class="badge badge-light" @click="getOtherExample()">GO:0002206</a>
       </div>
       <div class="mx-auto text-center">
-        <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click="getMentions()">
+        <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click.prevent="getMentions()">
           Get papers
         </button>
       </div>
@@ -71,14 +71,21 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
   <script>
     $(document).ready(function () {
-      var app = require("ols-autocomplete");
-      var instance = new app();
-      instance.start();
+      var autocomplete = require("ols-autocomplete");
+      var instance = new autocomplete();
+      options = {
+        action: function (relativePath, suggestion_ontology, type, iri, data) {
+          app.$set(app, 'entity', data.shortForm);
+        }
+      }
+      instance.start(options)
     });
+
   </script>
-  <script src="scripts.js"></script>
+
 </body>
 
 </html>
