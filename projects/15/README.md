@@ -32,11 +32,13 @@ Disease HPO annotations example (http://dev.orpha.net/hanauer/consor4.01/www/cgi
 JSON PLAYGROUND (https://tinyurl.com/yx2bqnqt)
 
 
-## Docker image of Orphadata's FAIRdatapoint almost setup
+## Docker image of Orphadata's FAIRdatapoint done and running !
 
 Giving a machine readable access to Orphadata's datasets
 
-Need look&feel customisation
+Need a bit more look&feel customisation
+
+(http://purl.org/orphadata/fairpoint)
 
 ## Research area alignment
 
