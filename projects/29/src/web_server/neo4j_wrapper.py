@@ -27,7 +27,15 @@ def print_publications(tx, where, limit=9):
     return tx.run("MATCH (n1)-[r]->(n2) WHERE " + where + " RETURN r, n1, n2 ORDER BY n2.centrality DESC LIMIT " + str(limit))
 
 def print_publications_with_update(tx, doi):
-    return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN $negatives AND n3.doi IN [$negatives] WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN [$positives] AND (NOT n.doi in removeList) AND (NOT n.doi IN $unvoted) RETURN n as n2", negatives=",".join(doi.negative), positives=",".join(doi.positive), unvoted=",".join(doi.unvoted))
+    print("[" + ",".join(['"' + item + '"' for item in doi.positive]) + "]")
+    print("[" + ",".join(['"' + item + '"' for item in doi.negative]) + "]")
+    negatives = "[" + ",".join(['"' + item + '"' for item in doi.negative]) + "]"
+    positives = "[" + ",".join(['"' + item + '"' for item in doi.positive]) + "]"
+    unvoted = "[" + ",".join(['"' + item + '"' for item in doi.unvoted]) + "]"
+    print("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN " + negatives + " AND n3.doi IN" + negatives + " WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN " + positives + " AND (NOT n.doi IN removeList) AND (NOT n.doi IN " + unvoted + " ) RETURN n as n2")
+    return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN " + negatives + " AND n3.doi IN " + negatives + " WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN " + positives + " AND (NOT n.doi IN removeList) AND (NOT n.doi IN " + unvoted + " ) RETURN n as n2"
+    )
+    #return tx.run("MATCH (n1)-[r1]-(n2)-[r2]-(n3) WHERE n1.doi IN $negatives AND n3.doi IN $negatives WITH collect(distinct(n2.doi)) + collect(distinct(n3.doi)) as removeList MATCH (n0)-[r]-(n) WHERE n0.doi IN $positives AND (NOT n.doi IN removeList) AND (NOT n.doi IN $unvoted) RETURN n as n2", negatives="[" + ",".join(['"' + item + '"' for item in doi.negative]) + "]", positives="[" + ",".join(['"' + item + '"' for item in doi.positive]) + "]", unvoted= "[" + ",".join(['"' + item + '"' for item in doi.unvoted]) + "]")
 
 def execute_cypher_simple(query):
     with driver.session() as session:
