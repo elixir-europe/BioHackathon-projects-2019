@@ -9,7 +9,8 @@ from SPARQLWrapper.SPARQLExceptions import QueryBadFormed
 from textminingservice.TextMiningService import TextMiningService
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
-from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code, reflect_type_to_biokb, standardise_entity_type
+from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code, \
+    reflect_type_to_biokb, standardise_entity_type
 
 logger = logging.getLogger(__name__)
 
@@ -63,8 +64,8 @@ class BioKBService(TextMiningService):
             solr_ids.add(solr_id)
 
         # translate ids
-        response = requests.get(BioKBService.SOLR_TRANSLATOR_URL,
-                                params={'solrIds': solr_ids})
+        response = requests.post(BioKBService.SOLR_TRANSLATOR_URL,
+                                 data={'solrIds': solr_ids})
         assert response.ok
         data = json.loads(response.content.decode().strip())
         publications = []
