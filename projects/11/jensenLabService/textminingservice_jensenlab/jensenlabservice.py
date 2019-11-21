@@ -18,7 +18,8 @@ class JensenLabService(TextMiningService):
     BASE_URL = "https://api.jensenlab.org"
     MENTION_URL = BASE_URL + "/Mentions?type={}&id={}&limit={}&format=json"
     COOCCURRENCES_URL = BASE_URL + "/Textmining?type1={}&id1={}&limit={}&format=json"
-    COOCCURRENCES_URL_WITH_FILTER = BASE_URL + "/Textmining?type1={}&id1={}&limit={}&format=json&type2={}"
+    COOCCURRENCES_URL_WITH_FILTER = BASE_URL + \
+        "/Textmining?type1={}&id1={}&limit={}&format=json&type2={}"
     IDS_MAPPING = {
         "CID": -1,
         "BTO": -25,
@@ -45,7 +46,8 @@ class JensenLabService(TextMiningService):
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
         entity_type = JensenLabService.guess_type_for_entity(entity)
         if not types:
-            url_cooccurrences = JensenLabService.COOCCURRENCES_URL.format(entity_type, entity, limit)
+            url_cooccurrences = JensenLabService.COOCCURRENCES_URL.format(
+                entity_type, entity, limit)
         else:
             if len(types) > 1:
                 raise TextMiningServiceOperationNotSupported(
@@ -61,7 +63,8 @@ class JensenLabService(TextMiningService):
         cooccurrences_results = []
         for entity2, entity2_dict in cooccurrences_entities.items():
             type2 = self.get_type2_from_url(entity2_dict)
-            cooccurrences_results.append(CoOccurrence(entity2, entity2_dict['evidence'], type2))
+            cooccurrences_results.append(CoOccurrence(
+                entity2, entity2_dict['evidence'], type2))
         return cooccurrences_results
 
     def get_type2_from_url(self, entity2_dict):
@@ -106,5 +109,6 @@ if __name__ == '__main__':
     # publications = text_mining_service.get_mentions(
     #     ["DOID:10652", "DOID:10935"], limit=1000000)
     # print(", ".join([p.pm_id for p in publications]))
-    cooccurrences = text_mining_service.get_co_occurrences("DOID:10652", types=['-25'], limit=10)
+    cooccurrences = text_mining_service.get_co_occurrences(
+        "DOID:10652", types=['-25'], limit=10)
     print(cooccurrences)
