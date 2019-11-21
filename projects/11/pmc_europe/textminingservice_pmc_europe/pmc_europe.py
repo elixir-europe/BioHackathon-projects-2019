@@ -224,8 +224,12 @@ if __name__ == "__main__":
     pmc = PMC_Europe_Service()
     print(datetime.datetime.now())
 
+    print('Test convert entity')
+    print(pmc._convert_entity('DOID:2841'))
+
+    print(datetime.datetime.now())
     print('get mentions for single entity PRDM1')
-    for pub in pmc.get_mentions(['PRDM1']):
+    for pub in pmc.get_mentions(['DOID:7148']):
         print(pub)
 
     print(datetime.datetime.now())
