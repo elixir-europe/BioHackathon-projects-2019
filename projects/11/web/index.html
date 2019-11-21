@@ -42,6 +42,9 @@
             placeholder="Entity"
           />
         </div>
+        <button class="btn btn-primary mb-2" @click="getExample()">
+          Get example
+        </button>
         <button class="btn btn-primary mb-2" @click="getMentions()">
           Get papers
         </button>
@@ -50,7 +53,7 @@
       <div id="papers_list">
         <ol>
           <li v-for="paper in papers">
-            {{ paper.info.id }}
+            {{ paper.info.title }} {{ paper.info.id }}
           </li>
         </ol>
       </div>
