@@ -24,17 +24,21 @@ var app = new Vue({
       var entity = that.entity;
       var url = `http://9b9a4973.ngrok.io/getMentions/?entity=${entity}&limit=100`;
       console.log(url);
-      var jqxhr = $.ajax(url)
-        .done(function(data) {
-          data = JSON.parse(data);
+      if (!entity) {
+        alert("Enter an entity!");
+      } else {
+        var jqxhr = $.ajax(url)
+          .done(function(data) {
+            data = JSON.parse(data);
 
-          that.$set(that, "papers", data);
-          console.log("success", data);
-        })
-        .fail(function() {
-          alert("error");
-        })
-        .always(function() {});
+            that.$set(that, "papers", data);
+            console.log("success", data);
+          })
+          .fail(function() {
+            alert("error");
+          })
+          .always(function() {});
+      }
     }
   }
 });
