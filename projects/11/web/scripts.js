@@ -130,7 +130,6 @@ var app = new Vue({
                 }).fail(function () {
                     console.log(`Error for ${id} ${type} ${pub_index} and url ${url}`);
                 });
-
         }
     }
 });
