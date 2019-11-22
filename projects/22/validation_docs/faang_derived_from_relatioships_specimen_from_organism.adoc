@@ -1,0 +1,12 @@
+## Title: specimen from organism "derived from" relationships
+
+#### Description
+
+Checks that 'source' of 'derived from' relationship has a material
+'specimen from organism' and 'target' has a material 'organism'
+
+#### Query
+[source,cypher]
+----
+MATCH (a:Biosample)-[r:DERIVED_FROM]->(b:Biosample) WHERE a.material='specimen from organism' AND NOT b.material='organism' RETURN a.accession, b.accession
+----

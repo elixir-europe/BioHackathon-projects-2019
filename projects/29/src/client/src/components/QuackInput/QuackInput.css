@@ -1,0 +1,66 @@
+.CodeMirror {
+    height: 50px;
+    font-family: Dosis;
+}
+
+.ReactCodeMirror {
+    height: 10px;
+}
+
+.cm-category {
+    color: #2196F3;
+}
+
+.cm-operator {
+    color: #9E9E9E;
+}
+
+.cm-value {
+    color: #E91E63;
+}
+
+.react-filter-box {
+    overflow-y: hidden;
+    height: 40px;
+    width: 800px;
+    margin-top: 2rem;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-family: Dosis;
+    line-height: normal;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border-bottom: 4px solid #000;
+}
+react-filter-box.focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.react-filter-box.error {
+  border-color: #ff0000;
+  outline: 0;
+}
+
+
+
+.CodeMirror-hints {
+    padding: 5px;
+    min-width: 100px;
+    font-family: Dosis;
+}
+
+.CodeMirror-hints .CodeMirror-hint {
+    padding: 5px 5px;
+}
+
+li.CodeMirror-hint-active {
+    background: #2196F3;
+}
+
+li.CodeMirror-hint-active .hint-value {
+    color: white;
+}

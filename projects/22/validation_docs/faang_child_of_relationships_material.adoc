@@ -1,0 +1,12 @@
+## Title: "child of" relationships, checks for material
+
+#### Description
+
+Checks that 'source' of 'child of' relationship has a material 'organism' and
+'target' has a material 'organism'
+
+#### Query
+[source,cypher]
+----
+MATCH (a:Biosample)-[r:CHILD_OF]->(b:Biosample) WHERE NOT a.material='organism' AND b.material='organism' RETURN a.accession, b.accession
+----
