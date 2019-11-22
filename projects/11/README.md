@@ -81,3 +81,21 @@ email: gurnoor.singh@radboudumc.nl
 
 **Number of expected hacking days**: 4
 
+## Installation
+
+```
+# Install virtualenv
+python3 -m pip install virtualenv
+
+# create virtualenv with python3
+virtualenv env -p which python3
+
+# activate the env
+source env/bin/activate
+
+# install dependencies
+./install.sh
+
+# run server
+./runserver.sh
+```
