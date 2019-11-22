@@ -28,7 +28,7 @@ var app = new Vue({
     getMentions: function () {
       var that = this;
       var entity = that.entity;
-      var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=100`;
+      var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=50`;
       if (!entity) {
         alert("Enter an entity!");
       } else {
@@ -73,7 +73,7 @@ var app = new Vue({
     getGraphMentions: function () {
       var that = this;
       var entity = that.entity;
-      var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=100&format=cytoscape`;
+      var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=50&format=cytoscape`;
       // var url = `http://127.0.0.1:5000/getMentions/?entity=${entity}&limit=100&format=cytoscape`;
       console.log(url);
       var jqxhr = $.ajax(url)
