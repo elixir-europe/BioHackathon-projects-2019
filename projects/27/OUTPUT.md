@@ -40,3 +40,7 @@
 * schymane finished preparing files for PubChem upload of [NORMAN SLE](https://www.norman-network.com/nds/SLE/) via CSV files on [Zenodo](https://zenodo.org/communities/norman-sle), including 2 new datasets plus errors resolved.
 * schymane & PubChem team now trying to get through deposition (parsing errors ...)
 
+# Friday 2019-11-22
+
+* schymane fixed 304 SMILES parsing errors in the NORMAN-SLE PubChem deposition file, this passed PubChem submission tests and is now awaiting PubChem curator approval - [submission](https://pubchem.ncbi.nlm.nih.gov/upload/#substance-102982). 
+* If successful this is a major outcome for the environmental community and just in time for the [NORMAN](https://www.norman-network.com/) General Assembly next week.
