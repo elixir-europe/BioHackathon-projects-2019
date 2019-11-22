@@ -15,13 +15,20 @@ Keeping up with the recent advancements in science is a challenge. BioRxiv.org, 
 
 ## System architecture
 
-The system applies the event stream listener we developed during the European Biohackathon 2018 to retrieve scientific publications in real-time using the bioRxiv Twitter feed. We extract meta- and semantic-information from these publications using a custom-built parser, as well as EDAMmap [4]. The resulting RDF graph is converted to a property graph using Graph to Graph Mapping Language (G2GML) [5]. The property graph enables downstream analytical operations and algorithms such as centrality detection and recommendation to be performed. Finally, we provide a friendly user interface that allows users to find relevant research items in the search space of semantically annotated publications.
+The system applies the event stream listener we developed in the European Biohackathon 2018 to retrieve scientific publications in real-time using the bioRxiv Twitter feed. We extract meta- and semantic-information for the retrieved publications using a custom-built parser, as well as EDAMmap [4]. The resulting RDF graph is converted to a property graph using Graph to Graph Mapping Language (G2GML) [5]. The property graph enables downstream analytical operations and algorithms such as centrality detection and recommendation to be performed. Finally, we provide a user friendly interface that allows users to find relevant research items in the search space of semantically annotated publications.
 
 In particular, each publication is represented by a feature vector created from the previously described concepts. The list of concept terms is transformed using one-hot encoding and all pairwise publication similarities are computed using the Jaccard Index. The resulting edges are then added to the Neo4j graph.
 
 In order to test the efficiency and robustness of our system, we ran it on a single board computer (SBC) -- a Raspberry Pi 3B+.
 Our system showed resilience in this low spec environment. This gave us a reasonable expectation of its performance on more powerful hardware once we try scaling it to a huge data set and a large number of concurrent users.
 
+## Figures
+
+1. <img src="figures/screenshot_1.png" width="400"/>
+    <br> The user interface: interaction with the recommended articles.
+
+2. <img src="figures/articles_jaccard_distance-1.png" width="400"/>
+    <br> The jaccard distance computed using EDAM ontology terms.  
 
 ## References
 
