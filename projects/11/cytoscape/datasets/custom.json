@@ -1,0 +1,198 @@
+[
+	{
+    "data": {
+      "id": "1",
+      "idInt": 1,
+      "name": "Group of Input entities (Entity 1 \\n Entity2)",
+      "query": true,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+  {
+    "data": {
+      "id": "2",
+      "idInt": 2,
+      "name": "PMC463212",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "3",
+      "idInt": 3,
+      "name": "PMC463213",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "4",
+      "idInt": 4,
+      "name": "PMC463214",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "5",
+      "idInt": 5,
+      "name": "PMC463215",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "6",
+      "idInt": 6,
+      "name": "PMC463216",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+  {
+    "data": {
+      "source": "1",
+      "target": "2",
+      "group": "coexp",
+      "networkId": 1133,
+      "networkGroupId": 18,
+      "intn": true,
+      "rIntnId": 2,
+      "id": "e1"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+	{
+		"data": {
+			"source": "1",
+			"target": "3",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e2"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	},
+	{
+		"data": {
+			"source": "1",
+			"target": "4",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e3"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	},
+	{
+		"data": {
+			"source": "1",
+			"target": "5",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e4"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	},
+	{
+		"data": {
+			"source": "1",
+			"target": "6",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e5"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	}
+]

@@ -50,7 +50,24 @@ Research Fellow,
  
 ### Nominated participant(s)
 
-- Lars Juhl Jensen, University of Copenhagen; Valentin Groues, University of Luxembourg
+- Lars Juhl Jensen, 
+Professor, Group Leader in Disease Systems Biology,
+NNF Center for Protein Research,
+Faculty of Health Sciences,
+University of Copenhagen, Denmark
+email: Lars.Juhl.Jensen@cpr.ku.dk
+
+- Valentin Groues, 
+Senior scientific software engineer, 
+Université du Luxembourg,
+Luxembourg Centre for Systems Biomedicine (LCSB),
+6, avenue du Swing,
+L-4367 Belvaux, Luxembourg
+email: valentin.groues@uni.lu
+
+### Participant(s)
+- Gurnoor Sing, RadboudUMC, Nijmegen
+email: gurnoor.singh@radboudumc.nl
 
 ## Expected outcomes
 
