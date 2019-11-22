@@ -1,0 +1,198 @@
+[
+	{
+    "data": {
+      "id": "1",
+      "uri": 1,
+      "name": "Input Entity 1",
+      "query": true,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+  {
+    "data": {
+      "id": "2",
+      "uri": 2,
+      "name": "Co-occurence Entity 1",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "3",
+      "uri": 3,
+      "name": "Co-occurence Entity 2",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "4",
+      "uri": 4,
+      "name": "Co-occurence Entity 3",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "5",
+      "uri": 5,
+      "name": "Co-occurence Entity 4",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+	{
+    "data": {
+      "id": "6",
+      "uri": 6,
+      "name": "Co-occurence Entity 5",
+      "query": false,
+      "gene": true
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "fn6935"
+  },
+  {
+    "data": {
+      "source": "1",
+      "target": "2",
+      "group": "coexp",
+      "networkId": 1133,
+      "networkGroupId": 18,
+      "intn": true,
+      "rIntnId": 2,
+      "id": "e1"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+	{
+		"data": {
+			"source": "1",
+			"target": "3",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e2"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	},
+	{
+		"data": {
+			"source": "1",
+			"target": "4",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e3"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	},
+	{
+		"data": {
+			"source": "1",
+			"target": "5",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e4"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	},
+	{
+		"data": {
+			"source": "1",
+			"target": "6",
+			"group": "coexp",
+			"networkId": 1133,
+			"networkGroupId": 18,
+			"intn": true,
+			"rIntnId": 2,
+			"id": "e5"
+		},
+		"position": {},
+		"group": "edges",
+		"removed": false,
+		"selected": false,
+		"selectable": true,
+		"locked": false,
+		"grabbable": true,
+		"classes": ""
+	}
+]

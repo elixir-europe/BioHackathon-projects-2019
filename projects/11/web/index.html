@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <title>Entity Explore</title>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"
+            integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="build/ols-autocomplete.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"
+            integrity="sha256-ufGElb3TnOtzl5E4c/qQnZFGP+FYEZj5kbSEdJNrw0A=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.9.4/cytoscape.min.js"
+            integrity="sha256-yvhiWj8VRHJV4JL+RmFcz3U2E2tu0bdjJ175tlvhSnE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/ols-colors.css" type="text/css"/>
+    <link rel="stylesheet" href="css/ols.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/typeaheadjs.css" type="text/css"/>
+</head>
+
+<body>
+<div class="container" id="container">
+    <div class="mx-auto" style="width: 200px; margin-top: 50px; margin-bottom: 0px;">
+        <label for="inputEntity" class="sr-only">Entity</label>
+        <input v-model="entity" type="Entity" class="form-control" id="inputEntity" placeholder="Entity: i.e. DOID:2841"
+               autocomplete="on" data-olswidget="select" data-olsontology="doid,go"
+               data-selectpath="https://www.ebi.ac.uk/ols/" olstype="" class="ac_input"/>
+        <!--  -->
+        <div id="examples">
+            <a href="#" class="badge badge-light" @click="getAsthmaExample()">Asthma</a>
+            <a href="#" class="badge badge-light" @click="getGOExample()">GO:0002206</a>
+        </div>
+        <div class="mx-auto text-center">
+            <button class="btn btn-primary mb-2" style="margin-top: 10px;" @click="getMentions();getGraphMentions()">
+                Get papers
+            </button>
+
+            <button class="btn btn-primary mb-2" style="margin-top: 10px;"
+                    @click="getCooccurrences();getGraphCooccurrences()">
+                Get entities
+            </button>
+        </div>
+    </div>
+
+    <div class="mx-auto text-center" style="padding-top: 15px;">
+        <div class="lds-ripple" id="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="entities_list">
+        <ul class="list-group list-group-flush">
+            <li v-for="entity in entities" class="list-group-item">
+                <ul style="list-style-type:none">
+                    <li>
+                        <span href="#">{{ entity.info.entity_type }}</span>
+                        <a href="#">{{ entity.info.entity }}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="papers_list">
+        <ul class="list-group list-group-flush">
+            <li v-for="paper in papers" class="list-group-item">
+                <ul style="list-style-type:none">
+                    <li v-if="paper.info.title != undefined">
+                        Title: <a href="#">{{ paper.info.title }}</a>
+                    </li>
+                    <li v-if="paper.info.doi != undefined">
+                        DOI: <a target="_blank" :href="'http://doi.org/'+paper.info.doi">{{ paper.info.doi }}</a>
+                    </li>
+                    <li v-if="paper.info.pmc_id != undefined">
+                        PMC ID: {{ paper.info.pmc_id }}
+                    </li>
+                    <li v-if="paper.info.pm_id != undefined">
+                        PM ID: {{ paper.info.pm_id }}
+                    </li>
+                    <li>
+                        Resources: {{ paper.resources.join(', ') }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="cy">
+
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        var autocomplete = require("ols-autocomplete");
+        var instance = new autocomplete();
+        options = {
+            action: function (relativePath, suggestion_ontology, type, iri, data) {
+                app.$set(app, "entity", data.shortForm);
+            }
+        };
+        instance.start(options);
+    });
+</script>
+</body>
+
+</html>

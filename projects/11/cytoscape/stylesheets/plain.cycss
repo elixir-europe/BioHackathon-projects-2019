@@ -1,0 +1,25 @@
+node {
+  label: data(name);
+}
+
+edge {
+  opacity: 0.5;
+}
+
+node.highlighted {
+  border-width: 6px;
+  border-color: #333333;
+}
+
+node.start {
+  border-color: #8FDC97;
+}
+
+node.end {
+  border-color: #9F4A54;
+}
+
+edge.highlighted {
+  line-color: #008484;
+  width: 9px;
+}
