@@ -164,8 +164,8 @@ function gatherSampleData(variantSetId) {
                 var sampleObjs = packageSampleData();
                 goToValidator(sampleObjs, function(data, status) {
 
-                    for (var validatorResultSetStr of data) {
-                        var validatorResultSet = JSON.parse(validatorResultSetStr);
+                    for (var validatorResultSet of data) {
+                        //var validatorResultSet = JSON.parse(validatorResultSetStr);
                         if (validatorResultSet.status === 'INVALID') {
                             invalidSamples.push(validatorResultSet);
                             for (var message of validatorResultSet.messages) {
