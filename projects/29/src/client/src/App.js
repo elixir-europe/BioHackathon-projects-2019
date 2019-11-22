@@ -8,7 +8,7 @@ import testdata from './testdata/testdata'
 const initialState = {
     query: 'doi == 10.1101/443275',
     expressions: [],
-    results:testdata.slice(0,9),
+    results: [],
     happy: [],
     sad: [],
     happyState: false,
