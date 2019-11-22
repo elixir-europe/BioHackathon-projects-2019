@@ -14,7 +14,7 @@ class DOIs(BaseModel):
     unvoted: list = []
 
 
-test()
+# test()
 
 app = FastAPI()
 
@@ -39,8 +39,3 @@ def query(q: Query):
 def update(q: DOIs):
     res = execute_cypher_update(q)
     return res
-
-
-#if __name__ == '__main__':
-#    host = os.environ.get('FLASK_HOST', '127.0.0.1')
-#    app.run(host=host, debug=True)
