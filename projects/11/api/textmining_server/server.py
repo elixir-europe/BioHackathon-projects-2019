@@ -2,7 +2,7 @@ from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
 
 from textminingservice.aggregator import TextMiningDeMultiplexer
-from textminingservice.exporters.exporters import export_aggregated_mentions_cytoscape
+from textminingservice.exporters.exporters import export_aggregated_mentions_cytoscape, export_aggregated_cooccurrences_cytoscape
 from flask import Flask, request, abort
 import json
 from flask_cors import CORS
@@ -48,7 +48,12 @@ def getCooccurrences(entity: str):
     logger.info(
         f'getCooccurrences parameters. Entity {entity} limit: {limit} types: {entity_types}')
     tmdm = TextMiningDeMultiplexer()
-    return jsonify(tmdm.get_co_occurrences(entity, limit=limit, types=entity_types))
+    results = tmdm.get_co_occurrences(entity, limit=limit, types=entity_types)
+    format = request.args.get('format')
+    if format == 'cytoscape':
+        return jsonify(export_aggregated_cooccurrences_cytoscape(entity, results))
+    else:
+        return jsonify(results)
 
 
 # Type	entity type

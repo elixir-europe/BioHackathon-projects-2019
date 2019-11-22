@@ -1,4 +1,5 @@
-BASE_URL = 'http://7fccb2cc.ngrok.io';
+// BASE_URL = 'http://7fccb2cc.ngrok.io';
+BASE_URL = 'http://127.0.0.1:5000';
 
 var app = new Vue({
     el: "#container",
@@ -54,7 +55,7 @@ var app = new Vue({
             var that = this;
             var entity = that.entity;
             // var url = "http://127.0.0.1:5000/getCooccurrence/DOID:2841?type=9606";
-            var url = "${BASE_URL}/getCooccurrence/DOID:2841?type=9606";
+            var url = `${BASE_URL}/getCooccurrence/${entity}`;
             if (!entity) {
                 alert("Enter an entity!");
             } else {
@@ -77,6 +78,16 @@ var app = new Vue({
             var entity = that.entity;
             var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=100&format=cytoscape`;
             // var url = `http://127.0.0.1:5000/getMentions/?entity=${entity}&limit=100&format=cytoscape`;
+            this.getGraphData(url);
+        },
+        getGraphCooccurrences: function () {
+            var that = this;
+            var entity = that.entity;
+            var url = `${BASE_URL}/getCooccurrence/${entity}?limit=100&format=cytoscape`;
+            // var url = `http://127.0.0.1:5000/getMentions/?entity=${entity}&limit=100&format=cytoscape`;
+            this.getGraphData(url);
+        },
+        getGraphData: function (url) {
             console.log(url);
             var jqxhr = $.ajax(url)
                 .done(function (data) {
