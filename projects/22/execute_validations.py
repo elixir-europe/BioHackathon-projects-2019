@@ -10,7 +10,7 @@ def run_validation_queries():
     queries = load_validation_queries()
     for q in queries:
         response = neo_utils.execute_query(q["query"])
-        if (len(response.data()) > 0):
+        if len(response.data()) > 0:
             q["status"] = "Failed"
         else:
             q["status"] = "Passed"
