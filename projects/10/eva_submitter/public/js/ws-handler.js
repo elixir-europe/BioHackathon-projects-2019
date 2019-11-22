@@ -1,10 +1,3 @@
-$(document).ready(function() {
-    window.localStorage.setItem('projectInfo', {});
-    window.localStorage.setItem('sampleInfo', []);
-    window.localStorage.setItem('analysisInfo', {});
-    $('go-btn').click(refSetSearch)
-})
-
 const baseURL = "https://gigwa-dev.southgreen.fr/gigwaV2/rest/brapi/v2/"
     //const baseURL = "http://localhost:8081/gigwa2/rest/brapi/v2/"
     //const baseURL = "http://172.16.5.144:59395/Gigwa2/rest/brapi/v2/"

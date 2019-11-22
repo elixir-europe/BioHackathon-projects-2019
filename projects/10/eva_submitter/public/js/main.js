@@ -1,6 +1,37 @@
 $(document).ready(function() {})
 
+function submitToBioSamples() {
+
+    getToken();
+
+    getTeams(function(data, status) {
+        console.log(data);
+        var teams = data['_embedded']['teams']
+        if (teams && teams.length > 0) {
+            sendSubmission(teams[0]['name'])
+        } else {
+            postTeam(function(data, status) {
+                console.log(data);
+                sendSubmission(data['name'])
+            });
+        }
+    });
+}
+
+function sendSubmission(teamName) {
+    postSubmission(teamName, function(data, status) {
+        var samples = getItemStorage('sampleObjs');
+
+        for (var sample of samples) {
+            postSamples(data['id'], sample, function(data, status) {
+                console.log(data);
+            });
+        }
+    });
+}
+
 function setSubbmitterDetails() {
+
     var formData = {};
     formData.lastName = document.getElementById("lastName").value;
     formData.firstName = document.getElementById("firstName").value;
@@ -126,7 +157,9 @@ function gatherSampleData(variantSetId) {
 
                 var sampleObjs = packageSampleData();
                 goToValidator(sampleObjs, function(data, status) {
+                    setItemStorage('sampleObjs', sampleObjs);
 
+                    submitToBioSamples();
                     $('#loading-log').append('<p class=\"col-xs-12\"> Finished </p>')
                     $('#loading-gif').remove();
                 });
@@ -147,7 +180,7 @@ function packageSampleData() {
         var sampleObj = {};
 
         if (callSet['callSetDbId'])
-            sampleObj.biological_material_ID = callSet['callSetDbId'];
+            sampleObj.alias = callSet['callSetDbId'];
 
         if (sample['sampleDescription'])
             sampleObj.material_source_description = sample['sampleDescription'];
@@ -162,6 +195,7 @@ function packageSampleData() {
             sampleObj.biological_material_preprocessing = germplasm['germplasmPreprocessing'];
         if (germplasm['instituteCode'] && germplasm['accessionNumber'])
             sampleObj.material_source_ID = [germplasm['instituteCode'] + ':' + germplasm['accessionNumber']];
+        sampleObj.biological_material_ID = [germplasm['instituteCode'] + ':' + germplasm['accessionNumber']];
         if (germplasm['germplasmPUI'])
             sampleObj.material_source_DOI = [germplasm['germplasmPUI']];
         //if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
