@@ -13,6 +13,8 @@ const Content = styled.div`
     padding-top:10rem;
     display: flex;
     flex-direction: column;
+    color: black;
+    align-items:center;
 `
 
 
@@ -31,6 +33,7 @@ const QuackResults = () => {
             <QuackNavBar happyCount={state.happyCount}/>
             <Content>
                 <QuackQuinder results={state.results}/>
+                {(state.results.length === 0)? <h1><em>no further papers</em></h1>   : null}
             </Content>
             <Bottom>
                 <QuackVote/>

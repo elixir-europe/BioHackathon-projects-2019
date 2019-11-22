@@ -56,13 +56,13 @@ const SadButton = styled.button`
 const QuackVote = () => {
     const {state, dispatch} = useContext(QuackContext);
     const addToList = (listType) => {
-        document.getElementById(state.index).style.visibility = "hidden";
+        if (document.getElementById(state.index) !== null) {
+            document.getElementById(state.index).style.visibility = "hidden";
             dispatch({type: listType, data: state.results[state.index]})
-
-
+        }
     }
     useEffect(() => {
-        if (state.index === -1) {
+        if (state.index < 0) {
             let happyDois = state.happy.map((ele) => ele.doi)
             let sadDois = state.sad.map((ele) => ele.doi)
             console.log(happyDois)
@@ -73,7 +73,7 @@ const QuackVote = () => {
                     for (let i = 0; i < eles.length; i++) {
                         eles[i].style.visibility = 'visible';
                     }
-
+                    console.log("UPDATE", res.data)
                 })
         }
     }, [state.index])

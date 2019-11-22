@@ -13,7 +13,8 @@ const initialState = {
     sad: [],
     happyState: false,
     sadState: false,
-    index: 8
+    index: 8,
+    inResults: false
 }
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   return (
 
         <QuackContext.Provider value={{state, dispatch}}>
-            {state.results.length>0?<QuackResults/>:<QuackSearch/>}
+            {state.inResults>0?<QuackResults/>:<QuackSearch/>}
         </QuackContext.Provider>
   );
 }

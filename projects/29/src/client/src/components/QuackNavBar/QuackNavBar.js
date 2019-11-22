@@ -27,6 +27,7 @@ const Start = styled.div`
 `
 
 const Middle = styled.div`
+    margin-left: 15rem;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,7 +7,7 @@ const DELETE_SEARCH = 'DELETE_SEARCH'
 const DELETE_ALL = 'DELETE_ALL';
 const ADD_HAPPY = 'ADD_HAPPY';
 const ADD_SAD = 'ADD_SAD';
-
+const SET_INRESULTS = 'SET_INRESULTS'
 
 function reducer(state, action) {
     switch (action.type) {
@@ -21,6 +21,13 @@ function reducer(state, action) {
                 expressions: [],
                 happyState: false,
                 sadState: false,
+                inResults: false
+            }
+        }
+        case SET_INRESULTS: {
+            return {
+                ...state,
+                inResults: true
             }
         }
         case SET_RESULTS: {
