@@ -1,0 +1,26 @@
+
+
+## Test: Backbone is acyclical
+
+#### Test description
+
+This test searches for directional cycles back to the same node.
+
+#### The test
+[source,cypher]
+----
+MATCH p = (a)-[:DERIVED_FROM *]->(b)
+WHERE a.accession = 'SAMEA103887132'
+RETURN a
+----
+
+
+
+.A note about all graph rule violation test
+[NOTE]
+===============================
+* Each cypher snippet in '_violation.adoc' will be ran.
+* The test passes if the cypher query returns no results.
+* `True` is a pass, `False` is a fail.
+* These tests can be renamed and added to as required.
+===============================

@@ -1,0 +1,12 @@
+## Title: pool of specimens "derived from" relationships
+
+#### Description
+
+Checks that 'source' of 'derived from' relationship has a material
+'pool of specimens' and 'target' has a material 'specimen from organism'
+
+#### Query
+[source,cypher]
+----
+MATCH (a:Biosample)-[r:DERIVED_FROM]->(b:Biosample) WHERE a.material='pool of specimens' AND NOT b.material='specimen from organism' RETURN a.accession, b.accession
+----

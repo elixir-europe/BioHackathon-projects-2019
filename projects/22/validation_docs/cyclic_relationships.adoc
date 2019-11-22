@@ -1,0 +1,14 @@
+## Title: cyclic "derived from" relationships
+
+#### Description
+Checks if there are any cyclic relationships for "derived from".
+Here we only checks for cycles of less than 5 edges, for performance reasons.
+In general we want to this for arbitrary length.
+
+#### Query
+[source,cypher]
+----
+MATCH (a:Sample)-[:DERIVED_FROM*1..5]->(a:Sample) RETURN a
+----
+
+
