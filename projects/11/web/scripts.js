@@ -25,7 +25,7 @@ var app = new Vue({
     getMentions: function () {
       var that = this;
       var entity = that.entity;
-      var url = `http://9b9a4973.ngrok.io/getMentions/?entity=${entity}&limit=100`;
+      var url = `http://7fccb2cc.ngrok.io/getMentions/?entity=${entity}&limit=100`;
       if (!entity) {
         alert("Enter an entity!");
       } else {
@@ -47,7 +47,7 @@ var app = new Vue({
     getCooccurrences: function () {
       var that = this;
       var entity = that.entity;
-      var url = "http://9b9a4973.ngrok.io/getCooccurrence/DOID:2841?type=9606";
+      var url = "http://7fccb2cc.ngrok.io/getCooccurrence/DOID:2841?type=9606";
       if (!entity) {
         alert("Enter an entity!");
       } else {
