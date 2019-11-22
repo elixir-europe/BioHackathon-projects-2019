@@ -16,15 +16,18 @@ function reducer(state, action) {
                 ...state,
                 results: [],
                 query: '',
-                happyCount: 0,
-                expressions: []
+                happy: [],
+                sad: [],
+                expressions: [],
+                happyState: false,
+                sadState: false,
             }
         }
         case SET_RESULTS: {
             return {
                 ...state,
                 results: action.data,
-                index: action.data.length -1
+                index: action.data.length - 1
             }
         }
         case SET_VOTESTATE: {

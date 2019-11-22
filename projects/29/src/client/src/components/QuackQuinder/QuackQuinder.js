@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import QuackContext from '../../context';
 import styled from 'styled-components';
 import {useSprings, animated, interpolate} from 'react-spring'
@@ -7,21 +7,10 @@ import {useGesture} from 'react-use-gesture';
 import {useDrag} from 'react-use-gesture'
 import {QuackCard} from "../QuackCard";
 import testdata from "../../testdata/testdata";
+import axios from "axios";
+import {v4 as uuidv4} from "uuid";
 
-const testdata2 = [{
-    "containsOperation": "http://edamontology.org/operation_2436|http://edamontology.org/operation_3501",
-    "hasTopic": "http://edamontology.org/topic_0749|http://edamontology.org/topic_0780|http://edamontology.org/topic_1775",
-    "centrality": 56.62862002570947,
-    "authorList": "nodeID://b128119|nodeID://b127247",
-    "id": "http://identifiers.org/doi/10.1101/698761",
-    "abstract": "Abstract Many plant species worldwide are dispersed by scatterhoarding granivores: animals that hide seeds in numerous, small caches for future consumption. Yet, the evolution of scatterhoarding is difficult to explain because undefended caches are at high risk of pilferage. Previous models have attempted to solve this problem by giving cache owners unrealistically large advantages in cache recovery, by kin selection (but individuals that cache and those that pilfer are usually unrelated), or by introducing reciprocal pilferage of \"shared\" seed resources. However, the role of environmental variability has been so far overlooked in this context. One important form of such variability is masting, which is displayed by many plant species dispersed by scatterhoarders. We use a mathematical model to investigate the influence of masting on the evolution of scatter-hoarding. The model accounts for periodically varying annual seed fall, caching and pilfering behavior, and the demography of scatterhoarders. Masting, through its effects on population density, reduces cache pilferage and lowers the reproductive cost of caching (i.e. the cost of caching for the future rather than using seeds for current reproduction). These reductions promote the evolution of scatter-hoarding behavior especially when interannual variation in seed fall and the period between masting events are high.",
-    "label": "nan",
-    "title": "Mast seeding promotes evolution of scatter-hoarding | bioRxiv",
-    "containsDataFormat": "http://edamontology.org/format_1964",
-    "containsData": "http://edamontology.org/data_3754|http://edamontology.org/data_3021",
-    "seeAlso": "https://www.biorxiv.org/content/biorxiv/early/2019/07/11/698761.full.pdf",
-    "doi": "10.1101/698761"
-}]
+
 
 const Outer = styled(animated.div)`
   position: absolute;
@@ -70,9 +59,7 @@ function QuackQuinder({results}) {
             } else {
                 dispatch({type: 'ADD_SAD', data: results[index]})
             }
-            if (state.index === 0) {
-                dispatch({type: 'SET_RESULTS', data: testdata2})
-            }
+
         }
         set(i => {
             if (index !== i) return // We're only interested in changing spring-data for the current spring
@@ -85,6 +72,7 @@ function QuackQuinder({results}) {
         })
         //if (!down && gone.size === results.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
     })
+
     // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
     return props.map(({x, y, rot, scale}, i) => (
         <animated.div id={i} className={"outerCard"} key={i}

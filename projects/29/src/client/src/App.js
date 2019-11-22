@@ -6,7 +6,7 @@ import reducer from "./reducer";
 import './App.css';
 import testdata from './testdata/testdata'
 const initialState = {
-    query: 'doi == 10.1101/443275',
+    query: '',
     expressions: [],
     results: [],
     happy: [],
