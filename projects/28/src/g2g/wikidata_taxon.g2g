@@ -1,0 +1,9 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+(taxon:Taxon {name: name})
+    ?taxon wdt:P31 wd:Q16521 ; # instance of taxon
+           wdt:P225 ?name .    # taxon name
+
+(t1:Taxon)-[:child]->(t2:Taxon)
+    ?t2 wdt:P171 ?t1 .
