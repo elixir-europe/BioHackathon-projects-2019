@@ -83,6 +83,8 @@ Orphanet produce also the Orphanet Rare Diseases Ontology and clinical descripti
  David Lagorce (Orphanet/Orphadata project manager & Dev)
  Marc Hanauer (Orphanet CTO)
  
+ & Thomas Rosnet (IFB)
+ 
  (Please note: no travel fundings for Rousselot, Lagorce and Hanauer, only accommodation)
 
 ## Expected outcomes
