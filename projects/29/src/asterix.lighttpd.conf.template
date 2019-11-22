@@ -1,0 +1,49 @@
+var.asterixdir = "${PWD}/"
+
+### For uWSGI
+server.modules += ( "mod_scgi" )
+scgi.protocol = "uwsgi"
+scgi.server = (
+  "/asterix.scgi" => ((
+#    "bin-path" => var.asterixdir + "asterix.scgi",
+#    "host" => "127.0.0.1", "port" => 4000, 
+    "socket" => "/tmp/asterix.sock", 
+    "check-local" => "disable" 
+  )),
+)
+
+server.modules += ( "mod_proxy" )
+proxy.server = (
+   "/api" => (( "host" => "127.0.0.1", "port" => 8000 )),
+)
+
+server.modules += ( "mod_rewrite" )
+url.rewrite-once = (
+#    "^(/favicon.ico|/robots.txt)$" => "/static/$1",
+#    "^(/static($|/.*))$" => "$1",
+    "^(/(asterix.scgi|seal)(/static($|/.*)))$" => "/seal/$3",
+#    "^(/asterix.scgi($|/.*)?)$" => "$1",
+#    "^(/.*)$" => "/asterix.scgi$1"
+    "^(/seal($|/.*))$" => "/asterix.scgi$2"
+)
+
+server.modules   += ( "mod_alias" )
+alias.url = (
+    "/seal/static/" => var.asterixdir + "web_server/static/"
+)
+
+$HTTP["url"] =~ "^/" {
+	server.document-root = var.asterixdir + "client/build/"
+}
+
+$HTTP["url"] =~ "^(^|/seal)/static" {
+	dir-listing.encoding = "utf-8"
+	server.dir-listing   = "enable"
+}
+
+### For Flask test server
+#server.modules += ( "mod_proxy" )
+#proxy.server = (
+#  "/" => (( "host" => "127.0.0.1", "port" => 5000 )),
+#)
+
