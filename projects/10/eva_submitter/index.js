@@ -35,6 +35,7 @@ request('https://raw.githubusercontent.com/FAIRsharing/mircat/mircat-ebiusi/miap
 
 function validator(data) {
     console.log('Doing validation...');
+    console.log(data);
     let jsonObj = data;
     let validator = new ElixirValidator();
     let validatorResponse = {};
@@ -43,10 +44,11 @@ function validator(data) {
         validatorResponse = { status: validationResult.validationState };
         console.log(validationResult.validationState);
         for (let errors of validationResult.validationErrors) {
-            validatorMessages.push(errors.userFriendlyMessage);
+            let enrichedMessage = 'The biological material ID: ' + data.biological_material_ID + ' ' + errors.userFriendlyMessage;
+            validatorMessages.push(enrichedMessage);
             console.log(errors.userFriendlyMessage)
         }
         validatorResponse.messages = validatorMessages;
-        return JSON.stringify(validatorResponse)
+        return validatorResponse
     });
 }

@@ -51,10 +51,11 @@ function setSubbmitterDetails() {
 
             console.log(data);
 
+            $('#mandatoryIndicator').remove();
             $('#mainPanel').empty();
-            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Reference Sets </p>')
+            $('#mainPanel').append('<p class=\"col-sm-8 offset-sm-2\"> Reference Sets </p>');
 
-            var refernceSets = {}
+            var refernceSets = {};
 
             for (var refSet of data['result']['data']) {
                 var id = refSet['referenceSetDbId'];
@@ -66,6 +67,7 @@ function setSubbmitterDetails() {
                     onclick=\"setReferenceSet(\'' + id + '\');\">' +
                     name + '</div>')
             }
+            $('#mainPanel').append('<div class=\"col-sm-8 offset-sm-2 mb-5\"></div>');
 
             setItemStorage('refernceSetsRaw', refernceSets);
         }
@@ -96,6 +98,7 @@ function setReferenceSet(referenceSetId) {
                 name + '</div>')
 
         }
+        $('#mainPanel').append('<div class=\"col-sm-8 offset-sm-2 mb-5\"></div>');
 
         setItemStorage('variantSetsRaw', variantSets);
     })
@@ -107,6 +110,9 @@ function setVariantSet(variantSetId) {
 
     gatherSampleData(variantSet['variantSetDbId']);
 }
+
+let validationFailedMessages = new Set();
+let invalidSamples = [];
 
 function gatherSampleData(variantSetId) {
 
@@ -157,15 +163,62 @@ function gatherSampleData(variantSetId) {
 
                 var sampleObjs = packageSampleData();
                 goToValidator(sampleObjs, function(data, status) {
-                    setItemStorage('sampleObjs', sampleObjs);
 
-                    submitToBioSamples();
-                    $('#loading-log').append('<p class=\"col-xs-12\"> Finished </p>')
+                    for (var validatorResultSetStr of data) {
+                        var validatorResultSet = JSON.parse(validatorResultSetStr);
+                        if (validatorResultSet.status === 'INVALID') {
+                            invalidSamples.push(validatorResultSet);
+                            for (var message of validatorResultSet.messages) {
+                                validationFailedMessages.add(message);
+                            }
+                        }
+                    }
+
+                    $('#loading-log').append('<p class=\"col-xs-12\"> Finished </p>');
+                    if (!(invalidSamples.length == 0)) {
+                        $('#loading-log').append('<div id="invalidMessage" class=\"col-xs-12\ alert alert-danger"> ' + invalidSamples.length +
+                            ' samples are invalid <u style="color: #0c5460; cursor: pointer;" onclick="showInvalidDetails()">click for more details </u>' +
+                            '</div>');
+                    } else {
+                        $('#loading-log').append('<div id="validMessage" class=\"col-xs-12 alert alert-success\"> All samples have been validated </div>');
+
+                        setItemStorage('sampleObjs', sampleObjs);
+                        submitToBioSamples();
+                    }
+                    $('#mainPanel').append('<div class=\"col-sm-8 offset-sm-2 mb-5\"></div>');
                     $('#loading-gif').remove();
                 });
             });
         });
     });
+}
+
+function showInvalidDetails() {
+    $('#invalidMessage').remove();
+    $('#loading-log').append('<div id="invalidMessage" class=\"col-xs-12\ alert alert-danger"> ' + invalidSamples.length + ' samples are invalid </br></div>');
+    if (validationFailedMessages.size < 30) {
+        for (let message of validationFailedMessages) {
+            $('#invalidMessage').append('<p class=\"col-xs-12\">ERROR: ' + message + '</p></br>');
+        }
+        $('#invalidMessage').append('<u style="color: #0c5460; cursor: pointer;" onclick="hideInvalidDetails()">hide details</u>');
+    } else {
+        let size = 30;
+        let invalidMessages = Array.from(validationFailedMessages).slice(0, size);
+
+        for (let message of invalidMessages) {
+            $('#invalidMessage').append('<p class=\"col-xs-12\">ERROR: ' + message + '</p></br>');
+        }
+        $('#invalidMessage').append('<p class=\"col-xs-12\"> ... </p></br>');
+        $('#invalidMessage').append('<u style="color: #0c5460; cursor: pointer;" onclick="hideInvalidDetails()">hide details</u>');
+    }
+}
+
+function hideInvalidDetails() {
+    $('#invalidMessage').remove();
+    $('#loading-log').append('<div id="invalidMessage" class=\"col-xs-12\ alert alert-danger"> ' + invalidSamples.length +
+        ' samples are invalid <u style="color: #0c5460; cursor: pointer;" onclick="showInvalidDetails()">click for more details</u>' +
+        '</div>');
+
 }
 
 function packageSampleData() {
@@ -198,8 +251,8 @@ function packageSampleData() {
         sampleObj.biological_material_ID = [germplasm['instituteCode'] + ':' + germplasm['accessionNumber']];
         if (germplasm['germplasmPUI'])
             sampleObj.material_source_DOI = [germplasm['germplasmPUI']];
-        //if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
-        //sampleObj.organism = germplasm['taxonIds'][0]['sourceName'] + ':' + germplasm['taxonIds'][0]['taxonId'];
+        if (germplasm['taxonIds'] && germplasm['taxonIds'][0] && germplasm['taxonIds'][0]['sourceName'] && germplasm['taxonIds'][0]['taxonId'])
+            sampleObj.organism = germplasm['taxonIds'][0]['sourceName'] + ':' + germplasm['taxonIds'][0]['taxonId'];
         if (germplasm['germplasmGenus'] && germplasm['germplasmSpecies'])
             sampleObj.organism = germplasm['germplasmGenus'] + ' ' + germplasm['germplasmSpecies'];
         if (germplasm['germplasmOrigin'] && germplasm['germplasmOrigin'][0]) {
