@@ -1,5 +1,5 @@
-// BASE_URL = 'http://7fccb2cc.ngrok.io';
-BASE_URL = 'http://127.0.0.1:5000';
+BASE_URL = 'http://7fccb2cc.ngrok.io';
+// BASE_URL = 'http://127.0.0.1:5000';
 
 var app = new Vue({
     el: "#container",
@@ -29,8 +29,7 @@ var app = new Vue({
         getMentions: function () {
             var that = this;
             var entity = that.entity;
-            var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=100`;
-            // var url = `http://127.0.0.1:5000/getMentions/?entity=${entity}&limit=100`;
+            var url = `${BASE_URL}/getMentions/?entity=${entity}&limit=50`;
             if (!entity) {
                 alert("Enter an entity!");
             } else {
