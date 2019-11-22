@@ -32,11 +32,13 @@ Disease HPO annotations example (http://dev.orpha.net/hanauer/consor4.01/www/cgi
 JSON PLAYGROUND (https://tinyurl.com/yx2bqnqt)
 
 
-## Docker image of Orphadata's FAIRdatapoint almost setup
+## Docker image of Orphadata's FAIRdatapoint done and running !
 
 Giving a machine readable access to Orphadata's datasets
 
-Need look&feel customisation
+Need a bit more look&feel customisation
+
+(http://purl.org/orphadata/fairpoint)
 
 ## Research area alignment
 
@@ -80,6 +82,8 @@ Orphanet produce also the Orphanet Rare Diseases Ontology and clinical descripti
  Celine Rousselot (Orphanet PHP dev lead)
  David Lagorce (Orphanet/Orphadata project manager & Dev)
  Marc Hanauer (Orphanet CTO)
+ 
+ & Thomas Rosnet (IFB)
  
  (Please note: no travel fundings for Rousselot, Lagorce and Hanauer, only accommodation)
 

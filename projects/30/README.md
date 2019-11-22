@@ -145,7 +145,6 @@ Find the file `run_create_db.sh` inside the cloned repo folder, and:
    
    `sh run_create_db.sh`
 
-Building the database should take < 1 minute with an OS package manager-installed neo4j
-(expect 1-5 minutes with the less performant docker version).
+Building the database should take < 1 minute.
 
 After that go back to the neo4j web interface and **start exploring**!

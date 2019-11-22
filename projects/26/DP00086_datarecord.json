@@ -1,0 +1,63 @@
+{
+  "@context": "http://schema.org",
+  "@type": "DataRecord",
+  "@id": "https://www.disprot.org/DP00086#DR",
+  "includedInDataset": "https://disprot.org#2019_09",
+  "mainEntity": {
+    "@id": "https://www.disprot.org/DP00086",
+    "@type": "Protein",
+    "dct:conformsTo": "https://bioschemas.org/specifications/Protein/0.9-DRAFT",
+    "hasRepresentation": [
+      "MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD"
+    ],
+    "identifier": "DP00086",
+    "name": "Cellular tumor antigen p53",
+    "sameAs": [
+      "https://www.uniprot.org/uniprot/P04637",
+      "https://identifiers.org/uniprot:P04637",
+      "http://mobidb.org/P04637",
+      "https://identifiers.org/mobidb:P04637"
+    ],
+    "taxonomicRange": [
+      "Homo sapiens"
+    ],
+    "hasSequenceAnnotation": [
+      {
+        "@type": "SequenceAnnotation",
+        "@id": "https://www.disprot.org/DP00086r026",
+        "description": "Chemical shift analysis and the NOE pattern demonstrated that p53 in complex with Tfb1 adopts an a-helical fold that extends from Pro47 to Thr55. Outside this region, p53 is flexible, as also supported by the 15N-1H heteronuclear NOE data.",
+        "creationMethod": "Nuclear magnetic resonance",
+        "editor": {
+          "@id": "curator:bhajdu"
+        },
+        "citation": {
+          "@id": "pmid:16793543"
+        },
+        "isPartOfBioChemEntity": {
+          "@id": "https://www.disprot.org/DP00086"
+        },
+        "hasAssociatedBioChemEntity": [
+          "https://www.ebi.ac.uk/pdbe/entry/pdb/2GS0",
+          "https://identifiers.org/pdb:2GS0"
+        ],
+        "sequenceLocation": {
+          "@type": "SequenceRange",
+          "rangeStart": 20,
+          "rangeEnd": 73
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Term",
+            "value": "disorder"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Ambiguous",
+            "value": "AMBSEQ"
+          }
+        ]
+      }
+    ]
+  }
+}

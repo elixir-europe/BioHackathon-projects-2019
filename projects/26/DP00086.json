@@ -3,8 +3,7 @@
   "@type": "DataRecord",
   "@id": "https://www.disprot.org/DP00086#",
   "includedInDataset": "https://www.disprot.org/",
-  "mainEntity":
-  {
+  "mainEntity": {
     "@id": "https://www.disprot.org/DP00086",
     "@type": "Protein",
     "dct:conformsTo": "https://bioschemas.org/specifications/Protein/0.9-DRAFT",
@@ -14,7 +13,10 @@
     "identifier": "DP00086",
     "name": "Cellular tumor antigen p53",
     "sameAs": [
-      "https://www.uniprot.org/uniprot/P04637"
+      "https://www.uniprot.org/uniprot/P04637",
+      "https://identifiers.org/uniprot:P04637",
+      "http://mobidb.org/P04637",
+      "https://identifiers.org/mobidb:P04637"
     ],
     "taxonomicRange": [
       "Homo sapiens"
