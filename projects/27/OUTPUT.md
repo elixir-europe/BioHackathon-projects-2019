@@ -44,3 +44,4 @@
 
 * schymane fixed 304 SMILES parsing errors in the NORMAN-SLE PubChem deposition file, this passed PubChem submission tests and is now awaiting PubChem curator approval - [submission](https://pubchem.ncbi.nlm.nih.gov/upload/#substance-102982). 
 * If successful this is a major outcome for the environmental community and just in time for the [NORMAN](https://www.norman-network.com/) General Assembly next week.
+* submission was approved on Saturday, 119,999 new live substances, CID calcs show approx 4,200 new CIDs assigned. [NORMAN-SLE on PubChem](https://pubchem.ncbi.nlm.nih.gov/source/23819).
