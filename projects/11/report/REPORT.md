@@ -1,23 +1,29 @@
-# Text-mining and semantic web technologies
+# Text-mining and semantic web technologies
 
 ## Authors
 
-### LCSB, University of Luxembourg 
-Venkata Satagopam (0000-0002-6532-5880)
-Carlos Vega (0000-0002-7979-9921)
-Valentin Grouès (0000-0001-6501-0806)
+- **Submitter and Proponent** : Venkata Satagopam
+- **Leads** : Venkata Satagopam; Johanna McEntyre; Aravind Venkatesan and Carlos Vega
+- **Nominated Participants** : Lars Juhl Jensen and Valentin Grouès
+- **Participants** : Gurnoor Singh and Margarita Kopniczky
 
-### Novo Nordisk Foundation Center for Protein Research
-Lars Juhl Jensen (0000-0001-7885-715X)
+### LCSB, University of Luxembourg 
+- Venkata Satagopam (0000-0002-6532-5880)
+- Carlos Vega (0000-0002-7979-9921)
+- Valentin Grouès (0000-0001-6501-0806)
+
+### Novo Nordisk Foundation Center for Protein Research
+- Lars Juhl Jensen (0000-0001-7885-715X)
 
 ### European Bioinformatics Institute
-Aravind Venkatesan (0000-0003-4019-1940)
+- Johanna McEntyre (0000-0002-1611-6935)
+- Aravind Venkatesan (0000-0003-4019-1940)
 
 ### Google, UK
-Margarita Kopniczky (0000-0002-4792-1355)
+- Margarita Kopniczky (0000-0002-4792-1355)
 
 ### Radboud University Medical Center
-Gurnoor Singh
+- Gurnoor Singh
 
 ## Abstract
 
