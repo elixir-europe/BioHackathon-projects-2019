@@ -11,13 +11,14 @@
 - Lars Juhl Jensen (0000-0001-7885-715X)
 
 ### European Bioinformatics Institute
+- Johanna McEntyre (0000-0002-1611-6935)
 - Aravind Venkatesan (0000-0003-4019-1940)
 
 ### Google, UK
-Margarita Kopniczky (0000-0002-4792-1355)
+- Margarita Kopniczky (0000-0002-4792-1355)
 
 ### Radboud University Medical Center
-Gurnoor Singh
+- Gurnoor Singh
 
 ## Abstract
 
