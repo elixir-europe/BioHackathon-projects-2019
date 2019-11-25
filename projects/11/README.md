@@ -81,6 +81,8 @@ email: gurnoor.singh@radboudumc.nl
 
 **Number of expected hacking days**: 4
 
+<img src="report/web_biohack.gif" width="600"  />
+
 ## Installation
 
 ```
