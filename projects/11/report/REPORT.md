@@ -1,4 +1,4 @@
-# Text-mining and semantic web technologies
+# Text-mining and semantic web technologies
 
 ## Authors
 
