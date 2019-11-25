@@ -3,15 +3,15 @@
 ## Authors
 
 ### LCSB, University of Luxembourg 
-Venkata Satagopam (0000-0002-6532-5880)
-Carlos Vega (0000-0002-7979-9921)
-Valentin Grouès (0000-0001-6501-0806)
+- Venkata Satagopam (0000-0002-6532-5880)
+- Carlos Vega (0000-0002-7979-9921)
+- Valentin Grouès (0000-0001-6501-0806)
 
-### Novo Nordisk Foundation Center for Protein Research
-Lars Juhl Jensen (0000-0001-7885-715X)
+### Novo Nordisk Foundation Center for Protein Research
+- Lars Juhl Jensen (0000-0001-7885-715X)
 
 ### European Bioinformatics Institute
-Aravind Venkatesan (0000-0003-4019-1940)
+- Aravind Venkatesan (0000-0003-4019-1940)
 
 ### Google, UK
 Margarita Kopniczky (0000-0002-4792-1355)
