@@ -81,7 +81,7 @@ email: gurnoor.singh@radboudumc.nl
 
 **Number of expected hacking days**: 4
 
-## Installation
+## Installation
 
 ```
 # Install virtualenv
