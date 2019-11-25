@@ -2,6 +2,11 @@
 
 ## Authors
 
+- **Submitter and Proponent** : Venkata Satagopam
+- **Leads** : Venkata Satagopam; Johanna McEntyre; Aravind Venkatesan and Carlos Vega
+- **Nominated Participants** : Lars Juhl Jensen and Valentin Grouès
+- **Participants** : Gurnoor Singh and Margarita Kopniczky
+
 ### LCSB, University of Luxembourg 
 - Venkata Satagopam (0000-0002-6532-5880)
 - Carlos Vega (0000-0002-7979-9921)
