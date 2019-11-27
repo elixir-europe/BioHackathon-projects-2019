@@ -75,7 +75,7 @@ As a proof of concept we deployed the multi resource hub server as well as a sma
 
 [...] (to be written)
 
-<img src="https://github.com/elixir-europe/BioHackathon-projects-2019/raw/master/projects/11/web_biohack.gif" width="600"  />
+<img src="web_biohack.gif" width="600"  />
 
 ## Conclusion
 
