@@ -46,3 +46,7 @@
 * If successful this is a major outcome for the environmental community and just in time for the [NORMAN](https://www.norman-network.com/) General Assembly next week.
 * submission was approved on Saturday, 119,999 new live substances, CID calcs show approx 4,200 new CIDs assigned. [NORMAN-SLE on PubChem](https://pubchem.ncbi.nlm.nih.gov/source/23819).
 * Denise discussed releasing database mapping info as CC0 with DiSGeNet (hoping to hear back from them on this!); mapping file will be used to test how many rare diseases (now modeled as text labels with OMIM IDs) can be converted to Orphanet (results will be send to Rare disease project group and Orphanet project group).
+
+# Saturday 2019-11-30
+
+* requested archival of the four BridgeDb repositories are Software Heritage
