@@ -47,6 +47,7 @@ class JensenLabService(TextMiningService):
         return [Publication(pm_id=pid) for pid in publications_ids_intersection][0:limit]
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        logger.info('get co occurrences')
         entity_type = JensenLabService.guess_type_for_entity(entity)
         if not types:
             url_cooccurrences = JensenLabService.COOCCURRENCES_URL.format(
@@ -68,6 +69,7 @@ class JensenLabService(TextMiningService):
             type2 = self.get_type2_from_url(entity2_dict)
             cooccurrences_results.append(CoOccurrence(
                 entity2, entity2_dict['evidence'], type2))
+        logger.info(f'get co occurrences (len: {len(cooccurrences_results)})')
         return cooccurrences_results
 
     def get_type2_from_url(self, entity2_dict):
