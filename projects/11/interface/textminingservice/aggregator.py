@@ -1,5 +1,6 @@
 import json
 import sys
+import traceback
 from collections import defaultdict
 from typing import List, Dict
 
@@ -8,6 +9,7 @@ from textminingservice_jensenlab.jensenlabservice import JensenLabService
 from textminingservice_pmc_europe.pmc_europe import PMC_Europe_Service
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
+from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 from textminingservice import logger
 
 import asyncio
@@ -60,8 +62,6 @@ class Aggregator():
 
 class TextMiningDeMultiplexer:
     def __init__(self):
-        self.loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(self.loop)
         biokb = BioKBService()
         jensen = JensenLabService()
         pmc = PMC_Europe_Service()
@@ -88,17 +88,18 @@ class TextMiningDeMultiplexer:
                 f'Exception from service {service}: {details}')
         return (service.name, results)
 
-    async def _get_mentions(self, entities: List[str], limit: int = 20) -> List[dict]:
-        pub_collections = await asyncio.gather(*[TextMiningDeMultiplexer.wrap_get_mentions(self.loop, service, entities, limit=limit) for service in self.services])
+    async def _get_mentions(self, loop, entities: List[str], limit: int = 20) -> List[dict]:
+        pub_collections = await asyncio.gather(*[TextMiningDeMultiplexer.wrap_get_mentions(loop, service, entities, limit=limit) for service in self.services])
         return pub_collections
 
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[dict]:
+        loop = asyncio.new_event_loop()
         try:
-            results = self.loop.run_until_complete(
-                self._get_mentions(entities, limit=limit))
-            self.loop.run_until_complete(self.loop.shutdown_asyncgens())
+            results = loop.run_until_complete(
+                self._get_mentions(loop, entities, limit=limit))
+            loop.run_until_complete(loop.shutdown_asyncgens())
         finally:
-            self.loop.close()
+            loop.close()
         return self.agg.aggregate_mentions(dict(results))
 
     #  ____ ____ ___    ____ ____    ____ ____ ____ _  _ ____ ____ ____ _  _ ____ ____ ____
@@ -109,24 +110,29 @@ class TextMiningDeMultiplexer:
     async def wrap_get_co_occurrences(loop, service: 'TextMiningService', entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
         results = []
         try:
+            logger.info(f'Entity {entity} Service {service.name}')
             results = await loop.run_in_executor(None, partial(service.get_co_occurrences, entity, limit=limit, types=types))
+        except TextMiningServiceOperationNotSupported:
+            details = sys.exc_info()[0]
+            logger.info(f'Exception from service {service}: {details}')
         except Exception:
             details = sys.exc_info()[0]
-            logger.info(
-                f'Exception from service {service}: {details}')
+            logger.info(f'Exception from service {service}: {details}')
+            logger.info(traceback.print_exc())
         return (service.name, results)
 
-    async def _get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
-        entity_collections = await asyncio.gather(*[TextMiningDeMultiplexer.wrap_get_co_occurrences(self.loop, service, entity, limit=limit, types=types) for service in self.services])
+    async def _get_co_occurrences(self, loop, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        entity_collections = await asyncio.gather(*[TextMiningDeMultiplexer.wrap_get_co_occurrences(loop, service, entity, limit=limit, types=types) for service in self.services])
         return entity_collections
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        loop = asyncio.new_event_loop()
         try:
-            entity_collections = self.loop.run_until_complete(
-                self._get_co_occurrences(entity, limit=limit, types=types))
-            self.loop.run_until_complete(self.loop.shutdown_asyncgens())
+            entity_collections = loop.run_until_complete(
+                self._get_co_occurrences(loop, entity, limit=limit, types=types))
+            loop.run_until_complete(loop.shutdown_asyncgens())
         finally:
-            self.loop.close()
+            loop.close()
         return self.agg.aggregate_cooccurrences(dict(entity_collections))
 
 
