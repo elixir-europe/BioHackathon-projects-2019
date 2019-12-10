@@ -68,6 +68,11 @@ class TextMiningDeMultiplexer:
         self.services = [biokb, jensen, pmc]
         self.agg = Aggregator()
 
+    #  ____ ____ ___    _  _ ____ _  _ ___ _ ____ _  _ ____
+    #  | __ |___  |     |\/| |___ |\ |  |  | |  | |\ | [__
+    #  |__] |___  |     |  | |___ | \|  |  | |__| | \| ___]
+    #
+
     @staticmethod
     async def wrap_get_mentions(loop, service: 'TextMiningService', entities: List[str], limit: int = 20) -> List[dict]:
         results = []
@@ -96,25 +101,39 @@ class TextMiningDeMultiplexer:
             self.loop.close()
         return self.agg.aggregate_mentions(dict(results))
 
+    #  ____ ____ ___    ____ ____    ____ ____ ____ _  _ ____ ____ ____ _  _ ____ ____ ____
+    #  | __ |___  |     |    |  |    |  | |    |    |  | |__/ |__/ |___ |\ | |    |___ [__
+    #  |__] |___  |     |___ |__|    |__| |___ |___ |__| |  \ |  \ |___ | \| |___ |___ ___]
+    #
+    @staticmethod
+    async def wrap_get_co_occurrences(loop, service: 'TextMiningService', entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        results = []
+        try:
+            results = await loop.run_in_executor(None, partial(service.get_co_occurrences, entity, limit=limit, types=types))
+        except Exception:
+            details = sys.exc_info()[0]
+            logger.info(
+                f'Exception from service {service}: {details}')
+        return (service.name, results)
+
+    async def _get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        entity_collections = await asyncio.gather(*[TextMiningDeMultiplexer.wrap_get_co_occurrences(self.loop, service, entity, limit=limit, types=types) for service in self.services])
+        return entity_collections
+
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
-
-        entity_collections = {}
-
-        for service in self.services:
-            try:
-                results = service.get_co_occurrences(
-                    entity, limit=limit, types=types)
-            except Exception:
-                results = []
-            entity_collections[service.name] = results
-
-        return self.agg.aggregate_cooccurrences(entity_collections)
+        try:
+            entity_collections = self.loop.run_until_complete(
+                self._get_co_occurrences(entity, limit=limit, types=types))
+            self.loop.run_until_complete(self.loop.shutdown_asyncgens())
+        finally:
+            self.loop.close()
+        return self.agg.aggregate_cooccurrences(dict(entity_collections))
 
 
 if __name__ == "__main__":
     tmdm = TextMiningDeMultiplexer()
-    print('get mentions')
-    results = tmdm.get_mentions(['DOID:2841'])
+    logger.info('get mentions')
+    results = tmdm.get_mentions(["DOID:2841", "DOID:10652", "DOID:10935"])
     print(json.dumps(results))
     print('get cooccurrences')
     results = tmdm.get_co_occurrences('DOID:2841')
