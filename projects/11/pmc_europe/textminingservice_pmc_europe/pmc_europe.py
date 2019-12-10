@@ -125,7 +125,7 @@ class PMC_Europe_Service(TextMiningService):
                     break
                 else:
                     publications.append(Publication(
-                        pm_id=article['extId'], pmc_id=article['pmcid']))
+                        pm_id=article.get('extId', None), pmc_id=article.get('pmcid', None)))
             return publications
         else:
             raise TextMiningServiceOperationNotSupported
