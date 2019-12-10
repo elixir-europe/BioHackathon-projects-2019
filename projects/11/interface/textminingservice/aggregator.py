@@ -10,6 +10,9 @@ from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 from textminingservice import logger
 
+import asyncio
+from functools import partial
+
 
 class Aggregator():
     def __init__(self):
@@ -57,29 +60,41 @@ class Aggregator():
 
 class TextMiningDeMultiplexer:
     def __init__(self):
+        self.loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self.loop)
         biokb = BioKBService()
         jensen = JensenLabService()
         pmc = PMC_Europe_Service()
         self.services = [biokb, jensen, pmc]
         self.agg = Aggregator()
 
-    def get_mentions(self, entities: List[str], limit: int = 20) -> List[dict]:
-        pub_collections = {}
+    @staticmethod
+    async def wrap_get_mentions(loop, service: 'TextMiningService', entities: List[str], limit: int = 20) -> List[dict]:
+        results = []
+        try:
+            results = await loop.run_in_executor(None, partial(service.get_mentions, entities, limit=limit))
+        except AssertionError:
+            details = sys.exc_info()[0]
+            logger.info(
+                f'AssertionError from service {service}: {details}')
+        except Exception:
+            details = sys.exc_info()[0]
+            logger.info(
+                f'Exception from service {service}: {details}')
+        return (service.name, results)
 
-        for service in self.services:
-            results = []
-            try:
-                results = service.get_mentions(entities, limit=limit)
-            except AssertionError:
-                details = sys.exc_info()[0]
-                logger.info(
-                    f'AssertionError from service {service}: {details}')
-            except Exception:
-                details = sys.exc_info()[0]
-                logger.info(
-                    f'Exception from service {service}: {details}')
-            pub_collections[service.name] = results
-        return self.agg.aggregate_mentions(pub_collections)
+    async def _get_mentions(self, entities: List[str], limit: int = 20) -> List[dict]:
+        pub_collections = await asyncio.gather(*[TextMiningDeMultiplexer.wrap_get_mentions(self.loop, service, entities, limit=limit) for service in self.services])
+        return pub_collections
+
+    def get_mentions(self, entities: List[str], limit: int = 20) -> List[dict]:
+        try:
+            results = self.loop.run_until_complete(
+                self._get_mentions(entities, limit=limit))
+            self.loop.run_until_complete(self.loop.shutdown_asyncgens())
+        finally:
+            self.loop.close()
+        return self.agg.aggregate_mentions(dict(results))
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
 
