@@ -1,17 +1,14 @@
 import json
 import sys
-import logging
 from collections import defaultdict
 from typing import List, Dict
 
 from textminingservice_biokb.biokb import BioKBService
 from textminingservice_jensenlab.jensenlabservice import JensenLabService
 from textminingservice_pmc_europe.pmc_europe import PMC_Europe_Service
-
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from textminingservice import logger
 
 
 class Aggregator():
