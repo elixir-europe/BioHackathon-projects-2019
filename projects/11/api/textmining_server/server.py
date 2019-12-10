@@ -8,14 +8,10 @@ import json
 from flask_cors import CORS
 
 import logging
-from logging import StreamHandler, Formatter
-FORMAT = '%(asctime)s %(levelname)s %(name)s.%(funcName)s ::: %(message)s'
-DATE_FORMAT = '%b %d %H:%M:%S'
-formatter = Formatter(fmt=FORMAT, datefmt=DATE_FORMAT)
-handler = StreamHandler()
-handler.setFormatter(formatter)
+logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s.%(funcName)s @ %(name)s ::: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    level=logging.INFO)
 logger = logging.getLogger(__name__)
-logger.addHandler(handler)
 
 
 app = Flask(__name__)
