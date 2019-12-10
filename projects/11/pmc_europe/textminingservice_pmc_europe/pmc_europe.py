@@ -214,6 +214,7 @@ class PMC_Europe_Service(TextMiningService):
         return publications[inds][:limit]
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
+        logger.info('get co occurrences')
         """Returns a list of co-occurrences from a given entity
         """
         raise TextMiningServiceOperationNotSupported
