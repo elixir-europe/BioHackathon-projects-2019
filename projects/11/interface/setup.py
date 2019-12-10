@@ -7,7 +7,7 @@ except ImportError:
     from distutils.core import setup
 
 requirements = [
-
+    'asyncio'
 ]
 
 test_requirements = [
@@ -21,7 +21,7 @@ setup(
     url='',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     package_dir={'textminingservice':
-                     'textminingservice'},
+                 'textminingservice'},
     include_package_data=True,
     install_requires=requirements,
     zip_safe=False,
