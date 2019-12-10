@@ -12,7 +12,7 @@ from textminingservice.models.publication import Publication
 from textminingservice_biokb.utils import uri_to_entity_code, standardise_underscored_entity_code, \
     reflect_type_to_biokb, standardise_entity_type
 
-logger = logging.getLogger(__name__)
+from textminingservice_biokb import logger
 
 
 class BioKBClientException(Exception):
@@ -45,6 +45,7 @@ class BioKBService(TextMiningService):
             raise MalformedQueryException(e)
 
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        logger.info('get mentions')
         entity_subquery = ""
         for entity in entities:
             entity = standardise_underscored_entity_code(entity)
@@ -151,6 +152,7 @@ class BioKBService(TextMiningService):
 
 if __name__ == "__main__":
     bkb = BioKBService()
+    logger.info('Main BioKB')
     print(bkb.get_mentions(["DOID:2841"]))
     print(bkb.get_mentions(["GO:0002206"]))
     print(bkb.get_mentions(["DOID:10652", "DOID:10935"]))

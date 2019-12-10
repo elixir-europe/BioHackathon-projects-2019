@@ -1,5 +1,4 @@
 import json
-import logging
 import urllib
 from typing import List
 
@@ -10,7 +9,7 @@ from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 
-logger = logging.getLogger(__name__)
+from textminingservice_jensenlab import logger
 
 
 class JensenLabService(TextMiningService):
@@ -32,6 +31,7 @@ class JensenLabService(TextMiningService):
         super().__init__("JensenLabService", "Text-Mining api available at api.jensenlab.org")
 
     def get_mentions(self, entities: List, limit: int = 20) -> List[Publication]:
+        logger.info('get mentions')
         entities_and_types = self.guess_types_for_entities(entities)
         publications_ids = []
         if len(entities) == 1:
@@ -42,6 +42,8 @@ class JensenLabService(TextMiningService):
             publications_ids.append(self.get_mentions_for_entity(
                 entity, entity_type, limit=limit_per_entity))
         publications_ids_intersection = set.intersection(*publications_ids)
+        logger.info(
+            f'JensenLabService {entities} {limit} (len: {len(publications_ids_intersection)})')
         return [Publication(pm_id=pid) for pid in publications_ids_intersection][0:limit]
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
@@ -106,7 +108,7 @@ class JensenLabService(TextMiningService):
 
 if __name__ == '__main__':
     text_mining_service = JensenLabService()
-    print("Using service {}".format(text_mining_service.name))
+    logger.info("Using service {}".format(text_mining_service.name))
     # publications = text_mining_service.get_mentions(
     #     ["DOID:10652", "DOID:10935"], limit=1000000)
     # print(", ".join([p.pm_id for p in publications]))

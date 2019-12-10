@@ -1,4 +1,3 @@
-import logging
 import datetime
 from typing import List, Set, DefaultDict
 from collections import defaultdict
@@ -13,8 +12,7 @@ from textminingservice.models.cooccurrence import CoOccurrence
 from textminingservice.models.publication import Publication
 from textminingservice.exceptions import TextMiningServiceOperationNotSupported
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from textminingservice_pmc_europe import logger
 
 
 class PMC_Europe_Service(TextMiningService):
@@ -115,6 +113,7 @@ class PMC_Europe_Service(TextMiningService):
         return entity
 
     def get_mentions(self, entities: List[str], limit: int = 20) -> List[Publication]:
+        logger.info('get mentions')
         entities = [self._convert_entity(entity) for entity in entities]
         if len(entities) == 1:
             pageSize = min(limit+1, PMC_Europe_Service.MAX_PAGE_SIZE)
@@ -221,14 +220,13 @@ class PMC_Europe_Service(TextMiningService):
 
 
 if __name__ == "__main__":
+    logger.info('PMC')
     pmc = PMC_Europe_Service()
-    print(datetime.datetime.now())
 
-    print('Test convert entity')
+    logger.info('Test convert entity')
     print(pmc._convert_entity('DOID:2841'))
 
-    print(datetime.datetime.now())
-    print('get mentions for single entity PRDM1')
+    logger.info('get mentions for single entity PRDM1')
     for pub in pmc.get_mentions(['DOID:7148']):
         print(pub)
 

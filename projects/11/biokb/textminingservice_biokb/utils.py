@@ -1,6 +1,4 @@
-import logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from textminingservice_biokb import logger
 
 
 def standardise_underscored_entity_code(entity_code: str) -> str:
