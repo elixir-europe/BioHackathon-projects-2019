@@ -59,6 +59,28 @@ def getCooccurrences(entity: str):
         return jsonify(results)
 
 
+@app.route('/bulk/getCooccurrence/', methods=['GET', 'POST'])
+def bulkGetCooccurrences():
+    entities = request.args.getlist('entity')
+    entities = [entity for entity in entities if entity != '']
+    if len(entities) == 0:
+        abort(400)
+    limit = request.args.get('limit', default=20, type=int)
+    entity_types = request.args.getlist('type', type=int)
+    if len(entity_types) == 0:
+        entity_types = None
+    logger.info(
+        f'Bulk getCooccurrences parameters. Entities {entities} limit: {limit} types: {entity_types}')
+    tmdm = TextMiningDeMultiplexer()
+
+    response = {}
+    for entity in entities:
+        results = tmdm.get_co_occurrences(
+            entity, limit=limit, types=entity_types)
+        response[entity] = results
+    return jsonify(response)
+
+
 # Type	entity type
 # any > 0	Proteins of species with this NCBI tax id
 # -1	chemicals
