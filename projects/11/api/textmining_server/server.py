@@ -6,10 +6,17 @@ from textminingservice.exporters.exporters import export_aggregated_mentions_cyt
 from flask import Flask, request, abort
 import json
 from flask_cors import CORS
-import logging
 
-logging.basicConfig(level=logging.INFO)
+import logging
+from logging import StreamHandler, Formatter
+FORMAT = '%(asctime)s %(levelname)s %(name)s.%(funcName)s ::: %(message)s'
+DATE_FORMAT = '%b %d %H:%M:%S'
+formatter = Formatter(fmt=FORMAT, datefmt=DATE_FORMAT)
+handler = StreamHandler()
+handler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+
 
 app = Flask(__name__)
 CORS(app)
