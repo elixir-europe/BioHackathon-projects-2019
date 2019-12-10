@@ -29,7 +29,7 @@ class PMC_Europe_Service(TextMiningService):
         '/europepmc/annotations_api/annotationsByEntity?entity={}&filter={}&format={}&cursorMark={}&pageSize={}'
 
     def __init__(self):
-        super().__init__('PCM Europe',
+        super().__init__('PMC Europe',
                          'This client communicates with PCM Europe API.')
 
     def _get_single_entity_mentions(self, entity: str, pageSize: int = None):
