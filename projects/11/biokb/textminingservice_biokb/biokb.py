@@ -90,7 +90,7 @@ class BioKBService(TextMiningService):
         return publications
 
     def get_co_occurrences(self, entity: str, limit: int = 20, types: List[str] = None) -> List[CoOccurrence]:
-        logger.info('get co occurrences')
+        logger.info(f'get co occurrences for entity {entity}')
         if types is None:
             types = []
 
