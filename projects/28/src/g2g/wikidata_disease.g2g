@@ -1,0 +1,25 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+(g:HumanGene {symbol: s})
+    ?g wdt:P31 wd:Q7187 ;      # instance of gene
+       wdt:P703 wd:Q15978631 ; # found in taxon Homo sapiens
+       wdt:P353 ?s .           # HGNC gene symbol
+
+(d:Disease {name: n})
+    ?d wdt:P31 wd:Q12136 ;     # instance of disease
+       rdfs:label ?l .
+    FILTER(lang(?l) = "en")
+    BIND(str(?l) AS ?n)
+
+(m:Drug {name: n})
+    ?m wdt:P31 wd:Q12140 ;     # instance of medication
+       rdfs:label ?l .
+    FILTER(lang(?l) = "en")
+    BIND(str(?l) AS ?n)
+
+(d:Disease)-[:hasAssociatedGene]->(g:HumanGene)
+    ?d wdt:P2293 ?g .          # genetic association
+
+(d:Disease)-[:hasDrug]->(m:Drug)
+    ?d wdt:P2176 ?m .          # drug used for treatment

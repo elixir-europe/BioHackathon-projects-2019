@@ -1,0 +1,13 @@
+# Get diseases from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?disease ?name ?omim WHERE {
+    ?disease wdt:P31 wd:Q12136 ; # instance of disease
+             wdt:P492 ?omim ;    # OMIM ID
+             rdfs:label ?label .
+    FILTER(lang(?label) = "en")
+    BIND(str(?label) AS ?name)
+}

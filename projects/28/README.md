@@ -17,19 +17,19 @@
 ### Lead(s)
 
 - Ryota Yamanaka
- Shota Matsumoto
- Hirokazu Chiba
- Ramona Röß
+- Shota Matsumoto
+- Hirokazu Chiba
+- Ramona Röß
 
 ### Nominated participant(s)
 
 - Shota Matsumoto (Japan)
- Ramona Röß (Germany)
- Ryota Yamanaka (Thailand)
+- Ramona Röß (Germany)
+- Ryota Yamanaka (Thailand)
 
 ## Expected outcomes
 
-- - G2GML mapping definitions for several existing datasets (KGX, Med2RDF, DesGeNET)
+ - G2GML mapping definitions for several existing datasets (KGX, Med2RDF, DesGeNET)
  - Generated property graph datasets for the projects above
  - Sample analysis methods on graph databases and the results
  - Paper to describe the practical use of G2GML
@@ -37,8 +37,8 @@
 ## Expected audience
 
 - programmers (JavaScript, SPARQL, graph query languages)
- ontologists, data modelers (RDF, property graph)
- data analysts, algorithm developers (graph algorithms, machine learning)
+- ontologists, data modelers (RDF, property graph)
+- data analysts, algorithm developers (graph algorithms, machine learning)
 
 **Number of expected hacking days**: 4
 

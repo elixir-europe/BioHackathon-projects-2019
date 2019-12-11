@@ -1,0 +1,22 @@
+# Get taxon from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?taxon ?rank ?name ?commonName ?image ?map WHERE {
+    ?taxon wdt:P31 wd:Q16521 ; # instance of taxon
+           wdt:P105/rdfs:label ?label ;
+           wdt:P1843 ?commonNameLang ;
+           wdt:P225 ?name .    # taxon name
+    FILTER(lang(?label) = "en")
+    BIND(str(?label) AS ?rank)
+    FILTER(lang(?commonNameLang) = "en")
+    BIND(str(?commonNameLang) AS ?commonName)
+    OPTIONAL {
+        ?taxon wdt:P18 ?image .
+    }
+    OPTIONAL {
+        ?taxon wdt:P181 ?map .
+    }
+}

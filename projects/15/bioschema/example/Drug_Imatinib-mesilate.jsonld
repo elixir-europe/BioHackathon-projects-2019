@@ -1,0 +1,6 @@
+{"@context": "http://schema.org/", 
+ "@type": "Drug", 
+ "@id": "https://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=69297", 
+ "activeIngredient": "Imatinib-mesilate", 
+ "description": "neant", 
+ "alternateName": "STI571" } 

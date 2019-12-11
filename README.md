@@ -15,6 +15,7 @@ Access for this repository can be requested over the gitter channel [![Join the 
 
 (ordered by project number)
 
+* [Project 5](projects/5): Disease and pathway maps for Rare Diseases
 * [Project 6](projects/6): Copy Number Variation Beacon
 * [Project 8](projects/8): Scalable delivery of FAIR training in Life Sciences using Galaxy and the Carpentries training material
 * [Project 7](projects/7): Towards seamless Galaxy and InterMine integration: Enhanced region analysis
@@ -26,7 +27,9 @@ Access for this repository can be requested over the gitter channel [![Join the 
 * [Project 25](projects/25): Designing a Software Management Plan as ELIXIR guidelines
 * [Project 26](projects/26): Data Ingestion Pipeline for the IDP Community
 * [Project 27](projects/27): FAIR Identifier Mapping: Building Bridges Between Communities
+* [Project 29](projects/29): Semantic recommendation system for life sciences publications
 * [Project 31](projects/31): Bioconda and Biocontainers helpdesk
+* [Project 32](projects/32): Nightingale - Data visualization web components for the life sciences
 
 ## BioHackathon IP disclaimer
 

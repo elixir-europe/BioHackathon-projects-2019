@@ -24,7 +24,17 @@
 - Hans Ienasescu, (bio.tools expert)
 - Alban Gaignard (ELIXIR-FR)
 
-## Expected outcomes
+## New priorities (set during the hackathon)
+
+1. **ELIXIR Tools platform ecosystem** - gathering technical requirements from the tools platform and stakeholders. Planning.
+2. **Tool information profiles** - to specifies which tool attributes - defined in biotoolsSchema - should be specified within a set of tool descriptions, e.g. from a project, institute, ELIXIR node *etc.*
+3. **Bioschema tool profile** - settle this 
+4. **Bioschema data dump and embedding** - dump of Bioschema (schema.org) metadata for all tools in *bio.tools*. Embed schema.org mark-up in *bio.tools*
+5. **biotoolsSchema & bio.tools updates** - *e.g.* support for organisational IDs
+6. **bio.tools subdomains** (discussion) more flexible / sustainable ways to define *bio.tools* subdomain content
+
+
+## Original plans
 
 At least a couple of the following:
 

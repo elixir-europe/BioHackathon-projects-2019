@@ -1,0 +1,8 @@
+# Get taxon parent from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?taxon ?parent WHERE {
+    ?taxon wdt:P171 ?parent .
+}

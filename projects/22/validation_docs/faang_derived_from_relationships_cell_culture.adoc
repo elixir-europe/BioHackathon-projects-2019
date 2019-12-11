@@ -1,0 +1,13 @@
+## Title: cell culture "derived from" relationships
+
+#### Description
+
+Checks that 'source' of 'derived from' relationship has a material
+'cell culture' and 'target' has a material 'specimen from organism' or
+'target' has a material 'cell specimen'
+
+#### Query
+[source,cypher]
+----
+MATCH (a:Biosample)-[r:DERIVED_FROM]->(b:Biosample) WHERE a.material='cell culture' AND NOT (b.material='specimen from organism' OR b.material='cell specimen') RETURN a.accession, b.accession
+----

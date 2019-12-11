@@ -1,0 +1,12 @@
+# Get drugs from Wikidata
+# @endpoint http://query.wikidata.org/sparql
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?drug ?name WHERE {
+    ?drug wdt:P31 wd:Q12140 ; # instance of medication
+          rdfs:label ?label .
+    FILTER(lang(?label) = "en")
+    BIND(str(?label) AS ?name)
+}

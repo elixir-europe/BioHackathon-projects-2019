@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "29-semantic-recommendation-system"
+version = "0.0.1"
+description = "Building an ontology for biology publications in real-time using event stream processing"
+
+license = "GPL"
+
+authors = [
+    "Mustafa Anil Tuncel <mustafa.tuncel@bsse.ethz.ch>",
+    "Kim Philipp Jablonski <kim.jablonski@bsse.ethz.ch>",
+    "Ivan Topolsky <ivan.topolsky@bsse.ethz.ch>"
+]
+
+readme = "README.md"
+
+repository = "https://github.com/elixir-europe/BioHackathon-projects-2019/"
+
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+pyyaml = "^3.13"
+flask = "^1.0"
+rdflib = "^4.2"
+requests = "^2.20"
+SPARQLWrapper = "^1.8"
+flask-paginate = "^0.5.1"
+lxml = "^4.2.5"
+tweepy= ">=3.6.0"
+uwsgi = {version = "^2.0",optional = true,extras = ["uwsgi"]}
+neo4j = "^1.7"
+fastapi = "^0.42.0"
+fastapi_contrib = "^0.1.17"
+uvicorn = "^0.10.8"
+
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.6"
+
+
+[tool.poetry.extras]
+uwsgi = ["uwsgi"]

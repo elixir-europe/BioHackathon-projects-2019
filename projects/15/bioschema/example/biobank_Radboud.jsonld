@@ -1,0 +1,29 @@
+{
+  "@context": "http://schema.org",
+  "@id": "https://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=504457",
+  "@type": "Organization",
+  "spatialCoverage": "Regional",
+  "url": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.radboudumc.nl/en/research/technology-centers/radboud-biobank"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@id": "https://www.orpha.net/consor/cgi-bin/Directory_Professionals.php?lng=EN&data_id=38066&MISSING%20CONTENT=Pr-D-W---Dorine--SWINKELS&title=Pr%20D.W.%20[Dorine]%20SWINKELS&search=Directory_Professionals_Simple",
+      "@type": "Person",
+      "name": "Pr D.W. [Dorine] SWINKELS",	
+      "telephone": "+31 (0)24 361 4567",
+      "address": "Translationeel Metabool Laboratorium, Afdeling Laboratoriumgeneeskunde, Radboudumc - Radboud universitair medisch centrum, Geert Grooteplein-Zuid 10, 6525 GA NIJMEGEN, NETHERLANDS"
+    }
+  ],
+  "dct:conformsTo": "https://bioschemas.org/specifications/Organization/0.2-DRAFT",
+  "keywords": "Biobanks",
+  "legalName": "Radboud Biobank - Iron Biobank (cell lines, DNA, serum and urine)",
+  "name": "Radboud Biobank - Iron Biobank (cell lines, DNA, serum and urine)",
+  "topic": [
+    "https://www.wikidata.org/wiki/Q57261729",
+    "http://purl.obolibrary.org/obo/OMIABIS_0000010"
+  ]
+}
