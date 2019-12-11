@@ -1,13 +1,12 @@
-from flask import Flask, request, abort, jsonify
-from flask_cors import CORS
-
-from textminingservice.aggregator import TextMiningDeMultiplexer
-from textminingservice.exporters.exporters import export_aggregated_mentions_cytoscape, export_aggregated_cooccurrences_cytoscape
-from flask import Flask, request, abort
-import json
-from flask_cors import CORS
-
 import logging
+import json
+from flask import Flask, request, abort
+from textminingservice.exporters.exporters import export_aggregated_mentions_cytoscape, export_aggregated_cooccurrences_cytoscape
+from textminingservice.aggregator import TextMiningDeMultiplexer
+from flask_cors import CORS
+from flask import Flask, request, abort, jsonify
+
+
 logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s.%(funcName)s @ %(name)s ::: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.INFO)
@@ -73,11 +72,17 @@ def bulkGetCooccurrences():
         f'Bulk getCooccurrences parameters. Entities {entities} limit: {limit} types: {entity_types}')
     tmdm = TextMiningDeMultiplexer()
 
+    format = request.args.get('format')
+
     response = {}
     for entity in entities:
         results = tmdm.get_co_occurrences(
             entity, limit=limit, types=entity_types)
-        response[entity] = results
+        if format == 'cytoscape':
+            response[entity] = export_aggregated_cooccurrences_cytoscape(
+                entity, results)
+        else:
+            response[entity] = results
     return jsonify(response)
 
 
