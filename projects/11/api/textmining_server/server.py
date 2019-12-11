@@ -24,14 +24,20 @@ def ping():
 
 @app.route('/getMentions/', methods=['GET', 'POST'])
 def get_mentions():
-    entities = request.args.getlist('entity')
+    if request.method == 'POST':
+        data = request.form
+    else:
+        data = request.args
+
+    entities = data.getlist('entity')
+    limit = data.get('limit', default=20, type=int)
+    format = data.get('format')
+
     entities = [entity for entity in entities if entity != '']
     if len(entities) == 0:
         abort(400)
-    limit = request.args.get('limit', default=20, type=int)
     logger.info(f'getMentions parameters. Entities {entities} limit: {limit}')
     tmdm = TextMiningDeMultiplexer()
-    format = request.args.get('format')
     results = tmdm.get_mentions(entities, limit=limit)
     if format == 'cytoscape':
         return jsonify(export_aggregated_mentions_cytoscape(entities, results))
@@ -41,17 +47,25 @@ def get_mentions():
 
 @app.route('/getCooccurrence/<entity>', methods=['GET', 'POST'])
 def getCooccurrences(entity: str):
+    if request.method == 'POST':
+        data = request.form
+    else:
+        data = request.args
+
     if entity == '':
         abort(400)
-    limit = request.args.get('limit', default=20, type=int)
-    entity_types = request.args.getlist('type', type=int)
+
+    limit = data.get('limit', default=20, type=int)
+    entity_types = data.getlist('type', type=int)
+    format = data.get('format')
+
     if len(entity_types) == 0:
         entity_types = None
     logger.info(
         f'getCooccurrences parameters. Entity {entity} limit: {limit} types: {entity_types}')
     tmdm = TextMiningDeMultiplexer()
     results = tmdm.get_co_occurrences(entity, limit=limit, types=entity_types)
-    format = request.args.get('format')
+
     if format == 'cytoscape':
         return jsonify(export_aggregated_cooccurrences_cytoscape(entity, results))
     else:
@@ -60,19 +74,24 @@ def getCooccurrences(entity: str):
 
 @app.route('/bulk/getCooccurrence/', methods=['GET', 'POST'])
 def bulkGetCooccurrences():
-    entities = request.args.getlist('entity')
+    if request.method == 'POST':
+        data = request.form
+    else:
+        data = request.args
+
+    entities = data.getlist('entity')
+    limit = data.get('limit', default=20, type=int)
+    entity_types = data.getlist('type', type=int)
+    format = data.get('format')
+
     entities = [entity for entity in entities if entity != '']
     if len(entities) == 0:
         abort(400)
-    limit = request.args.get('limit', default=20, type=int)
-    entity_types = request.args.getlist('type', type=int)
     if len(entity_types) == 0:
         entity_types = None
     logger.info(
         f'Bulk getCooccurrences parameters. Entities {entities} limit: {limit} types: {entity_types}')
     tmdm = TextMiningDeMultiplexer()
-
-    format = request.args.get('format')
 
     response = {}
     for entity in entities:
