@@ -35,7 +35,22 @@ We streamlined different tools and platforms to enable pan-resource searches for
 
 ## Approach and resources
 
-Our workflow can be subdivided into three separate steps
+Our workflow can be subdivided into three, conceptually separate steps:
+
+1. Getting data about the disease context for a given RD
+2. Creating a network of known mechanisms from a set of selected repositories
+3. Producing an online, interactive map prototype
+
+### Disease context
+In order to introduce disease context, we focused on two major resources: OrphaNet ([orpha.net](https://www.orpha.net)) and Human Phenotype Ontology (HPO) [PMID:27899602](https://www.ncbi.nlm.nih.gov/pubmed/27899602). Unique identifiers of OrphaNet allow to identify an RD, and if this disease is still not classified, it is possible to identify a proximal OrphaNet id by similarity of HPO terms.
+
+For given OrphaNet identifers, we obtained the list of relevant genes and variants by combining: i) gene-disease mapping of OrphaNet, ii) gene-disease and variant-disease mapping of DisGeNET [PMID:25877637](https://www.ncbi.nlm.nih.gov/pubmed/25877637) ([disgenet.org](https://www.disgenet.org)), iii) variant-disease mapping of OpenTargets platform [PMID:30462303](https://www.ncbi.nlm.nih.gov/pubmed/30462303) ([opentargets.org](https://www.opentargets.org)) and iii) variant-disease mapping of ClinVar ([www.ncbi.nlm.nih.gov/clinvar/](https://www.ncbi.nlm.nih.gov/clinvar/)).
+
+In parallel, for same OrphaNet identifers, we searched ArrayExpress [PMID:30357387](https://www.ncbi.nlm.nih.gov/pubmed/30357387) ([www.ebi.ac.uk/arrayexpress/](https://www.ebi.ac.uk/arrayexpress/)) and Gene Expression Omnibus [PMID:27008011](https://www.ncbi.nlm.nih.gov/pubmed/27008011) ([www.ncbi.nlm.nih.gov/geo/](http://www.ncbi.nlm.nih.gov/geo/)) to retrieve a list of Differentially Expressed Genes (DEGs), to extend the the set of disease-associated genes.
+
+### Network of mechanisms
+
+### Interactive prototype
 
 One of such tools is MINERVA platform [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494), allowing hosting and visual exploration of curated disease maps. Another tool of choice is Hipathia platform, allowing to interpret gene expression and mutation data into perturbations of signaling pathways. We will combine these two platforms with the content-rich DisGeNET resource and with our BioKB text mining platform for identification of evidence supporting a particular RD. We will also scan the contents of publicly available disease maps and OpenTargets for potential information pieces. We will align this bioinformatics setup with available data repositories for RDs, like RD-connect, to enable data-driven search for relevant knowledge. The search and visualization of the results will be implemented using existing building blocks, including the MINERVA plugin architecture.
 
