@@ -55,7 +55,7 @@ Disease maps offer standardized and diagrammatic description of disease mechanis
 
 Another set of resources that support building the network of mechanisms are pathway databases. They also offer diagrammatic description of mechanisms in molecular biology, but less relevant to a particular disease. Nevertheless, they area a valuable resource and can be evaluated using enrichment. We focused on WikiPathways [PMID:29136241](https://www.ncbi.nlm.nih.gov/pubmed/29136241) ([wikipathways.org](https://wikipathways.org)).
 
-Finally, to fetch potentially novel interactions between the preselected genes, we used String [PMID:30476243](https://www.ncbi.nlm.nih.gov/pubmed/30476243) ([string-db.org](https://string-db.org/)). Imporantly, a parallel project in BioHAckathon'19 focused on "[Text-mining and semantic web technologies](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/11)", and we worked to incorporate their outcomes into our workflow. As most of text mining interactions are non-directional and may contain noise, we relied on the OmniPath resource [PMID:27898060](https://www.ncbi.nlm.nih.gov/pubmed/27898060) to increase reliability, and to obtain directionality and sign of interaction.
+Finally, to fetch potentially novel interactions between the preselected genes, we used STRING [PMID:30476243](https://www.ncbi.nlm.nih.gov/pubmed/30476243) ([string-db.org](https://string-db.org/)). Imporantly, a parallel project in BioHAckathon'19 focused on "[Text-mining and semantic web technologies](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/11)", and we worked to incorporate their outcomes into our workflow. As most of text mining interactions are non-directional and may contain noise, we relied on the OmniPath resource [PMID:27898060](https://www.ncbi.nlm.nih.gov/pubmed/27898060) to increase reliability, and to obtain directionality and sign of interaction.
 
 ### Interactive prototype
 As mentioned above, we chose SBML with render and layout to harmonize and integrate different resources, using the MINERVA Platform [PMID:28725475](https://www.ncbi.nlm.nih.gov/pubmed/28725475), and in particular its conversion capabilities [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494). MINERVA was chosen as a platform to host the generated disease map, making it interactive and allowing to visually explore omics data.
@@ -63,5 +63,19 @@ As mentioned above, we chose SBML with render and layout to harmonize and integr
 To extend the use of the prototype disease map beyond visual exploration, we investigated Hipathia platform [PMID:31831811](https://www.ncbi.nlm.nih.gov/pubmed/31831811)([hipathia.babelomics.org](http://hipathia.babelomics.org/)), allowing to interpret gene expression and mutation data into perturbations of signaling pathways. We focused on interface between Hipathia and MINERVA to enable analysis of the disease map, and visualizatio of the analysis results.
 
 ## Results at the BioHackathon'19
+
+### Step 2. Assemly and extension of network of mechanisms
+
+We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
+
+#### Disease maps and pathway databases
+
+#### Text mining
+
+**STRING**  
+STRING integrates primary and predicted interactions, includes annotated pathway knowledge, text-mining results and data obtained by orthology. The query to STRING retrieves the first ``n`` neighbors of the seed genes. The number of neighbors can be adjusted by modifying the configuration of the workflow (see below). Moreover, the score for the associations among the seed proteins and the extended list of proteins can be set by modifying the parameter score in the configuration file. By default, the score equals zero.
+
+**OmniPath**  
+The query to OmniPath retrieves all associations in the database for the seed genes. The information from OmniPath includes directionality (values = 1 means direction, value=0 means no direction). The column ``consensus_directionality`` reflects the fact that some evidences might indicated the directionality to be from protein A to protein B for a given pair, and also from protein B to protein A. We also extracted from Omnipath the references supporting the relationship between the pairs of proteins. To the information from STRING, the information from OmniPath is added, to provide directionality to those pairs of proteins reported by both resources.
 
 ## Summary and outlook
