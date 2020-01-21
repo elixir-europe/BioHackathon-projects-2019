@@ -65,12 +65,15 @@ To extend the use of the prototype disease map beyond visual exploration, we inv
 ## Results at the BioHackathon'19
 
 ### Step 2. Assemly and extension of network of mechanisms
-
 We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
 
-#### Disease maps and pathway databases
+#### Disease maps
+Disease maps hosted on MINERVA can be queried via API calls, adn their content can be retrieved, including layout and network structure. We used Parkinson's disease map ([pdmap.uni.lu](https://pdmap.uni.lu)) as an example in our workflow. Nevertheless, source disease maps, if they are open access, can be set in configuration files of the workflow. For each selected disease map, the workflow performs Gene Set Enrichment Analysis for the seed genes (for GSEA in MINERVA see [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494)) and indicates enriched areas for later integration.
 
-#### Text mining
+#### Pathway databases
+We used the ``enrichR`` package, an R-based interface to the Enrichr server ([PMID:27141961](https://www.ncbi.nlm.nih.gov/pubmed/27141961)) to calculate pathway enrichment for the seed genes. As ``enrichR`` allows for querying multiple packages at once, a configuretion file (see below) allows to indicate, which pathway databases can be used. Currently, our workflow handles only the contents of Wikipathways.
+
+#### Text mining nad interaction databases
 
 **STRING**  
 STRING integrates primary and predicted interactions, includes annotated pathway knowledge, text-mining results and data obtained by orthology. The query to STRING retrieves the first ``n`` neighbors of the seed genes. The number of neighbors can be adjusted by modifying the configuration of the workflow (see below). Moreover, the score for the associations among the seed proteins and the extended list of proteins can be set by modifying the parameter score in the configuration file. By default, the score equals zero.
@@ -78,4 +81,12 @@ STRING integrates primary and predicted interactions, includes annotated pathway
 **OmniPath**  
 The query to OmniPath retrieves all associations in the database for the seed genes. The information from OmniPath includes directionality (values = 1 means direction, value=0 means no direction). The column ``consensus_directionality`` reflects the fact that some evidences might indicated the directionality to be from protein A to protein B for a given pair, and also from protein B to protein A. We also extracted from Omnipath the references supporting the relationship between the pairs of proteins. To the information from STRING, the information from OmniPath is added, to provide directionality to those pairs of proteins reported by both resources.
 
+### Step 3. Integration of map pieces into a prototype
+
+### Step 4. Streamlining of the previous steps and configuration of the workflow
+
 ## Summary and outlook
+
+Notes for later:
+- SPARQL query to Wikipathways
+- Deeper integration with text mining service
