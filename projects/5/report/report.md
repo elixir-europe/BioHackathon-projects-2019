@@ -41,6 +41,9 @@ Our workflow can be subdivided into three, conceptually separate steps:
 2. Creating a network of known mechanisms from a set of selected repositories
 3. Producing an online, interactive map prototype
 
+All code is available in the open gitlab repository:
+[https://git-r3lab.uni.lu/david.hoksza/bh19-rare-diseases](https://git-r3lab.uni.lu/david.hoksza/bh19-rare-diseases)
+
 ### Disease context
 In order to introduce disease context, we focused on two major resources: OrphaNet ([orpha.net](https://www.orpha.net)) and Human Phenotype Ontology (HPO) [PMID:27899602](https://www.ncbi.nlm.nih.gov/pubmed/27899602). Unique identifiers of OrphaNet allow to identify an RD, and if this disease is still not classified, it is possible to identify a proximal OrphaNet id by similarity of HPO terms.
 
@@ -85,7 +88,10 @@ The query to OmniPath retrieves all associations in the database for the seed ge
 
 ### Step 3. Integration of map pieces into a prototype
 
+We have 
+
 ### Step 4. Streamlining of the previous steps and configuration of the workflow
+
 
 ## Summary and outlook
 
