@@ -64,6 +64,8 @@ To extend the use of the prototype disease map beyond visual exploration, we inv
 
 ## Results at the BioHackathon'19
 
+### Step 1. Gathering disease-related genes and variants (seed genes)
+
 ### Step 2. Assemly and extension of network of mechanisms
 We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
 
