@@ -95,9 +95,9 @@ MINERVA Platform (v15, currently in beta) is capable of importing and exporting 
 
 Text mining informationhas inherently no layout nor rendering information. For these elements, a circular layout was introduced.
 
-The newly implemented functionality integrated the pieces from **Step 2** in a mesh-like layout. See image below for an example.
+The newly implemented functionality integrated the pieces from **Step 2** in a mesh-like layout. See image below for an example. In the image, Wikipathways content is in the upper part of the map, text mining results in the middle, and the content from disease maps at the bottom.
 
-
+![An example map](assembled_map.png)
 
 ### Step 4. Streamlining of the previous steps and configuration of the workflow
 
