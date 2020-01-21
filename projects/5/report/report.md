@@ -87,8 +87,17 @@ STRING integrates primary and predicted interactions, includes annotated pathway
 The query to OmniPath retrieves all associations in the database for the seed genes. The information from OmniPath includes directionality (values = 1 means direction, value=0 means no direction). The column ``consensus_directionality`` reflects the fact that some evidences might indicated the directionality to be from protein A to protein B for a given pair, and also from protein B to protein A. We also extracted from Omnipath the references supporting the relationship between the pairs of proteins. To the information from STRING, the information from OmniPath is added, to provide directionality to those pairs of proteins reported by both resources.
 
 ### Step 3. Integration of map pieces into a prototype
+We implemented functionality to integrate all the pieces assembled in **Step 2**, namely disease map segments, pathways and text mining data. 
 
-We have 
+Disease map segments, identified via GSEA for the seed genes, were retrieved from respective disease maps. Because this content is hosted by MINERVA, these pieces have their layout and rendering information fully preserved.
+
+MINERVA Platform (v15, currently in beta) is capable of importing and exporting GPML format, used by Wikipathways. This allows for programmatic handling of pathways enriched in **Step 2**. Because of the translation between two different layout and rendering descriptions, some details, e.g. custom images or interactions without reactant/product, are lost.
+
+Text mining informationhas inherently no layout nor rendering information. For these elements, a circular layout was introduced.
+
+The newly implemented functionality integrated the pieces from **Step 2** in a mesh-like layout. See image below for an example.
+
+
 
 ### Step 4. Streamlining of the previous steps and configuration of the workflow
 
