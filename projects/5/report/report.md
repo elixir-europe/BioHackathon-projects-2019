@@ -109,6 +109,20 @@ Finally the variants can be filtered by their allele frequency in several popula
 
  ### Step 4. Streamlining of the previous steps and configuration of the workflow
 
+The workflow is implemented as a shell pipeline which can be configured by a parameters file where the user can set all the parameters mentioned above including the list of disease identifiers. The output of the pipeline is a ZIP file containing the disease map with genetic and variants overlays and can be imported into [MINERVA](https://minerva.pages.uni.lu/). The pipeline implements the above described steps in the following order:
+
+1. Obtain gene-disease and variant-disease mapping from DisGeNET. 
+2. Obtain gene-disease and variant-disease mapping from OpenTargets.
+3. Obtain possibly pathogenic ClinVar variants and genes pertinent to given disease.
+4. Compile list of of genes associated with disease from all the input sources.
+5. Extend the list of genes by going to other resources such as OmniPath or text mining.
+6. Compile list of of variants associated with disease from all the input sources.
+7. Filter out variants with high allele frequency using Ensemble's VEP (Variant Effect Predictor) service.
+8. Obtain variant information (position, protein-level mapping) and store it for MINERVA genetic variant overlay.
+9. From resources such as existing disease maps or WikiPathways obtain enriched pathways 
+with respect to the disease-associated genes obtained from previous step.
+10. Compile the obtained pathways into a single disease map.
+11. Bundle the disease map with genetic and variant overlays into a single archive to be then uploaded to [MINERVA](https://minerva.pages.uni.lu/).  
 
  ## Summary and outlook
 
