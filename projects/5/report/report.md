@@ -69,6 +69,12 @@
 
  ### Step 1. Gathering disease-related genes and variants (seed genes)
 
+To obtain the disease-associated genes and variants, the workflow implements scripts to query [DisGeNET](http://www.disgenet.org/), [OpenTargets](https://www.opentargets.org/) and [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/). 
+
+Both DisGeNET and Open Targets scripts connect to the respective resources via their API and return a JSON file containing associated genes and their variants, including the association score provided by the respective platform. The scripts can be passed the required level of the association score and the maximum number of genes to be returned. The input to these scripts is a list of disease identifiers in the form of Orphanet identifiers. The Orphanet identifier is passed directly as query to Open Targets, however, DisGeNET requires UMLS identifier on its input and therefore [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) API is first called to translate the Orphanet identifiers to the corresponding UMLS identifieriers. All the parameters can be set in the workflow configuration files.
+
+The list of genes and variants are then contrasted with ClinVar data which is provided as a preprocessed file. The script goes through the obtained genes and variants and carries out pairwise comparison of ClinVar non-pathogenic variants (and thus also genes) with the  DisGeNET and Open Targets genes and variants. The script outputs a combined list of genes and variants pertinent to given disease, but also a report showing the difference in representation of genes and variants across the resources.
+
  ### Step 2. Assembly and extension of network of mechanisms
  We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
 
