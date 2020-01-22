@@ -117,7 +117,7 @@ The workflow is implemented as a shell pipeline which can be configured by a par
 4. Compile list of of genes associated with disease from all the input sources.
 5. Extend the list of genes by going to other resources such as OmniPath or text mining.
 6. Compile list of of variants associated with disease from all the input sources.
-7. Filter out variants with high allele frequency using Ensemble's VEP (Variant Effect Predictor) service.
+7. Filter out variants with high allele frequency using Ensemble's VEP service.
 8. Obtain variant information (position, protein-level mapping) and store it for MINERVA genetic variant overlay.
 9. From resources such as existing disease maps or WikiPathways obtain enriched pathways 
 with respect to the disease-associated genes obtained from previous step.
