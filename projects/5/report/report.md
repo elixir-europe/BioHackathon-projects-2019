@@ -75,6 +75,8 @@ Both DisGeNET and Open Targets scripts connect to the respective resources via t
 
 The list of genes and variants are then contrasted with ClinVar data which is provided as a preprocessed file. The script goes through the obtained genes and variants and carries out pairwise comparison of ClinVar non-pathogenic variants (and thus also genes) with the  DisGeNET and Open Targets genes and variants. The script outputs a combined list of genes and variants pertinent to given disease, but also a report showing the difference in representation of genes and variants across the resources.
 
+Finally the variants can be filtered by their allele frequency in several populations available in the [Ensembl](http://www.ensembl.org/index.html) database. This is done through the [Ensemble API endpoint](https://rest.ensembl.org/documentation/info/vep\_id\_post). 
+
  ### Step 2. Assembly and extension of network of mechanisms
  We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
 
