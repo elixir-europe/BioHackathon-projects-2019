@@ -107,6 +107,14 @@ The newly implemented functionality integrated the pieces from **Step 2** in a m
 
 ![An example map](assembled_map.png)
 
+Moreover, we worked on an interface from MINERVA to a full pathway-based analysis and visualization of disease maps in HiPhathia web tool. The task is divided in back-end and front-end related work. The back-end was developed under the Java EE platform, using Java 11 and the Spring Framework plus Spring Batch for managing the job queue, and a Mongo database for data persistence. The front-end was prototyped using TypeScript and ReactJS.
+
+**Back-end**  
+First, a service with a RESTful interface takes an identifier from MINERVA Platform network and a RD expression dataset as inputs, decompresses and stores the files in a temporal folder and queues the files to the second service, returning a job identifier. Second, a Mongo and Spring Batch based service downloads MINERVA-hosted disease map using dedicated services, developed during the BioHackathon. The map is preprocessed for its use in HiPhathia web tool. Then, HiPathia algorithm for pathway-based analysis is executed as an R script. Finally, a HTTP server is prepared for the visualization of the results from HiPathia pathway-based analysis,with an URL based on the job identifier.
+
+**Front-end**
+We developed a web component for its inclusion in Hipathia Web (and possibly in MINERVA) allowing the user to upload experimental data and select a MINERVA disease map, execute the corresponding Hipathia analysis, and view the results.
+
 ### Step 4. Streamlining of the previous steps and configuration of the workflow
 
 The workflow is implemented as a shell pipeline which can be configured by a parameters file where the user can set all the parameters mentioned above including the list of disease identifiers. The output of the pipeline is a ZIP file containing the disease map with genetic and variants overlays and can be imported into [MINERVA](https://minerva.pages.uni.lu/). The pipeline implements the above described steps in the following order:
