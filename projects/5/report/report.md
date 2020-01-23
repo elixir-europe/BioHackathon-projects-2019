@@ -142,8 +142,8 @@ with respect to the disease-associated genes obtained from previous step.
 10. Compile the obtained pathways into a single disease map.
 11. Bundle the disease map with genetic and variant overlays into a single archive to be then uploaded to [MINERVA](https://minerva.pages.uni.lu/).  
 
- ## Summary and outlook
+## Summary and outlook
 
- Notes for later:
- - SPARQL query to Wikipathways
- - Deeper integration with text mining service
+The workflow integrating disease and pathway maps according to a given RD identifier may be helpful for RD researchers in setting up their respective knowledge repositories, and mapping their datasets. There are a number of improvements we foresee for this work, including using SPARQL query of Wikipathways for more accurate enrichment, deeper integration with text mining service developed during the BioHackathon'19, or improvement of the Hipathia interface.
+
+The workflow can be expanded on each step, adding i) new gene candidate resources, ii) new pathway databases or iii) introducing layout for text mining results and broaden the downstream map analysis. We will continue our work to explore these directions
