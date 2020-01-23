@@ -77,6 +77,14 @@ The list of genes and variants are then contrasted with ClinVar data which is pr
 
 Finally, we scripted functions in R language to search microarrays datasets for a given rare disease in ArrayExpress and GEO databases. The user can select the organism of the datasets to be searched and filter the type/s of microarrays. Raw or normalized gene expression data can be downloaded, normalized and annotated using microarray annotation for each study. The user can choose between by study normalization or all studies as one batch normalization. Then, according to SD and QC analyses, samples are selected for the downstream processing, and, based on clinical metadata of the dataset, clinical variable is selected to assign samples to case/control groups. Finally, the script performs a meta-analysis using metaMA data and retrieves a list of differentially expressed genes (DEGs) for further analyses.
 
+Technical issues to be considered when calculating DEGs from GEO and ArrayExpress:
+- Missing clinical/phenotype data from datasets prohibits group definition for DEGs calculation.
+- The variability of the platforms and technologies for MicroArrays studies is challenging for systematic translation of probes to gene ids and for automatic data retrieval.
+- Data normalization and QC cannot be fully automated.
+- In order to perform meta-analysis, data must be homogeneously normalized, that implies
+that only raw datasets should be retrieved.
+- The definition of case/control groups must be made manually, and often needs from clinical and disease knowledge.
+
 ### Step 2. Assembly and extension of network of mechanisms
 We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
 
@@ -114,6 +122,8 @@ First, a service with a RESTful interface takes an identifier from MINERVA Platf
 
 **Front-end**
 We developed a web component for its inclusion in Hipathia Web (and possibly in MINERVA) allowing the user to upload experimental data and select a MINERVA disease map, execute the corresponding Hipathia analysis, and view the results.
+
+The existing implementation of Hipathia serves the results over HTTP directly from R. Currently, this is hardwired in code, which lacks sophistication to specify multiple URIs for multiple analyses, and is challenging for our Java-based architecture. This was circumvented with temporary workaround by copying the results to an existing Apache HTTP server folder. A more satisfying solution requires evolving the related Hipathia function.
 
 ### Step 4. Streamlining of the previous steps and configuration of the workflow
 
