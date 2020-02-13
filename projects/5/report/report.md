@@ -1,31 +1,66 @@
-# Disease and pathway maps for Rare Diseases
+---
+title: 'Disease and pathway maps for Rare Diseases'
+tags:
+  - rare diseases
+  - gene-disease association
+  - disease maps
+  - pathway diagrams
+  - systems biomedicine
+authors:
+  - name: Marek Ostaszewski
+    orcid: 0000-0003-1473-370X
+    affiliation: 1
+  - name: Piotr Gawron
+    orcid: 0000-0002-9328-8052
+    affiliation: 1
+  - name: David Hoksza
+    orcid: 0000-0003-4679-0557
+    affiliation: 1
+  - name: Laura I. Furlong 
+    orcid: 0000-0002-9383-528X
+    affiliation: 2
+  - name: Janet Pinero 
+    orcid: 0000-0003-1244-7654
+    affiliation: 2
+  - name: Joaquin Dopazo
+    orcid: 0000-0003-3318-120X
+    affiliation: 3
+  - name: Maria Pena Chilet
+    orcid: 0000-0002-6445-9617
+    affiliation: 3
+  - name: Marina Esteban
+    orcid: 0000-0003-2632-9587
+    affiliation: 3
+  - name: Jose Luis Fernandez
+    orcid: 0000-0003-2632-9587
+    affiliation: 3
+  - name: Vincenza Colonna
+    orcid: 0000-0002-3966-0474
+    affiliation: 4
+affiliations:
+  - name: LCSB, University of Luxembourg, Luxembourg
+    index: 1
+  - name: University Pompeu Fabra, Barcelona, Spain
+    index: 2
+  - name: Fundacion Progreso y Salud, Sevilla, Spain
+    index: 3
+  - name: Institute of Genetics and Biophysics, National Research Council of Italy
+    index: 4
+date: 12 February 2020
+---
 
-## Authors
- - **Submitter and proponent:** Marek Ostaszewski
- - **Leads:** Marek Ostaszewski, Laura I. Furlong, Joaquin Dopazo
- - **Nominated participants:** Maria Pena Chilet, Piotr Gawron
- - **Participants:** Janet Pinero, Marina Esteban, Jose Luis Fernandez, David Hoksza, Vincenza Colonna
+<!--
 
-### LCSB, University of Luxembourg, Luxembourg
- - Piotr Gawron (0000-0002-9328-8052)
- - David Hoksza (0000-0003-4679-0557)
- - Marek Ostaszewski (0000-0003-1473-370X)
+The report.md, bibtex and figure file can be found in this repo:
 
-### University Pompeu Fabra, Barcelona, Spain
- - Laura I. Furlong (0000-0002-9383-528X)
- - Janet Pinero (0000-0003-1244-7654)
+ https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/5/report
 
-### Fundacion Progreso y Salud, Sevilla, Spain
- - Joaquin Dopazo (0000-0003-3318-120X)
- - Maria Pena Chilet (0000-0002-6445-9617)
- - Marina Esteban (0000-0003-2632-9587)
- - Jose Luis Fernandez ()
+To modify, please clone the repo. You can generate PDF of the paper by
+pasting above link (or yours) in
 
-### Institute of Genetics and Biophysics, National Research Council of Italy
- - Vincenza Colonna (0000-0002-3966-0474)
+  http://biohackrxiv.genenetwork.org/
 
-
-## Abstract
+-->
 
 ## Introduction
 
