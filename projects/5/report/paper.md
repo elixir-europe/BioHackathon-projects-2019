@@ -47,6 +47,7 @@ affiliations:
   - name: Institute of Genetics and Biophysics, National Research Council of Italy
     index: 4
 date: 12 February 2020
+bibliography: paper.bib
 ---
 
 <!--
