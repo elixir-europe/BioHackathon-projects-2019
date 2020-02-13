@@ -45,16 +45,16 @@ All code is available in the open gitlab repository:
 [https://git-r3lab.uni.lu/david.hoksza/bh19-rare-diseases](https://git-r3lab.uni.lu/david.hoksza/bh19-rare-diseases)
 
 ### Disease context
-In order to introduce disease context, we focused on two major resources: OrphaNet ([orpha.net](https://www.orpha.net)) and Human Phenotype Ontology (HPO) [PMID:27899602](https://www.ncbi.nlm.nih.gov/pubmed/27899602). Unique identifiers of OrphaNet allow to identify an RD, and if this disease is still not classified, it is possible to identify a proximal OrphaNet id by similarity of HPO terms.
+In order to introduce disease context, we focused on two major resources: OrphaNet ([orpha.net](https://www.orpha.net)) and Human Phenotype Ontology (HPO) [[1]](https://www.ncbi.nlm.nih.gov/pubmed/27899602). Unique identifiers of OrphaNet allow to identify an RD, and if this disease is still not classified, it is possible to identify a proximal OrphaNet id by similarity of HPO terms.
 
-For given OrphaNet identifiers, we obtained the list of relevant genes and variants by combining: i) gene-disease mapping of OrphaNet, ii) gene-disease and variant-disease mapping of DisGeNET [PMID:25877637](https://www.ncbi.nlm.nih.gov/pubmed/25877637) ([disgenet.org](https://www.disgenet.org)), iii) variant-disease mapping of OpenTargets platform [PMID:30462303](https://www.ncbi.nlm.nih.gov/pubmed/30462303) ([opentargets.org](https://www.opentargets.org)) and iv) variant-disease mapping of ClinVar ([www.ncbi.nlm.nih.gov/clinvar/](https://www.ncbi.nlm.nih.gov/clinvar/)). Importantly, disease-associated variants were filtered for rarity using population allele frequencies obtained from Ensembl Variant Effect Predictor (VEP) ([www.ensembl.org/info/docs/tools/vep/](https://www.ensembl.org/info/docs/tools/vep/)).
+For given OrphaNet identifiers, we obtained the list of relevant genes and variants by combining: i) gene-disease mapping of OrphaNet, ii) gene-disease and variant-disease mapping of DisGeNET [[2]](https://www.ncbi.nlm.nih.gov/pubmed/25877637) ([disgenet.org](https://www.disgenet.org)), iii) variant-disease mapping of OpenTargets platform [[3]](https://www.ncbi.nlm.nih.gov/pubmed/30462303) ([opentargets.org](https://www.opentargets.org)) and iv) variant-disease mapping of ClinVar ([www.ncbi.nlm.nih.gov/clinvar/](https://www.ncbi.nlm.nih.gov/clinvar/)). Importantly, disease-associated variants were filtered for rarity using population allele frequencies obtained from Ensembl Variant Effect Predictor (VEP) ([www.ensembl.org/info/docs/tools/vep/](https://www.ensembl.org/info/docs/tools/vep/)).
 
-In parallel, for the same OrphaNet identifiers, we searched ArrayExpress [PMID:30357387](https://www.ncbi.nlm.nih.gov/pubmed/30357387) ([www.ebi.ac.uk/arrayexpress/](https://www.ebi.ac.uk/arrayexpress/)) and Gene Expression Omnibus [PMID:27008011](https://www.ncbi.nlm.nih.gov/pubmed/27008011) ([www.ncbi.nlm.nih.gov/geo/](http://www.ncbi.nlm.nih.gov/geo/)) to retrieve a list of Differentially Expressed Genes (DEGs), to extend the the set of disease-associated genes.
+In parallel, for the same OrphaNet identifiers, we searched ArrayExpress [[4]](https://www.ncbi.nlm.nih.gov/pubmed/30357387) ([www.ebi.ac.uk/arrayexpress/](https://www.ebi.ac.uk/arrayexpress/)) and Gene Expression Omnibus [[5]](https://www.ncbi.nlm.nih.gov/pubmed/27008011) ([www.ncbi.nlm.nih.gov/geo/](http://www.ncbi.nlm.nih.gov/geo/)) to retrieve a list of Differentially Expressed Genes (DEGs), to extend the the set of disease-associated genes.
 
 ### Network of mechanisms
 The disease-relevant list of genes and variants was then used to construct a network of mechanisms using three different resources: disease maps, pathways and text mining.
 
-Disease maps offer standardized and diagrammatic description of disease mechanisms [PMID:29872544](https://www.ncbi.nlm.nih.gov/pubmed/29872544), and with the help of Gene Set Enrichment Analysis can be queried for areas of significance for a given gene list [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494). These areas can be exported together with their layout information, thanks to the capabilities of Systems Biology Markup Language (SBML) to support layout and render information, and functionalities of the MINERVA Platform [PMID:31273380](https://www.ncbi.nlm.nih.gov/pubmed/31273380).
+Disease maps offer standardized and diagrammatic description of disease mechanisms [[6]](https://www.ncbi.nlm.nih.gov/pubmed/29872544), and with the help of Gene Set Enrichment Analysis can be queried for areas of significance for a given gene list [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494). These areas can be exported together with their layout information, thanks to the capabilities of Systems Biology Markup Language (SBML) to support layout and render information, and functionalities of the MINERVA Platform [PMID:31273380](https://www.ncbi.nlm.nih.gov/pubmed/31273380).
 
 Another set of resources that support building the network of mechanisms are pathway databases. They also offer diagrammatic description of mechanisms in molecular biology, but less relevant to a particular disease. Nevertheless, they area a valuable resource and can be evaluated using enrichment. We focused on WikiPathways [PMID:29136241](https://www.ncbi.nlm.nih.gov/pubmed/29136241) ([wikipathways.org](https://wikipathways.org)).
 
@@ -147,3 +147,21 @@ with respect to the disease-associated genes obtained from previous step.
 The workflow integrating disease and pathway maps according to a given RD identifier may be helpful for RD researchers in setting up their respective knowledge repositories, and mapping their datasets. There are a number of improvements we foresee for this work, including using SPARQL query of Wikipathways for more accurate enrichment, deeper integration with text mining service developed during the BioHackathon'19, or improvement of the Hipathia interface.
 
 The workflow can be expanded on each step, adding i) new gene candidate resources, ii) new pathway databases or iii) introducing layout for text mining results and broaden the downstream map analysis. We will continue our work to explore these directions
+
+## References
+
+[1] S. Köhler et al., “The Human Phenotype Ontology in 2017,” Nucleic Acids Res., vol. 45, no. D1, pp. D865–D876, 04 2017, doi: 10.1093/nar/gkw1039. PMID:27899602.  
+[2] J. Piñero et al., “DisGeNET: a discovery platform for the dynamical exploration of human diseases and their genes,” Database (Oxford), vol. 2015, p. bav028, 2015, doi: 10.1093/database/bav028. PMID:25877637.  
+[3] D. Carvalho-Silva et al., “Open Targets Platform: new developments and updates two years on,” Nucleic Acids Res., vol. 47, no. D1, pp. D1056–D1065, Jan. 2019, doi: 10.1093/nar/gky1133. PMID:30462303.  
+[4] A. Athar et al., “ArrayExpress update - from bulk to single-cell expression data,” Nucleic Acids Res., vol. 47, no. D1, pp. D711–D715, Jan. 2019, doi: 10.1093/nar/gky964. PMID:30357387.  
+[5] E. Clough and T. Barrett, “The Gene Expression Omnibus Database,” Methods Mol. Biol., vol. 1418, pp. 93–110, 2016, doi: 10.1007/978-1-4939-3578-9_5. PMID:27008011.  
+[6] A. Mazein et al., “Systems medicine disease maps: community-driven comprehensive representation of disease mechanisms,” NPJ Syst Biol Appl, vol. 4, p. 21, 2018, doi: 10.1038/s41540-018-0059-y. PMID:29872544.  
+
+
+
+
+
+
+
+
+
