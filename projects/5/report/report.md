@@ -54,16 +54,16 @@ In parallel, for the same OrphaNet identifiers, we searched ArrayExpress [[4]](h
 ### Network of mechanisms
 The disease-relevant list of genes and variants was then used to construct a network of mechanisms using three different resources: disease maps, pathways and text mining.
 
-Disease maps offer standardized and diagrammatic description of disease mechanisms [[6]](https://www.ncbi.nlm.nih.gov/pubmed/29872544), and with the help of Gene Set Enrichment Analysis can be queried for areas of significance for a given gene list [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494). These areas can be exported together with their layout information, thanks to the capabilities of Systems Biology Markup Language (SBML) to support layout and render information, and functionalities of the MINERVA Platform [PMID:31273380](https://www.ncbi.nlm.nih.gov/pubmed/31273380).
+Disease maps offer standardized and diagrammatic description of disease mechanisms [[6]](https://www.ncbi.nlm.nih.gov/pubmed/29872544), and with the help of Gene Set Enrichment Analysis can be queried for areas of significance for a given gene list [[7]](https://www.ncbi.nlm.nih.gov/pubmed/31074494). These areas can be exported together with their layout information, thanks to the capabilities of Systems Biology Markup Language (SBML) to support layout and render information, and functionalities of the MINERVA Platform [[8]](https://www.ncbi.nlm.nih.gov/pubmed/31273380).
 
-Another set of resources that support building the network of mechanisms are pathway databases. They also offer diagrammatic description of mechanisms in molecular biology, but less relevant to a particular disease. Nevertheless, they area a valuable resource and can be evaluated using enrichment. We focused on WikiPathways [PMID:29136241](https://www.ncbi.nlm.nih.gov/pubmed/29136241) ([wikipathways.org](https://wikipathways.org)).
+Another set of resources that support building the network of mechanisms are pathway databases. They also offer diagrammatic description of mechanisms in molecular biology, but less relevant to a particular disease. Nevertheless, they area a valuable resource and can be evaluated using enrichment. We focused on WikiPathways [[9]](https://www.ncbi.nlm.nih.gov/pubmed/29136241) ([wikipathways.org](https://wikipathways.org)).
 
-Finally, to fetch potentially novel interactions between the preselected genes, we used STRING [PMID:30476243](https://www.ncbi.nlm.nih.gov/pubmed/30476243) ([string-db.org](https://string-db.org/)). Importantly, a parallel project in BioHackathon'19 focused on "[Text-mining and semantic web technologies](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/11)", and we worked to incorporate their outcomes into our workflow. As most of text mining interactions are non-directional and may contain noise, we relied on the OmniPath resource [PMID:27898060](https://www.ncbi.nlm.nih.gov/pubmed/27898060) to increase reliability, and to obtain directionality and sign of interaction.
+Finally, to fetch potentially novel interactions between the preselected genes, we used STRING [[10]](https://www.ncbi.nlm.nih.gov/pubmed/30476243) ([string-db.org](https://string-db.org/)). Importantly, a parallel project in BioHackathon'19 focused on "[Text-mining and semantic web technologies](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/11)", and we worked to incorporate their outcomes into our workflow. As most of text mining interactions are non-directional and may contain noise, we relied on the OmniPath resource [[11]](https://www.ncbi.nlm.nih.gov/pubmed/27898060) to increase reliability, and to obtain directionality and sign of interaction.
 
 ### Interactive prototype
-As mentioned above, we chose SBML with render and layout to harmonize and integrate different resources, using the MINERVA Platform [PMID:28725475](https://www.ncbi.nlm.nih.gov/pubmed/28725475), and in particular its conversion capabilities [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494). MINERVA was chosen as a platform to host the generated disease map, making it interactive and allowing to visually explore omics data.
+As mentioned above, we chose SBML with render and layout to harmonize and integrate different resources, using the MINERVA Platform [[12]](https://www.ncbi.nlm.nih.gov/pubmed/28725475), and in particular its conversion capabilities [[7]](https://www.ncbi.nlm.nih.gov/pubmed/31074494). MINERVA was chosen as a platform to host the generated disease map, making it interactive and allowing to visually explore omics data.
 
-To extend the use of the prototype disease map beyond visual exploration, we investigated Hipathia platform [PMID:31831811](https://www.ncbi.nlm.nih.gov/pubmed/31831811)([hipathia.babelomics.org](http://hipathia.babelomics.org/)), allowing to interpret gene expression and mutation data into perturbations of signaling pathways. We focused on interface between Hipathia and MINERVA to enable analysis of the disease map, and visualization of the analysis results.
+To extend the use of the prototype disease map beyond visual exploration, we investigated Hipathia platform [[13]](https://www.ncbi.nlm.nih.gov/pubmed/31831811)([hipathia.babelomics.org](http://hipathia.babelomics.org/)), allowing to interpret gene expression and mutation data into perturbations of signaling pathways. We focused on interface between Hipathia and MINERVA to enable analysis of the disease map, and visualization of the analysis results.
 
 ## Results at the BioHackathon'19
 
@@ -89,10 +89,10 @@ that only raw datasets should be retrieved.
 We expanded the number of disease-associated genes and variants (seed genes), assembled in previous steps, using resources as described above. The script receives as an input a list of seed genes (from OrphaNet, DisGeNET, OpenTargets and ClinVar) and expands the list of seed genes using information from different resources.
 
 #### Disease maps
-Disease maps hosted on MINERVA can be queried via API calls, and their content can be retrieved, including layout and network structure. We used Parkinson's disease map ([pdmap.uni.lu](https://pdmap.uni.lu)) as an example in our workflow. Nevertheless, source disease maps, if they are open access, can be set in configuration files of the workflow. For each selected disease map, the workflow performs Gene Set Enrichment Analysis for the seed genes (for GSEA in MINERVA see [PMID:31074494](https://www.ncbi.nlm.nih.gov/pubmed/31074494)) and indicates enriched areas for later integration.
+Disease maps hosted on MINERVA can be queried via API calls, and their content can be retrieved, including layout and network structure. We used Parkinson's disease map ([pdmap.uni.lu](https://pdmap.uni.lu)) as an example in our workflow. Nevertheless, source disease maps, if they are open access, can be set in configuration files of the workflow. For each selected disease map, the workflow performs Gene Set Enrichment Analysis for the seed genes (for GSEA in MINERVA see [[7]](https://www.ncbi.nlm.nih.gov/pubmed/31074494)) and indicates enriched areas for later integration.
 
 #### Pathway databases
-We used the ``enrichR`` package, an R-based interface to the Enrichr server ([PMID:27141961](https://www.ncbi.nlm.nih.gov/pubmed/27141961)) to calculate pathway enrichment for the seed genes. As ``enrichR`` allows for querying multiple packages at once, a configuration file (see below) allows to indicate, which pathway databases can be used. Currently, our workflow handles only the contents of Wikipathways.
+We used the ``enrichR`` package, an R-based interface to the Enrichr server ([[14]](https://www.ncbi.nlm.nih.gov/pubmed/27141961)) to calculate pathway enrichment for the seed genes. As ``enrichR`` allows for querying multiple packages at once, a configuration file (see below) allows to indicate, which pathway databases can be used. Currently, our workflow handles only the contents of Wikipathways.
 
 #### Text mining nad interaction databases
 
@@ -150,18 +150,17 @@ The workflow can be expanded on each step, adding i) new gene candidate resource
 
 ## References
 
-[1] S. Köhler et al., “The Human Phenotype Ontology in 2017,” Nucleic Acids Res., vol. 45, no. D1, pp. D865–D876, 04 2017, doi: 10.1093/nar/gkw1039. PMID:27899602.  
-[2] J. Piñero et al., “DisGeNET: a discovery platform for the dynamical exploration of human diseases and their genes,” Database (Oxford), vol. 2015, p. bav028, 2015, doi: 10.1093/database/bav028. PMID:25877637.  
-[3] D. Carvalho-Silva et al., “Open Targets Platform: new developments and updates two years on,” Nucleic Acids Res., vol. 47, no. D1, pp. D1056–D1065, Jan. 2019, doi: 10.1093/nar/gky1133. PMID:30462303.  
-[4] A. Athar et al., “ArrayExpress update - from bulk to single-cell expression data,” Nucleic Acids Res., vol. 47, no. D1, pp. D711–D715, Jan. 2019, doi: 10.1093/nar/gky964. PMID:30357387.  
-[5] E. Clough and T. Barrett, “The Gene Expression Omnibus Database,” Methods Mol. Biol., vol. 1418, pp. 93–110, 2016, doi: 10.1007/978-1-4939-3578-9_5. PMID:27008011.  
-[6] A. Mazein et al., “Systems medicine disease maps: community-driven comprehensive representation of disease mechanisms,” NPJ Syst Biol Appl, vol. 4, p. 21, 2018, doi: 10.1038/s41540-018-0059-y. PMID:29872544.  
-
-
-
-
-
-
-
-
-
+**[1]** S. Köhler et al., “The Human Phenotype Ontology in 2017,” Nucleic Acids Res., vol. 45, no. D1, pp. D865–D876, 04 2017, doi: 10.1093/nar/gkw1039. PMID:27899602.  
+**[2]** J. Piñero et al., “DisGeNET: a discovery platform for the dynamical exploration of human diseases and their genes,” Database (Oxford), vol. 2015, p. bav028, 2015, doi: 10.1093/database/bav028. PMID:25877637.  
+**[3]** D. Carvalho-Silva et al., “Open Targets Platform: new developments and updates two years on,” Nucleic Acids Res., vol. 47, no. D1, pp. D1056–D1065, Jan. 2019, doi: 10.1093/nar/gky1133. PMID:30462303.  
+**[4]** A. Athar et al., “ArrayExpress update - from bulk to single-cell expression data,” Nucleic Acids Res., vol. 47, no. D1, pp. D711–D715, Jan. 2019, doi: 10.1093/nar/gky964. PMID:30357387.  
+**[5]** E. Clough and T. Barrett, “The Gene Expression Omnibus Database,” Methods Mol. Biol., vol. 1418, pp. 93–110, 2016, doi: 10.1007/978-1-4939-3578-9_5. PMID:27008011.  
+**[6]** A. Mazein et al., “Systems medicine disease maps: community-driven comprehensive representation of disease mechanisms,” NPJ Syst Biol Appl, vol. 4, p. 21, 2018, doi: 10.1038/s41540-018-0059-y. PMID:29872544.  
+**[7]** D. Hoksza, P. Gawron, M. Ostaszewski, E. Smula, and R. Schneider, “MINERVA API and plugins: opening molecular network analysis and visualization to the community,” Bioinformatics, vol. 35, no. 21, pp. 4496–4498, Nov. 2019, doi: 10.1093/bioinformatics/btz286. PMID:31074494.  
+**[8]** D. Hoksza, P. Gawron, M. Ostaszewski, J. Hausenauer, and R. Schneider, “Closing the gap between formats for storing layout information in systems biology,” Brief. Bioinformatics, 05 2019, doi: 10.1093/bib/bbz067. PMID:31273380.  
+**[9]** D. N. Slenter et al., “WikiPathways: a multifaceted pathway database bridging metabolomics to other omics research,” Nucleic Acids Res., vol. 46, no. D1, pp. D661–D667, 04 2018, doi: 10.1093/nar/gkx1064. PMID:29136241.  
+**[10]** D. Szklarczyk et al., “STRING v11: protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets,” Nucleic Acids Res., vol. 47, no. D1, pp. D607–D613, Jan. 2019, doi: 10.1093/nar/gky1131. PMID:30476243.  
+**[11]** D. Türei, T. Korcsmáros, and J. Saez-Rodriguez, “OmniPath: guidelines and gateway for literature-curated signaling pathway resources,” Nat. Methods, vol. 13, no. 12, pp. 966–967, 29 2016, doi: 10.1038/nmeth.4077. PMID:27898060.  
+**[12]** P. Gawron et al., “MINERVA-a platform for visualization and curation of molecular interaction networks,” NPJ Syst Biol Appl, vol. 2, p. 16020, 2016, doi: 10.1038/npjsba.2016.20. PMID:28725475.  
+**[13]** M. Peña-Chilet et al., “Using mechanistic models for the clinical interpretation of complex genomic variation,” Sci Rep, vol. 9, no. 1, p. 18937, Dec. 2019, doi: 10.1038/s41598-019-55454-7. PMID:31831811.  
+**[14]** M. V. Kuleshov et al., “Enrichr: a comprehensive gene set enrichment analysis web server 2016 update,” Nucleic Acids Res., vol. 44, no. W1, pp. W90-97, 08 2016, doi: 10.1093/nar/gkw377. PMID:27141961.
